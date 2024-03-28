@@ -1,9 +1,7 @@
 name: Test
 
 on:
-  push:
-    branches:
-      - master
+  pull_request:
 
 jobs:
   test:
@@ -41,7 +39,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run tests and collect coverage
-        run: pnpm run vitest --coverage
+        run: pnpm run vitest --coverage --changed
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4.0.1
