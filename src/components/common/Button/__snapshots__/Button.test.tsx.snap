@@ -1,0 +1,51 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: Button > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <button
+    class="bg-gray-100 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900"
+    type="button"
+  >
+    <p>
+      Button
+    </p>
+    <div
+      class="h-10 w-10 animate-spin rounded-full border-4 border-current border-r-transparent border-t-transparent animation-duration-[600ms] hidden"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Component: Button > Snapshot > Disabled 1`] = `
+<DocumentFragment>
+  <button
+    class="bg-gray-100 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900 pointer-events-none opacity-70"
+    type="button"
+  >
+    <p>
+      Button
+    </p>
+    <div
+      class="h-10 w-10 animate-spin rounded-full border-4 border-current border-r-transparent border-t-transparent animation-duration-[600ms] hidden"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Component: Button > Snapshot > Loading 1`] = `
+<DocumentFragment>
+  <button
+    class="bg-gray-100 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900 pointer-events-none opacity-90"
+    type="button"
+  >
+    <p
+      class="hidden"
+    >
+      Button
+    </p>
+    <div
+      class="inline-block h-10 w-10 animate-spin rounded-full border-4 border-current border-r-transparent border-t-transparent animation-duration-[600ms]"
+    />
+  </button>
+</DocumentFragment>
+`;
