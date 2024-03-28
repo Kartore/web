@@ -1,10 +1,10 @@
-name: Test
+name: Test Check
 
 on:
   pull_request:
 
 jobs:
-  test:
+  test-check:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
