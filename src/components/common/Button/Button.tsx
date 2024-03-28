@@ -4,15 +4,15 @@ import { Spinner } from '~/components/common/Spinner';
 
 const buttonVariants = tv({
   slots: {
-    base: 'bg-gray-100 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900',
+    base: 'relative rounded-lg bg-gray-300 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900',
     text: '',
-    spinner: '',
+    spinner: 'absolute inset-0 flex items-center justify-center text-[1em]',
   },
   variants: {
     isLoading: {
       true: {
         base: 'pointer-events-none opacity-90',
-        text: 'hidden',
+        text: 'opacity-0',
         spinner: '',
       },
       false: {
@@ -40,7 +40,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button type={'button'} {...props} className={base(props)} ref={ref}>
         <p className={text()}>{children}</p>
-        <Spinner className={spinner()} />
+        <div className={spinner()}>
+          <Spinner />
+        </div>
       </button>
     );
   }

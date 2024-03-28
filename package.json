@@ -13,7 +13,8 @@
     "vitest": "TZ=UTC vitest",
     "test": "TZ=UTC pnpm run test:unit",
     "test:unit": "TZ=UTC vitest run",
-    "test:changed": "TZ=UTC vitest run --changed"
+    "test:changed": "TZ=UTC vitest run --changed",
+    "chromatic": "npx chromatic"
   },
   "dependencies": {
     "@ark-ui/react": "2.2.3",
@@ -39,6 +40,7 @@
     "@vitest/coverage-v8": "1.4.0",
     "@vitest/ui": "1.4.0",
     "autoprefixer": "10.4.19",
+    "chromatic": "11.2.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-react-hooks": "4.6.0",

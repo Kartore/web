@@ -3,15 +3,19 @@
 exports[`Component: Button > Snapshot > Default 1`] = `
 <DocumentFragment>
   <button
-    class="bg-gray-100 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900"
+    class="relative rounded-lg bg-gray-300 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900"
     type="button"
   >
     <p>
       Button
     </p>
     <div
-      class="h-10 w-10 animate-spin rounded-full border-4 border-current border-r-transparent border-t-transparent animation-duration-[600ms] hidden"
-    />
+      class="absolute inset-0 items-center justify-center text-[1em] hidden"
+    >
+      <div
+        class="inline-block aspect-square h-[1em] w-[1em] animate-spin rounded-full border-[0.2em] border-current border-r-transparent border-t-transparent animation-duration-[600ms]"
+      />
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -19,15 +23,19 @@ exports[`Component: Button > Snapshot > Default 1`] = `
 exports[`Component: Button > Snapshot > Disabled 1`] = `
 <DocumentFragment>
   <button
-    class="bg-gray-100 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900 pointer-events-none opacity-70"
+    class="relative rounded-lg bg-gray-300 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900 pointer-events-none opacity-70"
     type="button"
   >
     <p>
       Button
     </p>
     <div
-      class="h-10 w-10 animate-spin rounded-full border-4 border-current border-r-transparent border-t-transparent animation-duration-[600ms] hidden"
-    />
+      class="absolute inset-0 items-center justify-center text-[1em] hidden"
+    >
+      <div
+        class="inline-block aspect-square h-[1em] w-[1em] animate-spin rounded-full border-[0.2em] border-current border-r-transparent border-t-transparent animation-duration-[600ms]"
+      />
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -35,17 +43,21 @@ exports[`Component: Button > Snapshot > Disabled 1`] = `
 exports[`Component: Button > Snapshot > Loading 1`] = `
 <DocumentFragment>
   <button
-    class="bg-gray-100 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900 pointer-events-none opacity-90"
+    class="relative rounded-lg bg-gray-300 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900 pointer-events-none opacity-90"
     type="button"
   >
     <p
-      class="hidden"
+      class="opacity-0"
     >
       Button
     </p>
     <div
-      class="inline-block h-10 w-10 animate-spin rounded-full border-4 border-current border-r-transparent border-t-transparent animation-duration-[600ms]"
-    />
+      class="absolute inset-0 flex items-center justify-center text-[1em]"
+    >
+      <div
+        class="inline-block aspect-square h-[1em] w-[1em] animate-spin rounded-full border-[0.2em] border-current border-r-transparent border-t-transparent animation-duration-[600ms]"
+      />
+    </div>
   </button>
 </DocumentFragment>
 `;
