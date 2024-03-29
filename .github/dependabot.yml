@@ -7,7 +7,7 @@ updates:
     labels:
       - dependencies
   - package-ecosystem: npm
-    directory: .github/workflows
+    directory: /
     schedule:
       interval: daily
     labels:
