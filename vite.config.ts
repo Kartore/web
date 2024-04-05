@@ -19,7 +19,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reportOnFailure: true,
-      include: ['src/**/*.{ts,tsx}'],
+      include: ['src/components/**/*.{ts,tsx}', "src/utils/**/*.{ts,tsx}", "src/hooks/**/*.{ts,tsx}", "src/pages/**/*.{ts,tsx}", "src/store/**/*.{ts,tsx}"],
       exclude: ['src/**/__mocks__/**', 'src/**/@types/**', 'src/**/sample/**', 'src/**/store/**'],
       all: true,
       reporter: ['json'],

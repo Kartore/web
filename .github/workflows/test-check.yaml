@@ -37,7 +37,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run tests and collect coverage
-        run: pnpm run vitest --coverage --changed
+        run: pnpm run vitest --coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4.1.1
