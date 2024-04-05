@@ -26,7 +26,7 @@
     "@chromatic-com/storybook": "1.2.25",
     "@storybook/addon-essentials": "8.0.5",
     "@storybook/addon-interactions": "8.0.5",
-    "@storybook/addon-links": "8.0.5",
+    "@storybook/addon-links": "8.0.6",
     "@storybook/blocks": "8.0.5",
     "@storybook/react": "8.0.5",
     "@storybook/react-vite": "8.0.5",
