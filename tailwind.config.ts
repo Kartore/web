@@ -8,6 +8,7 @@ export default withTV({
   theme: {
     extend: {},
   },
+  darkMode: 'class',
   plugins: [
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
