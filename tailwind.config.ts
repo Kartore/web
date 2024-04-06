@@ -6,8 +6,19 @@ import { Config } from 'tailwindcss';
 export default withTV({
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'fade-in': 'fade-in .25s ease-out',
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translateY(-4px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+    },
   },
+  darkMode: 'class',
   plugins: [
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
