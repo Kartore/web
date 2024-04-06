@@ -2,7 +2,9 @@ import {
   Portal,
   SelectContent,
   SelectControl,
+  SelectIndicator,
   SelectItem,
+  SelectLabel,
   SelectPositioner,
   SelectRoot,
   SelectTrigger,
@@ -35,12 +37,12 @@ const items: {
 const colorModeSelectorVariants = tv({
   slots: {
     root: 'relative w-fit',
-    control: 'w-fit min-w-16',
+    control: 'w-fit min-w-28',
     trigger:
       'flex w-full items-center justify-between gap-2 rounded-lg bg-gray-100 py-2 pl-4 pr-2 text-gray-800 dark:bg-gray-800 dark:text-white',
     icon: 'h-[1em] w-[1em]',
     content:
-      'animate-fade-in w-full overflow-hidden rounded-lg bg-gray-100 shadow-lg dark:bg-gray-800 dark:text-white ',
+      'w-full animate-fade-in overflow-hidden rounded-lg bg-gray-100 shadow-lg dark:bg-gray-800 dark:text-white ',
     item: 'px-4 py-2 hover:cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-900 ',
   },
 });
@@ -57,17 +59,6 @@ export const ColorModeSelector = () => {
       label: string;
       value: TernaryDarkMode;
     }>) => {
-      if (items[0].value === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else if (items[0].value === 'light') {
-        document.documentElement.classList.remove('dark');
-      } else {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      }
       setTernaryDarkMode(items[0].value);
     },
     [setTernaryDarkMode]
@@ -82,9 +73,12 @@ export const ColorModeSelector = () => {
       value={[ternaryDarkMode]}
     >
       <SelectControl className={control()}>
+        <SelectLabel className={'sr-only'}>Color Mode Setting</SelectLabel>
         <SelectTrigger className={trigger()}>
           <SelectValueText placeholder={'Color Theme'} />
-          <ChevronDownIcon className={icon()} />
+          <SelectIndicator>
+            <ChevronDownIcon className={icon()} />
+          </SelectIndicator>
         </SelectTrigger>
       </SelectControl>
       <Portal container={containerRef}>
