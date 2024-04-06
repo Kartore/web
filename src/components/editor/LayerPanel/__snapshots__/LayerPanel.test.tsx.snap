@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: LayerPanel > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    class="flex h-full w-auto flex-col bg-gray-200 px-4 text-black dark:bg-gray-700 dark:text-white"
+    style="height: 500px;"
+  >
+    LayerPanel
+  </div>
+</DocumentFragment>
+`;
