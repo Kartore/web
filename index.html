@@ -5,33 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
-    <script>
-      const LOCAL_STORAGE_KEY = 'usehooks-ts-ternary-dark-mode';
-      if (!(LOCAL_STORAGE_KEY in localStorage) || localStorage[LOCAL_STORAGE_KEY] === '"system"') {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-        }
-        localStorage.setItem(LOCAL_STORAGE_KEY, '"system"');
-      } else if (localStorage[LOCAL_STORAGE_KEY] === '"dark"') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
 
-      const mediaQueryListener = (e) => {
-        if (localStorage[LOCAL_STORAGE_KEY] === '"system"') {
-          if (e.matches) {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-        }
-      };
-
-      window
-        .matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener('change', mediaQueryListener);
-    </script>
   </head>
   <body>
     <div id="root"></div>
