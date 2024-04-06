@@ -42,8 +42,8 @@ const colorModeSelectorVariants = tv({
       'flex w-full items-center justify-between gap-2 rounded-lg bg-gray-100 py-2 pl-4 pr-2 text-gray-800 dark:bg-gray-800 dark:text-white',
     icon: 'h-[1em] w-[1em]',
     content:
-      'w-full animate-fade-in overflow-hidden rounded-lg bg-gray-100 shadow-lg dark:bg-gray-800 dark:text-white ',
-    item: 'px-4 py-2 hover:cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-900 ',
+      'w-full animate-fade-in overflow-hidden rounded-lg bg-gray-100 text-gray-800 shadow-lg dark:bg-gray-800 dark:text-white',
+    item: 'px-4 py-2 hover:cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-900',
   },
 });
 

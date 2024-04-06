@@ -96,7 +96,7 @@ exports[`Component: ColorModeSelector > Snapshot > Default 1`] = `
     >
       <div
         aria-labelledby="select::r0::label"
-        class="w-full animate-fade-in overflow-hidden rounded-lg bg-gray-100 shadow-lg dark:bg-gray-800 dark:text-white"
+        class="w-full animate-fade-in overflow-hidden rounded-lg bg-gray-100 text-gray-800 shadow-lg dark:bg-gray-800 dark:text-white"
         data-part="content"
         data-scope="select"
         data-state="closed"

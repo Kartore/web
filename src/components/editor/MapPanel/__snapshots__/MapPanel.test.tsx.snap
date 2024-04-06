@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: MapPanel > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    style="position: relative; width: auto; height: 500px;"
+  />
+</DocumentFragment>
+`;
