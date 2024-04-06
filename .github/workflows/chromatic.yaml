@@ -1,10 +1,7 @@
 name: 'Chromatic Deployment'
 
 on:
-  pull_request:
   push:
-    branches:
-      - master
 
 jobs:
   chromatic:
@@ -46,4 +43,6 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
           onlyChanged: true
+          exitOnceUploaded: true
+          zip: true
           autoAcceptChanges: 'master'
