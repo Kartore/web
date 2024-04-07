@@ -15,7 +15,6 @@ export const MapPanel: FC<{
       }}
       style={{ height: '100%', width: 'auto', ...style }}
       mapStyle={osmLiberty}
-      maplibreLogo
     />
   );
 };
