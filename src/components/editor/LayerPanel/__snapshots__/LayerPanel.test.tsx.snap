@@ -3,10 +3,1402 @@
 exports[`Component: LayerPanel > Snapshot > Default 1`] = `
 <DocumentFragment>
   <div
-    class="flex h-full w-auto flex-col bg-gray-200 px-4 text-black dark:bg-gray-700 dark:text-white"
+    class="flex h-full w-auto flex-col bg-gray-200 text-black dark:bg-gray-700 dark:text-white"
     style="height: 500px;"
   >
-    LayerPanel
+    <div
+      class="border-b border-b-gray-300 px-2 py-1 dark:border-b-gray-600"
+    >
+      <h2>
+        Layers
+      </h2>
+    </div>
+    <div
+      class="px-2"
+    >
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          background
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          natural_earth
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          park
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          park_outline
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landuse_residential
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landcover_wood
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landcover_grass
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landcover_ice
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landcover_wetland
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landuse_pitch
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landuse_track
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landuse_cemetery
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landuse_hospital
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landuse_school
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          waterway_tunnel
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          waterway_river
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          waterway_other
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          water
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          landcover_sand
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          aeroway_fill
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          aeroway_runway
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          aeroway_taxiway
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_motorway_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_service_track_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_street_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_secondary_tertiary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_trunk_primary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_motorway_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_path_pedestrian
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_motorway_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_service_track
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_minor
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_secondary_tertiary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_trunk_primary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_motorway
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_major_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_major_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_transit_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          tunnel_transit_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_area_pattern
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_motorway_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_service_track_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_minor_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_secondary_tertiary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_trunk_primary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_motorway_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_path_pedestrian
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_motorway_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_service_track
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_minor
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_secondary_tertiary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_trunk_primary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_motorway
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_major_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_major_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_transit_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_transit_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_one_way_arrow
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_one_way_arrow_opposite
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_motorway_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_service_track_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_street_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_path_pedestrian_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_secondary_tertiary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_trunk_primary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_motorway_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_path_pedestrian
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_motorway_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_service_track
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_street
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_secondary_tertiary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_trunk_primary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_motorway
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_major_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_major_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_transit_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          bridge_transit_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          building
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          building-3d
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          boundary_3
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          boundary_2_z0-4
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          boundary_2_z5-
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          water_name_line
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          water_name_point
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          poi_z16
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          poi_z15
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          poi_z14
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          poi_transit
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_label
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          road_shield
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          place_other
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          place_village
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          place_town
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          place_city
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          state
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          country_3
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          country_2
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          country_1
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <p>
+          continent
+        </p>
+      </div>
+      <div
+        id="DndDescribedBy-0"
+        style="display: none;"
+      >
+        
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  
+      </div>
+      <div
+        aria-atomic="true"
+        aria-live="assertive"
+        id="DndLiveRegion-0"
+        role="status"
+        style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;
