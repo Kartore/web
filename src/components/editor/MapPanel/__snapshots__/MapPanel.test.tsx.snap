@@ -3,7 +3,7 @@
 exports[`Component: MapPanel > Snapshot > Default 1`] = `
 <DocumentFragment>
   <div
-    style="position: relative; width: auto; height: 500px;"
+    style="position: relative; width: 100%; height: 500px;"
   />
 </DocumentFragment>
 `;

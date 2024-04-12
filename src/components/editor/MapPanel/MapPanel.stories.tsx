@@ -1,5 +1,6 @@
 import { MapPanel } from '.';
 import { Meta, StoryObj } from '@storybook/react';
+import { osmLiberty } from '~/samples/osm-liberty.ts';
 
 const meta = {
   component: MapPanel,
@@ -14,5 +15,6 @@ export const Default: Story = {
     style: {
       height: '500px',
     },
+    mapStyle: osmLiberty,
   },
 };

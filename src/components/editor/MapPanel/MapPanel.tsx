@@ -1,11 +1,12 @@
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { Map } from 'react-map-gl/maplibre';
-import { osmLiberty } from '~/samples/osm-liberty.ts';
 import { CSSProperties, FC } from 'react';
+import { StyleSpecification } from 'maplibre-gl';
 
 export const MapPanel: FC<{
   style?: CSSProperties;
-}> = ({ style }) => {
+  mapStyle: StyleSpecification;
+}> = ({ style, mapStyle }) => {
   return (
     <Map
       initialViewState={{
@@ -13,8 +14,8 @@ export const MapPanel: FC<{
         latitude: 35.681,
         zoom: 15,
       }}
-      style={{ height: '100%', width: 'auto', ...style }}
-      mapStyle={osmLiberty}
+      style={{ height: '100%', ...style }}
+      mapStyle={mapStyle}
       maplibreLogo
     />
   );
