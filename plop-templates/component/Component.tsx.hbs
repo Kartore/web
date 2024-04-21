@@ -1,0 +1,25 @@
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
+import { tv, VariantProps } from 'tailwind-variants';
+
+const {{camelCase name}}Variants = tv({
+  slots: {
+    box: '',
+  },
+  variants: {},
+});
+
+export type {{pascalCase name}}VaritantProps = VariantProps<typeof {{camelCase name}}Variants>;
+
+export type {{pascalCase name}}Props = {} & ComponentPropsWithoutRef<'div'> & {{pascalCase name}}VaritantProps;
+
+export const {{pascalCase name}} = forwardRef<HTMLDivElement, {{pascalCase name}}Props>(
+  ({ className, ...props }, ref) => {
+    const { box } = {{camelCase name}}Variants();
+
+    return (
+      <div {...props} ref={ref} className={box({ className })}>
+
+      </div>
+    );
+  }
+);
