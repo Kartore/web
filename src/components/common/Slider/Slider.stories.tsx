@@ -27,3 +27,12 @@ export const HasMarker: Story = {
     marks: [{ value: 20, label: 'test' }, { value: 40 }, { value: 60 }, { value: 80 }],
   },
 };
+
+export const HasLabel: Story = {
+  args: {
+    children: 'Visible Zoom Level',
+    defaultValue: [20],
+    min: 0,
+    max: 24,
+  },
+};

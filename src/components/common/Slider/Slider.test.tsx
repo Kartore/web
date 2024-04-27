@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/react';
 
 import * as Stories from './Slider.stories.tsx';
 
-const { Default, Range, HasMarker } = composeStories(Stories);
+const { Default, Range, HasMarker, HasLabel } = composeStories(Stories);
 
 describe('Component: Slider', () => {
   describe('Snapshot', () => {
@@ -18,6 +18,10 @@ describe('Component: Slider', () => {
     });
     it('HasMarker', () => {
       const { asFragment } = render(<HasMarker />);
+      expect(asFragment()).toMatchSnapshot();
+    });
+    it('HasLabel', () => {
+      const { asFragment } = render(<HasLabel />);
       expect(asFragment()).toMatchSnapshot();
     });
   });

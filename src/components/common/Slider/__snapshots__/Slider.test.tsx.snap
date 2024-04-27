@@ -79,6 +79,97 @@ exports[`Component: Slider > Snapshot > Default 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Component: Slider > Snapshot > HasLabel 1`] = `
+<DocumentFragment>
+  <div
+    class="flex w-full flex-col gap-1"
+    data-orientation="horizontal"
+    data-part="root"
+    data-scope="slider"
+    dir="ltr"
+    id="slider::r3:"
+    style="--slider-thumb-offset-0: calc(83.33333333333334% - 0px); --slider-thumb-transform: translateX(-50%); --slider-range-start: 0%; --slider-range-end: 16.666666666666657%;"
+  >
+    <label
+      class="text-sm"
+      data-orientation="horizontal"
+      data-part="label"
+      data-scope="slider"
+      dir="ltr"
+      for="slider::r3::input:0"
+      id="slider::r3::label"
+      style="user-select: none;"
+    >
+      Visible Zoom Level
+    </label>
+    <div
+      class="relative flex h-4 items-center"
+      data-orientation="horizontal"
+      data-part="control"
+      data-scope="slider"
+      dir="ltr"
+      id="slider::r3::control"
+      style="touch-action: none; user-select: none; position: relative;"
+    >
+      <div
+        class="flex h-2 flex-1 overflow-hidden rounded-full bg-gray-300 dark:bg-gray-600"
+        data-orientation="horizontal"
+        data-part="track"
+        data-scope="slider"
+        dir="ltr"
+        id="slider::r3::track"
+        style="position: relative;"
+      >
+        <div
+          class="h-2 bg-teal-500"
+          data-orientation="horizontal"
+          data-part="range"
+          data-scope="slider"
+          dir="ltr"
+          id="slider::r3::range"
+          style="position: absolute; left: var(--slider-range-start); right: var(--slider-range-end);"
+        />
+      </div>
+      <div
+        aria-labelledby="slider::r3::label"
+        aria-orientation="horizontal"
+        aria-valuemax="24"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="h-4 w-4 rounded-full border border-gray-300 bg-gray-50"
+        data-index="0"
+        data-orientation="horizontal"
+        data-part="thumb"
+        data-scope="slider"
+        dir="ltr"
+        draggable="false"
+        id="slider::r3::thumb:0"
+        role="slider"
+        style="visibility: visible; position: absolute; transform: var(--slider-thumb-transform); inset-inline-start: var(--slider-thumb-offset-0);"
+        tabindex="0"
+      />
+      <input
+        hidden=""
+        id="slider::r3::input:0"
+        name="undefined[0]"
+        type="text"
+        value="20"
+      />
+    </div>
+    <div
+      aria-hidden="true"
+      class="-mt-2"
+      data-orientation="horizontal"
+      data-part="marker-group"
+      data-scope="slider"
+      dir="ltr"
+      role="presentation"
+      style="user-select: none; pointer-events: none; position: relative;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Component: Slider > Snapshot > HasMarker 1`] = `
 <DocumentFragment>
   <div

@@ -15,7 +15,7 @@ import {
 const sliderVariants = tv({
   slots: {
     root: 'flex w-full flex-col gap-1',
-    label: '',
+    label: 'text-sm',
     control: 'relative flex h-4 items-center',
     track: 'flex h-2 flex-1 overflow-hidden rounded-full bg-gray-300 dark:bg-gray-600',
     range: 'h-2 bg-teal-500 ',
