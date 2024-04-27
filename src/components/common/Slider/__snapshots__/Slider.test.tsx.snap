@@ -1,0 +1,314 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: Slider > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    class="flex w-full flex-col gap-1"
+    data-orientation="horizontal"
+    data-part="root"
+    data-scope="slider"
+    dir="ltr"
+    id="slider::r0:"
+    style="--slider-thumb-offset-0: calc(20% - 0px); --slider-thumb-transform: translateX(-50%); --slider-range-start: 0%; --slider-range-end: 80%;"
+  >
+    <div
+      class="relative flex h-4 items-center"
+      data-orientation="horizontal"
+      data-part="control"
+      data-scope="slider"
+      dir="ltr"
+      id="slider::r0::control"
+      style="touch-action: none; user-select: none; position: relative;"
+    >
+      <div
+        class="flex h-2 flex-1 overflow-hidden rounded-full bg-gray-300 dark:bg-gray-600"
+        data-orientation="horizontal"
+        data-part="track"
+        data-scope="slider"
+        dir="ltr"
+        id="slider::r0::track"
+        style="position: relative;"
+      >
+        <div
+          class="h-2 bg-teal-500"
+          data-orientation="horizontal"
+          data-part="range"
+          data-scope="slider"
+          dir="ltr"
+          id="slider::r0::range"
+          style="position: absolute; left: var(--slider-range-start); right: var(--slider-range-end);"
+        />
+      </div>
+      <div
+        aria-labelledby="slider::r0::label"
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="h-4 w-4 rounded-full border border-gray-300 bg-gray-50"
+        data-index="0"
+        data-orientation="horizontal"
+        data-part="thumb"
+        data-scope="slider"
+        dir="ltr"
+        draggable="false"
+        id="slider::r0::thumb:0"
+        role="slider"
+        style="visibility: visible; position: absolute; transform: var(--slider-thumb-transform); inset-inline-start: var(--slider-thumb-offset-0);"
+        tabindex="0"
+      />
+      <input
+        hidden=""
+        id="slider::r0::input:0"
+        name="undefined[0]"
+        type="text"
+        value="20"
+      />
+    </div>
+    <div
+      aria-hidden="true"
+      class="-mt-2"
+      data-orientation="horizontal"
+      data-part="marker-group"
+      data-scope="slider"
+      dir="ltr"
+      role="presentation"
+      style="user-select: none; pointer-events: none; position: relative;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Component: Slider > Snapshot > HasMarker 1`] = `
+<DocumentFragment>
+  <div
+    class="flex w-full flex-col gap-1"
+    data-orientation="horizontal"
+    data-part="root"
+    data-scope="slider"
+    dir="ltr"
+    id="slider::r2:"
+    style="--slider-thumb-offset-0: calc(20% - 0px); --slider-thumb-transform: translateX(-50%); --slider-range-start: 0%; --slider-range-end: 80%;"
+  >
+    <div
+      class="relative flex h-4 items-center"
+      data-orientation="horizontal"
+      data-part="control"
+      data-scope="slider"
+      dir="ltr"
+      id="slider::r2::control"
+      style="touch-action: none; user-select: none; position: relative;"
+    >
+      <div
+        class="flex h-2 flex-1 overflow-hidden rounded-full bg-gray-300 dark:bg-gray-600"
+        data-orientation="horizontal"
+        data-part="track"
+        data-scope="slider"
+        dir="ltr"
+        id="slider::r2::track"
+        style="position: relative;"
+      >
+        <div
+          class="h-2 bg-teal-500"
+          data-orientation="horizontal"
+          data-part="range"
+          data-scope="slider"
+          dir="ltr"
+          id="slider::r2::range"
+          style="position: absolute; left: var(--slider-range-start); right: var(--slider-range-end);"
+        />
+      </div>
+      <div
+        aria-labelledby="slider::r2::label"
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="h-4 w-4 rounded-full border border-gray-300 bg-gray-50"
+        data-index="0"
+        data-orientation="horizontal"
+        data-part="thumb"
+        data-scope="slider"
+        dir="ltr"
+        draggable="false"
+        id="slider::r2::thumb:0"
+        role="slider"
+        style="visibility: visible; position: absolute; transform: var(--slider-thumb-transform); inset-inline-start: var(--slider-thumb-offset-0);"
+        tabindex="0"
+      />
+      <input
+        hidden=""
+        id="slider::r2::input:0"
+        name="undefined[0]"
+        type="text"
+        value="20"
+      />
+    </div>
+    <div
+      aria-hidden="true"
+      class="-mt-2"
+      data-orientation="horizontal"
+      data-part="marker-group"
+      data-scope="slider"
+      dir="ltr"
+      role="presentation"
+      style="user-select: none; pointer-events: none; position: relative;"
+    >
+      <span
+        class="before:relative before:-top-2 before:left-1/2 before:block before:h-1 before:w-1 before:-translate-x-1/2 before:translate-y-1/2 before:rounded-full before:bg-white before:content-["
+        data-orientation="horizontal"
+        data-part="marker"
+        data-scope="slider"
+        data-state="at-value"
+        data-value="20"
+        dir="ltr"
+        id="slider::r2::marker:20"
+        role="presentation"
+        style="visibility: visible; position: absolute; pointer-events: none; inset-inline-start: calc(20% - 0px); --tx: -50%; --ty: 0%;"
+      >
+        test
+      </span>
+      <span
+        class="before:relative before:-top-2 before:left-1/2 before:block before:h-1 before:w-1 before:-translate-x-1/2 before:translate-y-1/2 before:rounded-full before:bg-white before:content-["
+        data-orientation="horizontal"
+        data-part="marker"
+        data-scope="slider"
+        data-state="over-value"
+        data-value="40"
+        dir="ltr"
+        id="slider::r2::marker:40"
+        role="presentation"
+        style="visibility: visible; position: absolute; pointer-events: none; inset-inline-start: calc(40% - 0px); --tx: -50%; --ty: 0%;"
+      />
+      <span
+        class="before:relative before:-top-2 before:left-1/2 before:block before:h-1 before:w-1 before:-translate-x-1/2 before:translate-y-1/2 before:rounded-full before:bg-white before:content-["
+        data-orientation="horizontal"
+        data-part="marker"
+        data-scope="slider"
+        data-state="over-value"
+        data-value="60"
+        dir="ltr"
+        id="slider::r2::marker:60"
+        role="presentation"
+        style="visibility: visible; position: absolute; pointer-events: none; inset-inline-start: calc(60% - 0px); --tx: -50%; --ty: 0%;"
+      />
+      <span
+        class="before:relative before:-top-2 before:left-1/2 before:block before:h-1 before:w-1 before:-translate-x-1/2 before:translate-y-1/2 before:rounded-full before:bg-white before:content-["
+        data-orientation="horizontal"
+        data-part="marker"
+        data-scope="slider"
+        data-state="over-value"
+        data-value="80"
+        dir="ltr"
+        id="slider::r2::marker:80"
+        role="presentation"
+        style="visibility: visible; position: absolute; pointer-events: none; inset-inline-start: calc(80% - 0px); --tx: -50%; --ty: 0%;"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Component: Slider > Snapshot > Range 1`] = `
+<DocumentFragment>
+  <div
+    class="flex w-full flex-col gap-1"
+    data-orientation="horizontal"
+    data-part="root"
+    data-scope="slider"
+    dir="ltr"
+    id="slider::r1:"
+    style="--slider-thumb-offset-0: calc(20% - 0px); --slider-thumb-offset-1: calc(80% - 0px); --slider-thumb-transform: translateX(-50%); --slider-range-start: 20%; --slider-range-end: 20%;"
+  >
+    <div
+      class="relative flex h-4 items-center"
+      data-orientation="horizontal"
+      data-part="control"
+      data-scope="slider"
+      dir="ltr"
+      id="slider::r1::control"
+      style="touch-action: none; user-select: none; position: relative;"
+    >
+      <div
+        class="flex h-2 flex-1 overflow-hidden rounded-full bg-gray-300 dark:bg-gray-600"
+        data-orientation="horizontal"
+        data-part="track"
+        data-scope="slider"
+        dir="ltr"
+        id="slider::r1::track"
+        style="position: relative;"
+      >
+        <div
+          class="h-2 bg-teal-500"
+          data-orientation="horizontal"
+          data-part="range"
+          data-scope="slider"
+          dir="ltr"
+          id="slider::r1::range"
+          style="position: absolute; left: var(--slider-range-start); right: var(--slider-range-end);"
+        />
+      </div>
+      <div
+        aria-labelledby="slider::r1::label"
+        aria-orientation="horizontal"
+        aria-valuemax="80"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="h-4 w-4 rounded-full border border-gray-300 bg-gray-50"
+        data-index="0"
+        data-orientation="horizontal"
+        data-part="thumb"
+        data-scope="slider"
+        dir="ltr"
+        draggable="false"
+        id="slider::r1::thumb:0"
+        role="slider"
+        style="visibility: visible; position: absolute; transform: var(--slider-thumb-transform); inset-inline-start: var(--slider-thumb-offset-0);"
+        tabindex="0"
+      />
+      <input
+        hidden=""
+        id="slider::r1::input:0"
+        name="undefined[0]"
+        type="text"
+        value="20"
+      />
+      <div
+        aria-labelledby="slider::r1::label"
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="20"
+        aria-valuenow="80"
+        class="h-4 w-4 rounded-full border border-gray-300 bg-gray-50"
+        data-index="1"
+        data-orientation="horizontal"
+        data-part="thumb"
+        data-scope="slider"
+        dir="ltr"
+        draggable="false"
+        id="slider::r1::thumb:1"
+        role="slider"
+        style="visibility: visible; position: absolute; transform: var(--slider-thumb-transform); inset-inline-start: var(--slider-thumb-offset-1);"
+        tabindex="0"
+      />
+      <input
+        hidden=""
+        id="slider::r1::input:1"
+        name="undefined[1]"
+        type="text"
+        value="80"
+      />
+    </div>
+    <div
+      aria-hidden="true"
+      class="-mt-2"
+      data-orientation="horizontal"
+      data-part="marker-group"
+      data-scope="slider"
+      dir="ltr"
+      role="presentation"
+      style="user-select: none; pointer-events: none; position: relative;"
+    />
+  </div>
+</DocumentFragment>
+`;
