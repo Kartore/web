@@ -1,5 +1,6 @@
 import { PropertiesPanel } from '.';
 import { Meta, StoryObj } from '@storybook/react';
+import { BackgroundLayerSample } from '~/samples/LayerSample.ts';
 
 const meta = {
   component: PropertiesPanel,
@@ -11,8 +12,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    style: {
-      height: '500px',
-    },
+    layer: BackgroundLayerSample,
   },
 };

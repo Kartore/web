@@ -5,5 +5,9 @@ exports[`Component: MapPanel > Snapshot > Default 1`] = `
   <div
     style="position: relative; width: 100%; height: 500px;"
   />
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
 </DocumentFragment>
 `;

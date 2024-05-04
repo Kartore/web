@@ -1,5 +1,4 @@
 import { ComponentPropsWithoutRef, FC, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { LayerSpecification } from 'maplibre-gl';
 import {
   DndContext,
@@ -16,16 +15,18 @@ import {
 } from '@dnd-kit/core';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { SortableLayerTreeItem } from '~/components/editor/LayerPanel/SortableLayerTreeItem/SortableLayerTreeItem.tsx';
-import { Portal } from '@ark-ui/react';
+import { Box, Portal } from '@chakra-ui/react';
 
 type LayerPanelProps = ComponentPropsWithoutRef<'div'> & {
   layers: LayerSpecification[];
+  onClickLayer: (id: LayerSpecification) => void;
   onChangeLayerOrder: (layers: LayerSpecification[]) => void;
 };
 
 export const LayerPanel: FC<LayerPanelProps> = ({
   className,
   onChangeLayerOrder,
+  onClickLayer,
   layers,
   ...props
 }) => {
@@ -76,17 +77,11 @@ export const LayerPanel: FC<LayerPanelProps> = ({
   );
 
   return (
-    <div
-      className={twMerge(
-        'flex h-full w-auto flex-col bg-gray-200 text-black dark:bg-gray-700 dark:text-white',
-        className
-      )}
-      {...props}
-    >
-      <div className={'border-b border-b-gray-300 px-2 py-1 dark:border-b-gray-600'}>
+    <Box height={'100%'} width={'auto'} {...props}>
+      <Box borderBottom={'1px'} px={2} py={1}>
         <h2>Layers</h2>
-      </div>
-      <div className={'px-2'}>
+      </Box>
+      <Box px={2}>
         <DndContext
           measuring={{
             droppable: {
@@ -108,6 +103,9 @@ export const LayerPanel: FC<LayerPanelProps> = ({
                   key={layer.id}
                   id={layer.id}
                   indicator={layer.id === activeId}
+                  onClick={() => {
+                    onClickLayer(layer);
+                  }}
                 />
               );
             })}
@@ -118,7 +116,7 @@ export const LayerPanel: FC<LayerPanelProps> = ({
             </DragOverlay>
           </Portal>
         </DndContext>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };

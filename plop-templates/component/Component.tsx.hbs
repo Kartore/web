@@ -1,0 +1,14 @@
+import { Box, BoxProps, forwardRef } from '@chakra-ui/react';
+
+export type {{pascalCase name}}Props = {} & BoxProps;
+
+export const {{pascalCase name}} = forwardRef<'div', {{pascalCase name}}Props>(
+  ({ ...props }, ref) => {
+
+    return (
+      <Box ref={ref} {...props}>
+
+      </Box>
+    );
+  }
+);

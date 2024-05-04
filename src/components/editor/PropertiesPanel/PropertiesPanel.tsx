@@ -1,18 +1,22 @@
 import { ComponentPropsWithoutRef, FC } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { LayerSpecification } from '@maplibre/maplibre-gl-style-spec';
+import { replaceLayerData } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 
-type PropertiesPanelProps = ComponentPropsWithoutRef<'div'>;
+type PropertiesPanelProps = Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> & {
+  layer: LayerSpecification;
+  onChange?: (
+    layer: Parameters<typeof replaceLayerData>[1],
+    group: Parameters<typeof replaceLayerData>[2],
+    key: Parameters<typeof replaceLayerData>[3],
+    value: Parameters<typeof replaceLayerData>[4]
+  ) => void;
+};
 
-export const PropertiesPanel: FC<PropertiesPanelProps> = ({ className, ...props }) => {
-  return (
-    <div
-      className={twMerge(
-        'flex h-full w-auto flex-col bg-gray-200 px-4 text-black dark:bg-gray-700 dark:text-white',
-        className
-      )}
-      {...props}
-    >
-      PropertiesPanel
-    </div>
-  );
+export const PropertiesPanel: FC<PropertiesPanelProps> = ({
+  className,
+  layer,
+  onChange,
+  ...props
+}) => {
+  return <div {...props}>Properties</div>;
 };

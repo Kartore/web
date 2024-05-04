@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Component: Spinner > Snapshot > Default 1`] = `
-<DocumentFragment>
-  <div
-    class="inline-block aspect-square h-[1em] w-[1em] animate-spin rounded-full border-[0.2em] border-current border-r-transparent border-t-transparent animation-duration-[600ms]"
-  />
-</DocumentFragment>
-`;
