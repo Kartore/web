@@ -16,10 +16,17 @@ export default defineConfig({
     globals: true,
     clearMocks: true,
     testTimeout: 50000,
+    setupFiles: '.vitest/setup.ts',
     coverage: {
       provider: 'v8',
       reportOnFailure: true,
-      include: ['src/components/**/*.{ts,tsx}', "src/utils/**/*.{ts,tsx}", "src/hooks/**/*.{ts,tsx}", "src/pages/**/*.{ts,tsx}", "src/store/**/*.{ts,tsx}"],
+      include: [
+        'src/components/**/*.{ts,tsx}',
+        'src/utils/**/*.{ts,tsx}',
+        'src/hooks/**/*.{ts,tsx}',
+        'src/pages/**/*.{ts,tsx}',
+        'src/store/**/*.{ts,tsx}',
+      ],
       exclude: ['src/**/__mocks__/**', 'src/**/@types/**', 'src/**/sample/**', 'src/**/store/**'],
       all: true,
       reporter: ['json'],

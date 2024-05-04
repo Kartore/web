@@ -2,30 +2,72 @@
 
 exports[`Component: LayerPanel > Snapshot > Default 1`] = `
 <DocumentFragment>
-  <div
-    class="flex h-full w-auto flex-col bg-gray-200 text-black dark:bg-gray-700 dark:text-white"
+  .emotion-0 {
+  height: 100%;
+  width: auto;
+}
+
+.emotion-1 {
+  border-bottom: var(--chakra-borders-1px);
+  -webkit-padding-start: var(--chakra-space-2);
+  padding-inline-start: var(--chakra-space-2);
+  -webkit-padding-end: var(--chakra-space-2);
+  padding-inline-end: var(--chakra-space-2);
+  padding-top: var(--chakra-space-1);
+  padding-bottom: var(--chakra-space-1);
+}
+
+.emotion-2 {
+  -webkit-padding-start: var(--chakra-space-2);
+  padding-inline-start: var(--chakra-space-2);
+  -webkit-padding-end: var(--chakra-space-2);
+  padding-inline-end: var(--chakra-space-2);
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-padding-start: var(--chakra-space-2);
+  padding-inline-start: var(--chakra-space-2);
+  -webkit-padding-end: var(--chakra-space-2);
+  padding-inline-end: var(--chakra-space-2);
+  padding-top: var(--chakra-space-2);
+  padding-bottom: var(--chakra-space-2);
+  pointer-events: auto;
+}
+
+<div
+    class="emotion-0"
     style="height: 500px;"
   >
     <div
-      class="border-b border-b-gray-300 px-2 py-1 dark:border-b-gray-600"
+      class="emotion-1"
     >
       <h2>
         Layers
       </h2>
     </div>
     <div
-      class="px-2"
+      class="emotion-2"
     >
       <div
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           background
         </p>
       </div>
@@ -33,12 +75,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           natural_earth
         </p>
       </div>
@@ -46,12 +90,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           park
         </p>
       </div>
@@ -59,12 +105,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           park_outline
         </p>
       </div>
@@ -72,12 +120,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landuse_residential
         </p>
       </div>
@@ -85,12 +135,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landcover_wood
         </p>
       </div>
@@ -98,12 +150,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landcover_grass
         </p>
       </div>
@@ -111,12 +165,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landcover_ice
         </p>
       </div>
@@ -124,12 +180,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landcover_wetland
         </p>
       </div>
@@ -137,12 +195,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landuse_pitch
         </p>
       </div>
@@ -150,12 +210,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landuse_track
         </p>
       </div>
@@ -163,12 +225,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landuse_cemetery
         </p>
       </div>
@@ -176,12 +240,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landuse_hospital
         </p>
       </div>
@@ -189,12 +255,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landuse_school
         </p>
       </div>
@@ -202,12 +270,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           waterway_tunnel
         </p>
       </div>
@@ -215,12 +285,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           waterway_river
         </p>
       </div>
@@ -228,12 +300,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           waterway_other
         </p>
       </div>
@@ -241,12 +315,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           water
         </p>
       </div>
@@ -254,12 +330,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           landcover_sand
         </p>
       </div>
@@ -267,12 +345,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           aeroway_fill
         </p>
       </div>
@@ -280,12 +360,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           aeroway_runway
         </p>
       </div>
@@ -293,12 +375,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           aeroway_taxiway
         </p>
       </div>
@@ -306,12 +390,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_motorway_link_casing
         </p>
       </div>
@@ -319,12 +405,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_service_track_casing
         </p>
       </div>
@@ -332,12 +420,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_link_casing
         </p>
       </div>
@@ -345,12 +435,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_street_casing
         </p>
       </div>
@@ -358,12 +450,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_secondary_tertiary_casing
         </p>
       </div>
@@ -371,12 +465,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_trunk_primary_casing
         </p>
       </div>
@@ -384,12 +480,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_motorway_casing
         </p>
       </div>
@@ -397,12 +495,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_path_pedestrian
         </p>
       </div>
@@ -410,12 +510,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_motorway_link
         </p>
       </div>
@@ -423,12 +525,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_service_track
         </p>
       </div>
@@ -436,12 +540,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_link
         </p>
       </div>
@@ -449,12 +555,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_minor
         </p>
       </div>
@@ -462,12 +570,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_secondary_tertiary
         </p>
       </div>
@@ -475,12 +585,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_trunk_primary
         </p>
       </div>
@@ -488,12 +600,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_motorway
         </p>
       </div>
@@ -501,12 +615,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_major_rail
         </p>
       </div>
@@ -514,12 +630,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_major_rail_hatching
         </p>
       </div>
@@ -527,12 +645,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_transit_rail
         </p>
       </div>
@@ -540,12 +660,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           tunnel_transit_rail_hatching
         </p>
       </div>
@@ -553,12 +675,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_area_pattern
         </p>
       </div>
@@ -566,12 +690,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_motorway_link_casing
         </p>
       </div>
@@ -579,12 +705,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_service_track_casing
         </p>
       </div>
@@ -592,12 +720,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_link_casing
         </p>
       </div>
@@ -605,12 +735,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_minor_casing
         </p>
       </div>
@@ -618,12 +750,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_secondary_tertiary_casing
         </p>
       </div>
@@ -631,12 +765,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_trunk_primary_casing
         </p>
       </div>
@@ -644,12 +780,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_motorway_casing
         </p>
       </div>
@@ -657,12 +795,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_path_pedestrian
         </p>
       </div>
@@ -670,12 +810,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_motorway_link
         </p>
       </div>
@@ -683,12 +825,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_service_track
         </p>
       </div>
@@ -696,12 +840,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_link
         </p>
       </div>
@@ -709,12 +855,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_minor
         </p>
       </div>
@@ -722,12 +870,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_secondary_tertiary
         </p>
       </div>
@@ -735,12 +885,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_trunk_primary
         </p>
       </div>
@@ -748,12 +900,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_motorway
         </p>
       </div>
@@ -761,12 +915,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_major_rail
         </p>
       </div>
@@ -774,12 +930,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_major_rail_hatching
         </p>
       </div>
@@ -787,12 +945,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_transit_rail
         </p>
       </div>
@@ -800,12 +960,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_transit_rail_hatching
         </p>
       </div>
@@ -813,12 +975,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_one_way_arrow
         </p>
       </div>
@@ -826,12 +990,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_one_way_arrow_opposite
         </p>
       </div>
@@ -839,12 +1005,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_motorway_link_casing
         </p>
       </div>
@@ -852,12 +1020,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_service_track_casing
         </p>
       </div>
@@ -865,12 +1035,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_link_casing
         </p>
       </div>
@@ -878,12 +1050,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_street_casing
         </p>
       </div>
@@ -891,12 +1065,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_path_pedestrian_casing
         </p>
       </div>
@@ -904,12 +1080,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_secondary_tertiary_casing
         </p>
       </div>
@@ -917,12 +1095,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_trunk_primary_casing
         </p>
       </div>
@@ -930,12 +1110,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_motorway_casing
         </p>
       </div>
@@ -943,12 +1125,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_path_pedestrian
         </p>
       </div>
@@ -956,12 +1140,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_motorway_link
         </p>
       </div>
@@ -969,12 +1155,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_service_track
         </p>
       </div>
@@ -982,12 +1170,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_link
         </p>
       </div>
@@ -995,12 +1185,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_street
         </p>
       </div>
@@ -1008,12 +1200,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_secondary_tertiary
         </p>
       </div>
@@ -1021,12 +1215,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_trunk_primary
         </p>
       </div>
@@ -1034,12 +1230,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_motorway
         </p>
       </div>
@@ -1047,12 +1245,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_major_rail
         </p>
       </div>
@@ -1060,12 +1260,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_major_rail_hatching
         </p>
       </div>
@@ -1073,12 +1275,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_transit_rail
         </p>
       </div>
@@ -1086,12 +1290,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           bridge_transit_rail_hatching
         </p>
       </div>
@@ -1099,12 +1305,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           building
         </p>
       </div>
@@ -1112,12 +1320,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           building-3d
         </p>
       </div>
@@ -1125,12 +1335,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           boundary_3
         </p>
       </div>
@@ -1138,12 +1350,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           boundary_2_z0-4
         </p>
       </div>
@@ -1151,12 +1365,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           boundary_2_z5-
         </p>
       </div>
@@ -1164,12 +1380,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           water_name_line
         </p>
       </div>
@@ -1177,12 +1395,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           water_name_point
         </p>
       </div>
@@ -1190,12 +1410,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           poi_z16
         </p>
       </div>
@@ -1203,12 +1425,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           poi_z15
         </p>
       </div>
@@ -1216,12 +1440,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           poi_z14
         </p>
       </div>
@@ -1229,12 +1455,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           poi_transit
         </p>
       </div>
@@ -1242,12 +1470,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_label
         </p>
       </div>
@@ -1255,12 +1485,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           road_shield
         </p>
       </div>
@@ -1268,12 +1500,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           place_other
         </p>
       </div>
@@ -1281,12 +1515,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           place_village
         </p>
       </div>
@@ -1294,12 +1530,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           place_town
         </p>
       </div>
@@ -1307,12 +1545,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           place_city
         </p>
       </div>
@@ -1320,12 +1560,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           state
         </p>
       </div>
@@ -1333,12 +1575,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           country_3
         </p>
       </div>
@@ -1346,12 +1590,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           country_2
         </p>
       </div>
@@ -1359,12 +1605,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           country_1
         </p>
       </div>
@@ -1372,12 +1620,14 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400"
+        class="emotion-3"
         role="button"
         style="transition: transform 200ms ease;"
         tabindex="0"
       >
-        <p>
+        <p
+          class="chakra-text emotion-4"
+        >
           continent
         </p>
       </div>
@@ -1400,5 +1650,9 @@ exports[`Component: LayerPanel > Snapshot > Default 1`] = `
       />
     </div>
   </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
 </DocumentFragment>
 `;

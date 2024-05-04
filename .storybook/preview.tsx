@@ -1,6 +1,36 @@
-import type { Preview } from '@storybook/react';
-import '../src/index.css';
-import { withThemeByClassName } from '@storybook/addon-themes';
+import type { Decorator, Preview } from '@storybook/react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { DecoratorHelpers } from '@storybook/addon-themes';
+const { pluckThemeFromContext, initializeThemeState } = DecoratorHelpers;
+
+export const customDecorator = ({
+  themes,
+  defaultTheme,
+}: {
+  themes: {
+    [key: string]: string;
+  };
+  defaultTheme: string;
+}): Decorator => {
+  initializeThemeState(Object.keys(themes), defaultTheme);
+
+  return (Story, context) => {
+    const selectedTheme = pluckThemeFromContext(context);
+    return (
+      <ChakraProvider
+        colorModeManager={{
+          type: 'localStorage',
+          get() {
+            return selectedTheme === 'dark' ? 'dark' : 'light';
+          },
+          set() {},
+        }}
+      >
+        <Story />
+      </ChakraProvider>
+    );
+  };
+};
 
 const preview: Preview = {
   parameters: {
@@ -42,13 +72,12 @@ const preview: Preview = {
     },
   },
   decorators: [
-    withThemeByClassName({
+    customDecorator({
       themes: {
         light: 'light',
         dark: 'dark',
       },
-      defaultTheme: 'dark',
-      parentSelector: 'html',
+      defaultTheme: 'light',
     }),
   ],
 };

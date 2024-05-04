@@ -1,15 +1,19 @@
 import { FC } from 'react';
-import { ColorModeSelector } from '~/components/common/ColorModeSelector';
+import { Flex } from '@chakra-ui/react';
+import { ColorModeSwitcher } from '~/components/common/ColorModeSwitcher';
 
 export const Header: FC = () => {
   return (
-    <header
-      className={
-        'flex h-12 w-full items-center justify-between border-b border-b-gray-600 bg-gray-700 px-4 text-white'
-      }
+    <Flex
+      height={12}
+      width={'100%'}
+      alignItems={'center'}
+      justifyContent={'space-between'}
+      paddingX={4}
+      paddingY={2}
     >
       <h1>Kartore</h1>
-      <ColorModeSelector />
-    </header>
+      <ColorModeSwitcher />
+    </Flex>
   );
 };

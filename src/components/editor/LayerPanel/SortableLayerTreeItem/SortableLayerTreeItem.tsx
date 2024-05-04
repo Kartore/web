@@ -1,19 +1,15 @@
-import { ComponentPropsWithoutRef, CSSProperties, FC } from 'react';
+import { CSSProperties, FC } from 'react';
 import { AnimateLayoutChanges, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { UniqueIdentifier } from '@dnd-kit/core';
 import {
   LayerTreeItem,
-  LayerTreeItemVaritantProps,
+  LayerTreeItemProps,
 } from '~/components/editor/LayerPanel/SortableLayerTreeItem/LayerTreeItem/LayerTreeItem.tsx';
 
 const animateLayoutChanges: AnimateLayoutChanges = ({ isSorting, wasDragging }) =>
   !(isSorting || wasDragging);
 
-type SortableLayerTreeItemProps = {
-  id: UniqueIdentifier;
-} & Omit<ComponentPropsWithoutRef<'div'>, 'id'> &
-  LayerTreeItemVaritantProps;
+type SortableLayerTreeItemProps = LayerTreeItemProps;
 
 export const SortableLayerTreeItem: FC<SortableLayerTreeItemProps> = ({ id, ...props }) => {
   const {

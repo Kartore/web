@@ -1,9 +1,9 @@
-import { Spinner } from '.';
+import { ColorModeSwitcher } from '.';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  component: Spinner,
-} satisfies Meta<typeof Spinner>;
+  component: ColorModeSwitcher,
+} satisfies Meta<typeof ColorModeSwitcher>;
 
 export default meta;
 

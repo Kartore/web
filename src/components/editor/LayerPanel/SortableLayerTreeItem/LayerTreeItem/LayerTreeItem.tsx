@@ -1,51 +1,29 @@
-import { ComponentPropsWithoutRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { UniqueIdentifier } from '@dnd-kit/core';
-import { tv, VariantProps } from 'tailwind-variants';
-
-const layerTreeItemVariants = tv({
-  slots: {
-    box: 'relative box-border flex cursor-default items-center px-2 py-2 hover:outline hover:outline-blue-400',
-    text: '',
-  },
-  variants: {
-    clone: {
-      true: {
-        box: 'pointer-events-none inline-block',
-      },
-      false: '',
-    },
-    indicator: {
-      true: {
-        box: 'opacity-60',
-        text: '',
-      },
-      false: '',
-    },
-    disableInteraction: {
-      true: {
-        box: 'pointer-events-none',
-      },
-      false: '',
-    },
-  },
-});
-
-export type LayerTreeItemVaritantProps = VariantProps<typeof layerTreeItemVariants>;
+import { FlexProps, Flex, Text } from '@chakra-ui/react';
 
 export type LayerTreeItemProps = {
   id: UniqueIdentifier;
+  indicator?: boolean;
+  clone?: boolean;
   disableInteraction?: boolean;
-} & Omit<ComponentPropsWithoutRef<'div'>, 'id'> &
-  LayerTreeItemVaritantProps;
+} & Omit<FlexProps, 'id'>;
 
 export const LayerTreeItem = forwardRef<HTMLDivElement, LayerTreeItemProps>(
   ({ id, indicator, disableInteraction, clone, className, ...props }, ref) => {
-    const { box, text } = layerTreeItemVariants({ indicator, clone, disableInteraction });
-
     return (
-      <div {...props} ref={ref} className={box({ className })}>
-        <p className={text()}>{id}</p>
-      </div>
+      <Flex
+        ref={ref}
+        alignItems={'center'}
+        paddingX={2}
+        paddingY={2}
+        opacity={indicator ? '0.6' : undefined}
+        display={clone ? 'inline-block' : undefined}
+        pointerEvents={disableInteraction || clone ? 'none' : 'auto'}
+        {...props}
+      >
+        <Text>{id}</Text>
+      </Flex>
     );
   }
 );

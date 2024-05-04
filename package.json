@@ -17,12 +17,15 @@
     "chromatic": "chromatic"
   },
   "dependencies": {
-    "@ark-ui/react": "2.2.3",
+    "@chakra-ui/react": "2.8.2",
     "@dnd-kit/core": "6.1.0",
     "@dnd-kit/sortable": "8.0.0",
     "@dnd-kit/utilities": "3.2.2",
+    "@emotion/react": "11.11.4",
+    "@emotion/styled": "11.11.5",
     "@heroicons/react": "2.1.3",
     "@maplibre/maplibre-gl-style-spec": "20.1.1",
+    "framer-motion": "11.1.7",
     "maplibre-gl": "4.1.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -30,7 +33,9 @@
     "usehooks-ts": "3.1.0"
   },
   "devDependencies": {
+    "@chakra-ui/storybook-addon": "5.1.0",
     "@chromatic-com/storybook": "1.3.3",
+    "@emotion/jest": "11.11.0",
     "@storybook/addon-essentials": "8.0.8",
     "@storybook/addon-interactions": "8.0.8",
     "@storybook/addon-links": "8.0.8",
@@ -47,7 +52,6 @@
     "@vitejs/plugin-react-swc": "3.6.0",
     "@vitest/coverage-v8": "1.5.0",
     "@vitest/ui": "1.5.0",
-    "autoprefixer": "10.4.19",
     "chromatic": "11.3.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
@@ -57,16 +61,11 @@
     "eslint-plugin-vitest": "0.5.3",
     "happy-dom": "14.7.1",
     "plop": "4.0.1",
-    "postcss": "8.4.38",
     "prettier": "3.2.5",
-    "prettier-plugin-tailwindcss": "0.5.14",
     "storybook": "8.0.8",
-    "tailwind-merge": "2.3.0",
-    "tailwind-variants": "0.2.1",
-    "tailwindcss": "3.4.3",
     "typescript": "5.4.5",
     "vite": "5.2.10",
     "vitest": "1.5.0"
   },
-  "packageManager": "pnpm@9.0.4+sha256.caa915eaae9d9aefccf50ee8aeda25a2f8684d8f9d5c6e367eaf176d97c1f89e"
+  "packageManager": "pnpm@9.0.6+sha256.0624e30eff866cdeb363b15061bdb7fd9425b17bc1bb42c22f5f4efdea21f6b3"
 }

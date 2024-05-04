@@ -10,6 +10,7 @@ import {
   RasterLayerSpecification,
   SymbolLayerSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
+import { StyleSpecification } from 'maplibre-gl';
 
 type BackgroundExcludedLayerSpecification = Exclude<
   LayerSpecification,
@@ -109,4 +110,40 @@ export const isFillExtrusionLayer = (
   layer: LayerSpecification
 ): layer is FillExtrusionLayerSpecification => {
   return layer.type === 'fill-extrusion';
+};
+
+export const replaceLayerData = (
+  style: StyleSpecification,
+  layer: LayerSpecification,
+  group: 'paint' | 'layout' | 'metadata' | undefined,
+  key:
+    | keyof LayerSpecification['paint' | 'layout' | 'metadata']
+    | keyof Omit<LayerSpecification, 'metadata' | 'paint' | 'layout'>,
+  value:
+    | LayerSpecification['paint' | 'layout' | 'metadata'][keyof LayerSpecification[
+        | 'paint'
+        | 'layout'
+        | 'metadata']]
+    | Omit<LayerSpecification, 'metadata' | 'paint' | 'layout'>[keyof Omit<
+        LayerSpecification,
+        'metadata' | 'paint' | 'layout'
+      >]
+) => {
+  return {
+    ...style,
+    layers: style.layers.map((currentLayer) => {
+      if (currentLayer.id === layer.id) {
+        if (group) {
+          if (currentLayer[group] != null) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (currentLayer[group] as any)[key] = value;
+          }
+        } else {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (currentLayer[key] as any) = value;
+        }
+      }
+      return currentLayer;
+    }),
+  };
 };
