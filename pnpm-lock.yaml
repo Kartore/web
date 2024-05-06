@@ -30,8 +30,8 @@ importers:
         specifier: 2.1.3
         version: 2.1.3(react@18.3.1)
       '@maplibre/maplibre-gl-style-spec':
-        specifier: 20.1.1
-        version: 20.1.1
+        specifier: 20.2.0
+        version: 20.2.0
       framer-motion:
         specifier: 11.1.7
         version: 11.1.7(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1651,8 +1651,8 @@ packages:
     resolution: {integrity: sha512-cOZZOVhDSulgK0meTsTkmNXb1ahVvmTmWmfx9gRBwc6hq98wS9JP35ESIoNq3xqEan+UN+gn8187Z6E4NKhLsw==}
     hasBin: true
 
-  '@maplibre/maplibre-gl-style-spec@20.1.1':
-    resolution: {integrity: sha512-z85ARNPCBI2Cs5cPOS3DSbraTN+ue8zrcYVoSWBuNrD/mA+2SKAJ+hIzI22uN7gac6jBMnCdpPKRxS/V0KSZVQ==}
+  '@maplibre/maplibre-gl-style-spec@20.2.0':
+    resolution: {integrity: sha512-BTw6/3ysowky22QMtNDjElp+YLwwvBDh3xxnq1izDFjTtUERm5nYSihlNZ6QaxXb+6lX2T2t0hBEjheAI+kBEQ==}
     hasBin: true
 
   '@mdx-js/react@3.0.1':
@@ -7323,14 +7323,16 @@ snapshots:
       rw: 1.3.3
       sort-object: 3.0.3
 
-  '@maplibre/maplibre-gl-style-spec@20.1.1':
+  '@maplibre/maplibre-gl-style-spec@20.2.0':
     dependencies:
       '@mapbox/jsonlint-lines-primitives': 2.0.2
       '@mapbox/unitbezier': 0.0.1
       json-stringify-pretty-compact: 4.0.0
       minimist: 1.2.8
+      quickselect: 2.0.0
       rw: 1.3.3
       sort-object: 3.0.3
+      tinyqueue: 2.0.3
 
   '@mdx-js/react@3.0.1(@types/react@18.3.1)(react@18.3.1)':
     dependencies:
@@ -10316,7 +10318,7 @@ snapshots:
       '@mapbox/unitbezier': 0.0.1
       '@mapbox/vector-tile': 1.3.1
       '@mapbox/whoots-js': 3.1.0
-      '@maplibre/maplibre-gl-style-spec': 20.1.1
+      '@maplibre/maplibre-gl-style-spec': 20.2.0
       '@types/geojson': 7946.0.14
       '@types/geojson-vt': 3.2.5
       '@types/mapbox__point-geometry': 0.1.4
