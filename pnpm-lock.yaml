@@ -67,8 +67,8 @@ importers:
         specifier: 8.0.9
         version: 8.0.9(vitest@1.6.0(@types/node@20.12.8)(@vitest/ui@1.6.0)(happy-dom@14.7.1))
       '@storybook/addon-links':
-        specifier: 8.0.9
-        version: 8.0.9(react@18.3.1)
+        specifier: 8.0.10
+        version: 8.0.10(react@18.3.1)
       '@storybook/addon-themes':
         specifier: 8.0.9
         version: 8.0.9
@@ -1817,8 +1817,8 @@ packages:
   '@storybook/addon-interactions@8.0.9':
     resolution: {integrity: sha512-AMIdNcyM6DDAWvMitBJMqp1iPZND8AXB4QT4VZHGMKG2ngHNKktriEKpTfcRkfKPGTJs9T+71dWfm6/R4tticw==}
 
-  '@storybook/addon-links@8.0.9':
-    resolution: {integrity: sha512-FVt+AdW3JFSqbJzkKiqKsMRWqHXqEvCBqFs7lNfk3OW0w0jfv1iREtrxE0dVdJoUFQC9V/2Im/EpJ7UB3C2bNQ==}
+  '@storybook/addon-links@8.0.10':
+    resolution: {integrity: sha512-+mIyH2UcrgQfAyRM4+ARkB/D0OOY8UMwkZsD8dD23APZ8oru7W/NHX3lXl0WjPfQcOIx/QwWNWI3+DgVZJY3jw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     peerDependenciesMeta:
@@ -7531,7 +7531,7 @@ snapshots:
       - jest
       - vitest
 
-  '@storybook/addon-links@8.0.9(react@18.3.1)':
+  '@storybook/addon-links@8.0.10(react@18.3.1)':
     dependencies:
       '@storybook/csf': 0.1.6
       '@storybook/global': 5.0.0
