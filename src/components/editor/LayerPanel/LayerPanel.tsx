@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { LayerSpecification } from 'maplibre-gl';
 import {
   DndContext,
@@ -15,16 +15,15 @@ import {
 } from '@dnd-kit/core';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { SortableLayerTreeItem } from '~/components/editor/LayerPanel/SortableLayerTreeItem/SortableLayerTreeItem.tsx';
-import { Box, Portal } from '@chakra-ui/react';
+import { Box, BoxProps, Portal } from '@chakra-ui/react';
 
-type LayerPanelProps = ComponentPropsWithoutRef<'div'> & {
+type LayerPanelProps = Omit<BoxProps, 'children'> & {
   layers: LayerSpecification[];
   onClickLayer: (id: LayerSpecification) => void;
   onChangeLayerOrder: (layers: LayerSpecification[]) => void;
 };
 
 export const LayerPanel: FC<LayerPanelProps> = ({
-  className,
   onChangeLayerOrder,
   onClickLayer,
   layers,
