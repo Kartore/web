@@ -112,38 +112,71 @@ export const isFillExtrusionLayer = (
   return layer.type === 'fill-extrusion';
 };
 
-export const replaceLayerData = (
-  style: StyleSpecification,
-  layer: LayerSpecification,
-  group: 'paint' | 'layout' | 'metadata' | undefined,
-  key:
-    | keyof LayerSpecification['paint' | 'layout' | 'metadata']
-    | keyof Omit<LayerSpecification, 'metadata' | 'paint' | 'layout'>,
-  value:
-    | LayerSpecification['paint' | 'layout' | 'metadata'][keyof LayerSpecification[
-        | 'paint'
-        | 'layout'
-        | 'metadata']]
-    | Omit<LayerSpecification, 'metadata' | 'paint' | 'layout'>[keyof Omit<
-        LayerSpecification,
-        'metadata' | 'paint' | 'layout'
-      >]
-) => {
+type ObjectGroup = 'paint' | 'layout' | 'metadata' | undefined;
+
+type ObjectKey<L extends LayerSpecification, G extends ObjectGroup> = G extends 'metadata'
+  ? PropertyKey
+  : G extends undefined
+    ? keyof {
+        [K in keyof Omit<L, 'paint' | 'layout' | 'metadata'>]: '';
+      }
+    : G extends keyof L
+      ? L[G] extends undefined
+        ? never
+        : keyof Exclude<L[G], undefined>
+      : never;
+
+type ObjectValue<
+  L extends LayerSpecification,
+  G extends ObjectGroup,
+  K extends ObjectKey<L, G>,
+> = G extends 'metadata'
+  ? string | number | boolean | null | undefined
+  : G extends undefined
+    ? K extends keyof L
+      ? L[K]
+      : never
+    : G extends keyof L
+      ? L[G] extends undefined
+        ? never
+        : K extends keyof Exclude<L[G], undefined>
+          ? Exclude<L[G], undefined>[K]
+          : never
+      : never;
+
+export type onChangeType = <
+  L extends LayerSpecification,
+  G extends ObjectGroup,
+  K extends ObjectKey<L, G>,
+  V extends ObjectValue<L, G, K>,
+>(
+  layer: L,
+  group: G,
+  key: K,
+  value: V
+) => void;
+
+export function replaceLayerData<
+  L extends LayerSpecification,
+  G extends ObjectGroup,
+  K extends ObjectKey<L, G>,
+  V extends ObjectValue<L, G, K>,
+>(style: StyleSpecification, layer: L, group: G, key: K, value: V) {
   return {
     ...style,
     layers: style.layers.map((currentLayer) => {
       if (currentLayer.id === layer.id) {
         if (group) {
           if (currentLayer[group] != null) {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (currentLayer[group] as any)[key] = value;
+            //@ts-expect-error ObjectKey/ObjectGroupによって担保される
+            currentLayer[group][key] = value;
           }
         } else {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (currentLayer[key] as any) = value;
+          //@ts-expect-error ObjectKeyによって担保される
+          currentLayer[key] = value;
         }
       }
       return currentLayer;
     }),
   };
-};
+}

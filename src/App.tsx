@@ -7,7 +7,10 @@ import { osmLiberty } from '~/samples/osm-liberty.ts';
 import { useLocalStorage } from 'usehooks-ts';
 import { LayerSpecification, StyleSpecification } from 'maplibre-gl';
 import { useMemo, useState } from 'react';
-import { replaceLayerData } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
+import {
+  onChangeType,
+  replaceLayerData,
+} from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { Box, Flex, Grid } from '@chakra-ui/react';
 
 function App() {
@@ -28,12 +31,7 @@ function App() {
     });
   };
 
-  const handleChangeLayerData = (
-    layer: Parameters<typeof replaceLayerData>[1],
-    group: Parameters<typeof replaceLayerData>[2],
-    key: Parameters<typeof replaceLayerData>[3],
-    value: Parameters<typeof replaceLayerData>[4]
-  ) => {
+  const handleChangeLayerData: onChangeType = (layer, group, key, value) => {
     setMapStyle((currentStyle) => {
       return replaceLayerData(currentStyle, layer, group, key, value);
     });
@@ -49,20 +47,26 @@ function App() {
         templateRows={'3rem 1fr'}
       >
         <Header />
-        <Flex>
-          <Box overflowY={'auto'}>
-            <LayerPanel
-              layers={mapStyle.layers}
-              onChangeLayerOrder={handleChangeLayerOrder}
-              onClickLayer={(layer) => {
-                setSelectedLayerId(layer.id);
-              }}
-            />
+        <Flex height={'100%'} overflow={'hidden'}>
+          <LayerPanel
+            layers={mapStyle.layers}
+            onChangeLayerOrder={handleChangeLayerOrder}
+            onClickLayer={(layer) => {
+              setSelectedLayerId(layer.id);
+            }}
+            overflowY={'auto'}
+            width={'20%'}
+          />
+          <Box flex={1}>
+            <MapPanel mapStyle={mapStyle} />
           </Box>
-          <MapPanel mapStyle={mapStyle} />
 
-          <Box overflowY={'auto'}>
-            <PropertiesPanel layer={selectedLayer} onChange={handleChangeLayerData} />
+          <Box overflowY={'auto'} width={'20%'}>
+            <PropertiesPanel
+              layer={selectedLayer}
+              sources={mapStyle.sources}
+              onChange={handleChangeLayerData}
+            />
           </Box>
         </Flex>
       </Grid>
