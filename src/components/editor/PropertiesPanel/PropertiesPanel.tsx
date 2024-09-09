@@ -1,5 +1,16 @@
-import { FC } from 'react';
-import { LayerSpecification, SourceSpecification } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentPropsWithoutRef, FC } from 'react';
+
+import type { LayerSpecification, SourceSpecification } from '@maplibre/maplibre-gl-style-spec';
+
+import { BackgroundLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/BackgroundLayerPropertiesPanel';
+import { CircleLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/CircleLayerPropertiesPanel';
+import { FillExtrusionLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/FillExtrusionLayerPropertiesPanel';
+import { FillLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/FillLayerPropertiesPanel';
+import { HeatmapLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/HeatmapLayerPropertiesPanel';
+import { HillshadeLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/HillshadeLayerPropertiesPanel';
+import { LineLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/LineLayerPropertiesPanel';
+import { RasterLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/RasterLayerPropertiesPanel';
+import { SymbolLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/SymbolLayerPropertiesPanel';
 import {
   isBackgroundLayer,
   isCircleLayer,
@@ -10,20 +21,10 @@ import {
   isLineLayer,
   isRasterLayer,
   isSymbolLayer,
-  onChangeType,
 } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
-import { BoxProps } from '@chakra-ui/react';
-import { BackgroundLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/BackgroundLayerPropertiesPanel';
-import { CircleLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/CircleLayerPropertiesPanel';
-import { FillExtrusionLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/FillExtrusionLayerPropertiesPanel';
-import { FillLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/FillLayerPropertiesPanel';
-import { HeatmapLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/HeatmapLayerPropertiesPanel';
-import { HillshadeLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/HillshadeLayerPropertiesPanel';
-import { LineLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/LineLayerPropertiesPanel';
-import { RasterLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/RasterLayerPropertiesPanel';
-import { SymbolLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/SymbolLayerPropertiesPanel';
+import type { onChangeType } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 
-type PropertiesPanelProps = Omit<BoxProps, 'onChange' | 'children'> & {
+type PropertiesPanelProps = Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> & {
   layer: LayerSpecification;
   sources: {
     [key: string]: SourceSpecification;

@@ -1,23 +1,24 @@
-import { FC, useState } from 'react';
-import { LayerSpecification } from 'maplibre-gl';
+import type { ComponentPropsWithoutRef, FC } from 'react';
+import { useState } from 'react';
+
+import type { DragEndEvent, DragStartEvent, Modifier, UniqueIdentifier } from '@dnd-kit/core';
 import {
   DndContext,
-  DragEndEvent,
   DragOverlay,
-  DragStartEvent,
   KeyboardSensor,
   MeasuringStrategy,
-  Modifier,
   MouseSensor,
-  UniqueIdentifier,
   useSensor,
   useSensors,
 } from '@dnd-kit/core';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
-import { SortableLayerTreeItem } from '~/components/editor/LayerPanel/SortableLayerTreeItem/SortableLayerTreeItem.tsx';
-import { Box, BoxProps, Portal } from '@chakra-ui/react';
+import type { LayerSpecification } from 'maplibre-gl';
+import { createPortal } from 'react-dom';
 
-type LayerPanelProps = Omit<BoxProps, 'children'> & {
+import { SortableLayerTreeItem } from '~/components/editor/LayerPanel/SortableLayerTreeItem/SortableLayerTreeItem.tsx';
+import { cn } from '~/utils/tailwindUtil';
+
+type LayerPanelProps = Omit<ComponentPropsWithoutRef<'div'>, 'children'> & {
   layers: LayerSpecification[];
   onClickLayer: (id: LayerSpecification) => void;
   onChangeLayerOrder: (layers: LayerSpecification[]) => void;
@@ -27,6 +28,7 @@ export const LayerPanel: FC<LayerPanelProps> = ({
   onChangeLayerOrder,
   onClickLayer,
   layers,
+  className,
   ...props
 }) => {
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null);
@@ -76,11 +78,11 @@ export const LayerPanel: FC<LayerPanelProps> = ({
   );
 
   return (
-    <Box height={'100%'} width={'auto'} {...props}>
-      <Box borderBottom={'1px'} px={2} py={1}>
+    <div {...props} className={cn('h-full w-auto', className)}>
+      <div className={'border-b py-1 px-2'}>
         <h2>Layers</h2>
-      </Box>
-      <Box px={2}>
+      </div>
+      <div className={'px-2'}>
         <DndContext
           measuring={{
             droppable: {
@@ -109,13 +111,15 @@ export const LayerPanel: FC<LayerPanelProps> = ({
               );
             })}
           </SortableContext>
-          <Portal>
+          {createPortal(
             <DragOverlay modifiers={[adjustTranslate]}>
               {activeId ? <SortableLayerTreeItem id={activeId} clone /> : null}
-            </DragOverlay>
-          </Portal>
+            </DragOverlay>,
+            document.body,
+            `drag-overlay-${activeId}`
+          )}
         </DndContext>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };

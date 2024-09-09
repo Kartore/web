@@ -1,5 +1,6 @@
-import { describe } from 'vitest';
 import { expect } from '@storybook/test';
+import { describe } from 'vitest';
+
 import {
   BackgroundLayerSample,
   CircleLayerSample,
@@ -11,6 +12,7 @@ import {
   HillshadeLayerSample,
   FillExtrusionLayerSample,
 } from '~/samples/LayerSample.ts';
+
 import {
   isBackgroundLayer,
   isCircleLayer,

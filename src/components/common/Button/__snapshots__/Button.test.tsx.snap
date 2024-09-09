@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: Button > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <button
+    type="button"
+  >
+    Button
+  </button>
+</DocumentFragment>
+`;

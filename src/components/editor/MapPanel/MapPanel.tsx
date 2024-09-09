@@ -1,7 +1,8 @@
 import 'maplibre-gl/dist/maplibre-gl.css';
+import type { CSSProperties, FC } from 'react';
+
+import type { StyleSpecification } from 'maplibre-gl';
 import { Map } from 'react-map-gl/maplibre';
-import { CSSProperties, FC } from 'react';
-import { StyleSpecification } from 'maplibre-gl';
 
 export const MapPanel: FC<{
   style?: CSSProperties;

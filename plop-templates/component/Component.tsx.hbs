@@ -1,14 +1,16 @@
-import { Box, BoxProps, forwardRef } from '@chakra-ui/react';
+import { type ComponentPropsWithoutRef, forwardRef } from 'react';
 
-export type {{pascalCase name}}Props = {} & BoxProps;
+import { cn } from '~/utils/tailwindUtil';
 
-export const {{pascalCase name}} = forwardRef<{{pascalCase name}}Props, 'div'>(
-  ({ ...props }, ref) => {
+export type {{pascalCase name}}Props = {} & ComponentPropsWithoutRef<'div'>;
+
+export const {{pascalCase name}} = forwardRef<HTMLDivElement, {{pascalCase name}}Props>(
+  ({ className, children, ...props }, ref) => {
 
     return (
-      <Box ref={ref} {...props}>
-
-      </Box>
+      <div {...props} ref={ref} className={cn('', className)}>
+        {children}
+      </div>
     );
   }
 );

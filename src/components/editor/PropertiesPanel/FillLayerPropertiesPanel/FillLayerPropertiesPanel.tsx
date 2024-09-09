@@ -1,33 +1,24 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  BoxProps,
-  forwardRef,
-} from '@chakra-ui/react';
-import { FillLayerSpecification, SourceSpecification } from '@maplibre/maplibre-gl-style-spec';
-import { onChangeType } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
-import { GeneralProperties } from '~/components/editor/PropertiesPanel/common/GeneralProperties';
+import type { ComponentPropsWithoutRef } from 'react';
+import { forwardRef } from 'react';
 
-export type FillLayerPropertiesPanelProps = Omit<BoxProps, 'onChange' | 'children'> & {
+import type { FillLayerSpecification, SourceSpecification } from '@maplibre/maplibre-gl-style-spec';
+
+import { GeneralProperties } from '~/components/editor/PropertiesPanel/common/GeneralProperties';
+import type { onChangeType } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
+
+export type FillLayerPropertiesPanelProps = Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> & {
   layer: FillLayerSpecification;
   sources: { [key: string]: SourceSpecification };
   onChange?: onChangeType;
 };
 
-export const FillLayerPropertiesPanel = forwardRef<FillLayerPropertiesPanelProps, 'div'>(
-  ({ layer, sources, onChange, ...props }, ref) => {
+export const FillLayerPropertiesPanel = forwardRef<HTMLDivElement, FillLayerPropertiesPanelProps>(
+  ({ layer, sources, onChange, children, ...props }, ref) => {
     return (
-      <Accordion ref={ref} allowToggle allowMultiple defaultIndex={[0]} {...props}>
-        <AccordionItem>
-          <AccordionButton>General</AccordionButton>
-          <AccordionPanel>
-            <GeneralProperties layer={layer} sources={sources} onChange={onChange} />
-          </AccordionPanel>
-        </AccordionItem>
-      </Accordion>
+      <div ref={ref} {...props}>
+        <GeneralProperties layer={layer} sources={sources} onChange={onChange} />
+        {children}
+      </div>
     );
   }
 );

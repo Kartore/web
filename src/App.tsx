@@ -1,17 +1,16 @@
-import { Header } from '~/components/header/Header';
-import { LayerPanel } from '~/components/editor/LayerPanel/LayerPanel.tsx';
-import { PropertiesPanel } from '~/components/editor/PropertiesPanel/PropertiesPanel.tsx';
-import { MapPanel } from '~/components/editor/MapPanel/MapPanel.tsx';
-import { MapProvider } from 'react-map-gl';
-import { osmLiberty } from '~/samples/osm-liberty.ts';
-import { useLocalStorage } from 'usehooks-ts';
-import { LayerSpecification, StyleSpecification } from 'maplibre-gl';
 import { useMemo, useState } from 'react';
-import {
-  onChangeType,
-  replaceLayerData,
-} from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
-import { Box, Flex, Grid } from '@chakra-ui/react';
+
+import type { LayerSpecification, StyleSpecification } from 'maplibre-gl';
+import { MapProvider } from 'react-map-gl';
+import { useLocalStorage } from 'usehooks-ts';
+
+import { LayerPanel } from '~/components/editor/LayerPanel/LayerPanel.tsx';
+import { MapPanel } from '~/components/editor/MapPanel/MapPanel.tsx';
+import { PropertiesPanel } from '~/components/editor/PropertiesPanel/PropertiesPanel.tsx';
+import type { onChangeType } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
+import { replaceLayerData } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
+import { Header } from '~/components/header/Header';
+import { osmLiberty } from '~/samples/osm-liberty.ts';
 
 function App() {
   const [mapStyle, setMapStyle] = useLocalStorage<StyleSpecification>(
@@ -39,37 +38,30 @@ function App() {
 
   return (
     <MapProvider>
-      <Grid
-        maxHeight={'100vh'}
-        minHeight={'100vh'}
-        width={'100%'}
-        templateColumns={'1fr'}
-        templateRows={'3rem 1fr'}
-      >
+      <div className={'grid max-h-screen min-h-screen w-full grid-cols-1 grid-rows-[3rem_1fr]'}>
         <Header />
-        <Flex height={'100%'} overflow={'hidden'}>
+        <div className={'flex h-full flex-row overflow-hidden'}>
           <LayerPanel
+            className={'w-1/5 overflow-y-auto'}
             layers={mapStyle.layers}
             onChangeLayerOrder={handleChangeLayerOrder}
             onClickLayer={(layer) => {
               setSelectedLayerId(layer.id);
             }}
-            overflowY={'auto'}
-            width={'20%'}
           />
-          <Box flex={1}>
+          <div className={'flex-1'}>
             <MapPanel mapStyle={mapStyle} />
-          </Box>
+          </div>
 
-          <Box overflowY={'auto'} width={'20%'}>
+          <div className={'w-1/5 overflow-y-auto'}>
             <PropertiesPanel
               layer={selectedLayer}
               sources={mapStyle.sources}
               onChange={handleChangeLayerData}
             />
-          </Box>
-        </Flex>
-      </Grid>
+          </div>
+        </div>
+      </div>
     </MapProvider>
   );
 }

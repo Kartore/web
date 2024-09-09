@@ -1,15 +1,25 @@
-import { Box, BoxProps, forwardRef } from '@chakra-ui/react';
-import { LayerSpecification } from '@maplibre/maplibre-gl-style-spec';
-import { onChangeType } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
+import type { ComponentPropsWithoutRef } from 'react';
+import { forwardRef } from 'react';
 
-export type FillExtrusionLayerPropertiesPanelProps = Omit<BoxProps, 'onChange' | 'children'> & {
+import type { LayerSpecification } from '@maplibre/maplibre-gl-style-spec';
+
+import type { onChangeType } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
+
+export type FillExtrusionLayerPropertiesPanelProps = Omit<
+  ComponentPropsWithoutRef<'div'>,
+  'onChange'
+> & {
   layer: LayerSpecification;
   onChange?: onChangeType;
 };
 
 export const FillExtrusionLayerPropertiesPanel = forwardRef<
-  FillExtrusionLayerPropertiesPanelProps,
-  'div'
->(({ ...props }, ref) => {
-  return <Box ref={ref} {...props}></Box>;
+  HTMLDivElement,
+  FillExtrusionLayerPropertiesPanelProps
+>(({ children, layer, onChange, ...props }, ref) => {
+  return (
+    <div ref={ref} {...props}>
+      {children}
+    </div>
+  );
 });

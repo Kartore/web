@@ -1,6 +1,8 @@
-import { PropertiesPanel } from '.';
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+
 import { BackgroundLayerSample } from '~/samples/LayerSample.ts';
+
+import { PropertiesPanel } from '.';
 
 const meta = {
   component: PropertiesPanel,

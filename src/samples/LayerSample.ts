@@ -1,4 +1,4 @@
-import {
+import type {
   BackgroundLayerSpecification,
   CircleLayerSpecification,
   FillExtrusionLayerSpecification,
