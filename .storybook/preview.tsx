@@ -2,7 +2,7 @@ import type { Decorator, Preview } from '@storybook/react';
 import '~/main.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-export const customDecorator: Decorator = (Story, context) => {
+export const customDecorator: Decorator = (Story) => {
   const client = new QueryClient({
     defaultOptions: {
       queries: {
