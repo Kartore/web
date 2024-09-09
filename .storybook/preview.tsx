@@ -47,14 +47,6 @@ const preview: Preview = {
         desktop: {
           viewport: 'large',
         },
-        light: {
-          backgrounds: { value: '#fff' },
-          theme: 'light',
-        },
-        dark: {
-          backgrounds: { value: '#1E293B' },
-          theme: 'dark',
-        },
       },
     },
   },
