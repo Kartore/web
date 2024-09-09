@@ -1,8 +1,10 @@
-import { LayerPanel } from '.';
-import { Meta, StoryObj } from '@storybook/react';
-import { osmLiberty } from '~/samples/osm-liberty.ts';
+import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fireEvent, fn, within } from '@storybook/test';
-import { LayerSpecification } from 'maplibre-gl';
+import type { LayerSpecification } from 'maplibre-gl';
+
+import { osmLiberty } from '~/samples/osm-liberty.ts';
+
+import { LayerPanel } from '.';
 
 const meta = {
   component: LayerPanel,

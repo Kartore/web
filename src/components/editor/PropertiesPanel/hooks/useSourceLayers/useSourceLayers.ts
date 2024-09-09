@@ -1,6 +1,5 @@
-import { VectorSourceSpecification } from '@maplibre/maplibre-gl-style-spec';
+import type { VectorSourceSpecification } from '@maplibre/maplibre-gl-style-spec';
 import { useQuery } from '@tanstack/react-query';
-import { VectorTileSource } from 'maplibre-gl';
 
 type SourceVectorLayer = {
   id: string;

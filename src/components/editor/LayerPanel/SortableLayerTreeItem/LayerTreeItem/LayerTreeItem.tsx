@@ -1,29 +1,32 @@
-import { forwardRef } from 'react';
-import { UniqueIdentifier } from '@dnd-kit/core';
-import { FlexProps, Flex, Text } from '@chakra-ui/react';
+import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+
+import type { UniqueIdentifier } from '@dnd-kit/core';
+
+import { cn } from '~/utils/tailwindUtil';
 
 export type LayerTreeItemProps = {
   id: UniqueIdentifier;
   indicator?: boolean;
   clone?: boolean;
   disableInteraction?: boolean;
-} & Omit<FlexProps, 'id'>;
+} & Omit<ComponentPropsWithoutRef<'div'>, 'id'>;
 
 export const LayerTreeItem = forwardRef<HTMLDivElement, LayerTreeItemProps>(
   ({ id, indicator, disableInteraction, clone, className, ...props }, ref) => {
     return (
-      <Flex
+      <div
         ref={ref}
-        alignItems={'center'}
-        paddingX={2}
-        paddingY={2}
-        opacity={indicator ? '0.6' : undefined}
-        display={clone ? 'inline-block' : undefined}
-        pointerEvents={disableInteraction || clone ? 'none' : 'auto'}
         {...props}
+        className={cn(
+          'flex items-center p-2',
+          indicator && 'opacity-60',
+          clone && 'inline-block',
+          disableInteraction || clone ? 'pointer-events-none' : 'pointer-events-auto',
+          className
+        )}
       >
-        <Text>{id}</Text>
-      </Flex>
+        <p>{id}</p>
+      </div>
     );
   }
 );

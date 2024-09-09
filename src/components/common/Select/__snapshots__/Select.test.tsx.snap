@@ -1,0 +1,66 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: Select > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center justify-between"
+  >
+    <div />
+    <div
+      aria-hidden="true"
+      data-a11y-ignore="aria-hidden-focus"
+      data-react-aria-prevent-focus="true"
+      data-testid="hidden-select-container"
+      style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+    >
+      <input
+        style="font-size: 16px;"
+        tabindex="-1"
+        type="text"
+      />
+      <label>
+        <select
+          tabindex="-1"
+        >
+          <option />
+          <option
+            value="A"
+          >
+            A
+          </option>
+          <option
+            value="B"
+          >
+            B
+          </option>
+          <option
+            value="C"
+          >
+            C
+          </option>
+        </select>
+      </label>
+    </div>
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-labelledby="react-aria-:r7:"
+      id="react-aria-:r2:"
+      style="height: 30px; font-size: 14px;"
+      type="button"
+    >
+      <span
+        id="react-aria-:r7:"
+      >
+        Select an option
+      </span>
+      <span
+        aria-hidden="true"
+        style="padding-left: 5px;"
+      >
+        ▼
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;

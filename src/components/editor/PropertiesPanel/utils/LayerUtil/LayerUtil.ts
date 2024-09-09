@@ -1,4 +1,4 @@
-import {
+import type {
   BackgroundLayerSpecification,
   CircleLayerSpecification,
   FillExtrusionLayerSpecification,
@@ -10,7 +10,7 @@ import {
   RasterLayerSpecification,
   SymbolLayerSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
-import { StyleSpecification } from 'maplibre-gl';
+import type { StyleSpecification } from 'maplibre-gl';
 
 type BackgroundExcludedLayerSpecification = Exclude<
   LayerSpecification,

@@ -1,100 +1,73 @@
-import {
-  Box,
-  Flex,
-  FlexProps,
-  FormControl,
-  FormLabel,
-  forwardRef,
-  RangeSlider,
-  RangeSliderFilledTrack,
-  RangeSliderThumb,
-  RangeSliderTrack,
-  Select,
-} from '@chakra-ui/react';
-import {
+import { type ComponentPropsWithoutRef, forwardRef, useMemo } from 'react';
+
+import type {
   BackgroundLayerSpecification,
   LayerSpecification,
   SourceSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
-import { onChangeType } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
-import { useSourceLayers } from '~/components/editor/PropertiesPanel/hooks/useSourceLayers/useSourceLayers.ts';
-import { useMemo } from 'react';
-import { isVectorSource } from '~/components/editor/PropertiesPanel/utils/SourceUtil/SourceUtil.ts';
+import { Item } from 'react-stately';
 
-export type GeneralPropertiesProps = Omit<FlexProps, 'onChange' | 'children'> & {
+import { RangeSlider } from '~/components/common/RangeSlider';
+import { Select } from '~/components/common/Select';
+import { useSourceLayers } from '~/components/editor/PropertiesPanel/hooks/useSourceLayers/useSourceLayers.ts';
+import type { onChangeType } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
+import { isVectorSource } from '~/components/editor/PropertiesPanel/utils/SourceUtil/SourceUtil.ts';
+import { cn } from '~/utils/tailwindUtil';
+
+export type GeneralPropertiesProps = Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> & {
   layer: Exclude<LayerSpecification, BackgroundLayerSpecification>;
   sources: { [key: string]: SourceSpecification };
   onChange?: onChangeType;
 };
 
-export const GeneralProperties = forwardRef<GeneralPropertiesProps, 'div'>(
-  ({ layer, sources, onChange, ...props }, ref) => {
+export const GeneralProperties = forwardRef<HTMLDivElement, GeneralPropertiesProps>(
+  ({ layer, sources, onChange, children, className, ...props }, ref) => {
     const sourceData = useMemo(() => sources[layer.source], [layer.source, sources]);
     const sourceLayers = useSourceLayers(isVectorSource(sourceData) ? sourceData : undefined);
+
     return (
-      <Flex flexDirection={'column'} gap={2} ref={ref} {...props}>
-        <FormControl>
-          <FormLabel>Source</FormLabel>
+      <div ref={ref} {...props} className={cn('flex flex-col gap-2 px-3', className)}>
+        <Select
+          label={'Source'}
+          selectedKey={layer.source}
+          onSelectionChange={(value) => {
+            if (onChange) onChange(layer, undefined, 'source', value as string);
+          }}
+        >
+          {Object.keys(sources).map((sourceId) => {
+            return <Item key={sourceId}>{sourceId}</Item>;
+          })}
+        </Select>
+        {isVectorSource(sourceData) ? (
           <Select
-            value={layer.source}
-            onChange={(value) => {
-              if (onChange) onChange(layer, undefined, 'source', value.target.value);
+            label={'Source Layer'}
+            selectedKey={layer['source-layer']}
+            onSelectionChange={(value) => {
+              if (onChange) onChange(layer, undefined, 'source-layer', value as string);
             }}
           >
-            {Object.keys(sources).map((sourceId) => {
-              return (
-                <option key={sourceId} value={sourceId}>
-                  {sourceId}
-                </option>
-              );
+            {sourceLayers?.map(({ id }) => {
+              return <Item key={id}>{id}</Item>;
             })}
           </Select>
-        </FormControl>
-        {isVectorSource(sourceData) ? (
-          <FormControl>
-            <FormLabel>Source Layer</FormLabel>
-            <Select
-              value={layer['source-layer']}
-              onChange={(value) => {
-                onChange?.(layer, undefined, 'source-layer', value.target.value);
-              }}
-            >
-              {sourceLayers?.map(({ id }) => {
-                return (
-                  <option key={id} value={id}>
-                    {id}
-                  </option>
-                );
-              })}
-            </Select>
-          </FormControl>
         ) : null}
-        <FormControl>
-          <FormLabel>Zoom Level Range</FormLabel>
-          <Box px={2}>
-            <RangeSlider
-              min={0}
-              max={24}
-              aria-label={['Min Zoom', 'Max Zoom']}
-              value={[layer.minzoom ?? 0, layer.maxzoom ?? 24]}
-              onChange={([minzoom, maxzoom]) => {
-                if (minzoom !== layer.minzoom) {
-                  onChange?.(layer, undefined, 'minzoom', minzoom === 0 ? undefined : minzoom);
-                }
-                if (maxzoom !== layer.maxzoom) {
-                  onChange?.(layer, undefined, 'maxzoom', maxzoom === 24 ? undefined : maxzoom);
-                }
-              }}
-            >
-              <RangeSliderTrack>
-                <RangeSliderFilledTrack />
-              </RangeSliderTrack>
-              <RangeSliderThumb index={0} />
-              <RangeSliderThumb index={1} />
-            </RangeSlider>
-          </Box>
-        </FormControl>
-      </Flex>
+        <RangeSlider
+          label={'Zoom Level Range'}
+          minValue={0}
+          maxValue={24}
+          step={1}
+          value={[layer.minzoom ?? 0, layer.maxzoom ?? 24]}
+          onChange={([minzoom, maxzoom]) => {
+            if (minzoom !== layer.minzoom) {
+              onChange?.(layer, undefined, 'minzoom', minzoom === 0 ? undefined : minzoom);
+            }
+            if (maxzoom !== layer.maxzoom) {
+              onChange?.(layer, undefined, 'maxzoom', maxzoom === 24 ? undefined : maxzoom);
+            }
+          }}
+        />
+        {children}
+      </div>
     );
   }
 );

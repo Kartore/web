@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: Popover > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <button>
+    Trigger
+  </button>
+</DocumentFragment>
+`;

@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
 import { FillExtrusionLayerPropertiesPanel } from '.';
-import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   component: FillExtrusionLayerPropertiesPanel,

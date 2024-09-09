@@ -1,9 +1,13 @@
-import { CSSProperties, FC } from 'react';
-import { AnimateLayoutChanges, useSortable } from '@dnd-kit/sortable';
+import type { CSSProperties, FC } from 'react';
+
+import type { AnimateLayoutChanges} from '@dnd-kit/sortable';
+import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+
+import type {
+  LayerTreeItemProps} from '~/components/editor/LayerPanel/SortableLayerTreeItem/LayerTreeItem/LayerTreeItem.tsx';
 import {
-  LayerTreeItem,
-  LayerTreeItemProps,
+  LayerTreeItem
 } from '~/components/editor/LayerPanel/SortableLayerTreeItem/LayerTreeItem/LayerTreeItem.tsx';
 
 const animateLayoutChanges: AnimateLayoutChanges = ({ isSorting, wasDragging }) =>

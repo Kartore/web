@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
 import { HillshadeLayerPropertiesPanel } from '.';
-import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   component: HillshadeLayerPropertiesPanel,

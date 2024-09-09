@@ -1,7 +1,7 @@
 // Original: https://github.com/maputnik/osm-liberty
 // 他所にリクエストが飛ばないように全てforkして配置
 
-import { StyleSpecification } from 'maplibre-gl';
+import type { StyleSpecification } from 'maplibre-gl';
 
 export const osmLiberty = {
   version: 8,

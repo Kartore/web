@@ -1,38 +1,25 @@
 import type { Decorator, Preview } from '@storybook/react';
-import { ChakraProvider } from '@chakra-ui/react';
-import { DecoratorHelpers } from '@storybook/addon-themes';
-const { pluckThemeFromContext, initializeThemeState } = DecoratorHelpers;
+import '~/main.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-export const customDecorator = ({
-  themes,
-  defaultTheme,
-}: {
-  themes: {
-    [key: string]: string;
-  };
-  defaultTheme: string;
-}): Decorator => {
-  initializeThemeState(Object.keys(themes), defaultTheme);
+export const customDecorator: Decorator = (Story) => {
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+      },
+    },
+  });
 
-  return (Story, context) => {
-    const selectedTheme = pluckThemeFromContext(context);
-    return (
-      <ChakraProvider
-        colorModeManager={{
-          type: 'localStorage',
-          get() {
-            return selectedTheme === 'dark' ? 'dark' : 'light';
-          },
-          set() {},
-        }}
-      >
-        <Story />
-      </ChakraProvider>
-    );
-  };
+  return (
+    <QueryClientProvider client={client}>
+      <Story />
+    </QueryClientProvider>
+  );
 };
 
 const preview: Preview = {
+  decorators: [customDecorator],
   parameters: {
     controls: {
       matchers: {
@@ -60,26 +47,9 @@ const preview: Preview = {
         desktop: {
           viewport: 'large',
         },
-        light: {
-          backgrounds: { value: '#fff' },
-          theme: 'light',
-        },
-        dark: {
-          backgrounds: { value: '#1E293B' },
-          theme: 'dark',
-        },
       },
     },
   },
-  decorators: [
-    customDecorator({
-      themes: {
-        light: 'light',
-        dark: 'dark',
-      },
-      defaultTheme: 'light',
-    }),
-  ],
 };
 
 export default preview;
