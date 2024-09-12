@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PropertiesPanel } from '.';
+import { CircleLayerPropertiesPanel } from './index.ts';
 
 const meta = {
-  component: PropertiesPanel,
-} satisfies Meta<typeof PropertiesPanel>;
+  component: CircleLayerPropertiesPanel,
+} satisfies Meta<typeof CircleLayerPropertiesPanel>;
 
 export default meta;
 

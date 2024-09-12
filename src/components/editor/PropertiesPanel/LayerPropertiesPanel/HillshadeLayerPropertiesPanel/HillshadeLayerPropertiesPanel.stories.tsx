@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PropertiesPanel } from '.';
+import { HillshadeLayerPropertiesPanel } from './index.ts';
 
 const meta = {
-  component: PropertiesPanel,
-} satisfies Meta<typeof PropertiesPanel>;
+  component: HillshadeLayerPropertiesPanel,
+} satisfies Meta<typeof HillshadeLayerPropertiesPanel>;
 
 export default meta;
 

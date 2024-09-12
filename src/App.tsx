@@ -4,12 +4,11 @@ import type { LayerSpecification, StyleSpecification } from 'maplibre-gl';
 import { MapProvider } from 'react-map-gl';
 import { useLocalStorage } from 'usehooks-ts';
 
-import { LayerPanel } from '~/components/editor/LayerPanel/LayerPanel.tsx';
 import { MapPanel } from '~/components/editor/MapPanel/MapPanel.tsx';
+import { NavigationPanel } from '~/components/editor/NavigationPanel/NavigationPanel.tsx';
+import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
+import { replaceLayerData } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { PropertiesPanel } from '~/components/editor/PropertiesPanel/PropertiesPanel.tsx';
-import type { onChangeType } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
-import { replaceLayerData } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
-import { Header } from '~/components/header/Header';
 import { osmLiberty } from '~/samples/osm-liberty.ts';
 
 function App() {
@@ -38,29 +37,24 @@ function App() {
 
   return (
     <MapProvider>
-      <div className={'grid max-h-screen min-h-screen w-full grid-cols-1 grid-rows-[3rem_1fr]'}>
-        <Header />
-        <div className={'flex h-full flex-row overflow-hidden'}>
-          <LayerPanel
-            className={'w-1/5 overflow-y-auto'}
-            layers={mapStyle.layers}
-            onChangeLayerOrder={handleChangeLayerOrder}
-            onClickLayer={(layer) => {
-              setSelectedLayerId(layer.id);
-            }}
-          />
-          <div className={'flex-1'}>
-            <MapPanel mapStyle={mapStyle} />
-          </div>
+      <div className={'relative flex max-h-screen min-h-screen w-full flex-row overflow-hidden'}>
+        <MapPanel mapStyle={mapStyle} />
+        <NavigationPanel
+          className={'absolute top-2 bottom-2 left-2 w-1/5'}
+          mapStyle={mapStyle}
+          onChangeLayerOrder={handleChangeLayerOrder}
+          selectedLayerId={selectedLayerId}
+          onClickLayer={(layer) => {
+            setSelectedLayerId(layer.id);
+          }}
+        />
 
-          <div className={'w-1/5 overflow-y-auto'}>
-            <PropertiesPanel
-              layer={selectedLayer}
-              sources={mapStyle.sources}
-              onChange={handleChangeLayerData}
-            />
-          </div>
-        </div>
+        <PropertiesPanel
+          className={'absolute top-2 right-2 bottom-2 w-1/5'}
+          layer={selectedLayer}
+          sources={mapStyle.sources}
+          onChange={handleChangeLayerData}
+        />
       </div>
     </MapProvider>
   );

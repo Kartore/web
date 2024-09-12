@@ -1,78 +1,30 @@
-import type { ComponentPropsWithoutRef, FC } from 'react';
+import { type ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import type { LayerSpecification, SourceSpecification } from '@maplibre/maplibre-gl-style-spec';
 
-import { BackgroundLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/BackgroundLayerPropertiesPanel';
-import { CircleLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/CircleLayerPropertiesPanel';
-import { FillExtrusionLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/FillExtrusionLayerPropertiesPanel';
-import { FillLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/FillLayerPropertiesPanel';
-import { HeatmapLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/HeatmapLayerPropertiesPanel';
-import { HillshadeLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/HillshadeLayerPropertiesPanel';
-import { LineLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/LineLayerPropertiesPanel';
-import { RasterLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/RasterLayerPropertiesPanel';
-import { SymbolLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/SymbolLayerPropertiesPanel';
-import {
-  isBackgroundLayer,
-  isCircleLayer,
-  isFillExtrusionLayer,
-  isFillLayer,
-  isHeatmapLayer,
-  isHillshadeLayer,
-  isLineLayer,
-  isRasterLayer,
-  isSymbolLayer,
-} from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
-import type { onChangeType } from '~/components/editor/PropertiesPanel/utils/LayerUtil/LayerUtil.ts';
+import { LayerPropertiesPanel } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel';
+import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
+import { cn } from '~/utils/tailwindUtil';
 
-type PropertiesPanelProps = Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> & {
+export type PropertiesPanelProps = {
   layer: LayerSpecification;
   sources: {
     [key: string]: SourceSpecification;
   };
   onChange?: onChangeType;
-};
+} & Omit<ComponentPropsWithoutRef<'div'>, 'onChange'>;
 
-export const PropertiesPanel: FC<PropertiesPanelProps> = ({
-  layer,
-  sources,
-  onChange,
-  ...props
-}) => {
-  if (isBackgroundLayer(layer)) {
+export const PropertiesPanel = forwardRef<HTMLDivElement, PropertiesPanelProps>(
+  ({ className, sources, layer, onChange, children, ...props }, ref) => {
     return (
-      <BackgroundLayerPropertiesPanel
-        layer={layer}
-        sources={sources}
-        onChange={onChange}
+      <div
         {...props}
-      />
+        ref={ref}
+        className={cn('overflow-y-auto rounded-lg border border-gray-300 bg-white py-4', className)}
+      >
+        <LayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} />
+        {children}
+      </div>
     );
   }
-  if (isCircleLayer(layer)) {
-    return <CircleLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
-  }
-  if (isFillExtrusionLayer(layer)) {
-    return <FillExtrusionLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
-  }
-  if (isFillLayer(layer)) {
-    return (
-      <FillLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
-    );
-  }
-  if (isHeatmapLayer(layer)) {
-    return <HeatmapLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
-  }
-  if (isHillshadeLayer(layer)) {
-    return <HillshadeLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
-  }
-  if (isLineLayer(layer)) {
-    return <LineLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
-  }
-  if (isRasterLayer(layer)) {
-    return <RasterLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
-  }
-  if (isSymbolLayer(layer)) {
-    return <SymbolLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
-  }
-  throw new Error(`Unknown layer type`);
-};
+);

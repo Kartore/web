@@ -15,9 +15,10 @@ export const MapPanel: FC<{
         latitude: 35.681,
         zoom: 15,
       }}
-      style={{ height: '100%', ...style }}
+      style={{ height: 'auto', width: '100%', ...style }}
       mapStyle={mapStyle}
-      maplibreLogo
+      maplibreLogo={false}
+      attributionControl={false}
     />
   );
 };

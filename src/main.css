@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+body, html {
+    overscroll-behavior: none;
+}

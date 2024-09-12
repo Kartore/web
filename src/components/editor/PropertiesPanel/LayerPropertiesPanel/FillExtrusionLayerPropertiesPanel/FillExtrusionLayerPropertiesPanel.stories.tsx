@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PropertiesPanel } from '.';
+import { FillExtrusionLayerPropertiesPanel } from './index.ts';
 
 const meta = {
-  component: PropertiesPanel,
-} satisfies Meta<typeof PropertiesPanel>;
+  component: FillExtrusionLayerPropertiesPanel,
+} satisfies Meta<typeof FillExtrusionLayerPropertiesPanel>;
 
 export default meta;
 

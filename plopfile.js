@@ -36,4 +36,27 @@ export default function Plopfile(plop) {
       },
     ],
   });
+
+  plop.setGenerator('icon', {
+    description: 'Create a new icon',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Icon name',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'src/components/icons/{{name}}/{{name}}.tsx',
+        templateFile: 'plop-templates/icon/Icon.tsx.hbs',
+      },
+      {
+        type: 'append',
+        path: 'src/components/icons/index.ts',
+        template: "export * from './{{name}}/{{name}}';",
+      },
+    ],
+  });
 }
