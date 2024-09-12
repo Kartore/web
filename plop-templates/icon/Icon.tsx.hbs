@@ -1,0 +1,11 @@
+import type { HTMLAttributes } from 'react';
+
+export type {{pascalCase name}}Props = HTMLAttributes<SVGElement>;
+
+const {{pascalCase name}} = (props: {{pascalCase name}}Props) => {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}></svg>;
+};
+
+{{pascalCase name}}.displayName = '{{pascalCase name}}';
+
+export { {{pascalCase name}} };

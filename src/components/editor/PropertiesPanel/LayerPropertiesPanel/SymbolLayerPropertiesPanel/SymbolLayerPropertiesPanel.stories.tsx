@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PropertiesPanel } from '.';
+import { SymbolLayerPropertiesPanel } from './index.ts';
 
 const meta = {
-  component: PropertiesPanel,
-} satisfies Meta<typeof PropertiesPanel>;
+  component: SymbolLayerPropertiesPanel,
+} satisfies Meta<typeof SymbolLayerPropertiesPanel>;
 
 export default meta;
 

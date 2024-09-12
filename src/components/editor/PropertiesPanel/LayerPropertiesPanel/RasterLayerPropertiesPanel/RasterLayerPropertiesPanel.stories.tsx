@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PropertiesPanel } from '.';
+import { RasterLayerPropertiesPanel } from './index.ts';
 
 const meta = {
-  component: PropertiesPanel,
-} satisfies Meta<typeof PropertiesPanel>;
+  component: RasterLayerPropertiesPanel,
+} satisfies Meta<typeof RasterLayerPropertiesPanel>;
 
 export default meta;
 

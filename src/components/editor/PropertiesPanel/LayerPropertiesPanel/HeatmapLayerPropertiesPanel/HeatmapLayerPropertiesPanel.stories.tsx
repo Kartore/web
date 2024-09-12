@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PropertiesPanel } from '.';
+import { HeatmapLayerPropertiesPanel } from './index.ts';
 
 const meta = {
-  component: PropertiesPanel,
-} satisfies Meta<typeof PropertiesPanel>;
+  component: HeatmapLayerPropertiesPanel,
+} satisfies Meta<typeof HeatmapLayerPropertiesPanel>;
 
 export default meta;
 
