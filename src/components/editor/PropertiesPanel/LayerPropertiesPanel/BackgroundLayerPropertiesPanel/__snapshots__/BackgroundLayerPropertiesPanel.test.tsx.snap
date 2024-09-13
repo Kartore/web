@@ -3,7 +3,7 @@
 exports[`Component: BackgroundLayerPropertiesPanel > Snapshot > Default 1`] = `
 <DocumentFragment>
   <div
-    class="px-3"
+    class="px-4"
   >
     <div
       aria-labelledby="react-aria-:r1:"

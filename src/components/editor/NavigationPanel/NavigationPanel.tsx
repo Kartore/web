@@ -84,7 +84,7 @@ export const NavigationPanel: FC<LayerPanelProps> = ({
     <div
       {...props}
       className={cn(
-        'flex h-auto w-auto flex-col rounded-lg border border-gray-300 bg-white',
+        'pointer-events-auto flex h-auto w-auto flex-col rounded-lg border border-gray-300 bg-white',
         className
       )}
     >
