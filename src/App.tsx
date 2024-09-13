@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
 
 import type { LayerSpecification, StyleSpecification } from 'maplibre-gl';
-import { MapProvider } from 'react-map-gl';
+import { MapProvider } from 'react-map-gl/maplibre';
 import { useLocalStorage } from 'usehooks-ts';
 
-import { MapPanel } from '~/components/editor/MapPanel/MapPanel.tsx';
+import { ControlPanel } from '~/components/editor/ControlPanel';
+import { MapPanel } from '~/components/editor/MapPanel';
 import { NavigationPanel } from '~/components/editor/NavigationPanel/NavigationPanel.tsx';
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { replaceLayerData } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
@@ -39,22 +40,26 @@ function App() {
     <MapProvider>
       <div className={'relative flex max-h-screen min-h-screen w-full flex-row overflow-hidden'}>
         <MapPanel mapStyle={mapStyle} />
-        <NavigationPanel
-          className={'absolute top-2 bottom-2 left-2 w-1/5'}
-          mapStyle={mapStyle}
-          onChangeLayerOrder={handleChangeLayerOrder}
-          selectedLayerId={selectedLayerId}
-          onClickLayer={(layer) => {
-            setSelectedLayerId(layer.id);
-          }}
-        />
+        <div className={'pointer-events-none absolute inset-2 flex gap-2'}>
+          <NavigationPanel
+            className={'w-1/5'}
+            mapStyle={mapStyle}
+            onChangeLayerOrder={handleChangeLayerOrder}
+            selectedLayerId={selectedLayerId}
+            onClickLayer={(layer) => {
+              setSelectedLayerId(layer.id);
+            }}
+          />
 
-        <PropertiesPanel
-          className={'absolute top-2 right-2 bottom-2 w-1/5'}
-          layer={selectedLayer}
-          sources={mapStyle.sources}
-          onChange={handleChangeLayerData}
-        />
+          <ControlPanel className={'flex-1'} />
+
+          <PropertiesPanel
+            className={'w-1/5'}
+            layer={selectedLayer}
+            sources={mapStyle.sources}
+            onChange={handleChangeLayerData}
+          />
+        </div>
       </div>
     </MapProvider>
   );

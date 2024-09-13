@@ -1,0 +1,2716 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: NavigationPanel > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    class="pointer-events-auto flex h-auto w-auto flex-col rounded-lg border border-gray-300 bg-white"
+    style="height: 500px;"
+  >
+    <div
+      class="flex flex-col gap-2 border-b border-b-gray-300 py-4 px-4"
+    >
+      <h1
+        class="font-[Montserrat] font-bold"
+      >
+        Kartore
+      </h1>
+      <h2
+        class="font-[Montserrat] font-semibold"
+      >
+        OSM Liberty
+      </h2>
+    </div>
+    <div
+      class="border-b border-b-gray-300 py-2 px-4 font-[Montserrat] text-sm font-medium text-gray-500"
+    >
+      <h2>
+        Layers
+      </h2>
+    </div>
+    <div
+      class="flex-1 overflow-auto"
+    >
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto bg-gray-200"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m 1.821019,10.255581 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          background
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          natural_earth
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          park
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          park_outline
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landuse_residential
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landcover_wood
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landcover_grass
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landcover_ice
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landcover_wetland
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landuse_pitch
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landuse_track
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landuse_cemetery
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landuse_hospital
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landuse_school
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          waterway_tunnel
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          waterway_river
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          waterway_other
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          water
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          landcover_sand
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          aeroway_fill
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          aeroway_runway
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          aeroway_taxiway
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_motorway_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_service_track_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_street_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_secondary_tertiary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_trunk_primary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_motorway_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_path_pedestrian
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_motorway_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_service_track
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_minor
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_secondary_tertiary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_trunk_primary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_motorway
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_major_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_major_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_transit_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          tunnel_transit_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_area_pattern
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_motorway_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_service_track_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_minor_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_secondary_tertiary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_trunk_primary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_motorway_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_path_pedestrian
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_motorway_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_service_track
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_minor
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_secondary_tertiary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_trunk_primary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_motorway
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_major_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_major_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_transit_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_transit_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_one_way_arrow
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_one_way_arrow_opposite
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_motorway_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_service_track_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_link_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_street_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_path_pedestrian_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_secondary_tertiary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_trunk_primary_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_motorway_casing
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_path_pedestrian
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_motorway_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_service_track
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_link
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_street
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_secondary_tertiary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_trunk_primary
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_motorway
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_major_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_major_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_transit_rail
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          bridge_transit_rail_hatching
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 2.84978,9.763512 9.462149,4.7316391 16.47225,9.478015 9.859886,14.509879 2.84978,9.763512 m -1.028761,0.492069 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 l 0,0 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          building
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m 1.821019,10.255581 7.414535,5.020197 c 0.372277,0.25206 0.958697,0.239771 1.30985,-0.02745 L 17.539255,9.926162 C 17.89041,9.658941 17.873288,9.238006 17.501015,8.985946 L 10.08648,3.9657402 C 9.714204,3.7136802 9.127782,3.7259703 8.776627,3.9931918 L 1.782775,9.315365 c -0.3511551,0.267221 -0.3340331,0.688156 0.03824,0.940216 z"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          building-3d
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          boundary_3
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          boundary_2_z0-4
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 12.34,1.29 C 12.5114,1.1076 12.7497,1.0029 13,1 13.5523,1 14,1.4477 14,2 14.0047,2.2478 13.907,2.4866 13.73,2.66 9.785626,6.5516986 6.6148407,9.7551593 2.65,13.72 2.4793,13.8963 2.2453,13.9971 2,14 1.4477,14 1,13.5523 1,13 0.9953,12.7522 1.093,12.5134 1.27,12.34 4.9761967,8.7018093 9.0356422,4.5930579 12.34,1.29 Z"
+            transform="translate(2,2)"
+          />
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          boundary_2_z5-
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          water_name_line
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          water_name_point
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          poi_z16
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          poi_z15
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          poi_z14
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          poi_transit
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_label
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          road_shield
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          place_other
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          place_village
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          place_town
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          place_city
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          state
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          country_3
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          country_2
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          country_1
+        </p>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="flex w-full items-center gap-2 py-2 px-4 text-sm text-gray-800 pointer-events-auto hover:bg-gray-100"
+        role="button"
+        style="transition: transform 200ms ease;"
+        tabindex="0"
+      >
+        <svg
+          class="h-3 w-3 min-w-3 cursor-grab"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="matrix(1.2718518,0,0,1.2601269,16.559526,-7.4065264)"
+          >
+            <path
+              d="m -9.7959773,11.060163 c -0.3734787,-0.724437 -0.3580577,-1.2147051 -0.00547,-1.8767873 l 8.6034029,-0.019416 c 0.39670292,0.6865644 0.38365934,1.4750693 -0.011097,1.8864953 l -3.1359613,-0.0033 -0.013695,7.1305 c -0.4055357,0.397083 -1.3146432,0.397083 -1.7769191,-0.02274 l 0.030226,-7.104422 z"
+            />
+          </g>
+        </svg>
+        <p
+          class="flex-1 overflow-hidden text-ellipsis"
+        >
+          continent
+        </p>
+      </div>
+      <div
+        id="DndDescribedBy-0"
+        style="display: none;"
+      >
+        
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  
+      </div>
+      <div
+        aria-atomic="true"
+        aria-live="assertive"
+        id="DndLiveRegion-0"
+        role="status"
+        style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

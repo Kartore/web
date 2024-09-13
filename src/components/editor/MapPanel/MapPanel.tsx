@@ -10,6 +10,7 @@ export const MapPanel: FC<{
 }> = ({ style, mapStyle }) => {
   return (
     <Map
+      id={'backgroundMap'}
       initialViewState={{
         longitude: 139.767,
         latitude: 35.681,

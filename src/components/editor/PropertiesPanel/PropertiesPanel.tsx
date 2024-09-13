@@ -20,7 +20,10 @@ export const PropertiesPanel = forwardRef<HTMLDivElement, PropertiesPanelProps>(
       <div
         {...props}
         ref={ref}
-        className={cn('overflow-y-auto rounded-lg border border-gray-300 bg-white py-4', className)}
+        className={cn(
+          'pointer-events-auto overflow-y-auto rounded-lg border border-gray-300 bg-white py-4',
+          className
+        )}
       >
         <LayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} />
         {children}

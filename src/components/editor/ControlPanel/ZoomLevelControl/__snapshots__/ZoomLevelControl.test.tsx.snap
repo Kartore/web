@@ -1,0 +1,62 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: ZoomLevelControl > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    class="pointer-events-auto flex flex-col"
+  >
+    <button
+      aria-label="Zoom In"
+      class="size-7 cursor-pointer rounded-lg border border-gray-300 bg-white p-1 transition-colors hover:bg-gray-100 active:bg-gray-300 disabled:cursor-default disabled:bg-white disabled:text-gray-300 rounded-b-none border-b-0"
+      disabled=""
+      type="button"
+    >
+      <svg
+        viewBox="0 -960 960 960"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+    <button
+      aria-label="Zoom Out"
+      class="size-7 cursor-pointer border border-gray-300 bg-white p-1 transition-colors hover:bg-gray-100 active:bg-gray-300 disabled:cursor-default disabled:bg-white disabled:text-gray-300 rounded-none border-b-0"
+      disabled=""
+      type="button"
+    >
+      <svg
+        viewBox="0 -960 960 960"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M200-440v-80h560v80H200Z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+    <button
+      aria-label="Reset North Pitch"
+      class="size-7 cursor-pointer rounded-lg border border-gray-300 bg-white p-1 transition-colors hover:bg-gray-100 active:bg-gray-300 disabled:cursor-default disabled:bg-white disabled:text-gray-300 rounded-t-none"
+      disabled=""
+      type="button"
+    >
+      <svg
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polygon
+          fill="currentColor"
+          points="6,9 10,1 14,9"
+        />
+        <polygon
+          fill="currentColor"
+          points="6,11 10,19 14,11"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
