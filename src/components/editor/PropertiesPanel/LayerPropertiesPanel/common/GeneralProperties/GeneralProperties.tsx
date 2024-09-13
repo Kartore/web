@@ -27,6 +27,7 @@ export const GeneralProperties = forwardRef<HTMLDivElement, GeneralPropertiesPro
 
     return (
       <div ref={ref} {...props} className={cn('flex flex-col gap-2 px-4', className)}>
+        <h3 className={'font-montserrat text-sm font-semibold'}>General</h3>
         <Select
           label={'Source'}
           selectedKey={layer.source}

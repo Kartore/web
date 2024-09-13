@@ -12,12 +12,14 @@ exports[`Component: RangeSlider > Snapshot > Default 1`] = `
       class="flex items-center justify-between"
     >
       <label
+        class="text-sm font-semibold text-gray-600"
         id="react-aria-:r1:"
       >
         Label
       </label>
       <output
         aria-live="off"
+        class="text-sm font-semibold text-gray-800"
         for="react-aria-:r1:-0 react-aria-:r1:-1"
       >
         0 - 100

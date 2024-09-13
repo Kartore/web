@@ -52,7 +52,14 @@ export const LayerPropertiesPanel: FC<PropertiesPanelProps> = ({
     return <CircleLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
   }
   if (isFillExtrusionLayer(layer)) {
-    return <FillExtrusionLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
+    return (
+      <FillExtrusionLayerPropertiesPanel
+        layer={layer}
+        sources={sources}
+        onChange={onChange}
+        {...props}
+      />
+    );
   }
   if (isFillLayer(layer)) {
     return (
@@ -60,19 +67,34 @@ export const LayerPropertiesPanel: FC<PropertiesPanelProps> = ({
     );
   }
   if (isHeatmapLayer(layer)) {
-    return <HeatmapLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
+    return (
+      <HeatmapLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
+    );
   }
   if (isHillshadeLayer(layer)) {
-    return <HillshadeLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
+    return (
+      <HillshadeLayerPropertiesPanel
+        layer={layer}
+        sources={sources}
+        onChange={onChange}
+        {...props}
+      />
+    );
   }
   if (isLineLayer(layer)) {
-    return <LineLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
+    return (
+      <LineLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
+    );
   }
   if (isRasterLayer(layer)) {
-    return <RasterLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
+    return (
+      <RasterLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
+    );
   }
   if (isSymbolLayer(layer)) {
-    return <SymbolLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
+    return (
+      <SymbolLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
+    );
   }
   throw new Error(`Unknown layer type`);
 };

@@ -6,6 +6,7 @@ import { useListBox } from 'react-aria';
 import type { ListState } from 'react-stately';
 
 import { Option } from '~/components/common/Select/ListBox/Option';
+import { cn } from '~/utils/tailwindUtil.ts';
 
 export type ListBoxProps = AriaListBoxOptions<unknown> & {
   state: ListState<unknown>;
@@ -21,15 +22,9 @@ export const ListBox: FC<ListBoxProps> = ({ ...props }) => {
     <ul
       {...listBoxProps}
       ref={listBoxRef}
-      style={{
-        margin: 0,
-        padding: 0,
-        listStyle: 'none',
-        maxHeight: 150,
-        overflow: 'auto',
-        minWidth: 100,
-        background: 'lightgray',
-      }}
+      className={cn(
+        'm-0 max-h-40 min-w-32 list-none overflow-auto rounded border border-gray-500 bg-white p-0'
+      )}
     >
       {[...state.collection].map((item) => (
         <Option key={item.key} item={item} state={state} />

@@ -3,3 +3,7 @@
 body, html {
     overscroll-behavior: none;
 }
+
+@theme {
+    --font-family-montserrat: "Montserrat", "sans-serif";
+}
