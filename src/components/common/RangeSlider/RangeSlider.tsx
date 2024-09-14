@@ -30,8 +30,16 @@ export const RangeSlider = forwardRef<HTMLDivElement, RangeSliderProps>(
       >
         {props.label && (
           <div className="flex items-center justify-between">
-            <label {...labelProps}>{props.label}</label>
-            <output {...outputProps}>
+            <label
+              {...labelProps}
+              className={cn('text-sm font-semibold text-gray-600', labelProps.className)}
+            >
+              {props.label}
+            </label>
+            <output
+              {...outputProps}
+              className={cn('text-sm font-semibold text-gray-800', outputProps.className)}
+            >
               {`${state.getThumbValueLabel(0)} - ${state.getThumbValueLabel(1)}`}
             </output>
           </div>

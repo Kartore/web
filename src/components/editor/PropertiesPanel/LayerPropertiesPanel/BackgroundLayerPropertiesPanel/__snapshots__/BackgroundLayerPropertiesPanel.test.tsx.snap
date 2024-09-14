@@ -3,84 +3,116 @@
 exports[`Component: BackgroundLayerPropertiesPanel > Snapshot > Default 1`] = `
 <DocumentFragment>
   <div
-    class="px-4"
+    class="flex flex-col gap-2"
   >
     <div
-      aria-labelledby="react-aria-:r1:"
-      class="h-auto w-full horizontal"
-      id="react-aria-:r0:"
-      role="group"
+      class="flex flex-col gap-2 px-4"
     >
-      <div
-        class="flex items-center justify-between"
+      <h3
+        class="font-montserrat text-sm font-semibold"
       >
-        <label
-          id="react-aria-:r1:"
-        >
-          Zoom Level Range
-        </label>
-        <output
-          aria-live="off"
-          for="react-aria-:r1:-0 react-aria-:r1:-1"
-        >
-          0 - 24
-        </output>
-      </div>
+        General
+      </h3>
       <div
-        class="relative mt-2 h-0.5 w-full rounded-full bg-gray-300"
-        style="position: relative; touch-action: none;"
+        aria-labelledby="react-aria-:r1:"
+        class="h-auto w-full horizontal"
+        id="react-aria-:r0:"
+        role="group"
       >
         <div
-          class="absolute h-0.5 bg-gray-500"
-          style="left: 0%; right: 0%;"
-        />
-        <div
-          class="thumb mt-[1px] size-3 rounded-full border border-gray-500 bg-white"
-          style="position: absolute; left: 0%; transform: translate(-50%, -50%); touch-action: none;"
+          class="flex items-center justify-between"
         >
-          <div
-            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          <label
+            class="text-sm font-semibold text-gray-600"
+            id="react-aria-:r1:"
           >
-            <input
-              aria-describedby=""
-              aria-details=""
-              aria-labelledby="react-aria-:r1:"
-              aria-orientation="horizontal"
-              aria-valuetext="0"
-              id="react-aria-:r1:-0"
-              max="24"
-              min="0"
-              step="1"
-              tabindex="0"
-              type="range"
-              value="0"
-            />
-          </div>
+            Zoom Level Range
+          </label>
+          <output
+            aria-live="off"
+            class="text-sm font-semibold text-gray-800"
+            for="react-aria-:r1:-0 react-aria-:r1:-1"
+          >
+            0 - 24
+          </output>
         </div>
         <div
-          class="thumb mt-[1px] size-3 rounded-full border border-gray-500 bg-white"
-          style="position: absolute; left: 100%; transform: translate(-50%, -50%); touch-action: none;"
+          class="relative mt-2 h-0.5 w-full rounded-full bg-gray-300"
+          style="position: relative; touch-action: none;"
         >
           <div
-            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+            class="absolute h-0.5 bg-gray-500"
+            style="left: 0%; right: 0%;"
+          />
+          <div
+            class="thumb mt-[1px] size-3 rounded-full border border-gray-500 bg-white"
+            style="position: absolute; left: 0%; transform: translate(-50%, -50%); touch-action: none;"
           >
-            <input
-              aria-describedby=""
-              aria-details=""
-              aria-labelledby="react-aria-:r1:"
-              aria-orientation="horizontal"
-              aria-valuetext="24"
-              id="react-aria-:r1:-1"
-              max="24"
-              min="0"
-              step="1"
-              tabindex="0"
-              type="range"
-              value="24"
-            />
+            <div
+              style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+            >
+              <input
+                aria-describedby=""
+                aria-details=""
+                aria-labelledby="react-aria-:r1:"
+                aria-orientation="horizontal"
+                aria-valuetext="0"
+                id="react-aria-:r1:-0"
+                max="24"
+                min="0"
+                step="1"
+                tabindex="0"
+                type="range"
+                value="0"
+              />
+            </div>
+          </div>
+          <div
+            class="thumb mt-[1px] size-3 rounded-full border border-gray-500 bg-white"
+            style="position: absolute; left: 100%; transform: translate(-50%, -50%); touch-action: none;"
+          >
+            <div
+              style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+            >
+              <input
+                aria-describedby=""
+                aria-details=""
+                aria-labelledby="react-aria-:r1:"
+                aria-orientation="horizontal"
+                aria-valuetext="24"
+                id="react-aria-:r1:-1"
+                max="24"
+                min="0"
+                step="1"
+                tabindex="0"
+                type="range"
+                value="24"
+              />
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    <div
+      class="flex flex-col gap-2 px-4"
+    >
+      <h3
+        class="font-montserrat text-sm font-semibold"
+      >
+        Raw Data Editor (Advanced)
+      </h3>
+      <textarea
+        class="min-h-40 rounded text-sm"
+        readonly=""
+      >
+        {
+  "id": "background",
+  "type": "background",
+  "paint": {
+    "background-color": "rgb(239,239,239)"
+  }
+}
+      </textarea>
     </div>
   </div>
 </DocumentFragment>

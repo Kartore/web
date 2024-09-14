@@ -3,6 +3,7 @@
 exports[`Component: Button > Snapshot > Default 1`] = `
 <DocumentFragment>
   <button
+    class=""
     type="button"
   >
     Button
