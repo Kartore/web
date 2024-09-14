@@ -1,4 +1,4 @@
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 import type { LayerSpecification, SourceSpecification } from '@maplibre/maplibre-gl-style-spec';
 
@@ -12,22 +12,28 @@ export type PropertiesPanelProps = {
     [key: string]: SourceSpecification;
   };
   onChange?: onChangeType;
-} & Omit<ComponentPropsWithoutRef<'div'>, 'onChange'>;
+} & Omit<ComponentProps<'div'>, 'onChange'>;
 
-export const PropertiesPanel = forwardRef<HTMLDivElement, PropertiesPanelProps>(
-  ({ className, sources, layer, onChange, children, ...props }, ref) => {
-    return (
-      <div
-        {...props}
-        ref={ref}
-        className={cn(
-          'pointer-events-auto overflow-y-auto rounded-lg border border-gray-300 bg-white py-4',
-          className
-        )}
-      >
-        <LayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} />
-        {children}
-      </div>
-    );
-  }
-);
+export const PropertiesPanel: FC<PropertiesPanelProps> = ({
+  className,
+  sources,
+  layer,
+  onChange,
+  children,
+  ...props
+}) => {
+  return (
+    <div
+      {...props}
+      className={cn(
+        'pointer-events-auto overflow-y-auto rounded-lg border border-gray-300 bg-white py-4',
+        className
+      )}
+    >
+      <LayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} />
+      {children}
+    </div>
+  );
+};
+
+PropertiesPanel.displayName = 'PropertiesPanel';

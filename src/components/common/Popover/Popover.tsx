@@ -33,3 +33,5 @@ export const Popover: FC<PopoverProps> = ({ state, children, ...props }) => {
     </Overlay>
   );
 };
+
+Popover.displayName = 'Popover';

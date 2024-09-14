@@ -7,7 +7,6 @@ exports[`Component: PropertiesPanel > Snapshot > Default 1`] = `
   >
     <div
       class="flex flex-col gap-2"
-      sources="[object Object]"
     >
       <div
         class="flex flex-col gap-2 px-4"

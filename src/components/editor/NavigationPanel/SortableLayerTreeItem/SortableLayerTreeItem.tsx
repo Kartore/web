@@ -43,3 +43,5 @@ export const SortableLayerTreeItem: FC<SortableLayerTreeItemProps> = ({ layer, .
     />
   );
 };
+
+SortableLayerTreeItem.displayName = 'SortableLayerTreeItem';

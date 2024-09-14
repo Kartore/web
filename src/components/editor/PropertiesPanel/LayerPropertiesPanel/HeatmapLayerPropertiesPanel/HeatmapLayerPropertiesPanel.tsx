@@ -1,5 +1,4 @@
-import type { ComponentPropsWithoutRef } from 'react';
-import { forwardRef } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 import type {
   HeatmapLayerSpecification,
@@ -11,21 +10,27 @@ import { RawDataProperties } from '~/components/editor/PropertiesPanel/LayerProp
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { cn } from '~/utils/tailwindUtil.ts';
 
-export type HeatmapLayerPropertiesPanelProps = Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> & {
+export type HeatmapLayerPropertiesPanelProps = Omit<ComponentProps<'div'>, 'onChange'> & {
   layer: HeatmapLayerSpecification;
   sources: { [key: string]: SourceSpecification };
   onChange?: onChangeType;
 };
 
-export const HeatmapLayerPropertiesPanel = forwardRef<
-  HTMLDivElement,
-  HeatmapLayerPropertiesPanelProps
->(({ children, layer, sources, onChange, className, ...props }, ref) => {
+export const HeatmapLayerPropertiesPanel: FC<HeatmapLayerPropertiesPanelProps> = ({
+  children,
+  layer,
+  sources,
+  onChange,
+  className,
+  ...props
+}) => {
   return (
-    <div ref={ref} {...props} className={cn('flex flex-col gap-2', className)}>
+    <div {...props} className={cn('flex flex-col gap-2', className)}>
       <GeneralProperties layer={layer} sources={sources} onChange={onChange} />
       <RawDataProperties layer={layer} />
       {children}
     </div>
   );
-});
+};
+
+HeatmapLayerPropertiesPanel.displayName = 'HeatmapLayerPropertiesPanel';

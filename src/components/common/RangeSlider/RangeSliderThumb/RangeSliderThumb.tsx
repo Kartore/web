@@ -19,7 +19,7 @@ export const RangeSliderThumb: FC<RangeSliderThumbProps> = ({
   name,
   className,
 }) => {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const { thumbProps, inputProps, isDragging } = useSliderThumb(
     {
       index,
@@ -45,3 +45,5 @@ export const RangeSliderThumb: FC<RangeSliderThumbProps> = ({
     </div>
   );
 };
+
+RangeSliderThumb.displayName = 'RangeSliderThumb';

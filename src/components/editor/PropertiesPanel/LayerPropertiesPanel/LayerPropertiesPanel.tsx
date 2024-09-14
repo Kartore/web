@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 import type { LayerSpecification, SourceSpecification } from '@maplibre/maplibre-gl-style-spec';
 
@@ -24,7 +24,7 @@ import {
 } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 
-type PropertiesPanelProps = Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> & {
+type PropertiesPanelProps = Omit<ComponentProps<'div'>, 'onChange'> & {
   layer: LayerSpecification;
   sources: {
     [key: string]: SourceSpecification;
@@ -39,17 +39,12 @@ export const LayerPropertiesPanel: FC<PropertiesPanelProps> = ({
   ...props
 }) => {
   if (isBackgroundLayer(layer)) {
-    return (
-      <BackgroundLayerPropertiesPanel
-        layer={layer}
-        sources={sources}
-        onChange={onChange}
-        {...props}
-      />
-    );
+    return <BackgroundLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
   }
   if (isCircleLayer(layer)) {
-    return <CircleLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
+    return (
+      <CircleLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
+    );
   }
   if (isFillExtrusionLayer(layer)) {
     return (
@@ -98,3 +93,5 @@ export const LayerPropertiesPanel: FC<PropertiesPanelProps> = ({
   }
   throw new Error(`Unknown layer type`);
 };
+
+LayerPropertiesPanel.displayName = 'LayerPropertiesPanel';
