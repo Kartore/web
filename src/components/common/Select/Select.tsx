@@ -11,20 +11,20 @@ import { ListBox } from '~/components/common/Select/ListBox';
 import { ArrowDropDownIcon } from '~/components/icons';
 import { cn } from '~/utils/tailwindUtil.ts';
 
-export type SelectProps = SelectStateOptions<object>;
+export type SelectProps = {
+  className?: string;
+  triggerClassName?: string;
+} & SelectStateOptions<object>;
 
-export const Select: FC<SelectProps> = ({ ...props }) => {
+export const Select: FC<SelectProps> = ({ className, triggerClassName, ...props }) => {
   const state = useSelectState(props);
 
   const ref = useRef(null);
   const { labelProps, triggerProps, valueProps, menuProps } = useSelect(props, state, ref);
 
   return (
-    <div className={'flex items-center justify-between'}>
-      <div
-        {...labelProps}
-        className={cn('text-sm font-semibold text-gray-600', labelProps.className)}
-      >
+    <div className={cn('flex items-center justify-between text-sm', className)}>
+      <div {...labelProps} className={cn('font-semibold text-gray-600', labelProps.className)}>
         {props.label}
       </div>
       <HiddenSelect
@@ -37,11 +37,12 @@ export const Select: FC<SelectProps> = ({ ...props }) => {
         {...triggerProps}
         buttonRef={ref}
         className={cn(
-          'flex h-7 cursor-pointer flex-row items-center gap-1 rounded pl-1.5 text-sm hover:bg-gray-100 aria-expanded:bg-gray-200'
+          'flex w-1/2 flex-row items-center justify-between rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-expanded:bg-gray-200',
+          triggerClassName
         )}
       >
-        <p {...valueProps}>
-          {state.selectedItem ? state.selectedItem.rendered : 'Select an option'}
+        <p {...valueProps} className={'flex-1 overflow-hidden text-ellipsis text-start'}>
+          {state.selectedItem ? state.selectedItem.rendered : ''}
         </p>
         <ArrowDropDownIcon aria-hidden={'true'} className={'w-4'} />
       </Button>

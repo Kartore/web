@@ -3,7 +3,7 @@
 exports[`Component: Button > Snapshot > Default 1`] = `
 <DocumentFragment>
   <button
-    class=""
+    class="cursor-pointer transition-colors hover:bg-gray-100 active:bg-gray-300"
     type="button"
   >
     Button

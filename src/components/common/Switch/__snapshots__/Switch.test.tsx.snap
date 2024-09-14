@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: Switch > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row items-center justify-between"
+  >
+    <label
+      class="text-sm font-semibold text-gray-600"
+    />
+    <label
+      class="cursor-pointer"
+    >
+      <p
+        class="sr-only"
+      />
+      <div
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <input
+          role="switch"
+          type="checkbox"
+        />
+      </div>
+      <svg
+        aria-hidden="true"
+        height="24"
+        style="margin-right: 4px;"
+        width="40"
+      >
+        <rect
+          fill="gray"
+          height="16"
+          rx="8"
+          width="32"
+          x="4"
+          y="4"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          fill="white"
+          r="5"
+        />
+      </svg>
+    </label>
+  </div>
+</DocumentFragment>
+`;

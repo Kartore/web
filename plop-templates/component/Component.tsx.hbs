@@ -1,10 +1,10 @@
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 import { cn } from '~/utils/tailwindUtil';
 
-export type {{pascalCase name}}Props = {} & ComponentPropsWithoutRef<'div'>;
+export type {{pascalCase name}}Props = {} & ComponentProps<'div'>;
 
-export const {{pascalCase name}}:FC<{{pascalCase name}}Props> = ({ className, children, ...props }) => {
+export const {{pascalCase name}}: FC<{{pascalCase name}}Props> = ({ className, children, ...props }) => {
 
   return (
     <div {...props} className={cn('', className)}>

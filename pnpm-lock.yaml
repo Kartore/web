@@ -26,6 +26,12 @@ importers:
       '@maplibre/maplibre-gl-style-spec':
         specifier: 20.3.1
         version: 20.3.1
+      '@react-aria/color':
+        specifier: 3.0.0-rc.2
+        version: 3.0.0-rc.2(react-dom@19.0.0-rc-206df66e-20240912(react@19.0.0-rc-206df66e-20240912))(react@19.0.0-rc-206df66e-20240912)
+      '@react-stately/color':
+        specifier: 3.7.2
+        version: 3.7.2(react@19.0.0-rc-206df66e-20240912)
       '@tanstack/react-query':
         specifier: 5.56.2
         version: 5.56.2(react@19.0.0-rc-206df66e-20240912)
@@ -900,6 +906,12 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
 
+  '@react-aria/color@3.0.0-rc.2':
+    resolution: {integrity: sha512-h4P7LocDEHPOEWgHYb8VPJLRGkyMhcsXemmvGao6G23zGTpTX8Nr6pEuJhcXQlGWt8hXvj/ASnC750my+zb1yA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
   '@react-aria/combobox@3.10.3':
     resolution: {integrity: sha512-EdDwr2Rp1xy7yWjOYHt2qF1IpAtUrkaNKZJzlIw1XSwcqizQY6E8orNPdZr6ZwD6/tgujxF1N71JTKyffrR0Xw==}
     peerDependencies:
@@ -1110,6 +1122,11 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
 
+  '@react-stately/color@3.7.2':
+    resolution: {integrity: sha512-tNJ7pQjBqXtfASdLRjIYzeI8q0b3JtxqkJbusyEEdLAumpcWkbOvl3Vp9un0Bu/XXWihDa4v2dEdpKxjM+pPxg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
   '@react-stately/combobox@3.9.2':
     resolution: {integrity: sha512-ZsbAcD58IvxZqwYxg9d2gOf8R/k5RUB2TPUiGKD6wgWfEKH6SDzY3bgRByHGOyMCyJB62cHjih/ZShizNTguqA==}
     peerDependencies:
@@ -1235,6 +1252,11 @@ packages:
 
   '@react-types/checkbox@3.8.3':
     resolution: {integrity: sha512-f4c1mnLEt0iS1NMkyZXgT3q3AgcxzDk7w6MSONOKydcnh0xG5L2oefY14DhVDLkAuQS7jThlUFwiAs+MxiO3MA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
+  '@react-types/color@3.0.0-rc.1':
+    resolution: {integrity: sha512-aw6FzrBlZTWKrFaFskM7e3AFICe6JqH10wO0E919goa3LZDDFbyYEwRpatwjIyiZH1elEUkFPgwqpv3ZcPPn8g==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
 
@@ -5384,6 +5406,24 @@ snapshots:
       '@swc/helpers': 0.5.11
       react: 19.0.0-rc-206df66e-20240912
 
+  '@react-aria/color@3.0.0-rc.2(react-dom@19.0.0-rc-206df66e-20240912(react@19.0.0-rc-206df66e-20240912))(react@19.0.0-rc-206df66e-20240912)':
+    dependencies:
+      '@react-aria/i18n': 3.12.2(react@19.0.0-rc-206df66e-20240912)
+      '@react-aria/interactions': 3.22.2(react@19.0.0-rc-206df66e-20240912)
+      '@react-aria/numberfield': 3.11.6(react-dom@19.0.0-rc-206df66e-20240912(react@19.0.0-rc-206df66e-20240912))(react@19.0.0-rc-206df66e-20240912)
+      '@react-aria/slider': 3.7.11(react@19.0.0-rc-206df66e-20240912)
+      '@react-aria/spinbutton': 3.6.8(react-dom@19.0.0-rc-206df66e-20240912(react@19.0.0-rc-206df66e-20240912))(react@19.0.0-rc-206df66e-20240912)
+      '@react-aria/textfield': 3.14.8(react@19.0.0-rc-206df66e-20240912)
+      '@react-aria/utils': 3.25.2(react@19.0.0-rc-206df66e-20240912)
+      '@react-aria/visually-hidden': 3.8.15(react@19.0.0-rc-206df66e-20240912)
+      '@react-stately/color': 3.7.2(react@19.0.0-rc-206df66e-20240912)
+      '@react-stately/form': 3.0.5(react@19.0.0-rc-206df66e-20240912)
+      '@react-types/color': 3.0.0-rc.1(react@19.0.0-rc-206df66e-20240912)
+      '@react-types/shared': 3.24.1(react@19.0.0-rc-206df66e-20240912)
+      '@swc/helpers': 0.5.11
+      react: 19.0.0-rc-206df66e-20240912
+      react-dom: 19.0.0-rc-206df66e-20240912(react@19.0.0-rc-206df66e-20240912)
+
   '@react-aria/combobox@3.10.3(react-dom@19.0.0-rc-206df66e-20240912(react@19.0.0-rc-206df66e-20240912))(react@19.0.0-rc-206df66e-20240912)':
     dependencies:
       '@react-aria/i18n': 3.12.2(react@19.0.0-rc-206df66e-20240912)
@@ -5854,6 +5894,20 @@ snapshots:
       '@swc/helpers': 0.5.11
       react: 19.0.0-rc-206df66e-20240912
 
+  '@react-stately/color@3.7.2(react@19.0.0-rc-206df66e-20240912)':
+    dependencies:
+      '@internationalized/number': 3.5.3
+      '@internationalized/string': 3.2.3
+      '@react-aria/i18n': 3.12.2(react@19.0.0-rc-206df66e-20240912)
+      '@react-stately/form': 3.0.5(react@19.0.0-rc-206df66e-20240912)
+      '@react-stately/numberfield': 3.9.6(react@19.0.0-rc-206df66e-20240912)
+      '@react-stately/slider': 3.5.7(react@19.0.0-rc-206df66e-20240912)
+      '@react-stately/utils': 3.10.3(react@19.0.0-rc-206df66e-20240912)
+      '@react-types/color': 3.0.0-rc.1(react@19.0.0-rc-206df66e-20240912)
+      '@react-types/shared': 3.24.1(react@19.0.0-rc-206df66e-20240912)
+      '@swc/helpers': 0.5.11
+      react: 19.0.0-rc-206df66e-20240912
+
   '@react-stately/combobox@3.9.2(react@19.0.0-rc-206df66e-20240912)':
     dependencies:
       '@react-stately/collections': 3.10.9(react@19.0.0-rc-206df66e-20240912)
@@ -6055,6 +6109,12 @@ snapshots:
   '@react-types/checkbox@3.8.3(react@19.0.0-rc-206df66e-20240912)':
     dependencies:
       '@react-types/shared': 3.24.1(react@19.0.0-rc-206df66e-20240912)
+      react: 19.0.0-rc-206df66e-20240912
+
+  '@react-types/color@3.0.0-rc.1(react@19.0.0-rc-206df66e-20240912)':
+    dependencies:
+      '@react-types/shared': 3.24.1(react@19.0.0-rc-206df66e-20240912)
+      '@react-types/slider': 3.7.5(react@19.0.0-rc-206df66e-20240912)
       react: 19.0.0-rc-206df66e-20240912
 
   '@react-types/combobox@3.12.1(react@19.0.0-rc-206df66e-20240912)':

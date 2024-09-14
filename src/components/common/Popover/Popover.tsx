@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { FC, ReactNode, RefObject } from 'react';
 import { useRef } from 'react';
 
 import type { AriaPopoverProps } from 'react-aria';
@@ -9,14 +9,16 @@ import { cn } from '~/utils/tailwindUtil.ts';
 
 export type PopoverProps = Omit<AriaPopoverProps, 'popoverRef'> & {
   children: ReactNode;
+  popoverRef?: RefObject<HTMLDivElement>;
   state: OverlayTriggerState;
 };
 
 export const Popover: FC<PopoverProps> = ({ state, children, ...props }) => {
-  const popoverRef = useRef(null);
+  const ref = useRef(null);
+  const { popoverRef = ref, ...otherProps } = props;
   const { popoverProps, underlayProps } = usePopover(
     {
-      ...props,
+      ...otherProps,
       popoverRef,
     },
     state

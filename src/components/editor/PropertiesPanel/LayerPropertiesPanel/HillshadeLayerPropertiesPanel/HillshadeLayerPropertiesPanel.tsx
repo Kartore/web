@@ -25,7 +25,7 @@ export const HillshadeLayerPropertiesPanel: FC<HillshadeLayerPropertiesPanelProp
   ...props
 }) => {
   return (
-    <div {...props} className={cn('flex flex-col gap-2', className)}>
+    <div {...props} className={cn('flex flex-col gap-6', className)}>
       <GeneralProperties layer={layer} sources={sources} onChange={onChange} />
       <RawDataProperties layer={layer} />
       {children}

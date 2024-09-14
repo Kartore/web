@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: BoxRadioGroup > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    aria-labelledby="react-aria-:r1:"
+    aria-orientation="vertical"
+    class="flex items-center justify-between text-sm"
+    id="react-aria-:r0:"
+    role="radiogroup"
+  >
+    <span
+      class="font-semibold text-gray-600"
+      id="react-aria-:r1:"
+    >
+      Numbers
+    </span>
+    <div
+      class="flex w-1/2 flex-row items-center justify-end gap-1"
+    >
+      <label
+        aria-checked="false"
+        class="block cursor-pointer rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-checked:bg-gray-300"
+      >
+        <input
+          class="sr-only"
+          name="react-aria-:r5:"
+          tabindex="0"
+          type="radio"
+          value="1"
+        />
+        One
+      </label>
+      <label
+        aria-checked="false"
+        class="block cursor-pointer rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-checked:bg-gray-300"
+      >
+        <input
+          class="sr-only"
+          name="react-aria-:r5:"
+          tabindex="0"
+          type="radio"
+          value="2"
+        />
+        Two
+      </label>
+      <label
+        aria-checked="false"
+        class="block cursor-pointer rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-checked:bg-gray-300"
+      >
+        <input
+          class="sr-only"
+          name="react-aria-:r5:"
+          tabindex="0"
+          type="radio"
+          value="3"
+        />
+        Three
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;

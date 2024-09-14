@@ -53,6 +53,7 @@ function App() {
 
           <PropertiesPanel
             className={'w-1/5'}
+            sprite={mapStyle.sprite}
             layer={selectedLayer}
             sources={mapStyle.sources}
             onChange={handleChangeLayerData}

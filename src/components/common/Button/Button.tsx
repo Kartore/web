@@ -16,7 +16,14 @@ export const Button: FC<ButtonProps> = (props) => {
   const { buttonRef = ref, className, ...otherProps } = props;
   const { buttonProps } = useButton(otherProps, buttonRef);
   return (
-    <button {...buttonProps} ref={buttonRef} className={cn(className)}>
+    <button
+      {...buttonProps}
+      ref={buttonRef}
+      className={cn(
+        'cursor-pointer transition-colors hover:bg-gray-100 active:bg-gray-300',
+        className
+      )}
+    >
       {props.children}
     </button>
   );
