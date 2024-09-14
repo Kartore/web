@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import type { LayerSpecification, StyleSpecification } from 'maplibre-gl';
 import { MapProvider } from 'react-map-gl/maplibre';
@@ -20,10 +20,8 @@ function App() {
   );
 
   const [selectedLayerId, setSelectedLayerId] = useState<string>(mapStyle.layers[0].id);
-  const selectedLayer = useMemo(() => {
-    const findLayer = mapStyle.layers.find((layer) => layer.id === selectedLayerId);
-    return findLayer ?? mapStyle.layers[0];
-  }, [mapStyle.layers, selectedLayerId]);
+  const selectedLayer =
+    mapStyle.layers.find((layer) => layer.id === selectedLayerId) ?? mapStyle.layers[0];
   const handleChangeLayerOrder = (layer: LayerSpecification[]) => {
     setMapStyle((currentStyle) => {
       return { ...currentStyle, layers: layer };

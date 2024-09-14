@@ -23,3 +23,5 @@ export const MapPanel: FC<{
     />
   );
 };
+
+MapPanel.displayName = 'MapPanel';

@@ -1,5 +1,4 @@
-import type { ComponentPropsWithoutRef } from 'react';
-import { forwardRef } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 import type { BackgroundLayerSpecification } from '@maplibre/maplibre-gl-style-spec';
 
@@ -8,20 +7,20 @@ import { RawDataProperties } from '~/components/editor/PropertiesPanel/LayerProp
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { cn } from '~/utils/tailwindUtil.ts';
 
-export type BackgroundLayerPropertiesPanelProps = Omit<
-  ComponentPropsWithoutRef<'div'>,
-  'onChange'
-> & {
+export type BackgroundLayerPropertiesPanelProps = Omit<ComponentProps<'div'>, 'onChange'> & {
   layer: BackgroundLayerSpecification;
   onChange?: onChangeType;
 };
 
-export const BackgroundLayerPropertiesPanel = forwardRef<
-  HTMLDivElement,
-  BackgroundLayerPropertiesPanelProps
->(({ children, layer, onChange, className, ...props }, ref) => {
+export const BackgroundLayerPropertiesPanel: FC<BackgroundLayerPropertiesPanelProps> = ({
+  children,
+  layer,
+  onChange,
+  className,
+  ...props
+}) => {
   return (
-    <div ref={ref} {...props} className={cn('flex flex-col gap-2', className)}>
+    <div {...props} className={cn('flex flex-col gap-2', className)}>
       <div className={'flex flex-col gap-2 px-4'}>
         <h3 className={'font-montserrat text-sm font-semibold'}>General</h3>
         <RangeSlider
@@ -44,4 +43,6 @@ export const BackgroundLayerPropertiesPanel = forwardRef<
       {children}
     </div>
   );
-});
+};
+
+BackgroundLayerPropertiesPanel.displayName = 'BackgroundLayerPropertiesPanel';

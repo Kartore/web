@@ -1,18 +1,16 @@
-import { useCallback, useSyncExternalStore } from 'react';
+import { useSyncExternalStore } from 'react';
 
-import { useMap } from 'react-map-gl';
+import { useMap } from 'react-map-gl/maplibre';
 
 export const useZoomLevel = () => {
   const { backgroundMap } = useMap();
-  const subscribe = useCallback(
-    (callback: () => void) => {
+  return useSyncExternalStore(
+    (callback) => {
       backgroundMap?.on('zoom', callback);
       return () => {
         backgroundMap?.off('zoom', callback);
       };
     },
-    [backgroundMap]
+    () => backgroundMap?.getZoom().toFixed(2)
   );
-  const getSnapshot = useCallback(() => backgroundMap?.getZoom().toFixed(2), [backgroundMap]);
-  return useSyncExternalStore(subscribe, getSnapshot);
 };

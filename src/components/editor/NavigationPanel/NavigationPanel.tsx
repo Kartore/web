@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 import { useState } from 'react';
 
 import type { DragEndEvent, DragStartEvent, Modifier } from '@dnd-kit/core';
@@ -18,7 +18,7 @@ import { createPortal } from 'react-dom';
 import { SortableLayerTreeItem } from '~/components/editor/NavigationPanel/SortableLayerTreeItem/SortableLayerTreeItem.tsx';
 import { cn } from '~/utils/tailwindUtil';
 
-type LayerPanelProps = Omit<ComponentPropsWithoutRef<'div'>, 'children'> & {
+type LayerPanelProps = Omit<ComponentProps<'div'>, 'children'> & {
   mapStyle: StyleSpecification;
   selectedLayerId: LayerSpecification['id'] | null;
   onClickLayer: (id: LayerSpecification) => void;
@@ -141,3 +141,5 @@ export const NavigationPanel: FC<LayerPanelProps> = ({
     </div>
   );
 };
+
+NavigationPanel.displayName = 'NavigationPanel';

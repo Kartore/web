@@ -32,3 +32,5 @@ export const ListBox: FC<ListBoxProps> = ({ ...props }) => {
     </ul>
   );
 };
+
+ListBox.displayName = 'ListBox';
