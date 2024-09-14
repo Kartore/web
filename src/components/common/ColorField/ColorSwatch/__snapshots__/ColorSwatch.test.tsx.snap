@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: ColorSwatch > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="transparent"
+    aria-roledescription="color swatch"
+    class=""
+    id="react-aria-:r0:"
+    role="img"
+    style="background-color: rgba(255, 255, 255, 0);"
+  />
+</DocumentFragment>
+`;

@@ -1,1 +1,1 @@
-export * from './ColorField';
+export * from './ColorField.tsx';

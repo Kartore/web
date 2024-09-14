@@ -1,15 +1,26 @@
-import type { ComponentProps, FC } from 'react';
+import type { FC } from 'react';
 
-import { cn } from '~/utils/tailwindUtil';
+import type { AriaColorSwatchProps } from '@react-aria/color';
+import { useColorSwatch } from '@react-aria/color';
 
-export type ColorSwatchProps = {} & ComponentProps<'div'>;
+import { cn } from '~/utils/tailwindUtil.ts';
 
-export const ColorSwatch: FC<ColorSwatchProps> = ({ className, children, ...props }) => {
+export type ColorSwatchProps = {
+  className?: string;
+} & AriaColorSwatchProps;
 
+export const ColorSwatch: FC<ColorSwatchProps> = ({ className, ...props }) => {
+  const { colorSwatchProps, color } = useColorSwatch(props);
   return (
-    <div {...props} className={cn('', className)}>
-      {children}
-    </div>
+    <div
+      {...colorSwatchProps}
+      className={cn('', className)}
+      style={{
+        ...colorSwatchProps.style,
+        background: `linear-gradient(${color}, ${color}),
+          repeating-conic-gradient(#CCC 0% 25%, white 0% 50%) 50% / 16px 16px`,
+      }}
+    />
   );
 };
 

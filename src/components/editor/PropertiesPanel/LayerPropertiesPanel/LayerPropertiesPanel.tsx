@@ -1,6 +1,10 @@
 import type { ComponentProps, FC } from 'react';
 
-import type { LayerSpecification, SourceSpecification } from '@maplibre/maplibre-gl-style-spec';
+import type {
+  LayerSpecification,
+  SourceSpecification,
+  SpriteSpecification,
+} from '@maplibre/maplibre-gl-style-spec';
 
 import { BackgroundLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/BackgroundLayerPropertiesPanel';
 import { CircleLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/CircleLayerPropertiesPanel';
@@ -26,6 +30,7 @@ import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerProp
 
 type PropertiesPanelProps = Omit<ComponentProps<'div'>, 'onChange'> & {
   layer: LayerSpecification;
+  sprite?: SpriteSpecification;
   sources: {
     [key: string]: SourceSpecification;
   };
@@ -34,12 +39,20 @@ type PropertiesPanelProps = Omit<ComponentProps<'div'>, 'onChange'> & {
 
 export const LayerPropertiesPanel: FC<PropertiesPanelProps> = ({
   layer,
+  sprite,
   sources,
   onChange,
   ...props
 }) => {
   if (isBackgroundLayer(layer)) {
-    return <BackgroundLayerPropertiesPanel layer={layer} onChange={onChange} {...props} />;
+    return (
+      <BackgroundLayerPropertiesPanel
+        layer={layer}
+        sprite={sprite}
+        onChange={onChange}
+        {...props}
+      />
+    );
   }
   if (isCircleLayer(layer)) {
     return (
@@ -58,7 +71,13 @@ export const LayerPropertiesPanel: FC<PropertiesPanelProps> = ({
   }
   if (isFillLayer(layer)) {
     return (
-      <FillLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
+      <FillLayerPropertiesPanel
+        layer={layer}
+        sources={sources}
+        sprite={sprite}
+        onChange={onChange}
+        {...props}
+      />
     );
   }
   if (isHeatmapLayer(layer)) {

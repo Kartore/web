@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: NumberArrayInnerField > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row items-center justify-between gap-2 rounded bg-gray-100 py-0.5 px-2"
+  >
+    <label
+      class="text-sm font-semibold text-gray-500"
+      for="react-aria-:r0:"
+      id="react-aria-:r2:"
+    >
+      X
+    </label>
+    <div
+      class="w-full"
+      role="group"
+    >
+      <input
+        aria-labelledby="react-aria-:r2:"
+        aria-roledescription="Number field"
+        autocomplete="off"
+        autocorrect="off"
+        class="w-full rounded border-none py-0.5 px-1 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0"
+        id="react-aria-:r0:"
+        inputmode="numeric"
+        spellcheck="false"
+        type="text"
+        value="0"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

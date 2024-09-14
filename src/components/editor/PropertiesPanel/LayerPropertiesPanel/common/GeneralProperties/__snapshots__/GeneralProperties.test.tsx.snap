@@ -11,10 +11,10 @@ exports[`Component: GeneralProperties > Snapshot > Default 1`] = `
       General
     </h3>
     <div
-      class="flex items-center justify-between"
+      class="flex items-center justify-between text-sm"
     >
       <div
-        class="text-sm font-semibold text-gray-600"
+        class="font-semibold text-gray-600"
         id="react-aria-:r3:"
       >
         Source
@@ -54,11 +54,12 @@ exports[`Component: GeneralProperties > Snapshot > Default 1`] = `
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-labelledby="react-aria-:r7: react-aria-:r3:"
-        class="flex h-7 cursor-pointer flex-row items-center gap-1 rounded pl-1.5 text-sm hover:bg-gray-100 aria-expanded:bg-gray-200"
+        class="cursor-pointer active:bg-gray-300 flex w-1/2 flex-row items-center justify-between rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-expanded:bg-gray-200"
         id="react-aria-:r2:"
         type="button"
       >
         <p
+          class="flex-1 overflow-hidden text-ellipsis text-start"
           id="react-aria-:r7:"
         >
           openmaptiles
@@ -76,10 +77,10 @@ exports[`Component: GeneralProperties > Snapshot > Default 1`] = `
       </button>
     </div>
     <div
-      class="flex items-center justify-between"
+      class="flex items-center justify-between text-sm"
     >
       <div
-        class="text-sm font-semibold text-gray-600"
+        class="font-semibold text-gray-600"
         id="react-aria-:rb:"
       >
         Source Layer
@@ -109,15 +110,14 @@ exports[`Component: GeneralProperties > Snapshot > Default 1`] = `
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-labelledby="react-aria-:rf: react-aria-:rb:"
-        class="flex h-7 cursor-pointer flex-row items-center gap-1 rounded pl-1.5 text-sm hover:bg-gray-100 aria-expanded:bg-gray-200"
+        class="cursor-pointer active:bg-gray-300 flex w-1/2 flex-row items-center justify-between rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-expanded:bg-gray-200"
         id="react-aria-:ra:"
         type="button"
       >
         <p
+          class="flex-1 overflow-hidden text-ellipsis text-start"
           id="react-aria-:rf:"
-        >
-          Select an option
-        </p>
+        />
         <svg
           aria-hidden="true"
           class="w-4"
@@ -143,7 +143,7 @@ exports[`Component: GeneralProperties > Snapshot > Default 1`] = `
           class="text-sm font-semibold text-gray-600"
           id="react-aria-:rh:"
         >
-          Zoom Level Range
+          Zoom Range
         </label>
         <output
           aria-live="off"

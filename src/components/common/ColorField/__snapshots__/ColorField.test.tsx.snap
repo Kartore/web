@@ -1,0 +1,56 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: ColorField > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row items-center justify-between"
+  >
+    <label
+      class="text-sm font-semibold text-gray-600"
+    />
+    <div
+      class="flex w-1/2 flex-row items-center gap-2 rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0"
+    >
+      <div
+        class="h-4 w-4"
+      >
+        <button
+          class="cursor-pointer transition-colors hover:bg-gray-100 active:bg-gray-300 h-full w-full border border-gray-300 focus:outline-0"
+          type="button"
+        >
+          <div
+            aria-label="transparent"
+            aria-roledescription="color swatch"
+            class="h-full w-full"
+            id="react-aria-:re:"
+            role="img"
+            style="background-color: rgba(255, 255, 255, 0);"
+          />
+        </button>
+      </div>
+      <input
+        autocomplete="off"
+        autocorrect="off"
+        class="min-w-10 flex-2 border-none focus-visible:outline-0"
+        id="react-aria-:r0:"
+        role="textbox"
+        spellcheck="false"
+        type="text"
+        value=""
+      />
+      <input
+        aria-labelledby="react-aria-:r8:"
+        aria-roledescription="Number field"
+        autocomplete="off"
+        autocorrect="off"
+        class="min-w-8 flex-1 border-none focus-visible:outline-0"
+        id="react-aria-:r6:"
+        inputmode="numeric"
+        spellcheck="false"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

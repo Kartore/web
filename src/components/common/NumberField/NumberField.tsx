@@ -15,7 +15,7 @@ export type NumberFieldProps = {
 
 export const NumberField: FC<NumberFieldProps> = ({ className, showButton, label, ...props }) => {
   const { locale } = useLocale();
-  const state = useNumberFieldState({ ...props, locale });
+  const state = useNumberFieldState({ ...props, label, locale });
   const ref = useRef(null);
   const {
     labelProps,
@@ -27,7 +27,8 @@ export const NumberField: FC<NumberFieldProps> = ({ className, showButton, label
     errorMessageProps,
     isInvalid,
     validationErrors,
-  } = useNumberField(props, state, ref);
+  } = useNumberField({ ...props, label }, state, ref);
+
   return (
     <div className={cn('flex flex-row items-center justify-between', className)}>
       <label
@@ -36,12 +37,12 @@ export const NumberField: FC<NumberFieldProps> = ({ className, showButton, label
       >
         {label}
       </label>
-      <div {...groupProps}>
+      <div {...groupProps} className={'w-1/2'}>
         <input
           {...inputProps}
           ref={ref}
           className={cn(
-            'rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0',
+            'w-full rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0',
             inputProps.className
           )}
         />

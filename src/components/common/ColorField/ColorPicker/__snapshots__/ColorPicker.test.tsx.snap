@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: ColorPicker > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    class="h-4 w-4"
+  >
+    <button
+      class="cursor-pointer transition-colors hover:bg-gray-100 active:bg-gray-300 h-full w-full border border-gray-300 focus:outline-0"
+      type="button"
+    >
+      <div
+        aria-label="transparent"
+        aria-roledescription="color swatch"
+        class="h-full w-full"
+        id="react-aria-:r0:"
+        role="img"
+        style="background-color: rgba(255, 255, 255, 0);"
+      />
+    </button>
+  </div>
+</DocumentFragment>
+`;

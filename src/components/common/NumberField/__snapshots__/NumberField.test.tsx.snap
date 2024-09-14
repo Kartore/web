@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: NumberField > Snapshot > Default 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row items-center justify-between"
+  >
+    <label
+      class="text-sm font-semibold text-gray-600"
+    />
+    <div
+      class="w-1/2"
+      role="group"
+    >
+      <input
+        aria-roledescription="Number field"
+        autocomplete="off"
+        autocorrect="off"
+        class="w-full rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0"
+        id="react-aria-:r0:"
+        inputmode="numeric"
+        spellcheck="false"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

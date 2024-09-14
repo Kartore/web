@@ -32,7 +32,7 @@ export const TextField: FC<TextFieldProps> = ({ className, label, ...props }) =>
         {...inputProps}
         ref={ref}
         className={cn(
-          'rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0',
+          'w-1/2 rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0',
           inputProps.className
         )}
       />

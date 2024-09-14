@@ -59,7 +59,7 @@ export const GeneralProperties: FC<GeneralPropertiesProps> = ({
         </Select>
       ) : null}
       <RangeSlider
-        label={'Zoom Level Range'}
+        label={'Zoom Range'}
         minValue={0}
         maxValue={24}
         step={1}

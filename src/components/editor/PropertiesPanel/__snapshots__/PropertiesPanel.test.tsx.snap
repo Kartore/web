@@ -6,7 +6,7 @@ exports[`Component: PropertiesPanel > Snapshot > Default 1`] = `
     class="pointer-events-auto overflow-y-auto rounded-lg border border-gray-300 bg-white py-4"
   >
     <div
-      class="flex flex-col gap-2"
+      class="flex flex-col gap-6"
     >
       <div
         class="flex flex-col gap-2 px-4"
@@ -29,7 +29,7 @@ exports[`Component: PropertiesPanel > Snapshot > Default 1`] = `
               class="text-sm font-semibold text-gray-600"
               id="react-aria-:r1:"
             >
-              Zoom Level Range
+              Zoom Range
             </label>
             <output
               aria-live="off"
@@ -93,6 +93,146 @@ exports[`Component: PropertiesPanel > Snapshot > Default 1`] = `
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-2 px-4"
+      >
+        <h3
+          class="font-montserrat text-sm font-semibold"
+        >
+          Paint
+        </h3>
+        <div
+          class="flex flex-row items-center justify-between"
+        >
+          <label
+            class="text-sm font-semibold text-gray-600"
+            for="react-aria-:r9:"
+            id="react-aria-:rb:"
+          >
+            Opacity
+          </label>
+          <div
+            class="w-1/2"
+            role="group"
+          >
+            <input
+              aria-labelledby="react-aria-:rb:"
+              aria-roledescription="Number field"
+              autocomplete="off"
+              autocorrect="off"
+              class="w-full rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0"
+              id="react-aria-:r9:"
+              inputmode="numeric"
+              spellcheck="false"
+              type="text"
+              value="100%"
+            />
+          </div>
+        </div>
+        <div
+          class="flex flex-row items-center justify-between"
+        >
+          <label
+            class="text-sm font-semibold text-gray-600"
+            for="react-aria-:rh:"
+            id="react-aria-:rj:"
+          >
+            Color
+          </label>
+          <div
+            class="flex w-1/2 flex-row items-center gap-2 rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0"
+          >
+            <div
+              class="h-4 w-4"
+            >
+              <button
+                class="cursor-pointer transition-colors hover:bg-gray-100 active:bg-gray-300 h-full w-full border border-gray-300 focus:outline-0"
+                type="button"
+              >
+                <div
+                  aria-label="very light gray"
+                  aria-roledescription="color swatch"
+                  class="h-full w-full"
+                  id="react-aria-:rv:"
+                  role="img"
+                  style="background-color: rgba(239, 239, 239, 1);"
+                />
+              </button>
+            </div>
+            <input
+              aria-labelledby="react-aria-:rj:"
+              autocomplete="off"
+              autocorrect="off"
+              class="min-w-10 flex-2 border-none focus-visible:outline-0"
+              id="react-aria-:rh:"
+              role="textbox"
+              spellcheck="false"
+              type="text"
+              value="#EFEFEF"
+            />
+            <input
+              aria-labelledby="react-aria-:rp:"
+              aria-roledescription="Number field"
+              autocomplete="off"
+              autocorrect="off"
+              class="min-w-8 flex-1 border-none focus-visible:outline-0"
+              id="react-aria-:rn:"
+              inputmode="numeric"
+              spellcheck="false"
+              type="text"
+              value="100%"
+            />
+          </div>
+        </div>
+        <div
+          class="flex items-center justify-between text-sm"
+        >
+          <div
+            class="font-semibold text-gray-600"
+            for="react-aria-:r12:"
+            id="react-aria-:r13:"
+          >
+            Pattern
+          </div>
+          <div
+            aria-expanded="false"
+            class="flex w-1/2 cursor-pointer flex-row rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-expanded:bg-gray-200"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-labelledby="react-aria-:r13:"
+              autocomplete="off"
+              autocorrect="off"
+              class="w-full flex-1 border-none focus-visible:outline-0"
+              id="react-aria-:r12:"
+              role="combobox"
+              spellcheck="false"
+              type="text"
+              value=""
+            />
+            <button
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-label="Show suggestions"
+              aria-labelledby="react-aria-:r10: react-aria-:r13:"
+              class="cursor-pointer"
+              id="react-aria-:r10:"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-4"
+                viewBox="0 -960 960 960"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M480-360 280-560h400L480-360Z"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

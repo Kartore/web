@@ -3,7 +3,7 @@
 exports[`Component: FillLayerPropertiesPanel > Snapshot > Default 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col gap-2"
+    class="flex flex-col gap-6"
   >
     <div
       class="flex flex-col gap-2 px-4"
@@ -14,10 +14,10 @@ exports[`Component: FillLayerPropertiesPanel > Snapshot > Default 1`] = `
         General
       </h3>
       <div
-        class="flex items-center justify-between"
+        class="flex items-center justify-between text-sm"
       >
         <div
-          class="text-sm font-semibold text-gray-600"
+          class="font-semibold text-gray-600"
           id="react-aria-:r3:"
         >
           Source
@@ -57,11 +57,12 @@ exports[`Component: FillLayerPropertiesPanel > Snapshot > Default 1`] = `
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="react-aria-:r7: react-aria-:r3:"
-          class="flex h-7 cursor-pointer flex-row items-center gap-1 rounded pl-1.5 text-sm hover:bg-gray-100 aria-expanded:bg-gray-200"
+          class="cursor-pointer active:bg-gray-300 flex w-1/2 flex-row items-center justify-between rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-expanded:bg-gray-200"
           id="react-aria-:r2:"
           type="button"
         >
           <p
+            class="flex-1 overflow-hidden text-ellipsis text-start"
             id="react-aria-:r7:"
           >
             openmaptiles
@@ -79,10 +80,10 @@ exports[`Component: FillLayerPropertiesPanel > Snapshot > Default 1`] = `
         </button>
       </div>
       <div
-        class="flex items-center justify-between"
+        class="flex items-center justify-between text-sm"
       >
         <div
-          class="text-sm font-semibold text-gray-600"
+          class="font-semibold text-gray-600"
           id="react-aria-:rb:"
         >
           Source Layer
@@ -112,15 +113,14 @@ exports[`Component: FillLayerPropertiesPanel > Snapshot > Default 1`] = `
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="react-aria-:rf: react-aria-:rb:"
-          class="flex h-7 cursor-pointer flex-row items-center gap-1 rounded pl-1.5 text-sm hover:bg-gray-100 aria-expanded:bg-gray-200"
+          class="cursor-pointer active:bg-gray-300 flex w-1/2 flex-row items-center justify-between rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-expanded:bg-gray-200"
           id="react-aria-:ra:"
           type="button"
         >
           <p
+            class="flex-1 overflow-hidden text-ellipsis text-start"
             id="react-aria-:rf:"
-          >
-            Select an option
-          </p>
+          />
           <svg
             aria-hidden="true"
             class="w-4"
@@ -146,7 +146,7 @@ exports[`Component: FillLayerPropertiesPanel > Snapshot > Default 1`] = `
             class="text-sm font-semibold text-gray-600"
             id="react-aria-:rh:"
           >
-            Zoom Level Range
+            Zoom Range
           </label>
           <output
             aria-live="off"
@@ -210,6 +210,362 @@ exports[`Component: FillLayerPropertiesPanel > Snapshot > Default 1`] = `
               />
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col gap-2 px-4"
+    >
+      <h3
+        class="font-montserrat text-sm font-semibold"
+      >
+        Paint
+      </h3>
+      <div
+        class="flex flex-row items-center justify-between"
+      >
+        <label
+          class="text-sm font-semibold text-gray-600"
+          for="react-aria-:rp:"
+          id="react-aria-:rr:"
+        >
+          Opacity
+        </label>
+        <div
+          class="w-1/2"
+          role="group"
+        >
+          <input
+            aria-labelledby="react-aria-:rr:"
+            aria-roledescription="Number field"
+            autocomplete="off"
+            autocorrect="off"
+            class="w-full rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0"
+            id="react-aria-:rp:"
+            inputmode="numeric"
+            spellcheck="false"
+            type="text"
+            value="40%"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-row items-center justify-between"
+      >
+        <label
+          class="text-sm font-semibold text-gray-600"
+          for="react-aria-:r11:"
+          id="react-aria-:r13:"
+        >
+          Fill Color
+        </label>
+        <div
+          class="flex w-1/2 flex-row items-center gap-2 rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0"
+        >
+          <div
+            class="h-4 w-4"
+          >
+            <button
+              class="cursor-pointer transition-colors hover:bg-gray-100 active:bg-gray-300 h-full w-full border border-gray-300 focus:outline-0"
+              type="button"
+            >
+              <div
+                aria-label="very light yellow green, 30% transparent"
+                aria-roledescription="color swatch"
+                class="h-full w-full"
+                id="react-aria-:r1f:"
+                role="img"
+                style="background-color: hsla(98, 61%, 72%, 0.7);"
+              />
+            </button>
+          </div>
+          <input
+            aria-labelledby="react-aria-:r13:"
+            autocomplete="off"
+            autocorrect="off"
+            class="min-w-10 flex-2 border-none focus-visible:outline-0"
+            id="react-aria-:r11:"
+            role="textbox"
+            spellcheck="false"
+            type="text"
+            value="#ACE38C"
+          />
+          <input
+            aria-labelledby="react-aria-:r19:"
+            aria-roledescription="Number field"
+            autocomplete="off"
+            autocorrect="off"
+            class="min-w-8 flex-1 border-none focus-visible:outline-0"
+            id="react-aria-:r17:"
+            inputmode="numeric"
+            spellcheck="false"
+            type="text"
+            value="70%"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-row items-center justify-between"
+      >
+        <label
+          class="text-sm font-semibold text-gray-600"
+        >
+          Antialias
+        </label>
+        <label
+          class="cursor-pointer"
+        >
+          <p
+            class="sr-only"
+          >
+            Antialias
+          </p>
+          <div
+            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          >
+            <input
+              role="switch"
+              type="checkbox"
+            />
+          </div>
+          <svg
+            aria-hidden="true"
+            height="24"
+            style="margin-right: 4px;"
+            width="40"
+          >
+            <rect
+              fill="gray"
+              height="16"
+              rx="8"
+              width="32"
+              x="4"
+              y="4"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              fill="white"
+              r="5"
+            />
+          </svg>
+        </label>
+      </div>
+      <div
+        class="flex flex-row items-center justify-between"
+      >
+        <label
+          class="text-sm font-semibold text-gray-600"
+          for="react-aria-:r1g:"
+          id="react-aria-:r1i:"
+        >
+          Outline Color
+        </label>
+        <div
+          class="flex w-1/2 flex-row items-center gap-2 rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0"
+        >
+          <div
+            class="h-4 w-4"
+          >
+            <button
+              class="cursor-pointer transition-colors hover:bg-gray-100 active:bg-gray-300 h-full w-full border border-gray-300 focus:outline-0"
+              type="button"
+            >
+              <div
+                aria-label="white"
+                aria-roledescription="color swatch"
+                class="h-full w-full"
+                id="react-aria-:r1u:"
+                role="img"
+                style="background-color: rgba(255, 255, 255, 1);"
+              />
+            </button>
+          </div>
+          <input
+            aria-labelledby="react-aria-:r1i:"
+            autocomplete="off"
+            autocorrect="off"
+            class="min-w-10 flex-2 border-none focus-visible:outline-0"
+            id="react-aria-:r1g:"
+            role="textbox"
+            spellcheck="false"
+            type="text"
+            value="#FFFFFF"
+          />
+          <input
+            aria-labelledby="react-aria-:r1o:"
+            aria-roledescription="Number field"
+            autocomplete="off"
+            autocorrect="off"
+            class="min-w-8 flex-1 border-none focus-visible:outline-0"
+            id="react-aria-:r1m:"
+            inputmode="numeric"
+            spellcheck="false"
+            type="text"
+            value="100%"
+          />
+        </div>
+      </div>
+       
+      <div
+        class="flex items-center justify-between text-sm"
+      >
+        <div
+          class="font-semibold text-gray-600"
+          for="react-aria-:r21:"
+          id="react-aria-:r22:"
+        >
+          Pattern
+        </div>
+        <div
+          aria-expanded="false"
+          class="flex w-1/2 cursor-pointer flex-row rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-expanded:bg-gray-200"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-expanded="false"
+            aria-labelledby="react-aria-:r22:"
+            autocomplete="off"
+            autocorrect="off"
+            class="w-full flex-1 border-none focus-visible:outline-0"
+            id="react-aria-:r21:"
+            role="combobox"
+            spellcheck="false"
+            type="text"
+            value=""
+          />
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Show suggestions"
+            aria-labelledby="react-aria-:r1v: react-aria-:r22:"
+            class="cursor-pointer"
+            id="react-aria-:r1v:"
+          >
+            <svg
+              aria-hidden="true"
+              class="w-4"
+              viewBox="0 -960 960 960"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M480-360 280-560h400L480-360Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="flex flex-row items-center justify-between"
+      >
+        <label
+          class="text-sm font-semibold text-gray-600"
+        >
+          Translate
+        </label>
+        <div
+          class="flex w-1/2 flex-row gap-1"
+        >
+          <div
+            class="flex flex-row items-center justify-between gap-2 rounded bg-gray-100 py-0.5 px-2"
+          >
+            <label
+              class="text-sm font-semibold text-gray-500"
+              for="react-aria-:r28:"
+              id="react-aria-:r2a:"
+            >
+              X
+            </label>
+            <div
+              class="w-full"
+              role="group"
+            >
+              <input
+                aria-labelledby="react-aria-:r2a:"
+                aria-roledescription="Number field"
+                autocomplete="off"
+                autocorrect="off"
+                class="w-full rounded border-none py-0.5 px-1 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0"
+                id="react-aria-:r28:"
+                inputmode="numeric"
+                spellcheck="false"
+                type="text"
+                value="0"
+              />
+            </div>
+          </div>
+          <div
+            class="flex flex-row items-center justify-between gap-2 rounded bg-gray-100 py-0.5 px-2"
+          >
+            <label
+              class="text-sm font-semibold text-gray-500"
+              for="react-aria-:r2g:"
+              id="react-aria-:r2i:"
+            >
+              Y
+            </label>
+            <div
+              class="w-full"
+              role="group"
+            >
+              <input
+                aria-labelledby="react-aria-:r2i:"
+                aria-roledescription="Number field"
+                autocomplete="off"
+                autocorrect="off"
+                class="w-full rounded border-none py-0.5 px-1 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0"
+                id="react-aria-:r2g:"
+                inputmode="numeric"
+                spellcheck="false"
+                type="text"
+                value="0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-labelledby="react-aria-:r2p:"
+        aria-orientation="vertical"
+        class="flex items-center justify-between text-sm"
+        id="react-aria-:r2o:"
+        role="radiogroup"
+      >
+        <span
+          class="font-semibold text-gray-600"
+          id="react-aria-:r2p:"
+        >
+          Translate Anchor
+        </span>
+        <div
+          class="flex w-1/2 flex-row items-center justify-end gap-1"
+        >
+          <label
+            aria-checked="true"
+            class="block cursor-pointer rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-checked:bg-gray-300"
+          >
+            <input
+              class="sr-only"
+              name="react-aria-:r2t:"
+              tabindex="0"
+              type="radio"
+              value="map"
+            />
+            Map
+          </label>
+          <label
+            aria-checked="false"
+            class="block cursor-pointer rounded border-none bg-gray-100 py-1 px-2 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-checked:bg-gray-300"
+          >
+            <input
+              class="sr-only"
+              name="react-aria-:r2t:"
+              tabindex="-1"
+              type="radio"
+              value="viewport"
+            />
+            Viewport
+          </label>
         </div>
       </div>
     </div>
