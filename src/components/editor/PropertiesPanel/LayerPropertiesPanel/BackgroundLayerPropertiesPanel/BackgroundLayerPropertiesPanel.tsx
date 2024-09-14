@@ -2,7 +2,9 @@ import type { ComponentProps, FC } from 'react';
 
 import type { BackgroundLayerSpecification } from '@maplibre/maplibre-gl-style-spec';
 
+import { NumberField } from '~/components/common/NumberField';
 import { RangeSlider } from '~/components/common/RangeSlider';
+import { TextField } from '~/components/common/TextField';
 import { RawDataProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties';
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { cn } from '~/utils/tailwindUtil.ts';
@@ -38,6 +40,32 @@ export const BackgroundLayerPropertiesPanel: FC<BackgroundLayerPropertiesPanelPr
             }
           }}
         />
+      </div>
+      <div className={'flex flex-col gap-2 px-4'}>
+        <h3 className={'font-montserrat text-sm font-semibold'}>Paint</h3>
+        {typeof layer.paint?.['background-opacity'] === 'number' ||
+        layer.paint?.['background-opacity'] === undefined ? (
+          <NumberField
+            label={'Opacity'}
+            onChange={(value) => {
+              onChange?.(layer, 'paint', 'background-opacity', value === 1 ? undefined : value);
+            }}
+            value={
+              layer.paint?.['background-opacity'] !== undefined
+                ? layer.paint['background-opacity']
+                : 1
+            }
+          />
+        ) : (
+          <TextField
+            label={'Opacity'}
+            value={
+              layer.paint?.['background-opacity']
+                ? String(layer.paint?.['background-opacity'])
+                : '1'
+            }
+          />
+        )}
       </div>
       <RawDataProperties layer={layer} />
       {children}
