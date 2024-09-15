@@ -172,7 +172,7 @@ export function replaceLayerData<
       if (currentLayer.id === layer.id) {
         if (group) {
           if (group === 'all') {
-            return value;
+            return value as LayerSpecification;
           } else {
             //@ts-expect-error ObjectGroupによって担保される
             if (currentLayer[group] != null) {

@@ -157,6 +157,28 @@ exports[`Component: CircleLayerPropertiesPanel > Snapshot > Default 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="flex flex-col gap-2 px-4"
+    >
+      <h3
+        class="font-montserrat text-sm font-semibold"
+      >
+        Raw Data Editor (Advanced)
+      </h3>
+      <section
+        style="display: flex; position: relative; text-align: initial; width: 100%; height: 100%;"
+      >
+        <div
+          style="display: flex; height: 100%; width: 100%; justify-content: center; align-items: center;"
+        >
+          Loading...
+        </div>
+        <div
+          class="min-h-40"
+          style="width: 100%; display: none;"
+        />
+      </section>
+    </div>
   </div>
 </DocumentFragment>
 `;

@@ -7,6 +7,7 @@ import type {
 
 import { GeneralProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/GeneralProperties';
 import { RawDataProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties';
+import { getStyleJSONSchemaDefinition } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties/schema/StyleJSONSchemaBase.ts';
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { cn } from '~/utils/tailwindUtil.ts';
 
@@ -27,7 +28,11 @@ export const RasterLayerPropertiesPanel: FC<RasterLayerPropertiesPanelProps> = (
   return (
     <div {...props} className={cn('flex flex-col gap-6', className)}>
       <GeneralProperties layer={layer} sources={sources} onChange={onChange} />
-      <RawDataProperties layer={layer} onChange={onChange} />
+      <RawDataProperties
+        layer={layer}
+        onChange={onChange}
+        schema={getStyleJSONSchemaDefinition('RasterLayerSpecification')}
+      />
       {children}
     </div>
   );

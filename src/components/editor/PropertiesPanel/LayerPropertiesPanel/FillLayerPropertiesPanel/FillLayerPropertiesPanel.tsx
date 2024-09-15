@@ -15,8 +15,10 @@ import { NumberArrayField } from '~/components/common/NumberArrayField';
 import { NumberField } from '~/components/common/NumberField';
 import { Switch } from '~/components/common/Switch';
 import { TextField } from '~/components/common/TextField';
+import { FilterProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/FilterProperties';
 import { GeneralProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/GeneralProperties';
 import { RawDataProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties';
+import { getStyleJSONSchemaDefinition } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties/schema/StyleJSONSchemaBase.ts';
 import { useSpriteIds } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/hooks/useSpriteIds/useSpriteIds.ts';
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { cn } from '~/utils/tailwindUtil.ts';
@@ -41,6 +43,7 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
   return (
     <div {...props} className={cn('flex flex-col gap-6', className)}>
       <GeneralProperties layer={layer} sources={sources} onChange={onChange} />
+      <FilterProperties layer={layer} onChange={onChange} />
       <div className={'flex flex-col gap-2 px-4'}>
         <h3 className={'font-montserrat text-sm font-semibold'}>Paint</h3>
         {typeof layer.paint?.['fill-opacity'] === 'number' ||
@@ -211,7 +214,11 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
           />
         )}
       </div>
-      <RawDataProperties layer={layer} onChange={onChange} />
+      <RawDataProperties
+        layer={layer}
+        onChange={onChange}
+        schema={getStyleJSONSchemaDefinition('FillLayerSpecification')}
+      />
       {children}
     </div>
   );

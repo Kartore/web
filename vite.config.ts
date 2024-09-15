@@ -28,6 +28,12 @@ export default defineConfig({
     clearMocks: true,
     testTimeout: 50000,
     setupFiles: '.vitest/setup.ts',
+    alias: [
+      {
+        find: /^monaco-editor$/,
+        replacement: __dirname + '/node_modules/monaco-editor/esm/vs/editor/editor.api',
+      },
+    ],
     coverage: {
       provider: 'v8',
       reportOnFailure: true,

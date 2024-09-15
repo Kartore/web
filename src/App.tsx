@@ -52,7 +52,7 @@ function App() {
           <ControlPanel className={'flex-1'} />
 
           <PropertiesPanel
-            className={'w-1/5'}
+            className={'w-2/5'}
             sprite={mapStyle.sprite}
             layer={selectedLayer}
             sources={mapStyle.sources}
