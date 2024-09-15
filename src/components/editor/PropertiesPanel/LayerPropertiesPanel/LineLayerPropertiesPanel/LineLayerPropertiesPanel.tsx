@@ -24,7 +24,7 @@ export const LineLayerPropertiesPanel: FC<LineLayerPropertiesPanelProps> = ({
   return (
     <div {...props} className={cn('flex flex-col gap-6', className)}>
       <GeneralProperties layer={layer} sources={sources} onChange={onChange} />
-      <RawDataProperties layer={layer} />
+      <RawDataProperties layer={layer} onChange={onChange} />
       {children}
     </div>
   );

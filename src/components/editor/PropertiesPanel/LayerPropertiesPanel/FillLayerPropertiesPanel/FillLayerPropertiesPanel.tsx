@@ -211,7 +211,7 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
           />
         )}
       </div>
-      <RawDataProperties layer={layer} />
+      <RawDataProperties layer={layer} onChange={onChange} />
       {children}
     </div>
   );

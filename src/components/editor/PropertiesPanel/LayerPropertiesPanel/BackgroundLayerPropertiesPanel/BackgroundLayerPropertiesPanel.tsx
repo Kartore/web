@@ -139,7 +139,7 @@ export const BackgroundLayerPropertiesPanel: FC<BackgroundLayerPropertiesPanelPr
           />
         )}
       </div>
-      <RawDataProperties layer={layer} />
+      <RawDataProperties layer={layer} onChange={onChange} />
       {children}
     </div>
   );

@@ -112,7 +112,7 @@ export const isFillExtrusionLayer = (
   return layer.type === 'fill-extrusion';
 };
 
-type ObjectGroup = 'paint' | 'layout' | 'metadata' | undefined;
+type ObjectGroup = 'paint' | 'layout' | 'metadata' | 'all' | undefined;
 
 type ObjectKey<L extends LayerSpecification, G extends ObjectGroup> = G extends 'metadata'
   ? PropertyKey
@@ -120,11 +120,13 @@ type ObjectKey<L extends LayerSpecification, G extends ObjectGroup> = G extends 
     ? keyof {
         [K in keyof Omit<L, 'paint' | 'layout' | 'metadata'>]: '';
       }
-    : G extends keyof L
-      ? L[G] extends undefined
-        ? never
-        : keyof Exclude<L[G], undefined>
-      : never;
+    : G extends 'all'
+      ? undefined
+      : G extends keyof L
+        ? L[G] extends undefined
+          ? never
+          : keyof Exclude<L[G], undefined>
+        : never;
 
 type ObjectValue<
   L extends LayerSpecification,
@@ -132,17 +134,19 @@ type ObjectValue<
   K extends ObjectKey<L, G>,
 > = G extends 'metadata'
   ? string | number | boolean | null | undefined
-  : G extends undefined
-    ? K extends keyof L
-      ? L[K]
-      : never
-    : G extends keyof L
-      ? L[G] extends undefined
-        ? never
-        : K extends keyof Exclude<L[G], undefined>
-          ? Exclude<L[G], undefined>[K]
-          : never
-      : never;
+  : G extends 'all'
+    ? LayerSpecification
+    : G extends undefined
+      ? K extends keyof L
+        ? L[K]
+        : never
+      : G extends keyof L
+        ? L[G] extends undefined
+          ? never
+          : K extends keyof Exclude<L[G], undefined>
+            ? Exclude<L[G], undefined>[K]
+            : never
+        : never;
 
 export type onChangeType = <
   L extends LayerSpecification,
@@ -167,9 +171,14 @@ export function replaceLayerData<
     layers: style.layers.map((currentLayer) => {
       if (currentLayer.id === layer.id) {
         if (group) {
-          if (currentLayer[group] != null) {
-            //@ts-expect-error ObjectKey/ObjectGroupによって担保される
-            currentLayer[group][key] = value;
+          if (group === 'all') {
+            return value;
+          } else {
+            //@ts-expect-error ObjectGroupによって担保される
+            if (currentLayer[group] != null) {
+              //@ts-expect-error ObjectKey/ObjectGroupによって担保される
+              currentLayer[group][key] = value;
+            }
           }
         } else {
           //@ts-expect-error ObjectKeyによって担保される
