@@ -6,6 +6,8 @@ import type {
 } from '@maplibre/maplibre-gl-style-spec';
 
 import { GeneralProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/GeneralProperties';
+import { RawDataProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties';
+import { getStyleJSONSchemaDefinition } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties/schema/StyleJSONSchemaBase.ts';
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { cn } from '~/utils/tailwindUtil.ts';
 
@@ -26,6 +28,11 @@ export const CircleLayerPropertiesPanel: FC<CircleLayerPropertiesPanelProps> = (
   return (
     <div {...props} className={cn('flex flex-col gap-6', className)}>
       <GeneralProperties layer={layer} sources={sources} onChange={onChange} />
+      <RawDataProperties
+        layer={layer}
+        onChange={onChange}
+        schema={getStyleJSONSchemaDefinition('CircleLayerSpecification')}
+      />
       {children}
     </div>
   );

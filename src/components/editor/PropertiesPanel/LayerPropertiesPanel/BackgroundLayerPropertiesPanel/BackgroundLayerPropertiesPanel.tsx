@@ -13,6 +13,7 @@ import { NumberField } from '~/components/common/NumberField';
 import { RangeSlider } from '~/components/common/RangeSlider';
 import { TextField } from '~/components/common/TextField';
 import { RawDataProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties';
+import { getStyleJSONSchemaDefinition } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties/schema/StyleJSONSchemaBase.ts';
 import { useSpriteIds } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/hooks/useSpriteIds/useSpriteIds.ts';
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { cn } from '~/utils/tailwindUtil.ts';
@@ -139,7 +140,11 @@ export const BackgroundLayerPropertiesPanel: FC<BackgroundLayerPropertiesPanelPr
           />
         )}
       </div>
-      <RawDataProperties layer={layer} />
+      <RawDataProperties
+        layer={layer}
+        onChange={onChange}
+        schema={getStyleJSONSchemaDefinition('BackgroundLayerSpecification')}
+      />
       {children}
     </div>
   );
