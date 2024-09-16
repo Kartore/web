@@ -1,6 +1,7 @@
 // Original: https://github.com/maputnik/osm-liberty
 // 他所にリクエストが飛ばないように全てforkして配置
 
+import { migrate } from '@maplibre/maplibre-gl-style-spec';
 import type { StyleSpecification } from 'maplibre-gl';
 
 export const osmLiberty = {
@@ -2097,3 +2098,5 @@ export const osmLiberty = {
   ],
   id: 'osm-liberty',
 } as StyleSpecification;
+
+export const osmLibertyMigrated = migrate(osmLiberty);

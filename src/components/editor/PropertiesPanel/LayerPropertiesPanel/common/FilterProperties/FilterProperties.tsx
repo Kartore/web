@@ -5,7 +5,9 @@ import type {
   LayerSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
 
+import { FilterInputField } from '~/components/common/FilterInputField';
 import { MonacoEditor } from '~/components/common/MonacoEditor';
+import { isExpressionFilter } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/FilterProperties/utils/isExpressionFilter.ts';
 import { getStyleJSONSchemaDefinition } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties/schema/StyleJSONSchemaBase.ts';
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { cn } from '~/utils/tailwindUtil.ts';
@@ -25,38 +27,49 @@ export const FilterProperties: FC<FilterPropertiesProps> = ({
   return (
     <div {...props} className={cn('flex flex-col gap-2 px-4', className)}>
       <h3 className={'font-montserrat text-sm font-semibold'}>Filter</h3>
-      <MonacoEditor
-        className={cn('min-h-16', className)}
-        value={JSON.stringify({ filter: layer.filter ? layer.filter : [] }, undefined, 2)}
-        onChange={(value) => {
-          if (onChange && value) {
-            const filterValue = JSON.parse(value).filter;
-            onChange(
-              layer,
-              undefined,
-              'filter',
-              filterValue.length === 0 ? undefined : filterValue
-            );
-          }
-        }}
-        onMount={(_, monaco) => {
-          monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
-            validate: true,
-            schemas: [
-              {
-                fileMatch: ['*'],
-                uri: 'kartore://FilterSpecification.json',
-                schema: {
-                  type: 'object',
-                  properties: {
-                    filter: getStyleJSONSchemaDefinition('FilterSpecification'),
-                  },
-                },
-              },
-            ],
-          });
-        }}
-      />
+      {isExpressionFilter(layer.filter) ? (
+        <FilterInputField
+          value={layer.filter}
+          onChange={(value) => onChange && onChange(layer, undefined, 'filter', value)}
+        />
+      ) : (
+        <summary>
+          <details>
+            <MonacoEditor
+              className={cn('min-h-16', className)}
+              value={JSON.stringify({ filter: layer.filter ? layer.filter : [] }, undefined, 2)}
+              onChange={(value) => {
+                if (onChange && value) {
+                  const filterValue = JSON.parse(value).filter;
+                  onChange(
+                    layer,
+                    undefined,
+                    'filter',
+                    filterValue.length === 0 ? undefined : filterValue
+                  );
+                }
+              }}
+              onMount={(_, monaco) => {
+                monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+                  validate: true,
+                  schemas: [
+                    {
+                      fileMatch: ['*'],
+                      uri: 'kartore://FilterSpecification.json',
+                      schema: {
+                        type: 'object',
+                        properties: {
+                          filter: getStyleJSONSchemaDefinition('FilterSpecification'),
+                        },
+                      },
+                    },
+                  ],
+                });
+              }}
+            />
+          </details>
+        </summary>
+      )}
       {children}
     </div>
   );
