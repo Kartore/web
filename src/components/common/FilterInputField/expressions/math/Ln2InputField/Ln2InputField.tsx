@@ -9,9 +9,22 @@ export type Ln2InputFieldProps = {
   onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 
-export const Ln2InputField: FC<Ln2InputFieldProps> = ({ className, children, ...props }) => {
+export const Ln2InputField: FC<Ln2InputFieldProps> = ({
+  className,
+  children,
+  value,
+  onChange,
+  ...props
+}) => {
   return (
-    <div {...props} className={cn('', className)}>
+    <div
+      {...props}
+      className={cn(
+        'flex flex-row flex-wrap items-center gap-2 rounded bg-black/5 py-0.5 px-0.5',
+        className
+      )}
+    >
+      <div className={'flex flex-row py-0.5 px-0.5'}>ln(2)</div>
       {children}
     </div>
   );
