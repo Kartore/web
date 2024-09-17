@@ -5,7 +5,7 @@ import type { ExpressionInputType } from '@maplibre/maplibre-gl-style-spec';
 import { cn } from '~/utils/tailwindUtil.ts';
 
 export type ExpressionInputTypeInputFieldProps = {
-  value: ExpressionInputType;
+  value: ExpressionInputType | unknown;
   onChange?: (value: ExpressionInputType) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 
@@ -22,7 +22,9 @@ export const ExpressionInputTypeInputField: FC<ExpressionInputTypeInputFieldProp
         ? '"' + value + '"'
         : typeof value === 'number'
           ? value
-          : value.toString()}
+          : typeof value === 'boolean'
+            ? value.toString()
+            : JSON.stringify(value)}
       {children}
     </div>
   );
