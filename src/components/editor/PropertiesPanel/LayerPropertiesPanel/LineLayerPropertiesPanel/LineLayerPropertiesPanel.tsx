@@ -2,6 +2,7 @@ import type { ComponentProps, FC } from 'react';
 
 import type { LineLayerSpecification, SourceSpecification } from '@maplibre/maplibre-gl-style-spec';
 
+import { FilterProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/FilterProperties';
 import { GeneralProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/GeneralProperties';
 import { RawDataProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties';
 import { getStyleJSONSchemaDefinition } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/RawDataProperties/schema/StyleJSONSchemaBase.ts';
@@ -25,6 +26,7 @@ export const LineLayerPropertiesPanel: FC<LineLayerPropertiesPanelProps> = ({
   return (
     <div {...props} className={cn('flex flex-col gap-6', className)}>
       <GeneralProperties layer={layer} sources={sources} onChange={onChange} />
+      <FilterProperties layer={layer} onChange={onChange} />
       <RawDataProperties
         layer={layer}
         onChange={onChange}

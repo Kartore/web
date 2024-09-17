@@ -10,16 +10,16 @@ import { NavigationPanel } from '~/components/editor/NavigationPanel/NavigationP
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { replaceLayerData } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { PropertiesPanel } from '~/components/editor/PropertiesPanel/PropertiesPanel.tsx';
-import { osmLiberty } from '~/samples/osm-liberty.ts';
+import { osmLibertyMigrated } from '~/samples/osm-liberty.ts';
 
 function App() {
   const [mapStyle, setMapStyle] = useLocalStorage<StyleSpecification>(
     'kartore:style',
-    osmLiberty,
+    osmLibertyMigrated,
     {}
   );
 
-  const [selectedLayerId, setSelectedLayerId] = useState<string>(mapStyle.layers[0].id);
+  const [selectedLayerId, setSelectedLayerId] = useState<string>(mapStyle.layers[4].id);
   const selectedLayer =
     mapStyle.layers.find((layer) => layer.id === selectedLayerId) ?? mapStyle.layers[0];
   const handleChangeLayerOrder = (layer: LayerSpecification[]) => {
