@@ -26,7 +26,7 @@
     "@monaco-editor/react": "4.6.0",
     "@react-aria/color": "3.0.0-rc.2",
     "@react-stately/color": "3.7.2",
-    "@shikijs/monaco": "1.17.6",
+    "@shikijs/monaco": "1.22.0",
     "@tanstack/react-query": "5.56.2",
     "maplibre-gl": "4.7.0",
     "monaco-editor": "0.51.0",
