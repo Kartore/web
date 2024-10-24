@@ -50,7 +50,7 @@
     "@storybook/react": "8.3.0",
     "@storybook/react-vite": "8.3.0",
     "@storybook/test": "8.3.0",
-    "@tailwindcss/vite": "4.0.0-alpha.23",
+    "@tailwindcss/vite": "4.0.0-alpha.29",
     "@testing-library/react": "16.0.1",
     "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
