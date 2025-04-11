@@ -86,5 +86,5 @@
     "vite": "5.4.5",
     "vitest": "2.1.1"
   },
-  "packageManager": "pnpm@9.0.6+sha256.0624e30eff866cdeb363b15061bdb7fd9425b17bc1bb42c22f5f4efdea21f6b3"
+  "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
 }
