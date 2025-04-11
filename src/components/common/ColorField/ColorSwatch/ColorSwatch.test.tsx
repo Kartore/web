@@ -7,10 +7,10 @@ import * as Stories from './ColorSwatch.stories.tsx';
 const { Default } = composeStories(Stories);
 
 describe('Component: ColorSwatch', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

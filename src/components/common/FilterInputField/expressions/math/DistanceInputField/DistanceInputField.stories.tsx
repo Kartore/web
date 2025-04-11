@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { DistanceInputField } from '.';
 
 const meta = {
-  component: DistanceInputField,
+	component: DistanceInputField,
 } satisfies Meta<typeof DistanceInputField>;
 
 export default meta;
@@ -11,5 +11,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+	args: {},
 };

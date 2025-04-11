@@ -7,10 +7,10 @@ import * as Stories from './ColorPicker.stories.tsx';
 const { Default } = composeStories(Stories);
 
 describe('Component: ColorPicker', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

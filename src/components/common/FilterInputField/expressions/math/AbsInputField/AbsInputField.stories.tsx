@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AbsInputField } from '.';
 
 const meta = {
-  component: AbsInputField,
+	component: AbsInputField,
 } satisfies Meta<typeof AbsInputField>;
 
 export default meta;
@@ -11,5 +11,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+	args: {},
 };

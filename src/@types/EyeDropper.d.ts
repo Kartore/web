@@ -1,19 +1,19 @@
 interface ColorSelectionOptions {
-  signal?: AbortSignal;
+	signal?: AbortSignal;
 }
 
 interface ColorSelectionResult {
-  sRGBHex: `#${string}`;
+	sRGBHex: `#${string}`;
 }
 
 interface EyeDropper {
-  open: (options?: ColorSelectionOptions) => Promise<ColorSelectionResult>;
+	open: (options?: ColorSelectionOptions) => Promise<ColorSelectionResult>;
 }
 
 interface EyeDropperConstructor {
-  new (): EyeDropper;
+	new (): EyeDropper;
 }
 
 interface Window {
-  EyeDropper?: EyeDropperConstructor | undefined;
+	EyeDropper?: EyeDropperConstructor | undefined;
 }

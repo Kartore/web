@@ -7,10 +7,10 @@ import * as Stories from './HeatmapLayerPropertiesPanel.stories.tsx';
 const { Default } = composeStories(Stories);
 
 describe('Component: HeatmapLayerPropertiesPanel', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

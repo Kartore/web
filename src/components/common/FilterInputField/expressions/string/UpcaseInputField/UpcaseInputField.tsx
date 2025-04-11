@@ -8,35 +8,35 @@ import { isExpression } from '~/components/common/FilterInputField/expressions/u
 import { cn } from '~/utils/tailwindUtil';
 
 export type UpcaseInputFieldProps = {
-  value: ['upcase', string | ExpressionSpecification];
-  onChange?: (value: ExpressionSpecification) => void;
+	value: ['upcase', string | ExpressionSpecification];
+	onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 
 export const UpcaseInputField: FC<UpcaseInputFieldProps> = ({
-  className,
-  children,
-  value,
-  onChange,
-  ...props
+	className,
+	children,
+	value,
+	onChange,
+	...props
 }) => {
-  const text = value[1];
-  return (
-    <div
-      {...props}
-      className={cn(
-        'flex flex-row flex-wrap items-center gap-2 rounded bg-black/5 py-0.5 px-0.5',
-        className
-      )}
-    >
-      {isExpression(text) ? (
-        <ExpressionInputField value={text} onChange={onChange} />
-      ) : (
-        <ExpressionInputTypeInputField value={text} />
-      )}
-      <div className={'flex flex-row py-0.5 px-0.5'}>to UPPERCASE</div>
+	const text = value[1];
+	return (
+		<div
+			{...props}
+			className={cn(
+				'flex flex-row flex-wrap items-center gap-2 rounded bg-black/5 px-0.5 py-0.5',
+				className,
+			)}
+		>
+			{isExpression(text) ? (
+				<ExpressionInputField value={text} onChange={onChange} />
+			) : (
+				<ExpressionInputTypeInputField value={text} />
+			)}
+			<div className={'flex flex-row px-0.5 py-0.5'}>to UPPERCASE</div>
 
-      {children}
-    </div>
-  );
+			{children}
+		</div>
+	);
 };
 UpcaseInputField.displayName = 'UpcaseInputField';

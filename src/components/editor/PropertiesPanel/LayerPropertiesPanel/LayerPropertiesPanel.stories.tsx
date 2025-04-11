@@ -5,7 +5,7 @@ import { BackgroundLayerSample } from '~/samples/LayerSample.ts';
 import { LayerPropertiesPanel } from './index.ts';
 
 const meta = {
-  component: LayerPropertiesPanel,
+	component: LayerPropertiesPanel,
 } satisfies Meta<typeof LayerPropertiesPanel>;
 
 export default meta;
@@ -13,8 +13,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    sources: {},
-    layer: BackgroundLayerSample,
-  },
+	args: {
+		sources: {},
+		layer: BackgroundLayerSample,
+	},
 };

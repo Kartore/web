@@ -7,10 +7,10 @@ import * as Stories from './ResolvedLocaleInputField.stories';
 const { Default } = composeStories(Stories);
 
 describe('Component: ResolvedLocaleInputField', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

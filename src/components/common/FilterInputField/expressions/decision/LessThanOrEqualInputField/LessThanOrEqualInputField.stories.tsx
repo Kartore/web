@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { LessThanOrEqualInputField } from '.';
 
 const meta = {
-  component: LessThanOrEqualInputField,
+	component: LessThanOrEqualInputField,
 } satisfies Meta<typeof LessThanOrEqualInputField>;
 
 export default meta;
@@ -11,5 +11,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+	args: {},
 };

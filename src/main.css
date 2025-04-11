@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
-body, html {
-    overscroll-behavior: none;
+body,
+html {
+	overscroll-behavior: none;
 }
 
 @theme {
-    --font-family-montserrat: "Montserrat", "sans-serif";
+	--font-family-montserrat: "Montserrat", "sans-serif";
 }
