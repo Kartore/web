@@ -1,9 +1,6 @@
 import type { ComponentProps, FC } from 'react';
 
-import type {
-	ExpressionSpecification,
-	InterpolationSpecification,
-} from '@maplibre/maplibre-gl-style-spec';
+import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { ExpressionInputTypeInputField } from '~/components/common/FilterInputField/expressions/common/ExpressionInputTypeInputField';
@@ -18,7 +15,7 @@ export type CubicBezierInputFieldProps = {
 		number | ExpressionSpecification,
 		number | ExpressionSpecification,
 	];
-	onChange?: (value: InterpolationSpecification) => void;
+	onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 
 export const CubicBezierInputField: FC<CubicBezierInputFieldProps> = ({

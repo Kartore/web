@@ -1,12 +1,12 @@
 import type { ComponentProps, FC } from 'react';
 
-import type { InterpolationSpecification } from '@maplibre/maplibre-gl-style-spec';
+import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 
 import { cn } from '~/utils/tailwindUtil';
 
 export type LinearInputFieldProps = {
 	value: ['linear'];
-	onChange?: (value: InterpolationSpecification) => void;
+	onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 
 export const LinearInputField: FC<LinearInputFieldProps> = ({

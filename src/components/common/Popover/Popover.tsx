@@ -9,7 +9,7 @@ import { cn } from '~/utils/tailwindUtil.ts';
 
 export type PopoverProps = Omit<AriaPopoverProps, 'popoverRef'> & {
 	children: ReactNode;
-	popoverRef?: RefObject<HTMLDivElement>;
+	popoverRef?: RefObject<HTMLDivElement | null>;
 	state: OverlayTriggerState;
 };
 

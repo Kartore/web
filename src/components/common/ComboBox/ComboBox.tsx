@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import { useComboBox, useFilter } from 'react-aria';
 import type { ComboBoxStateOptions } from 'react-stately';
 import { useComboBoxState } from 'react-stately';
-
 import { Popover } from '~/components/common/Popover';
 import { ListBox } from '~/components/common/Select/ListBox';
 import { ArrowDropDownIcon } from '~/components/icons';
@@ -22,10 +21,10 @@ export const ComboBox: FC<ComboBoxProps> = ({ className, ...props }) => {
 	});
 
 	// Setup refs and get props for child elements.
-	const buttonRef = useRef(null);
-	const inputRef = useRef(null);
-	const listBoxRef = useRef(null);
-	const popoverRef = useRef(null);
+	const buttonRef = useRef<HTMLButtonElement>(null);
+	const inputRef = useRef<HTMLInputElement>(null);
+	const listBoxRef = useRef<HTMLUListElement>(null);
+	const popoverRef = useRef<HTMLDivElement>(null);
 
 	const { buttonProps, inputProps, listBoxProps, labelProps } = useComboBox(
 		{

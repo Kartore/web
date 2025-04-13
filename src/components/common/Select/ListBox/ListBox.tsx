@@ -10,7 +10,7 @@ import { cn } from '~/utils/tailwindUtil.ts';
 
 export type ListBoxProps = AriaListBoxOptions<unknown> & {
 	state: ListState<unknown>;
-	listBoxRef?: RefObject<HTMLUListElement>;
+	listBoxRef?: RefObject<HTMLUListElement | null>;
 };
 
 export const ListBox: FC<ListBoxProps> = ({ ...props }) => {
