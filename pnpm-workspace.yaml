@@ -2,3 +2,5 @@ onlyBuiltDependencies:
   - '@biomejs/biome'
   - esbuild
   - msw
+  - sharp
+  - workerd
