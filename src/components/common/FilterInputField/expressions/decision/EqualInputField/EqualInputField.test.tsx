@@ -7,10 +7,10 @@ import * as Stories from './EqualInputField.stories';
 const { Default } = composeStories(Stories);
 
 describe('Component: EqualInputField', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

@@ -7,10 +7,10 @@ import * as Stories from './ObjectInputField.stories';
 const { Default } = composeStories(Stories);
 
 describe('Component: ObjectInputField', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

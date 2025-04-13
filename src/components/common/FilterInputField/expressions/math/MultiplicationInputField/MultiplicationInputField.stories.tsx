@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { MultiplicationInputField } from '.';
 
 const meta = {
-  component: MultiplicationInputField,
+	component: MultiplicationInputField,
 } satisfies Meta<typeof MultiplicationInputField>;
 
 export default meta;
@@ -11,5 +11,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+	args: {},
 };

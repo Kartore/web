@@ -1,9 +1,9 @@
 import type { ComponentProps, FC } from 'react';
 
 import type {
-  CollatorExpressionSpecification,
-  ExpressionInputType,
-  ExpressionSpecification,
+	CollatorExpressionSpecification,
+	ExpressionInputType,
+	ExpressionSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
@@ -12,45 +12,44 @@ import { isExpression } from '~/components/common/FilterInputField/expressions/u
 import { cn } from '~/utils/tailwindUtil';
 
 export type GreaterThanOrEqualInputFieldProps = {
-  value: [
-    '>=',
-    ExpressionInputType | ExpressionSpecification,
-    ExpressionInputType | ExpressionSpecification,
-    CollatorExpressionSpecification?,
-  ];
-  onChange?: (value: ExpressionSpecification) => void;
+	value: [
+		'>=',
+		ExpressionInputType | ExpressionSpecification,
+		ExpressionInputType | ExpressionSpecification,
+		CollatorExpressionSpecification?,
+	];
+	onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 
-export const GreaterThanOrEqualInputField: FC<GreaterThanOrEqualInputFieldProps> = ({
-  className,
-  children,
-  value,
-  onChange,
-  ...props
-}) => {
-  const left = value[1];
-  const right = value[2];
-  const collator = value[3];
-  return (
-    <div
-      {...props}
-      className={cn('flex flex-row items-center gap-2 rounded bg-black/5 py-0.5 px-0.5', className)}
-    >
-      {isExpression(left) ? (
-        <ExpressionInputField value={left} onChange={onChange} />
-      ) : (
-        <ExpressionInputTypeInputField value={left} />
-      )}
-      <div className={'flex flex-row py-0.5 px-0.5'}>&gt;=</div>
-      {isExpression(right) ? (
-        <ExpressionInputField value={right} onChange={onChange} />
-      ) : (
-        <ExpressionInputTypeInputField value={right} />
-      )}
-      {collator && <div>{JSON.stringify(collator)}</div>}
-      {children}
-    </div>
-  );
+export const GreaterThanOrEqualInputField: FC<
+	GreaterThanOrEqualInputFieldProps
+> = ({ className, children, value, onChange, ...props }) => {
+	const left = value[1];
+	const right = value[2];
+	const collator = value[3];
+	return (
+		<div
+			{...props}
+			className={cn(
+				'flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5',
+				className,
+			)}
+		>
+			{isExpression(left) ? (
+				<ExpressionInputField value={left} onChange={onChange} />
+			) : (
+				<ExpressionInputTypeInputField value={left} />
+			)}
+			<div className={'flex flex-row px-0.5 py-0.5'}>&gt;=</div>
+			{isExpression(right) ? (
+				<ExpressionInputField value={right} onChange={onChange} />
+			) : (
+				<ExpressionInputTypeInputField value={right} />
+			)}
+			{collator && <div>{JSON.stringify(collator)}</div>}
+			{children}
+		</div>
+	);
 };
 
 GreaterThanOrEqualInputField.displayName = 'GreaterThanOrEqualInputField';

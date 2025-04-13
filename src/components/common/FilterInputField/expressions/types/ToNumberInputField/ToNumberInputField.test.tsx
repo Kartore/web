@@ -7,10 +7,10 @@ import * as Stories from './ToNumberInputField.stories';
 const { Default } = composeStories(Stories);
 
 describe('Component: ToNumberInputField', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

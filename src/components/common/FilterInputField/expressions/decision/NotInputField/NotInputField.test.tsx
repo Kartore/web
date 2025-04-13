@@ -7,10 +7,10 @@ import * as Stories from './NotInputField.stories';
 const { Default } = composeStories(Stories);
 
 describe('Component: NotInputField', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

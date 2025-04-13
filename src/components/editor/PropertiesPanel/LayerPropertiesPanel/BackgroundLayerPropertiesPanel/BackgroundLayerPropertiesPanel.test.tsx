@@ -7,10 +7,10 @@ import * as Stories from './BackgroundLayerPropertiesPanel.stories.tsx';
 const { Default } = composeStories(Stories);
 
 describe('Component: BackgroundLayerPropertiesPanel', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

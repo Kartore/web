@@ -4,7 +4,7 @@ import { fn } from '@storybook/test';
 import { NumberArrayField } from '.';
 
 const meta = {
-  component: NumberArrayField,
+	component: NumberArrayField,
 } satisfies Meta<typeof NumberArrayField>;
 
 export default meta;
@@ -12,10 +12,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    label: 'Numbers',
-    arrayLabels: ['X', 'Y'],
-    values: [0, 0],
-    onChange: fn(),
-  },
+	args: {
+		label: 'Numbers',
+		arrayLabels: ['X', 'Y'],
+		values: [0, 0],
+		onChange: fn(),
+	},
 };

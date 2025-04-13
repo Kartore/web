@@ -10,69 +10,86 @@ import { RangeSliderThumb } from '~/components/common/RangeSlider/RangeSliderThu
 import { cn } from '~/utils/tailwindUtil';
 
 export type RangeSliderProps = {
-  formatOptions?: NumberFormatOptions;
-  sliderThumbLabel?: [string, string];
-  className?: string;
+	formatOptions?: NumberFormatOptions;
+	sliderThumbLabel?: [string, string];
+	className?: string;
 } & AriaSliderProps<[number, number]>;
 
 export const RangeSlider: FC<RangeSliderProps> = ({ className, ...props }) => {
-  const trackRef = useRef(null);
+	const trackRef = useRef(null);
 
-  const numberFormatter = useNumberFormatter(props.formatOptions);
-  const state = useSliderState({ ...props, numberFormatter });
-  const { groupProps, trackProps, labelProps, outputProps } = useSlider(props, state, trackRef);
+	const numberFormatter = useNumberFormatter(props.formatOptions);
+	const state = useSliderState({ ...props, numberFormatter });
+	const { groupProps, trackProps, labelProps, outputProps } = useSlider(
+		props,
+		state,
+		trackRef,
+	);
 
-  return (
-    <div {...groupProps} className={cn(`h-auto w-full ${state.orientation}`, className)}>
-      {props.label && (
-        <div className="flex items-center justify-between">
-          <label
-            {...labelProps}
-            className={cn('text-sm font-semibold text-gray-600', labelProps.className)}
-          >
-            {props.label}
-          </label>
-          <output
-            {...outputProps}
-            className={cn('text-sm font-semibold text-gray-800', outputProps.className)}
-          >
-            {`${state.getThumbValueLabel(0)} - ${state.getThumbValueLabel(1)}`}
-          </output>
-        </div>
-      )}
+	return (
+		<div
+			{...groupProps}
+			className={cn(`h-auto w-full ${state.orientation}`, className)}
+		>
+			{props.label && (
+				<div className="flex items-center justify-between">
+					<label
+						{...labelProps}
+						className={cn(
+							'font-semibold text-gray-600 text-sm',
+							labelProps.className,
+						)}
+					>
+						{props.label}
+					</label>
+					<output
+						{...outputProps}
+						className={cn(
+							'font-semibold text-gray-800 text-sm',
+							outputProps.className,
+						)}
+					>
+						{`${state.getThumbValueLabel(0)} - ${state.getThumbValueLabel(1)}`}
+					</output>
+				</div>
+			)}
 
-      <div
-        {...trackProps}
-        ref={trackRef}
-        className={cn(
-          'relative mt-2 h-0.5 w-full rounded-full bg-gray-300',
-          state.isDisabled && 'opacity-60'
-        )}
-      >
-        <div
-          className={'absolute h-0.5 bg-gray-500'}
-          style={{
-            left: `${state.getThumbPercent(0) * 100}%`,
-            right: `${100 - state.getThumbPercent(1) * 100}%`,
-          }}
-        />
-        <RangeSliderThumb
-          className={'mt-[1px] size-3 rounded-full border border-gray-500 bg-white'}
-          index={0}
-          state={state}
-          trackRef={trackRef}
-          aria-label={props.sliderThumbLabel?.[0]}
-        />
-        <RangeSliderThumb
-          className={'mt-[1px] size-3 rounded-full border border-gray-500 bg-white'}
-          index={1}
-          state={state}
-          trackRef={trackRef}
-          aria-label={props.sliderThumbLabel?.[1]}
-        />
-      </div>
-    </div>
-  );
+			<div
+				{...trackProps}
+				ref={trackRef}
+				className={cn(
+					'relative mt-2 h-0.5 w-full rounded-full bg-gray-300',
+					state.isDisabled && 'opacity-60',
+				)}
+			>
+				<div
+					className={'absolute h-0.5 bg-gray-500'}
+					style={{
+						left: `${state.getThumbPercent(0) * 100}%`,
+						right: `${100 - state.getThumbPercent(1) * 100}%`,
+					}}
+				/>
+				<RangeSliderThumb
+					className={
+						'mt-[1px] size-3 rounded-full border border-gray-500 bg-white'
+					}
+					index={0}
+					state={state}
+					trackRef={trackRef}
+					aria-label={props.sliderThumbLabel?.[0]}
+				/>
+				<RangeSliderThumb
+					className={
+						'mt-[1px] size-3 rounded-full border border-gray-500 bg-white'
+					}
+					index={1}
+					state={state}
+					trackRef={trackRef}
+					aria-label={props.sliderThumbLabel?.[1]}
+				/>
+			</div>
+		</div>
+	);
 };
 
 RangeSlider.displayName = 'RangeSlider';

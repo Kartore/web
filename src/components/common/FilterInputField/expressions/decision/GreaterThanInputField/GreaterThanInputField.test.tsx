@@ -7,10 +7,10 @@ import * as Stories from './GreaterThanInputField.stories';
 const { Default } = composeStories(Stories);
 
 describe('Component: GreaterThanInputField', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

@@ -7,10 +7,10 @@ import * as Stories from './LineLayerPropertiesPanel.stories.tsx';
 const { Default } = composeStories(Stories);
 
 describe('Component: LineLayerPropertiesPanel', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

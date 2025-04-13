@@ -7,10 +7,10 @@ import * as Stories from './LessThanOrEqualInputField.stories';
 const { Default } = composeStories(Stories);
 
 describe('Component: LessThanOrEqualInputField', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

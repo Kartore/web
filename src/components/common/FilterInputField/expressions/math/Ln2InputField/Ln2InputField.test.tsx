@@ -7,10 +7,10 @@ import * as Stories from './Ln2InputField.stories';
 const { Default } = composeStories(Stories);
 
 describe('Component: Ln2InputField', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

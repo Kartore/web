@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { LinearInputField } from '.';
 
 const meta = {
-  component: LinearInputField,
+	component: LinearInputField,
 } satisfies Meta<typeof LinearInputField>;
 
 export default meta;
@@ -11,5 +11,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+	args: {},
 };

@@ -7,10 +7,10 @@ import * as Stories from './ToBooleanInputField.stories';
 const { Default } = composeStories(Stories);
 
 describe('Component: ToBooleanInputField', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });

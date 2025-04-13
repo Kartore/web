@@ -7,10 +7,10 @@ import * as Stories from './FillExtrusionLayerPropertiesPanel.stories.tsx';
 const { Default } = composeStories(Stories);
 
 describe('Component: FillExtrusionLayerPropertiesPanel', () => {
-  describe('Snapshot', () => {
-    it('Default', () => {
-      const { asFragment } = render(<Default />);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+	describe('Snapshot', () => {
+		it('Default', () => {
+			const { asFragment } = render(<Default />);
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });
