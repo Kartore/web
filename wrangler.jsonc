@@ -1,9 +1,6 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "kartore-webapp",
-	"build": {
-		"command": "pnpm run build-no-tscheck"
-	},
 	"compatibility_date": "2025-03-03",
 	"compatibility_flags": ["nodejs_compat"],
 	"assets": {
