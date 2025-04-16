@@ -11,6 +11,8 @@ import { Item } from 'react-stately';
 import { BoxRadioGroup } from '~/components/common/BoxRadioGroup';
 import { ColorField } from '~/components/common/ColorField';
 import { ComboBox } from '~/components/common/ComboBox';
+import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
+import { isExpression } from '~/components/common/FilterInputField/expressions/utils/isExpression.ts';
 import { NumberArrayField } from '~/components/common/NumberArrayField';
 import { NumberField } from '~/components/common/NumberField';
 import { Switch } from '~/components/common/Switch';
@@ -67,8 +69,10 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
             value={layer.paint?.['fill-opacity'] ? String(layer.paint?.['fill-opacity']) : '1'}
           />
         )}
-        {typeof layer.paint?.['fill-color'] === 'string' ||
-        layer.paint?.['fill-color'] === undefined ? (
+        {isExpression(layer.paint?.['fill-color']) ? (
+          <ExpressionInputField value={layer.paint?.['fill-color']} onChange={() => {}} />
+        ) : typeof layer.paint?.['fill-color'] === 'string' ||
+          layer.paint?.['fill-color'] === undefined ? (
           <ColorField
             label={'Fill Color'}
             value={parseColor(layer.paint?.['fill-color'] ?? 'rgba(255, 255, 255, 1)')}
@@ -77,10 +81,7 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
             }}
           />
         ) : (
-          <TextField
-            label={'Fill Color'}
-            value={layer.paint?.['fill-color'] ? String(layer.paint?.['fill-color']) : '1'}
-          />
+          JSON.stringify(layer.paint?.['fill-color'])
         )}
         {typeof layer.paint?.['fill-antialias'] === 'boolean' ||
         layer.paint?.['fill-antialias'] === undefined ? (

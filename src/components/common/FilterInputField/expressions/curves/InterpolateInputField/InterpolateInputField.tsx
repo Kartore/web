@@ -4,6 +4,7 @@ import type {
   ColorSpecification,
   ExpressionSpecification,
   InterpolationSpecification,
+  ProjectionDefinitionSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
@@ -17,7 +18,13 @@ export type InterpolateInputFieldProps = {
     'interpolate',
     InterpolationSpecification,
     number | ExpressionSpecification,
-    ...(number | number[] | ColorSpecification | ExpressionSpecification)[],
+    ...(
+      | number
+      | number[]
+      | ColorSpecification
+      | ExpressionSpecification
+      | ProjectionDefinitionSpecification
+    )[],
   ];
   onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
@@ -36,11 +43,11 @@ export const InterpolateInputField: FC<InterpolateInputFieldProps> = ({
     <div
       {...props}
       className={cn(
-        'flex flex-row flex-wrap items-center gap-2 rounded bg-black/5 py-0.5 px-0.5',
+        'flex flex-row flex-wrap items-center gap-2 rounded bg-black/5 px-0.5 py-0.5',
         className
       )}
     >
-      <div className={'flex flex-row py-0.5 px-0.5'}>interpolate</div>
+      <div className={'flex flex-row px-0.5 py-0.5'}>interpolate</div>
       <InterpolationsInputField value={interpolation} onChange={onChange} />
       {isExpression(condition) ? (
         <ExpressionInputField value={condition} onChange={onChange} />
@@ -49,8 +56,8 @@ export const InterpolateInputField: FC<InterpolateInputFieldProps> = ({
       )}
       {steps.map((step, index) => {
         return (
-          <div key={index} className={'flex flex-row py-0.5 px-0.5'}>
-            <div className={'flex flex-row py-0.5 px-0.5'}>at </div>
+          <div key={index} className={'flex flex-row px-0.5 py-0.5'}>
+            <div className={'flex flex-row px-0.5 py-0.5'}>at </div>
             {isExpression(step) ? (
               <ExpressionInputField value={step} onChange={onChange} />
             ) : (

@@ -60,6 +60,7 @@ export const BackgroundLayerPropertiesPanel: FC<BackgroundLayerPropertiesPanelPr
           <NumberField
             label={'Opacity'}
             onChange={(value) => {
+              console.log(value);
               onChange?.(layer, 'paint', 'background-opacity', value === 1 ? undefined : value);
             }}
             value={
