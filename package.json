@@ -63,7 +63,7 @@
 		"@vitest/eslint-plugin": "1.1.42",
 		"@vitest/ui": "3.1.1",
 		"babel-plugin-react-compiler": "19.0.0-beta-e993439-20250405",
-		"chromatic": "11.28.0",
+		"chromatic": "13.2.1",
 		"clsx": "2.1.1",
 		"happy-dom": "17.4.4",
 		"playwright": "1.51.1",
