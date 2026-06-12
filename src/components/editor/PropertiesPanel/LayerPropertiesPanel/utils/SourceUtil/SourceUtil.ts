@@ -32,14 +32,10 @@ export const isGeoJSONSource = (
 	return source?.type === 'geojson';
 };
 
-export const isVideoSource = (
-	source: SourceSpecification,
-): source is VideoSourceSpecification => {
+export const isVideoSource = (source: SourceSpecification): source is VideoSourceSpecification => {
 	return source?.type === 'video';
 };
 
-export const isImageSource = (
-	source: SourceSpecification,
-): source is ImageSourceSpecification => {
+export const isImageSource = (source: SourceSpecification): source is ImageSourceSpecification => {
 	return source?.type === 'image';
 };

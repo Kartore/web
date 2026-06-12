@@ -27,7 +27,6 @@ export default defineConfig({
 		globals: true,
 		clearMocks: true,
 		testTimeout: 50000,
-		setupFiles: '.vitest/setup.ts',
 		alias: [
 			{
 				find: /^monaco-editor$/,
@@ -44,12 +43,7 @@ export default defineConfig({
 				'src/pages/**/*.{ts,tsx}',
 				'src/store/**/*.{ts,tsx}',
 			],
-			exclude: [
-				'src/**/__mocks__/**',
-				'src/**/@types/**',
-				'src/**/sample/**',
-				'src/**/store/**',
-			],
+			exclude: ['src/**/__mocks__/**', 'src/**/@types/**', 'src/**/sample/**', 'src/**/store/**'],
 			all: true,
 			reporter: ['json'],
 		},

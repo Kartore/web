@@ -1,7 +1,5 @@
 import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 
-export const isHeatmapDensityExpressionSpecification = (
-	input: ExpressionSpecification,
-) => {
+export const isHeatmapDensityExpressionSpecification = (input: ExpressionSpecification) => {
 	return Array.isArray(input) && input[0] === 'heatmap-density';
 };

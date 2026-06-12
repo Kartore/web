@@ -1,6 +1,5 @@
-import type { ComponentProps, FC } from 'react';
-
 import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { isExpression } from '~/components/common/FilterInputField/expressions/utils/isExpression.ts';
@@ -36,18 +35,14 @@ export const HasInputField: FC<HasInputFieldProps> = ({
 			{isExpression(propertyKey) ? (
 				<ExpressionInputField value={propertyKey} onChange={onChange} />
 			) : (
-				<div className={'flex flex-row px-0.5 py-0.5'}>
-					{propertyKey.toString()}
-				</div>
+				<div className={'flex flex-row px-0.5 py-0.5'}>{propertyKey.toString()}</div>
 			)}
 			<div className={'flex flex-row px-0.5 py-0.5'}>in</div>
 			{items ? (
 				isExpression(items) ? (
 					<ExpressionInputField value={items} onChange={onChange} />
 				) : (
-					<div className={'flex flex-row px-0.5 py-0.5'}>
-						{JSON.stringify(items)}
-					</div>
+					<div className={'flex flex-row px-0.5 py-0.5'}>{JSON.stringify(items)}</div>
 				)
 			) : (
 				<div className={'flex flex-row px-0.5 py-0.5'}>this features</div>

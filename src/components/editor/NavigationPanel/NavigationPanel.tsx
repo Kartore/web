@@ -1,6 +1,3 @@
-import type { ComponentProps, FC } from 'react';
-import { useState } from 'react';
-
 import type { DragEndEvent, DragStartEvent, Modifier } from '@dnd-kit/core';
 import {
 	DndContext,
@@ -11,12 +8,10 @@ import {
 	useSensor,
 	useSensors,
 } from '@dnd-kit/core';
-import {
-	SortableContext,
-	arrayMove,
-	verticalListSortingStrategy,
-} from '@dnd-kit/sortable';
+import { SortableContext, arrayMove, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import type { LayerSpecification, StyleSpecification } from 'maplibre-gl';
+import type { ComponentProps, FC } from 'react';
+import { useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { SortableLayerTreeItem } from '~/components/editor/NavigationPanel/SortableLayerTreeItem/SortableLayerTreeItem.tsx';
@@ -37,9 +32,7 @@ export const NavigationPanel: FC<LayerPanelProps> = ({
 	selectedLayerId,
 	...props
 }) => {
-	const [activeLayer, setActiveLayer] = useState<LayerSpecification | null>(
-		null,
-	);
+	const [activeLayer, setActiveLayer] = useState<LayerSpecification | null>(null);
 
 	const handleDragStart = ({ active: { id } }: DragStartEvent) => {
 		setActiveLayer(mapStyle.layers.find((layer) => layer.id === id) || null);
@@ -56,13 +49,9 @@ export const NavigationPanel: FC<LayerPanelProps> = ({
 		if (!over) {
 			return;
 		}
-		const clonedLayers: LayerSpecification[] = JSON.parse(
-			JSON.stringify(mapStyle.layers),
-		);
+		const clonedLayers: LayerSpecification[] = JSON.parse(JSON.stringify(mapStyle.layers));
 
-		const activeIndex = clonedLayers.findIndex(
-			(layer) => layer.id === active.id,
-		);
+		const activeIndex = clonedLayers.findIndex((layer) => layer.id === active.id);
 		const overIndex = clonedLayers.findIndex((layer) => layer.id === over.id);
 		const sortedLayers = arrayMove(clonedLayers, activeIndex, overIndex);
 		onChangeLayerOrder(sortedLayers);
@@ -98,15 +87,13 @@ export const NavigationPanel: FC<LayerPanelProps> = ({
 				className,
 			)}
 		>
-			<div
-				className={'flex flex-col gap-2 border-b border-b-gray-300 px-4 py-4'}
-			>
+			<div className={'flex flex-col gap-2 border-b border-b-gray-300 px-4 py-4'}>
 				<h1 className={'font-[Montserrat] font-bold'}>Kartore</h1>
 				<h2 className={'font-[Montserrat] font-semibold'}>{mapStyle.name}</h2>
 			</div>
 			<div
 				className={
-					'border-b border-b-gray-300 px-4 py-2 font-[Montserrat] font-medium text-gray-500 text-sm'
+					'border-b border-b-gray-300 px-4 py-2 font-[Montserrat] text-sm font-medium text-gray-500'
 				}
 			>
 				<h2>Layers</h2>
@@ -143,9 +130,7 @@ export const NavigationPanel: FC<LayerPanelProps> = ({
 					</SortableContext>
 					{createPortal(
 						<DragOverlay modifiers={[adjustTranslate]}>
-							{activeLayer ? (
-								<SortableLayerTreeItem layer={activeLayer} clone />
-							) : null}
+							{activeLayer ? <SortableLayerTreeItem layer={activeLayer} clone /> : null}
 						</DragOverlay>,
 						document.body,
 						`drag-overlay-${activeLayer?.id}`,

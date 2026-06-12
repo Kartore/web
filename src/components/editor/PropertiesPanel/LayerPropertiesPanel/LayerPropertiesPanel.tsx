@@ -1,10 +1,9 @@
-import type { ComponentProps, FC } from 'react';
-
 import type {
 	LayerSpecification,
 	SourceSpecification,
 	SpriteSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { BackgroundLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/BackgroundLayerPropertiesPanel';
 import { CircleLayerPropertiesPanel } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/CircleLayerPropertiesPanel';
@@ -56,12 +55,7 @@ export const LayerPropertiesPanel: FC<PropertiesPanelProps> = ({
 	}
 	if (isCircleLayer(layer)) {
 		return (
-			<CircleLayerPropertiesPanel
-				layer={layer}
-				sources={sources}
-				onChange={onChange}
-				{...props}
-			/>
+			<CircleLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
 		);
 	}
 	if (isFillExtrusionLayer(layer)) {
@@ -87,12 +81,7 @@ export const LayerPropertiesPanel: FC<PropertiesPanelProps> = ({
 	}
 	if (isHeatmapLayer(layer)) {
 		return (
-			<HeatmapLayerPropertiesPanel
-				layer={layer}
-				sources={sources}
-				onChange={onChange}
-				{...props}
-			/>
+			<HeatmapLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
 		);
 	}
 	if (isHillshadeLayer(layer)) {
@@ -107,32 +96,17 @@ export const LayerPropertiesPanel: FC<PropertiesPanelProps> = ({
 	}
 	if (isLineLayer(layer)) {
 		return (
-			<LineLayerPropertiesPanel
-				layer={layer}
-				sources={sources}
-				onChange={onChange}
-				{...props}
-			/>
+			<LineLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
 		);
 	}
 	if (isRasterLayer(layer)) {
 		return (
-			<RasterLayerPropertiesPanel
-				layer={layer}
-				sources={sources}
-				onChange={onChange}
-				{...props}
-			/>
+			<RasterLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
 		);
 	}
 	if (isSymbolLayer(layer)) {
 		return (
-			<SymbolLayerPropertiesPanel
-				layer={layer}
-				sources={sources}
-				onChange={onChange}
-				{...props}
-			/>
+			<SymbolLayerPropertiesPanel layer={layer} sources={sources} onChange={onChange} {...props} />
 		);
 	}
 	throw new Error('Unknown layer type');

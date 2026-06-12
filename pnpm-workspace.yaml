@@ -1,5 +1,8 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
 onlyBuiltDependencies:
-  - '@biomejs/biome'
   - esbuild
   - msw
   - sharp

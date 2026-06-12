@@ -32,10 +32,7 @@ export type SplitLayerProperties = {
 	filter: BackgroundExcludedLayerSpecification['filter'];
 	paint: BackgroundExcludedLayerSpecification['paint'];
 	layout: BackgroundExcludedLayerSpecification['layout'];
-	visibility: Exclude<
-		BackgroundExcludedLayerSpecification['layout'],
-		undefined
-	>['visibility'];
+	visibility: Exclude<BackgroundExcludedLayerSpecification['layout'], undefined>['visibility'];
 };
 
 export type BackgroundSplitLayerProperties = {
@@ -48,10 +45,7 @@ export type BackgroundSplitLayerProperties = {
 	};
 	paint: BackgroundLayerSpecification['paint'];
 	layout: BackgroundLayerSpecification['layout'];
-	visibility: Exclude<
-		BackgroundExcludedLayerSpecification['layout'],
-		undefined
-	>['visibility'];
+	visibility: Exclude<BackgroundExcludedLayerSpecification['layout'], undefined>['visibility'];
 };
 
 export const splitLayerProperties = (layer: LayerSpecification) => {
@@ -65,15 +59,7 @@ export const splitLayerProperties = (layer: LayerSpecification) => {
 			visibility: layout ? layout.visibility : 'visible',
 		} satisfies BackgroundSplitLayerProperties;
 	}
-	const {
-		id,
-		type,
-		source,
-		'source-layer': sourceLayer,
-		minzoom,
-		maxzoom,
-		metadata,
-	} = layer;
+	const { id, type, source, 'source-layer': sourceLayer, minzoom, maxzoom, metadata } = layer;
 	return {
 		type,
 		general: { id, source, sourceLayer, minzoom, maxzoom, metadata },
@@ -90,39 +76,27 @@ export const isBackgroundLayer = (
 	return layer.type === 'background';
 };
 
-export const isFillLayer = (
-	layer: LayerSpecification,
-): layer is FillLayerSpecification => {
+export const isFillLayer = (layer: LayerSpecification): layer is FillLayerSpecification => {
 	return layer.type === 'fill';
 };
 
-export const isLineLayer = (
-	layer: LayerSpecification,
-): layer is LineLayerSpecification => {
+export const isLineLayer = (layer: LayerSpecification): layer is LineLayerSpecification => {
 	return layer.type === 'line';
 };
 
-export const isSymbolLayer = (
-	layer: LayerSpecification,
-): layer is SymbolLayerSpecification => {
+export const isSymbolLayer = (layer: LayerSpecification): layer is SymbolLayerSpecification => {
 	return layer.type === 'symbol';
 };
 
-export const isRasterLayer = (
-	layer: LayerSpecification,
-): layer is RasterLayerSpecification => {
+export const isRasterLayer = (layer: LayerSpecification): layer is RasterLayerSpecification => {
 	return layer.type === 'raster';
 };
 
-export const isCircleLayer = (
-	layer: LayerSpecification,
-): layer is CircleLayerSpecification => {
+export const isCircleLayer = (layer: LayerSpecification): layer is CircleLayerSpecification => {
 	return layer.type === 'circle';
 };
 
-export const isHeatmapLayer = (
-	layer: LayerSpecification,
-): layer is HeatmapLayerSpecification => {
+export const isHeatmapLayer = (layer: LayerSpecification): layer is HeatmapLayerSpecification => {
 	return layer.type === 'heatmap';
 };
 
@@ -140,10 +114,7 @@ export const isFillExtrusionLayer = (
 
 type ObjectGroup = 'paint' | 'layout' | 'metadata' | 'all' | undefined;
 
-type ObjectKey<
-	L extends LayerSpecification,
-	G extends ObjectGroup,
-> = G extends 'metadata'
+type ObjectKey<L extends LayerSpecification, G extends ObjectGroup> = G extends 'metadata'
 	? PropertyKey
 	: G extends undefined
 		? keyof {
@@ -202,13 +173,12 @@ export function replaceLayerData<
 				if (group) {
 					if (group === 'all') {
 						return value as LayerSpecification;
-						// biome-ignore lint/style/noUselessElse: <explanation>
-					} else {
-						//@ts-expect-error ObjectGroupによって担保される
-						if (currentLayer[group] != null) {
-							//@ts-expect-error ObjectKey/ObjectGroupによって担保される
-							currentLayer[group][key] = value;
-						}
+					}
+
+					//@ts-expect-error ObjectGroupによって担保される
+					if (currentLayer[group] != null) {
+						//@ts-expect-error ObjectKey/ObjectGroupによって担保される
+						currentLayer[group][key] = value;
 					}
 				} else {
 					//@ts-expect-error ObjectKeyによって担保される

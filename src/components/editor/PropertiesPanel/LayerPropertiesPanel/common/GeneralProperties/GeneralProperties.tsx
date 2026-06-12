@@ -1,10 +1,9 @@
-import type { ComponentProps, FC } from 'react';
-
 import type {
 	BackgroundLayerSpecification,
 	LayerSpecification,
 	SourceSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 import { Item } from 'react-stately';
 
 import { RangeSlider } from '~/components/common/RangeSlider';
@@ -29,13 +28,11 @@ export const GeneralProperties: FC<GeneralPropertiesProps> = ({
 	...props
 }) => {
 	const sourceData = sources[layer.source];
-	const sourceLayers = useSourceLayers(
-		isVectorSource(sourceData) ? sourceData : undefined,
-	);
+	const sourceLayers = useSourceLayers(isVectorSource(sourceData) ? sourceData : undefined);
 
 	return (
 		<div {...props} className={cn('flex flex-col gap-2 px-4', className)}>
-			<h3 className={'font-montserrat font-semibold text-sm'}>General</h3>
+			<h3 className={'font-montserrat text-sm font-semibold'}>General</h3>
 			<Select
 				label={'Source'}
 				selectedKey={layer.source}
@@ -52,8 +49,7 @@ export const GeneralProperties: FC<GeneralPropertiesProps> = ({
 					label={'Source Layer'}
 					selectedKey={layer['source-layer']}
 					onSelectionChange={(value) => {
-						if (onChange)
-							onChange(layer, undefined, 'source-layer', value as string);
+						if (onChange) onChange(layer, undefined, 'source-layer', value as string);
 					}}
 				>
 					{sourceLayers?.map(({ id }) => {
@@ -69,20 +65,10 @@ export const GeneralProperties: FC<GeneralPropertiesProps> = ({
 				value={[layer.minzoom ?? 0, layer.maxzoom ?? 24]}
 				onChange={([minzoom, maxzoom]) => {
 					if (minzoom !== layer.minzoom) {
-						onChange?.(
-							layer,
-							undefined,
-							'minzoom',
-							minzoom === 0 ? undefined : minzoom,
-						);
+						onChange?.(layer, undefined, 'minzoom', minzoom === 0 ? undefined : minzoom);
 					}
 					if (maxzoom !== layer.maxzoom) {
-						onChange?.(
-							layer,
-							undefined,
-							'maxzoom',
-							maxzoom === 24 ? undefined : maxzoom,
-						);
+						onChange?.(layer, undefined, 'maxzoom', maxzoom === 24 ? undefined : maxzoom);
 					}
 				}}
 			/>

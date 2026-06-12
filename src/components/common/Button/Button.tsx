@@ -1,6 +1,5 @@
 import type { ComponentProps, FC, MutableRefObject } from 'react';
 import { useRef } from 'react';
-
 import type { AriaButtonOptions } from 'react-aria';
 import { useButton } from 'react-aria';
 

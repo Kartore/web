@@ -1,7 +1,6 @@
-import type { FC } from 'react';
-
 import type { AriaColorSwatchProps } from '@react-aria/color';
 import { useColorSwatch } from '@react-aria/color';
+import type { FC } from 'react';
 
 import { cn } from '~/utils/tailwindUtil.ts';
 

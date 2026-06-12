@@ -1,6 +1,5 @@
-import { useState } from 'react';
-
 import type { LayerSpecification, StyleSpecification } from 'maplibre-gl';
+import { useState } from 'react';
 import { MapProvider } from 'react-map-gl/maplibre';
 import { useLocalStorage } from 'usehooks-ts';
 
@@ -19,12 +18,9 @@ function App() {
 		{},
 	);
 
-	const [selectedLayerId, setSelectedLayerId] = useState<string>(
-		mapStyle.layers[4].id,
-	);
+	const [selectedLayerId, setSelectedLayerId] = useState<string>(mapStyle.layers[4].id);
 	const selectedLayer =
-		mapStyle.layers.find((layer) => layer.id === selectedLayerId) ??
-		mapStyle.layers[0];
+		mapStyle.layers.find((layer) => layer.id === selectedLayerId) ?? mapStyle.layers[0];
 	const handleChangeLayerOrder = (layer: LayerSpecification[]) => {
 		setMapStyle((currentStyle) => {
 			return { ...currentStyle, layers: layer };
@@ -39,11 +35,7 @@ function App() {
 
 	return (
 		<MapProvider>
-			<div
-				className={
-					'relative flex max-h-screen min-h-screen w-full flex-row overflow-hidden'
-				}
-			>
+			<div className={'relative flex max-h-screen min-h-screen w-full flex-row overflow-hidden'}>
 				<MapPanel mapStyle={mapStyle} />
 				<div className={'pointer-events-none absolute inset-2 flex gap-2'}>
 					<NavigationPanel

@@ -1,0 +1,29 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["typescript", "react", "react-hooks", "jsx-a11y", "oxc"],
+	"options": {
+		"typeAware": true,
+		"typeCheck": true
+	},
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn"
+	},
+	"rules": {
+		"eslint/no-unused-vars": "off",
+		"typescript/no-unused-vars": "off",
+		"typescript/no-explicit-any": "warn",
+		"react/no-array-index-key": "off",
+		"react/react-in-jsx-scope": "off",
+		"jsx-a11y/label-has-associated-control": "off",
+		"jsx-a11y/no-static-element-interactions": "off",
+		"jsx-a11y/click-events-have-key-events": "warn",
+		"jsx-a11y/mouse-events-have-key-events": "warn",
+		"jsx-a11y/alt-text": "off"
+	},
+	"env": {
+		"browser": true,
+		"es2020": true,
+		"node": true
+	}
+}

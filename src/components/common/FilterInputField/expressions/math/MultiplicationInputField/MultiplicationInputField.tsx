@@ -1,7 +1,6 @@
+import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 import type { ComponentProps, FC } from 'react';
 import { Fragment } from 'react';
-
-import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { ExpressionInputTypeInputField } from '~/components/common/FilterInputField/expressions/common/ExpressionInputTypeInputField';

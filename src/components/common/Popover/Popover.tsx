@@ -1,6 +1,5 @@
 import type { FC, ReactNode, RefObject } from 'react';
 import { useRef } from 'react';
-
 import type { AriaPopoverProps } from 'react-aria';
 import { DismissButton, Overlay, usePopover } from 'react-aria';
 import type { OverlayTriggerState } from 'react-stately';
@@ -26,10 +25,7 @@ export const Popover: FC<PopoverProps> = ({ state, children, ...props }) => {
 
 	return (
 		<Overlay>
-			<div
-				{...underlayProps}
-				className={cn('fixed inset-0', underlayProps.className)}
-			/>
+			<div {...underlayProps} className={cn('fixed inset-0', underlayProps.className)} />
 			<div {...popoverProps} ref={popoverRef}>
 				<DismissButton onDismiss={state.close} />
 				{children}

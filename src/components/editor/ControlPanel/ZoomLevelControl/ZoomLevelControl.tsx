@@ -1,6 +1,5 @@
 import type { ComponentProps, FC } from 'react';
 import { useSyncExternalStore } from 'react';
-
 import { useMap } from 'react-map-gl/maplibre';
 
 import { ZoomLevelControlButton } from '~/components/editor/ControlPanel/ZoomLevelControl/ZoomLevelControlButton';
@@ -8,15 +7,9 @@ import { CompassIcon, MinusIcon, PlusIcon } from '~/components/icons';
 import { useZoomLevel } from '~/hooks/useZoomLevel.ts';
 import { cn } from '~/utils/tailwindUtil';
 
-export type ZoomLevelControlProps = {} & Omit<
-	ComponentProps<'div'>,
-	'children'
->;
+export type ZoomLevelControlProps = {} & Omit<ComponentProps<'div'>, 'children'>;
 
-export const ZoomLevelControl: FC<ZoomLevelControlProps> = ({
-	className,
-	...props
-}) => {
+export const ZoomLevelControl: FC<ZoomLevelControlProps> = ({ className, ...props }) => {
 	const { backgroundMap } = useMap();
 	const zoomLevel = useZoomLevel();
 	const isMaxZoom = zoomLevel === backgroundMap?.getMaxZoom().toFixed(2);
@@ -50,10 +43,7 @@ export const ZoomLevelControl: FC<ZoomLevelControlProps> = ({
 	);
 
 	return (
-		<div
-			{...props}
-			className={cn('pointer-events-auto flex flex-col', className)}
-		>
+		<div {...props} className={cn('pointer-events-auto flex flex-col', className)}>
 			<ZoomLevelControlButton
 				className={'rounded-b-none border-b-0'}
 				aria-label={'Zoom In'}

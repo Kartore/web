@@ -1,9 +1,8 @@
-import type { ComponentProps, FC } from 'react';
-
 import type {
 	ExpressionSpecification,
 	InterpolationSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import {
 	CubicBezierInputField,

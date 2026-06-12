@@ -1,9 +1,8 @@
-import type { ComponentProps, FC } from 'react';
-
 import type {
 	CollatorExpressionSpecification,
 	ExpressionSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { cn } from '~/utils/tailwindUtil';
 
@@ -29,9 +28,7 @@ export const ResolvedLocaleInputField: FC<ResolvedLocaleInputFieldProps> = ({
 			)}
 		>
 			<div className={'flex flex-row px-0.5 py-0.5'}>Resolve Locale</div>
-			<div className={'flex flex-row px-0.5 py-0.5'}>
-				{JSON.stringify(collator)}
-			</div>
+			<div className={'flex flex-row px-0.5 py-0.5'}>{JSON.stringify(collator)}</div>
 			{children}
 		</div>
 	);

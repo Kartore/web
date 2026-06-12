@@ -1,7 +1,6 @@
+import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 import type { ComponentProps, FC } from 'react';
 import { Fragment } from 'react';
-
-import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { ExpressionInputTypeInputField } from '~/components/common/FilterInputField/expressions/common/ExpressionInputTypeInputField';
@@ -9,11 +8,7 @@ import { isExpression } from '~/components/common/FilterInputField/expressions/u
 import { cn } from '~/utils/tailwindUtil';
 
 export type MinInputFieldProps = {
-	value: [
-		'min',
-		number | ExpressionSpecification,
-		...(number | ExpressionSpecification)[],
-	];
+	value: ['min', number | ExpressionSpecification, ...(number | ExpressionSpecification)[]];
 	onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 

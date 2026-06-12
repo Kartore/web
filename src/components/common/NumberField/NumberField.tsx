@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { useRef } from 'react';
-
 import type { AriaNumberFieldProps } from 'react-aria';
 import { useLocale, useNumberField } from 'react-aria';
 import { useNumberFieldState } from 'react-stately';
@@ -13,12 +12,7 @@ export type NumberFieldProps = {
 	showButton?: boolean;
 } & AriaNumberFieldProps;
 
-export const NumberField: FC<NumberFieldProps> = ({
-	className,
-	showButton,
-	label,
-	...props
-}) => {
+export const NumberField: FC<NumberFieldProps> = ({ className, showButton, label, ...props }) => {
 	const { locale } = useLocale();
 	const state = useNumberFieldState({ ...props, label, locale });
 	const ref = useRef(null);
@@ -35,15 +29,10 @@ export const NumberField: FC<NumberFieldProps> = ({
 	} = useNumberField({ ...props, label }, state, ref);
 
 	return (
-		<div
-			className={cn('flex flex-row items-center justify-between', className)}
-		>
+		<div className={cn('flex flex-row items-center justify-between', className)}>
 			<label
 				{...labelProps}
-				className={cn(
-					'font-semibold text-gray-600 text-sm',
-					labelProps.className,
-				)}
+				className={cn('font-semibold text-gray-600 text-sm', labelProps.className)}
 			>
 				{label}
 			</label>
@@ -64,18 +53,12 @@ export const NumberField: FC<NumberFieldProps> = ({
 				) : null}
 			</div>
 			{props.description && (
-				<div
-					{...descriptionProps}
-					className={cn('text-xs', descriptionProps.className)}
-				>
+				<div {...descriptionProps} className={cn('text-xs', descriptionProps.className)}>
 					{props.description}
 				</div>
 			)}
 			{isInvalid && (
-				<div
-					{...errorMessageProps}
-					className={cn('text-red text-xs', errorMessageProps.className)}
-				>
+				<div {...errorMessageProps} className={cn('text-red text-xs', errorMessageProps.className)}>
 					{validationErrors.join(' ')}
 				</div>
 			)}

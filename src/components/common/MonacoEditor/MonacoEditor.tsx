@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import type { EditorProps } from '@monaco-editor/react';
 import { Editor, loader } from '@monaco-editor/react';
 import { shikiToMonaco } from '@shikijs/monaco';
@@ -8,6 +6,7 @@ import * as monaco from 'monaco-editor';
 import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
 // eslint-disable-next-line import-x/default
 import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
+import type { FC } from 'react';
 import { createHighlighter } from 'shiki/bundle/web';
 
 self.MonacoEnvironment = {
@@ -23,11 +22,7 @@ loader.config({ monaco });
 
 export type MonacoEditorProps = {} & EditorProps;
 
-export const MonacoEditor: FC<MonacoEditorProps> = ({
-	options,
-	onMount,
-	...props
-}) => {
+export const MonacoEditor: FC<MonacoEditorProps> = ({ options, onMount, ...props }) => {
 	return (
 		<Editor
 			defaultLanguage={'json'}

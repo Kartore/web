@@ -1,6 +1,5 @@
-import type { ComponentProps, FC } from 'react';
-
 import type { LayerSpecification } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { LayerIcon } from '~/components/icons';
 import { cn } from '~/utils/tailwindUtil';
@@ -29,9 +28,7 @@ export const LayerTreeItem: FC<LayerTreeItemProps> = ({
 				'flex w-full items-center gap-2 px-4 py-2 text-gray-800 text-sm',
 				indicator && 'opacity-60',
 				clone && 'inline-flex',
-				disableInteraction || clone
-					? 'pointer-events-none'
-					: 'pointer-events-auto',
+				disableInteraction || clone ? 'pointer-events-none' : 'pointer-events-auto',
 				isSelected ? 'bg-gray-200' : 'hover:bg-gray-100',
 				className,
 			)}

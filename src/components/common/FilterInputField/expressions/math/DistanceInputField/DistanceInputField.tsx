@@ -1,15 +1,12 @@
-import type { ComponentProps, FC } from 'react';
-
 import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { isExpression } from '~/components/common/FilterInputField/expressions/utils/isExpression.ts';
 import { cn } from '~/utils/tailwindUtil';
 
 export type DistanceInputFieldProps = {
-	value:
-		| ['distance', unknown]
-		| ['distance', Record<string, unknown> | ExpressionSpecification];
+	value: ['distance', unknown] | ['distance', Record<string, unknown> | ExpressionSpecification];
 	onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 
@@ -33,9 +30,7 @@ export const DistanceInputField: FC<DistanceInputFieldProps> = ({
 			{isExpression(object) ? (
 				<ExpressionInputField value={object} onChange={onChange} />
 			) : (
-				<div className={'flex flex-row px-0.5 py-0.5'}>
-					{JSON.stringify(object)}
-				</div>
+				<div className={'flex flex-row px-0.5 py-0.5'}>{JSON.stringify(object)}</div>
 			)}
 			{children}
 		</div>

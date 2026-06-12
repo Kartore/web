@@ -1,13 +1,7 @@
 import type { FC } from 'react';
 import { useRef } from 'react';
-
 import type { AriaSliderThumbOptions } from 'react-aria';
-import {
-	VisuallyHidden,
-	mergeProps,
-	useFocusRing,
-	useSliderThumb,
-} from 'react-aria';
+import { VisuallyHidden, mergeProps, useFocusRing, useSliderThumb } from 'react-aria';
 import type { SliderState } from 'react-stately';
 
 import { cn } from '~/utils/tailwindUtil';

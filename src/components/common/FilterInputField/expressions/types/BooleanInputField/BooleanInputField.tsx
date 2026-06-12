@@ -1,7 +1,6 @@
+import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 import type { ComponentProps, FC } from 'react';
 import { Fragment } from 'react';
-
-import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { ExpressionInputTypeInputField } from '~/components/common/FilterInputField/expressions/common/ExpressionInputTypeInputField';
@@ -9,11 +8,7 @@ import { isExpression } from '~/components/common/FilterInputField/expressions/u
 import { cn } from '~/utils/tailwindUtil';
 
 export type BooleanInputFieldProps = {
-	value: [
-		'boolean',
-		...(unknown | ExpressionSpecification)[],
-		unknown | ExpressionSpecification,
-	];
+	value: ['boolean', ...(unknown | ExpressionSpecification)[], unknown | ExpressionSpecification];
 	onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 
@@ -28,10 +23,7 @@ export const BooleanInputField: FC<BooleanInputFieldProps> = ({
 	return (
 		<div
 			{...props}
-			className={cn(
-				'flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5',
-				className,
-			)}
+			className={cn('flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5', className)}
 		>
 			<div className={'flex flex-row px-0.5 py-0.5'}>typecheck boolean</div>
 			{values.map((arg, index) => (
@@ -41,9 +33,7 @@ export const BooleanInputField: FC<BooleanInputFieldProps> = ({
 					) : (
 						<ExpressionInputTypeInputField value={arg} />
 					)}
-					{index < values.length - 1 && (
-						<div className={'flex flex-row px-0.5 py-0.5'}>OR</div>
-					)}
+					{index < values.length - 1 && <div className={'flex flex-row px-0.5 py-0.5'}>OR</div>}
 				</Fragment>
 			))}
 			{children}

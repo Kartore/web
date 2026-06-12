@@ -1,10 +1,6 @@
+import type { ColorSpecification, ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 import type { ComponentProps, FC } from 'react';
 import { Fragment } from 'react';
-
-import type {
-	ColorSpecification,
-	ExpressionSpecification,
-} from '@maplibre/maplibre-gl-style-spec';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { ExpressionInputTypeInputField } from '~/components/common/FilterInputField/expressions/common/ExpressionInputTypeInputField';
@@ -39,10 +35,7 @@ export const FormatInputField: FC<FormatInputFieldProps> = ({
 	return (
 		<div
 			{...props}
-			className={cn(
-				'flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5',
-				className,
-			)}
+			className={cn('flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5', className)}
 		>
 			<div className={'flex flex-row px-0.5 py-0.5'}>format</div>
 			{values.map((arg, index) => (
@@ -52,9 +45,7 @@ export const FormatInputField: FC<FormatInputFieldProps> = ({
 					) : (
 						<ExpressionInputTypeInputField value={arg} />
 					)}
-					{index % 2 === 0 && (
-						<div className={'flex flex-row px-0.5 py-0.5'}>format option:</div>
-					)}
+					{index % 2 === 0 && <div className={'flex flex-row px-0.5 py-0.5'}>format option:</div>}
 				</Fragment>
 			))}
 			{children}

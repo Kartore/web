@@ -1,10 +1,9 @@
-import type { ComponentProps, FC } from 'react';
-
 import type {
 	CollatorExpressionSpecification,
 	ExpressionInputType,
 	ExpressionSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { ExpressionInputTypeInputField } from '~/components/common/FilterInputField/expressions/common/ExpressionInputTypeInputField';
@@ -34,10 +33,7 @@ export const LessThanOrEqualInputField: FC<LessThanOrEqualInputFieldProps> = ({
 	return (
 		<div
 			{...props}
-			className={cn(
-				'flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5',
-				className,
-			)}
+			className={cn('flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5', className)}
 		>
 			{isExpression(left) ? (
 				<ExpressionInputField value={left} onChange={onChange} />

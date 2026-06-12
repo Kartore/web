@@ -1,10 +1,9 @@
-import type { ComponentProps, FC } from 'react';
-
 import type {
 	LayerSpecification,
 	SourceSpecification,
 	SpriteSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { LayerPropertiesPanel } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel';
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
@@ -36,12 +35,7 @@ export const PropertiesPanel: FC<PropertiesPanelProps> = ({
 				className,
 			)}
 		>
-			<LayerPropertiesPanel
-				layer={layer}
-				sprite={sprite}
-				sources={sources}
-				onChange={onChange}
-			/>
+			<LayerPropertiesPanel layer={layer} sprite={sprite} sources={sources} onChange={onChange} />
 			{children}
 		</div>
 	);

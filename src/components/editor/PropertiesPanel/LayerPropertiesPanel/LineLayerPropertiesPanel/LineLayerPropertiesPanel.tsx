@@ -1,9 +1,5 @@
+import type { LineLayerSpecification, SourceSpecification } from '@maplibre/maplibre-gl-style-spec';
 import type { ComponentProps, FC } from 'react';
-
-import type {
-	LineLayerSpecification,
-	SourceSpecification,
-} from '@maplibre/maplibre-gl-style-spec';
 
 import { FilterProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/FilterProperties';
 import { GeneralProperties } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/common/GeneralProperties';
@@ -12,10 +8,7 @@ import { getStyleJSONSchemaDefinition } from '~/components/editor/PropertiesPane
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { cn } from '~/utils/tailwindUtil.ts';
 
-export type LineLayerPropertiesPanelProps = Omit<
-	ComponentProps<'div'>,
-	'onChange'
-> & {
+export type LineLayerPropertiesPanelProps = Omit<ComponentProps<'div'>, 'onChange'> & {
 	layer: LineLayerSpecification;
 	sources: { [key: string]: SourceSpecification };
 	onChange?: onChangeType;

@@ -1,18 +1,13 @@
+import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 import type { ComponentProps, FC } from 'react';
 import { Fragment } from 'react';
-
-import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { isExpression } from '~/components/common/FilterInputField/expressions/utils/isExpression.ts';
 import { cn } from '~/utils/tailwindUtil';
 
 export type NumberInputFieldProps = {
-	value: [
-		'number',
-		unknown | ExpressionSpecification,
-		...(unknown | ExpressionSpecification)[],
-	];
+	value: ['number', unknown | ExpressionSpecification, ...(unknown | ExpressionSpecification)[]];
 	onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 
@@ -27,10 +22,7 @@ export const NumberInputField: FC<NumberInputFieldProps> = ({
 	return (
 		<div
 			{...props}
-			className={cn(
-				'flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5',
-				className,
-			)}
+			className={cn('flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5', className)}
 		>
 			<div className={'flex flex-row px-0.5 py-0.5'}>typecheck number</div>
 			{values.map((arg, index) => (
@@ -38,13 +30,9 @@ export const NumberInputField: FC<NumberInputFieldProps> = ({
 					{isExpression(arg) ? (
 						<ExpressionInputField value={arg} onChange={onChange} />
 					) : (
-						<div className={'flex flex-row px-0.5 py-0.5'}>
-							{JSON.stringify(arg)}
-						</div>
+						<div className={'flex flex-row px-0.5 py-0.5'}>{JSON.stringify(arg)}</div>
 					)}
-					{index < values.length - 1 && (
-						<div className={'flex flex-row px-0.5 py-0.5'}>OR</div>
-					)}
+					{index < values.length - 1 && <div className={'flex flex-row px-0.5 py-0.5'}>OR</div>}
 				</Fragment>
 			))}
 			{children}

@@ -1,11 +1,10 @@
-import type { ComponentProps, FC } from 'react';
-
 import type {
 	FillLayerSpecification,
 	SourceSpecification,
 	SpriteSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
 import { parseColor } from '@react-stately/color';
+import type { ComponentProps, FC } from 'react';
 import { Item } from 'react-stately';
 
 import { BoxRadioGroup } from '~/components/common/BoxRadioGroup';
@@ -23,10 +22,7 @@ import { useSpriteIds } from '~/components/editor/PropertiesPanel/LayerPropertie
 import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { cn } from '~/utils/tailwindUtil.ts';
 
-export type FillLayerPropertiesPanelProps = Omit<
-	ComponentProps<'div'>,
-	'onChange'
-> & {
+export type FillLayerPropertiesPanelProps = Omit<ComponentProps<'div'>, 'onChange'> & {
 	layer: FillLayerSpecification;
 	sprite?: SpriteSpecification;
 	sources: { [key: string]: SourceSpecification };
@@ -48,24 +44,15 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
 			<GeneralProperties layer={layer} sources={sources} onChange={onChange} />
 			<FilterProperties layer={layer} onChange={onChange} />
 			<div className={'flex flex-col gap-2 px-4'}>
-				<h3 className={'font-montserrat font-semibold text-sm'}>Paint</h3>
+				<h3 className={'font-montserrat text-sm font-semibold'}>Paint</h3>
 				{typeof layer.paint?.['fill-opacity'] === 'number' ||
 				layer.paint?.['fill-opacity'] === undefined ? (
 					<NumberField
 						label={'Opacity'}
 						onChange={(value) => {
-							onChange?.(
-								layer,
-								'paint',
-								'fill-opacity',
-								value === 1 ? undefined : value,
-							);
+							onChange?.(layer, 'paint', 'fill-opacity', value === 1 ? undefined : value);
 						}}
-						value={
-							layer.paint?.['fill-opacity'] !== undefined
-								? layer.paint['fill-opacity']
-								: 1
-						}
+						value={layer.paint?.['fill-opacity'] !== undefined ? layer.paint['fill-opacity'] : 1}
 						minValue={0}
 						maxValue={1}
 						formatOptions={{
@@ -76,20 +63,14 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
 				) : (
 					<TextField
 						label={'Opacity'}
-						value={
-							layer.paint?.['fill-opacity']
-								? String(layer.paint?.['fill-opacity'])
-								: '1'
-						}
+						value={layer.paint?.['fill-opacity'] ? String(layer.paint?.['fill-opacity']) : '1'}
 					/>
 				)}
 				{typeof layer.paint?.['fill-color'] === 'string' ||
 				layer.paint?.['fill-color'] === undefined ? (
 					<ColorField
 						label={'Fill Color'}
-						value={parseColor(
-							layer.paint?.['fill-color'] ?? 'rgba(255, 255, 255, 1)',
-						)}
+						value={parseColor(layer.paint?.['fill-color'] ?? 'rgba(255, 255, 255, 1)')}
 						onChange={(color) => {
 							onChange?.(layer, 'paint', 'fill-color', color?.toString('rgba'));
 						}}
@@ -97,11 +78,7 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
 				) : (
 					<TextField
 						label={'Fill Color'}
-						value={
-							layer.paint?.['fill-color']
-								? String(layer.paint?.['fill-color'])
-								: '1'
-						}
+						value={layer.paint?.['fill-color'] ? String(layer.paint?.['fill-color']) : '1'}
 					/>
 				)}
 				{typeof layer.paint?.['fill-antialias'] === 'boolean' ||
@@ -110,21 +87,14 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
 						label={'Antialias'}
 						isSelected={layer.paint?.['fill-antialias'] ?? false}
 						onChange={(isSelected) => {
-							onChange?.(
-								layer,
-								'paint',
-								'fill-antialias',
-								isSelected ? true : undefined,
-							);
+							onChange?.(layer, 'paint', 'fill-antialias', isSelected ? true : undefined);
 						}}
 					/>
 				) : (
 					<TextField
 						label={'Antialias'}
 						value={
-							layer.paint?.['fill-antialias']
-								? String(layer.paint?.['fill-antialias'])
-								: 'false'
+							layer.paint?.['fill-antialias'] ? String(layer.paint?.['fill-antialias']) : 'false'
 						}
 					/>
 				)}
@@ -132,16 +102,9 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
 				layer.paint?.['fill-outline-color'] === undefined ? (
 					<ColorField
 						label={'Outline Color'}
-						value={parseColor(
-							layer.paint?.['fill-outline-color'] ?? 'rgba(255, 255, 255, 1)',
-						)}
+						value={parseColor(layer.paint?.['fill-outline-color'] ?? 'rgba(255, 255, 255, 1)')}
 						onChange={(color) => {
-							onChange?.(
-								layer,
-								'paint',
-								'fill-outline-color',
-								color?.toString('rgba'),
-							);
+							onChange?.(layer, 'paint', 'fill-outline-color', color?.toString('rgba'));
 						}}
 					/>
 				) : (
@@ -185,11 +148,7 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
 				) : (
 					<TextField
 						label={'Pattern'}
-						value={
-							layer.paint?.['fill-pattern']
-								? String(layer.paint?.['fill-pattern'])
-								: '1'
-						}
+						value={layer.paint?.['fill-pattern'] ? String(layer.paint?.['fill-pattern']) : '1'}
 					/>
 				)}
 				{(typeof layer.paint?.['fill-translate'] === 'object' &&
@@ -215,9 +174,7 @@ export const FillLayerPropertiesPanel: FC<FillLayerPropertiesPanelProps> = ({
 					<TextField
 						label={'Translate'}
 						value={
-							layer.paint?.['fill-translate']
-								? String(layer.paint?.['fill-translate'])
-								: '[0,0]'
+							layer.paint?.['fill-translate'] ? String(layer.paint?.['fill-translate']) : '[0,0]'
 						}
 					/>
 				)}

@@ -1,6 +1,5 @@
-import type { ComponentProps, FC } from 'react';
-
 import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { ExpressionInputTypeInputField } from '~/components/common/FilterInputField/expressions/common/ExpressionInputTypeInputField';
@@ -8,11 +7,7 @@ import { isExpression } from '~/components/common/FilterInputField/expressions/u
 import { cn } from '~/utils/tailwindUtil';
 
 export type RemainderInputFieldProps = {
-	value: [
-		'%',
-		number | ExpressionSpecification,
-		number | ExpressionSpecification,
-	];
+	value: ['%', number | ExpressionSpecification, number | ExpressionSpecification];
 	onChange?: (value: ExpressionSpecification) => void;
 } & Omit<ComponentProps<'div'>, 'onChange'>;
 

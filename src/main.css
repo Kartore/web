@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 body,
 html {
@@ -6,5 +6,5 @@ html {
 }
 
 @theme {
-	--font-family-montserrat: "Montserrat", "sans-serif";
+	--font-family-montserrat: 'Montserrat', 'sans-serif';
 }

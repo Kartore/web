@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import { useRef } from 'react';
-
 import { useComboBox, useFilter } from 'react-aria';
 import type { ComboBoxStateOptions } from 'react-stately';
 import { useComboBoxState } from 'react-stately';
+
 import { Popover } from '~/components/common/Popover';
 import { ListBox } from '~/components/common/Select/ListBox';
 import { ArrowDropDownIcon } from '~/components/icons';
@@ -39,16 +39,13 @@ export const ComboBox: FC<ComboBoxProps> = ({ className, ...props }) => {
 
 	return (
 		<div className={cn('flex items-center justify-between text-sm', className)}>
-			<div
-				{...labelProps}
-				className={cn('font-semibold text-gray-600', labelProps.className)}
-			>
+			<div {...labelProps} className={cn('font-semibold text-gray-600', labelProps.className)}>
 				{props.label}
 			</div>
 			<div
 				aria-expanded={state.isOpen}
 				className={
-					'flex w-1/2 cursor-pointer flex-row rounded border-none bg-gray-100 px-2 py-1 font-semibold text-sm transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-expanded:bg-gray-200'
+					'flex w-1/2 cursor-pointer flex-row rounded border-none bg-gray-100 px-2 py-1 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0 aria-expanded:bg-gray-200'
 				}
 				onClick={() => state.open()}
 			>

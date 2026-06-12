@@ -1,7 +1,6 @@
+import type { Color } from '@react-stately/color';
 import type { FC } from 'react';
 import { useRef, useState } from 'react';
-
-import type { Color } from '@react-stately/color';
 import { Item, useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '~/components/common/Button';
@@ -21,19 +20,12 @@ export type ColorPickerProps = {
 	className?: string;
 };
 
-export const ColorPicker: FC<ColorPickerProps> = ({
-	className,
-	onChange,
-	value,
-	...props
-}) => {
+export const ColorPicker: FC<ColorPickerProps> = ({ className, onChange, value, ...props }) => {
 	const triggerRef = useRef(null);
 	const triggerState = useOverlayTriggerState({
 		defaultOpen: false,
 	});
-	const [colorFormat, setColorFormat] = useState<'Hex' | 'RGB' | 'HSL' | 'HSB'>(
-		'RGB',
-	);
+	const [colorFormat, setColorFormat] = useState<'Hex' | 'RGB' | 'HSL' | 'HSB'>('RGB');
 	return (
 		<div {...props} className={cn('h-4 w-4', className)}>
 			<Button
@@ -43,22 +35,13 @@ export const ColorPicker: FC<ColorPickerProps> = ({
 				}}
 				className={'h-full w-full border border-gray-300 focus:outline-0'}
 			>
-				<ColorSwatch
-					color={value ? value : undefined}
-					className={'h-full w-full'}
-				/>
+				<ColorSwatch color={value ? value : undefined} className={'h-full w-full'} />
 			</Button>
 			{triggerState.isOpen ? (
 				<Popover state={triggerState} triggerRef={triggerRef} placement="left">
-					<div
-						className={cn(
-							'mr-2 flex w-64 flex-col border border-gray-300 bg-white shadow-xl',
-						)}
-					>
+					<div className={cn('mr-2 flex w-64 flex-col border border-gray-300 bg-white shadow-xl')}>
 						<div
-							className={
-								'flex flex-row items-center justify-end border-b border-b-gray-300 p-1'
-							}
+							className={'flex flex-row items-center justify-end border-b border-b-gray-300 p-1'}
 						>
 							<Button
 								className={'rounded p-1'}
@@ -70,20 +53,13 @@ export const ColorPicker: FC<ColorPickerProps> = ({
 							</Button>
 						</div>
 						<ColorArea
-							value={
-								value
-									? value.toFormat(colorFormat === 'HSL' ? 'hsl' : 'hsb')
-									: undefined
-							}
+							value={value ? value.toFormat(colorFormat === 'HSL' ? 'hsl' : 'hsb') : undefined}
 							xChannel={'saturation'}
 							yChannel={colorFormat === 'HSL' ? 'lightness' : 'brightness'}
 							onChange={onChange}
 						/>
 						<div className={'flex flex-row items-center gap-3 px-3 pt-4 pb-2'}>
-							<EyeDropperButton
-								onChange={onChange}
-								className={'h-7 min-w-7 rounded p-1'}
-							/>
+							<EyeDropperButton onChange={onChange} className={'h-7 min-w-7 rounded p-1'} />
 							<div className={'flex w-full flex-col gap-3'}>
 								<ColorChannelSlider
 									label={'Hue'}
@@ -102,9 +78,7 @@ export const ColorPicker: FC<ColorPickerProps> = ({
 						<div className={'flex flex-row px-3 pt-2 pb-4'}>
 							<Select
 								className={'text-xs'}
-								triggerClassName={
-									'h-8 bg-gray-100 hover:bg-gray-200 rounded-none'
-								}
+								triggerClassName={'h-8 bg-gray-100 hover:bg-gray-200 rounded-none'}
 								selectedKey={colorFormat}
 								onSelectionChange={(value) => {
 									setColorFormat(value as 'Hex' | 'RGB' | 'HSL' | 'HSB');

@@ -8,8 +8,7 @@ export const osmLiberty = {
 	version: 8,
 	name: 'OSM Liberty',
 	metadata: {
-		'maputnik:license':
-			'https://github.com/kartore/osm-liberty/blob/gh-pages/LICENSE.md',
+		'maputnik:license': 'https://github.com/kartore/osm-liberty/blob/gh-pages/LICENSE.md',
 		'maputnik:renderer': 'mbgljs',
 		'openmaptiles:version': '3.x',
 	},
@@ -28,8 +27,7 @@ export const osmLiberty = {
 		},
 	},
 	sprite: 'https://kartore.github.io/osm-liberty/sprites/osm-liberty',
-	glyphs:
-		'https://kartore.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf',
+	glyphs: 'https://kartore.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf',
 	layers: [
 		{
 			id: 'background',
@@ -289,11 +287,7 @@ export const osmLiberty = {
 			source: 'openmaptiles',
 			'source-layer': 'aeroway',
 			minzoom: 11,
-			filter: [
-				'all',
-				['==', '$type', 'LineString'],
-				['==', 'class', 'taxiway'],
-			],
+			filter: ['all', ['==', '$type', 'LineString'], ['==', 'class', 'taxiway']],
 			paint: {
 				'line-color': '#f0ede9',
 				'line-width': {
@@ -310,12 +304,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'class', 'motorway'],
-				['==', 'ramp', 1],
-				['==', 'brunnel', 'tunnel'],
-			],
+			filter: ['all', ['==', 'class', 'motorway'], ['==', 'ramp', 1], ['==', 'brunnel', 'tunnel']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#e9ac77',
@@ -336,11 +325,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'tunnel'],
-				['in', 'class', 'service', 'track'],
-			],
+			filter: ['all', ['==', 'brunnel', 'tunnel'], ['in', 'class', 'service', 'track']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#cfcdca',
@@ -380,11 +365,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'tunnel'],
-				['in', 'class', 'street', 'street_limited'],
-			],
+			filter: ['all', ['==', 'brunnel', 'tunnel'], ['in', 'class', 'street', 'street_limited']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#cfcdca',
@@ -410,11 +391,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'tunnel'],
-				['in', 'class', 'secondary', 'tertiary'],
-			],
+			filter: ['all', ['==', 'brunnel', 'tunnel'], ['in', 'class', 'secondary', 'tertiary']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#e9ac77',
@@ -432,11 +409,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'tunnel'],
-				['in', 'class', 'primary', 'trunk'],
-			],
+			filter: ['all', ['==', 'brunnel', 'tunnel'], ['in', 'class', 'primary', 'trunk']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#e9ac77',
@@ -456,12 +429,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'class', 'motorway'],
-				['!=', 'ramp', 1],
-				['==', 'brunnel', 'tunnel'],
-			],
+			filter: ['all', ['==', 'class', 'motorway'], ['!=', 'ramp', 1], ['==', 'brunnel', 'tunnel']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#e9ac77',
@@ -505,12 +473,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'class', 'motorway'],
-				['==', 'ramp', 1],
-				['==', 'brunnel', 'tunnel'],
-			],
+			filter: ['all', ['==', 'class', 'motorway'], ['==', 'ramp', 1], ['==', 'brunnel', 'tunnel']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#fc8',
@@ -530,11 +493,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'tunnel'],
-				['in', 'class', 'service', 'track'],
-			],
+			filter: ['all', ['==', 'brunnel', 'tunnel'], ['in', 'class', 'service', 'track']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#fff',
@@ -592,11 +551,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'tunnel'],
-				['in', 'class', 'secondary', 'tertiary'],
-			],
+			filter: ['all', ['==', 'brunnel', 'tunnel'], ['in', 'class', 'secondary', 'tertiary']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#fff4c6',
@@ -615,11 +570,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'tunnel'],
-				['in', 'class', 'primary', 'trunk'],
-			],
+			filter: ['all', ['==', 'brunnel', 'tunnel'], ['in', 'class', 'primary', 'trunk']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#fff4c6',
@@ -638,12 +589,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'class', 'motorway'],
-				['!=', 'ramp', 1],
-				['==', 'brunnel', 'tunnel'],
-			],
+			filter: ['all', ['==', 'class', 'motorway'], ['!=', 'ramp', 1], ['==', 'brunnel', 'tunnel']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#ffdaa6',
@@ -770,11 +716,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['!in', 'brunnel', 'bridge', 'tunnel'],
-				['in', 'class', 'service', 'track'],
-			],
+			filter: ['all', ['!in', 'brunnel', 'bridge', 'tunnel'], ['in', 'class', 'service', 'track']],
 			layout: { 'line-cap': 'round', 'line-join': 'round' },
 			paint: {
 				'line-color': '#cfcdca',
@@ -874,11 +816,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['!in', 'brunnel', 'bridge', 'tunnel'],
-				['in', 'class', 'primary', 'trunk'],
-			],
+			filter: ['all', ['!in', 'brunnel', 'bridge', 'tunnel'], ['in', 'class', 'primary', 'trunk']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#e9ac77',
@@ -975,11 +913,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['!in', 'brunnel', 'bridge', 'tunnel'],
-				['in', 'class', 'service', 'track'],
-			],
+			filter: ['all', ['!in', 'brunnel', 'bridge', 'tunnel'], ['in', 'class', 'service', 'track']],
 			layout: { 'line-cap': 'round', 'line-join': 'round' },
 			paint: {
 				'line-color': '#fff',
@@ -1071,11 +1005,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['!in', 'brunnel', 'bridge', 'tunnel'],
-				['in', 'class', 'primary', 'trunk'],
-			],
+			filter: ['all', ['!in', 'brunnel', 'bridge', 'tunnel'], ['in', 'class', 'primary', 'trunk']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#fea',
@@ -1125,11 +1055,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['!in', 'brunnel', 'bridge', 'tunnel'],
-				['==', 'class', 'rail'],
-			],
+			filter: ['all', ['!in', 'brunnel', 'bridge', 'tunnel'], ['==', 'class', 'rail']],
 			paint: {
 				'line-color': '#bbb',
 				'line-width': {
@@ -1147,11 +1073,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['!in', 'brunnel', 'bridge', 'tunnel'],
-				['==', 'class', 'rail'],
-			],
+			filter: ['all', ['!in', 'brunnel', 'bridge', 'tunnel'], ['==', 'class', 'rail']],
 			paint: {
 				'line-color': '#bbb',
 				'line-dasharray': [0.2, 8],
@@ -1170,11 +1092,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['!in', 'brunnel', 'bridge', 'tunnel'],
-				['==', 'class', 'transit'],
-			],
+			filter: ['all', ['!in', 'brunnel', 'bridge', 'tunnel'], ['==', 'class', 'transit']],
 			paint: {
 				'line-color': '#bbb',
 				'line-width': {
@@ -1192,11 +1110,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['!in', 'brunnel', 'bridge', 'tunnel'],
-				['==', 'class', 'transit'],
-			],
+			filter: ['all', ['!in', 'brunnel', 'bridge', 'tunnel'], ['==', 'class', 'transit']],
 			paint: {
 				'line-color': '#bbb',
 				'line-dasharray': [0.2, 8],
@@ -1237,12 +1151,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'class', 'motorway'],
-				['==', 'ramp', 1],
-				['==', 'brunnel', 'bridge'],
-			],
+			filter: ['all', ['==', 'class', 'motorway'], ['==', 'ramp', 1], ['==', 'brunnel', 'bridge']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#e9ac77',
@@ -1262,11 +1171,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'bridge'],
-				['in', 'class', 'service', 'track'],
-			],
+			filter: ['all', ['==', 'brunnel', 'bridge'], ['in', 'class', 'service', 'track']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#cfcdca',
@@ -1305,11 +1210,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'bridge'],
-				['in', 'class', 'street', 'street_limited'],
-			],
+			filter: ['all', ['==', 'brunnel', 'bridge'], ['in', 'class', 'street', 'street_limited']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': 'hsl(36, 6%, 74%)',
@@ -1358,11 +1259,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'bridge'],
-				['in', 'class', 'secondary', 'tertiary'],
-			],
+			filter: ['all', ['==', 'brunnel', 'bridge'], ['in', 'class', 'secondary', 'tertiary']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#e9ac77',
@@ -1380,11 +1277,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'bridge'],
-				['in', 'class', 'primary', 'trunk'],
-			],
+			filter: ['all', ['==', 'brunnel', 'bridge'], ['in', 'class', 'primary', 'trunk']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#e9ac77',
@@ -1404,12 +1297,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'class', 'motorway'],
-				['!=', 'ramp', 1],
-				['==', 'brunnel', 'bridge'],
-			],
+			filter: ['all', ['==', 'class', 'motorway'], ['!=', 'ramp', 1], ['==', 'brunnel', 'bridge']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#e9ac77',
@@ -1452,12 +1340,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'class', 'motorway'],
-				['==', 'ramp', 1],
-				['==', 'brunnel', 'bridge'],
-			],
+			filter: ['all', ['==', 'class', 'motorway'], ['==', 'ramp', 1], ['==', 'brunnel', 'bridge']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#fc8',
@@ -1477,11 +1360,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'bridge'],
-				['in', 'class', 'service', 'track'],
-			],
+			filter: ['all', ['==', 'brunnel', 'bridge'], ['in', 'class', 'service', 'track']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#fff',
@@ -1539,11 +1418,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'bridge'],
-				['in', 'class', 'secondary', 'tertiary'],
-			],
+			filter: ['all', ['==', 'brunnel', 'bridge'], ['in', 'class', 'secondary', 'tertiary']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#fea',
@@ -1562,11 +1437,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'brunnel', 'bridge'],
-				['in', 'class', 'primary', 'trunk'],
-			],
+			filter: ['all', ['==', 'brunnel', 'bridge'], ['in', 'class', 'primary', 'trunk']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#fea',
@@ -1585,12 +1456,7 @@ export const osmLiberty = {
 			type: 'line',
 			source: 'openmaptiles',
 			'source-layer': 'transportation',
-			filter: [
-				'all',
-				['==', 'class', 'motorway'],
-				['!=', 'ramp', 1],
-				['==', 'brunnel', 'bridge'],
-			],
+			filter: ['all', ['==', 'class', 'motorway'], ['!=', 'ramp', 1], ['==', 'brunnel', 'bridge']],
 			layout: { 'line-join': 'round' },
 			paint: {
 				'line-color': '#fc8',
@@ -1862,12 +1728,7 @@ export const osmLiberty = {
 			source: 'openmaptiles',
 			'source-layer': 'poi',
 			minzoom: 15,
-			filter: [
-				'all',
-				['==', '$type', 'Point'],
-				['>=', 'rank', 7],
-				['<', 'rank', 20],
-			],
+			filter: ['all', ['==', '$type', 'Point'], ['>=', 'rank', 7], ['<', 'rank', 20]],
 			layout: {
 				'icon-image': [
 					'match',
@@ -1896,12 +1757,7 @@ export const osmLiberty = {
 			source: 'openmaptiles',
 			'source-layer': 'poi',
 			minzoom: 14,
-			filter: [
-				'all',
-				['==', '$type', 'Point'],
-				['>=', 'rank', 1],
-				['<', 'rank', 7],
-			],
+			filter: ['all', ['==', '$type', 'Point'], ['>=', 'rank', 1], ['<', 'rank', 7]],
 			layout: {
 				'icon-image': [
 					'match',
@@ -2005,16 +1861,7 @@ export const osmLiberty = {
 			'source-layer': 'place',
 			filter: [
 				'all',
-				[
-					'in',
-					'class',
-					'hamlet',
-					'island',
-					'islet',
-					'neighbourhood',
-					'suburb',
-					'quarter',
-				],
+				['in', 'class', 'hamlet', 'island', 'islet', 'neighbourhood', 'suburb', 'quarter'],
 			],
 			layout: {
 				'text-field': '{name_en}',

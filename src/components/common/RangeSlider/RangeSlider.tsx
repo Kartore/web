@@ -1,7 +1,6 @@
+import type { NumberFormatOptions } from '@internationalized/number';
 import type { FC } from 'react';
 import { useRef } from 'react';
-
-import type { NumberFormatOptions } from '@internationalized/number';
 import type { AriaSliderProps } from 'react-aria';
 import { useNumberFormatter, useSlider } from 'react-aria';
 import { useSliderState } from 'react-stately';
@@ -20,34 +19,21 @@ export const RangeSlider: FC<RangeSliderProps> = ({ className, ...props }) => {
 
 	const numberFormatter = useNumberFormatter(props.formatOptions);
 	const state = useSliderState({ ...props, numberFormatter });
-	const { groupProps, trackProps, labelProps, outputProps } = useSlider(
-		props,
-		state,
-		trackRef,
-	);
+	const { groupProps, trackProps, labelProps, outputProps } = useSlider(props, state, trackRef);
 
 	return (
-		<div
-			{...groupProps}
-			className={cn(`h-auto w-full ${state.orientation}`, className)}
-		>
+		<div {...groupProps} className={cn(`h-auto w-full ${state.orientation}`, className)}>
 			{props.label && (
 				<div className="flex items-center justify-between">
 					<label
 						{...labelProps}
-						className={cn(
-							'font-semibold text-gray-600 text-sm',
-							labelProps.className,
-						)}
+						className={cn('font-semibold text-gray-600 text-sm', labelProps.className)}
 					>
 						{props.label}
 					</label>
 					<output
 						{...outputProps}
-						className={cn(
-							'font-semibold text-gray-800 text-sm',
-							outputProps.className,
-						)}
+						className={cn('font-semibold text-gray-800 text-sm', outputProps.className)}
 					>
 						{`${state.getThumbValueLabel(0)} - ${state.getThumbValueLabel(1)}`}
 					</output>
@@ -70,18 +56,14 @@ export const RangeSlider: FC<RangeSliderProps> = ({ className, ...props }) => {
 					}}
 				/>
 				<RangeSliderThumb
-					className={
-						'mt-[1px] size-3 rounded-full border border-gray-500 bg-white'
-					}
+					className={'mt-[1px] size-3 rounded-full border border-gray-500 bg-white'}
 					index={0}
 					state={state}
 					trackRef={trackRef}
 					aria-label={props.sliderThumbLabel?.[0]}
 				/>
 				<RangeSliderThumb
-					className={
-						'mt-[1px] size-3 rounded-full border border-gray-500 bg-white'
-					}
+					className={'mt-[1px] size-3 rounded-full border border-gray-500 bg-white'}
 					index={1}
 					state={state}
 					trackRef={trackRef}

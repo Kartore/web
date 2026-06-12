@@ -1,6 +1,5 @@
-import type { ComponentProps, FC } from 'react';
-
 import type { ExpressionFilterSpecification } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 
@@ -23,12 +22,7 @@ export const FilterInputField: FC<FilterInputFieldProps> = ({
 		return null;
 	}
 	return (
-		<ExpressionInputField
-			className={'text-sm'}
-			value={value}
-			onChange={onChange}
-			{...props}
-		>
+		<ExpressionInputField className={'text-sm'} value={value} onChange={onChange} {...props}>
 			{children}
 		</ExpressionInputField>
 	);

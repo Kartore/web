@@ -1264,65 +1264,64 @@ const StyleJSONSchemaBase = {
 				},
 			],
 		},
-		'CameraFunctionSpecification<VariableAnchorOffsetCollectionSpecification>':
-			{
-				anyOf: [
-					{
-						additionalProperties: false,
-						properties: {
-							stops: {
-								items: {
-									items: [
-										{
-											type: 'number',
-										},
-										{
-											$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-										},
-									],
-									maxItems: 2,
-									minItems: 2,
-									type: 'array',
-								},
+		'CameraFunctionSpecification<VariableAnchorOffsetCollectionSpecification>': {
+			anyOf: [
+				{
+					additionalProperties: false,
+					properties: {
+						stops: {
+							items: {
+								items: [
+									{
+										type: 'number',
+									},
+									{
+										$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+									},
+								],
+								maxItems: 2,
+								minItems: 2,
 								type: 'array',
 							},
-							type: {
-								const: 'exponential',
-								type: 'string',
-							},
+							type: 'array',
 						},
-						required: ['type', 'stops'],
-						type: 'object',
+						type: {
+							const: 'exponential',
+							type: 'string',
+						},
 					},
-					{
-						additionalProperties: false,
-						properties: {
-							stops: {
-								items: {
-									items: [
-										{
-											type: 'number',
-										},
-										{
-											$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-										},
-									],
-									maxItems: 2,
-									minItems: 2,
-									type: 'array',
-								},
+					required: ['type', 'stops'],
+					type: 'object',
+				},
+				{
+					additionalProperties: false,
+					properties: {
+						stops: {
+							items: {
+								items: [
+									{
+										type: 'number',
+									},
+									{
+										$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+									},
+								],
+								maxItems: 2,
+								minItems: 2,
 								type: 'array',
 							},
-							type: {
-								const: 'interval',
-								type: 'string',
-							},
+							type: 'array',
 						},
-						required: ['type', 'stops'],
-						type: 'object',
+						type: {
+							const: 'interval',
+							type: 'string',
+						},
 					},
-				],
-			},
+					required: ['type', 'stops'],
+					type: 'object',
+				},
+			],
+		},
 		'CameraFunctionSpecification<[number,number,number,number]>': {
 			anyOf: [
 				{
@@ -3042,140 +3041,139 @@ const StyleJSONSchemaBase = {
 				},
 			],
 		},
-		'CompositeFunctionSpecification<VariableAnchorOffsetCollectionSpecification>':
-			{
-				anyOf: [
-					{
-						additionalProperties: false,
-						properties: {
-							default: {
-								$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-							},
-							property: {
-								type: 'string',
-							},
-							stops: {
-								items: {
-									items: [
-										{
-											additionalProperties: false,
-											properties: {
-												value: {
-													type: 'number',
-												},
-												zoom: {
-													type: 'number',
-												},
+		'CompositeFunctionSpecification<VariableAnchorOffsetCollectionSpecification>': {
+			anyOf: [
+				{
+					additionalProperties: false,
+					properties: {
+						default: {
+							$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+						},
+						property: {
+							type: 'string',
+						},
+						stops: {
+							items: {
+								items: [
+									{
+										additionalProperties: false,
+										properties: {
+											value: {
+												type: 'number',
 											},
-											required: ['zoom', 'value'],
-											type: 'object',
+											zoom: {
+												type: 'number',
+											},
 										},
-										{
-											$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-										},
-									],
-									maxItems: 2,
-									minItems: 2,
-									type: 'array',
-								},
+										required: ['zoom', 'value'],
+										type: 'object',
+									},
+									{
+										$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+									},
+								],
+								maxItems: 2,
+								minItems: 2,
 								type: 'array',
 							},
-							type: {
-								const: 'exponential',
-								type: 'string',
-							},
+							type: 'array',
 						},
-						required: ['type', 'stops', 'property'],
-						type: 'object',
+						type: {
+							const: 'exponential',
+							type: 'string',
+						},
 					},
-					{
-						additionalProperties: false,
-						properties: {
-							default: {
-								$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-							},
-							property: {
-								type: 'string',
-							},
-							stops: {
-								items: {
-									items: [
-										{
-											additionalProperties: false,
-											properties: {
-												value: {
-													type: 'number',
-												},
-												zoom: {
-													type: 'number',
-												},
+					required: ['type', 'stops', 'property'],
+					type: 'object',
+				},
+				{
+					additionalProperties: false,
+					properties: {
+						default: {
+							$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+						},
+						property: {
+							type: 'string',
+						},
+						stops: {
+							items: {
+								items: [
+									{
+										additionalProperties: false,
+										properties: {
+											value: {
+												type: 'number',
 											},
-											required: ['zoom', 'value'],
-											type: 'object',
+											zoom: {
+												type: 'number',
+											},
 										},
-										{
-											$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-										},
-									],
-									maxItems: 2,
-									minItems: 2,
-									type: 'array',
-								},
+										required: ['zoom', 'value'],
+										type: 'object',
+									},
+									{
+										$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+									},
+								],
+								maxItems: 2,
+								minItems: 2,
 								type: 'array',
 							},
-							type: {
-								const: 'interval',
-								type: 'string',
-							},
+							type: 'array',
 						},
-						required: ['type', 'stops', 'property'],
-						type: 'object',
+						type: {
+							const: 'interval',
+							type: 'string',
+						},
 					},
-					{
-						additionalProperties: false,
-						properties: {
-							default: {
-								$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-							},
-							property: {
-								type: 'string',
-							},
-							stops: {
-								items: {
-									items: [
-										{
-											additionalProperties: false,
-											properties: {
-												value: {
-													type: ['string', 'number', 'boolean'],
-												},
-												zoom: {
-													type: 'number',
-												},
+					required: ['type', 'stops', 'property'],
+					type: 'object',
+				},
+				{
+					additionalProperties: false,
+					properties: {
+						default: {
+							$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+						},
+						property: {
+							type: 'string',
+						},
+						stops: {
+							items: {
+								items: [
+									{
+										additionalProperties: false,
+										properties: {
+											value: {
+												type: ['string', 'number', 'boolean'],
 											},
-											required: ['zoom', 'value'],
-											type: 'object',
+											zoom: {
+												type: 'number',
+											},
 										},
-										{
-											$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-										},
-									],
-									maxItems: 2,
-									minItems: 2,
-									type: 'array',
-								},
+										required: ['zoom', 'value'],
+										type: 'object',
+									},
+									{
+										$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+									},
+								],
+								maxItems: 2,
+								minItems: 2,
 								type: 'array',
 							},
-							type: {
-								const: 'categorical',
-								type: 'string',
-							},
+							type: 'array',
 						},
-						required: ['type', 'stops', 'property'],
-						type: 'object',
+						type: {
+							const: 'categorical',
+							type: 'string',
+						},
 					},
-				],
-			},
+					required: ['type', 'stops', 'property'],
+					type: 'object',
+				},
+			],
+		},
 		'CompositeFunctionSpecification<[number,number]>': {
 			anyOf: [
 				{
@@ -3840,26 +3838,25 @@ const StyleJSONSchemaBase = {
 				},
 			],
 		},
-		'DataDrivenPropertyValueSpecification<VariableAnchorOffsetCollectionSpecification>':
-			{
-				anyOf: [
-					{
-						$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-					},
-					{
-						$ref: '#/definitions/CameraFunctionSpecification<VariableAnchorOffsetCollectionSpecification>',
-					},
-					{
-						$ref: '#/definitions/SourceFunctionSpecification<VariableAnchorOffsetCollectionSpecification>',
-					},
-					{
-						$ref: '#/definitions/CompositeFunctionSpecification<VariableAnchorOffsetCollectionSpecification>',
-					},
-					{
-						$ref: '#/definitions/ExpressionSpecification',
-					},
-				],
-			},
+		'DataDrivenPropertyValueSpecification<VariableAnchorOffsetCollectionSpecification>': {
+			anyOf: [
+				{
+					$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+				},
+				{
+					$ref: '#/definitions/CameraFunctionSpecification<VariableAnchorOffsetCollectionSpecification>',
+				},
+				{
+					$ref: '#/definitions/SourceFunctionSpecification<VariableAnchorOffsetCollectionSpecification>',
+				},
+				{
+					$ref: '#/definitions/CompositeFunctionSpecification<VariableAnchorOffsetCollectionSpecification>',
+				},
+				{
+					$ref: '#/definitions/ExpressionSpecification',
+				},
+			],
+		},
 		'DataDrivenPropertyValueSpecification<[number,number]>': {
 			anyOf: [
 				{
@@ -6475,13 +6472,11 @@ const StyleJSONSchemaBase = {
 					$ref: '#/definitions/GeometryCollection',
 				},
 			],
-			description:
-				'Geometry object. https://tools.ietf.org/html/rfc7946#section-3',
+			description: 'Geometry object. https://tools.ietf.org/html/rfc7946#section-3',
 		},
 		GeometryCollection: {
 			additionalProperties: false,
-			description:
-				'Geometry Collection https://tools.ietf.org/html/rfc7946#section-3.1.8',
+			description: 'Geometry Collection https://tools.ietf.org/html/rfc7946#section-3.1.8',
 			properties: {
 				bbox: {
 					$ref: '#/definitions/BBox',
@@ -7090,8 +7085,7 @@ const StyleJSONSchemaBase = {
 		},
 		LineString: {
 			additionalProperties: false,
-			description:
-				'LineString geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.4',
+			description: 'LineString geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.4',
 			properties: {
 				bbox: {
 					$ref: '#/definitions/BBox',
@@ -7143,8 +7137,7 @@ const StyleJSONSchemaBase = {
 		},
 		MultiPoint: {
 			additionalProperties: false,
-			description:
-				'MultiPoint geometry object.  https://tools.ietf.org/html/rfc7946#section-3.1.3',
+			description: 'MultiPoint geometry object.  https://tools.ietf.org/html/rfc7946#section-3.1.3',
 			properties: {
 				bbox: {
 					$ref: '#/definitions/BBox',
@@ -7212,8 +7205,7 @@ const StyleJSONSchemaBase = {
 		},
 		Point: {
 			additionalProperties: false,
-			description:
-				'Point geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.2',
+			description: 'Point geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.2',
 			properties: {
 				bbox: {
 					$ref: '#/definitions/BBox',
@@ -7234,8 +7226,7 @@ const StyleJSONSchemaBase = {
 		},
 		Polygon: {
 			additionalProperties: false,
-			description:
-				'Polygon geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.6',
+			description: 'Polygon geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.6',
 			properties: {
 				bbox: {
 					$ref: '#/definitions/BBox',
@@ -8921,127 +8912,126 @@ const StyleJSONSchemaBase = {
 				},
 			],
 		},
-		'SourceFunctionSpecification<VariableAnchorOffsetCollectionSpecification>':
-			{
-				anyOf: [
-					{
-						additionalProperties: false,
-						properties: {
-							default: {
-								$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-							},
-							property: {
-								type: 'string',
-							},
-							stops: {
-								items: {
-									items: [
-										{
-											type: 'number',
-										},
-										{
-											$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-										},
-									],
-									maxItems: 2,
-									minItems: 2,
-									type: 'array',
-								},
+		'SourceFunctionSpecification<VariableAnchorOffsetCollectionSpecification>': {
+			anyOf: [
+				{
+					additionalProperties: false,
+					properties: {
+						default: {
+							$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+						},
+						property: {
+							type: 'string',
+						},
+						stops: {
+							items: {
+								items: [
+									{
+										type: 'number',
+									},
+									{
+										$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+									},
+								],
+								maxItems: 2,
+								minItems: 2,
 								type: 'array',
 							},
-							type: {
-								const: 'exponential',
-								type: 'string',
-							},
+							type: 'array',
 						},
-						required: ['type', 'stops', 'property'],
-						type: 'object',
+						type: {
+							const: 'exponential',
+							type: 'string',
+						},
 					},
-					{
-						additionalProperties: false,
-						properties: {
-							default: {
-								$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-							},
-							property: {
-								type: 'string',
-							},
-							stops: {
-								items: {
-									items: [
-										{
-											type: 'number',
-										},
-										{
-											$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-										},
-									],
-									maxItems: 2,
-									minItems: 2,
-									type: 'array',
-								},
+					required: ['type', 'stops', 'property'],
+					type: 'object',
+				},
+				{
+					additionalProperties: false,
+					properties: {
+						default: {
+							$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+						},
+						property: {
+							type: 'string',
+						},
+						stops: {
+							items: {
+								items: [
+									{
+										type: 'number',
+									},
+									{
+										$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+									},
+								],
+								maxItems: 2,
+								minItems: 2,
 								type: 'array',
 							},
-							type: {
-								const: 'interval',
-								type: 'string',
-							},
+							type: 'array',
 						},
-						required: ['type', 'stops', 'property'],
-						type: 'object',
+						type: {
+							const: 'interval',
+							type: 'string',
+						},
 					},
-					{
-						additionalProperties: false,
-						properties: {
-							default: {
-								$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-							},
-							property: {
-								type: 'string',
-							},
-							stops: {
-								items: {
-									items: [
-										{
-											type: ['string', 'number', 'boolean'],
-										},
-										{
-											$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-										},
-									],
-									maxItems: 2,
-									minItems: 2,
-									type: 'array',
-								},
+					required: ['type', 'stops', 'property'],
+					type: 'object',
+				},
+				{
+					additionalProperties: false,
+					properties: {
+						default: {
+							$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+						},
+						property: {
+							type: 'string',
+						},
+						stops: {
+							items: {
+								items: [
+									{
+										type: ['string', 'number', 'boolean'],
+									},
+									{
+										$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+									},
+								],
+								maxItems: 2,
+								minItems: 2,
 								type: 'array',
 							},
-							type: {
-								const: 'categorical',
-								type: 'string',
-							},
+							type: 'array',
 						},
-						required: ['type', 'stops', 'property'],
-						type: 'object',
-					},
-					{
-						additionalProperties: false,
-						properties: {
-							default: {
-								$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
-							},
-							property: {
-								type: 'string',
-							},
-							type: {
-								const: 'identity',
-								type: 'string',
-							},
+						type: {
+							const: 'categorical',
+							type: 'string',
 						},
-						required: ['type', 'property'],
-						type: 'object',
 					},
-				],
-			},
+					required: ['type', 'stops', 'property'],
+					type: 'object',
+				},
+				{
+					additionalProperties: false,
+					properties: {
+						default: {
+							$ref: '#/definitions/VariableAnchorOffsetCollectionSpecification',
+						},
+						property: {
+							type: 'string',
+						},
+						type: {
+							const: 'identity',
+							type: 'string',
+						},
+					},
+					required: ['type', 'property'],
+					type: 'object',
+				},
+			],
+		},
 		'SourceFunctionSpecification<[number,number]>': {
 			anyOf: [
 				{

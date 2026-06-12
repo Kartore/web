@@ -24,16 +24,6 @@ export default function Plopfile(plop) {
 				path: 'src/components/{{parentPath}}/{{name}}/index.ts',
 				templateFile: 'plop-templates/component/index.ts.hbs',
 			},
-			{
-				type: 'add',
-				path: 'src/components/{{parentPath}}/{{name}}/{{name}}.stories.tsx',
-				templateFile: 'plop-templates/component/Component.stories.tsx.hbs',
-			},
-			{
-				type: 'add',
-				path: 'src/components/{{parentPath}}/{{name}}/{{name}}.test.tsx',
-				templateFile: 'plop-templates/component/Component.test.tsx.hbs',
-			},
 		],
 	});
 

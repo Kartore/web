@@ -1,5 +1,4 @@
 import { useSyncExternalStore } from 'react';
-
 import { useMap } from 'react-map-gl/maplibre';
 
 export const useZoomLevel = () => {

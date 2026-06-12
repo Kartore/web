@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { useRef } from 'react';
-
 import { HiddenSelect, useSelect } from 'react-aria';
 import type { SelectStateOptions } from 'react-stately';
 import { useSelectState } from 'react-stately';
@@ -16,26 +15,15 @@ export type SelectProps = {
 	triggerClassName?: string;
 } & SelectStateOptions<object>;
 
-export const Select: FC<SelectProps> = ({
-	className,
-	triggerClassName,
-	...props
-}) => {
+export const Select: FC<SelectProps> = ({ className, triggerClassName, ...props }) => {
 	const state = useSelectState(props);
 
 	const ref = useRef(null);
-	const { labelProps, triggerProps, valueProps, menuProps } = useSelect(
-		props,
-		state,
-		ref,
-	);
+	const { labelProps, triggerProps, valueProps, menuProps } = useSelect(props, state, ref);
 
 	return (
 		<div className={cn('flex items-center justify-between text-sm', className)}>
-			<div
-				{...labelProps}
-				className={cn('font-semibold text-gray-600', labelProps.className)}
-			>
+			<div {...labelProps} className={cn('font-semibold text-gray-600', labelProps.className)}>
 				{props.label}
 			</div>
 			<HiddenSelect
@@ -52,10 +40,7 @@ export const Select: FC<SelectProps> = ({
 					triggerClassName,
 				)}
 			>
-				<p
-					{...valueProps}
-					className={'flex-1 overflow-hidden text-ellipsis text-start'}
-				>
+				<p {...valueProps} className={'flex-1 overflow-hidden text-start text-ellipsis'}>
 					{state.selectedItem ? state.selectedItem.rendered : ''}
 				</p>
 				<ArrowDropDownIcon aria-hidden={'true'} className={'w-4'} />

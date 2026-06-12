@@ -1,6 +1,5 @@
 import type { ComponentProps, FC, MutableRefObject } from 'react';
 import { useRef } from 'react';
-
 import { type AriaButtonOptions, useButton } from 'react-aria';
 
 import { cn } from '~/utils/tailwindUtil';

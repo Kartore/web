@@ -1,6 +1,5 @@
-import type { ComponentProps, FC } from 'react';
-
 import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { ExpressionInputTypeInputField } from '~/components/common/FilterInputField/expressions/common/ExpressionInputTypeInputField';
@@ -31,10 +30,7 @@ export const NumberFormatInputField: FC<NumberFormatInputFieldProps> = ({
 	return (
 		<div
 			{...props}
-			className={cn(
-				'flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5',
-				className,
-			)}
+			className={cn('flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5', className)}
 		>
 			<div className={'flex flex-row px-0.5 py-0.5'}>number format</div>
 			{isExpression(value[1]) ? (
@@ -42,9 +38,7 @@ export const NumberFormatInputField: FC<NumberFormatInputFieldProps> = ({
 			) : (
 				<ExpressionInputTypeInputField value={value[1]} />
 			)}
-			<div className={'flex flex-row px-0.5 py-0.5'}>
-				option: {JSON.stringify(value[2])}
-			</div>
+			<div className={'flex flex-row px-0.5 py-0.5'}>option: {JSON.stringify(value[2])}</div>
 			{children}
 		</div>
 	);

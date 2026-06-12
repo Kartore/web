@@ -1,13 +1,8 @@
-import type { FC } from 'react';
-import { useRef } from 'react';
-
 import type { AriaColorFieldProps } from '@react-aria/color';
 import { useColorChannelField, useColorField } from '@react-aria/color';
-import {
-	parseColor,
-	useColorChannelFieldState,
-	useColorFieldState,
-} from '@react-stately/color';
+import { parseColor, useColorChannelFieldState, useColorFieldState } from '@react-stately/color';
+import type { FC } from 'react';
+import { useRef } from 'react';
 import { useLocale } from 'react-aria';
 
 import { ColorPicker } from '~/components/common/ColorField/ColorPicker';
@@ -17,11 +12,7 @@ export type ColorFieldProps = {
 	className?: string;
 } & AriaColorFieldProps;
 
-export const ColorField: FC<ColorFieldProps> = ({
-	className,
-	label,
-	...props
-}) => {
+export const ColorField: FC<ColorFieldProps> = ({ className, label, ...props }) => {
 	const state = useColorFieldState({ label, ...props });
 	const ref = useRef(null);
 	const alphaInputRef = useRef(null);
@@ -48,29 +39,20 @@ export const ColorField: FC<ColorFieldProps> = ({
 	);
 
 	return (
-		<div
-			className={cn('flex flex-row items-center justify-between', className)}
-		>
+		<div className={cn('flex flex-row items-center justify-between', className)}>
 			<label
 				{...labelProps}
-				className={cn(
-					'font-semibold text-gray-600 text-sm',
-					labelProps.className,
-				)}
+				className={cn('font-semibold text-gray-600 text-sm', labelProps.className)}
 			>
 				{label}
 			</label>
 			<div
 				className={
-					'flex w-1/2 flex-row items-center gap-2 rounded border-none bg-gray-100 px-2 py-1 font-semibold text-sm transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0'
+					'flex w-1/2 flex-row items-center gap-2 rounded border-none bg-gray-100 px-2 py-1 text-sm font-semibold transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-0'
 				}
 			>
 				<ColorPicker
-					value={
-						typeof props.value === 'string'
-							? parseColor(props.value)
-							: props.value
-					}
+					value={typeof props.value === 'string' ? parseColor(props.value) : props.value}
 					onChange={props.onChange}
 				/>
 				<input
@@ -84,25 +66,16 @@ export const ColorField: FC<ColorFieldProps> = ({
 				<input
 					{...alphaInputProps}
 					ref={alphaInputRef}
-					className={cn(
-						'min-w-8 flex-1 border-none focus-visible:outline-0',
-						inputProps.className,
-					)}
+					className={cn('min-w-8 flex-1 border-none focus-visible:outline-0', inputProps.className)}
 				/>
 			</div>
 			{props.description && (
-				<div
-					{...descriptionProps}
-					className={cn('text-xs', descriptionProps.className)}
-				>
+				<div {...descriptionProps} className={cn('text-xs', descriptionProps.className)}>
 					{props.description}
 				</div>
 			)}
 			{isInvalid && (
-				<div
-					{...errorMessageProps}
-					className={cn('text-red text-xs', errorMessageProps.className)}
-				>
+				<div {...errorMessageProps} className={cn('text-red text-xs', errorMessageProps.className)}>
 					{validationErrors.join(' ')}
 				</div>
 			)}

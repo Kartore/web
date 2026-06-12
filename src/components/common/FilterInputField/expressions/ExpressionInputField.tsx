@@ -1,15 +1,14 @@
+import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 import type { ComponentProps, FC } from 'react';
 
-import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
-
-import {
-	RgbInputField,
-	isRgbExpressionSpecification,
-} from '~/components/common/FilterInputField/expressions/color/RgbInputField';
 import {
 	RgbaInputField,
 	isRgbaExpressionSpecification,
 } from '~/components/common/FilterInputField/expressions/color/RgbaInputField';
+import {
+	RgbInputField,
+	isRgbExpressionSpecification,
+} from '~/components/common/FilterInputField/expressions/color/RgbInputField';
 import {
 	ToRgbaInputField,
 	isToRgbaExpressionSpecification,
@@ -123,13 +122,13 @@ import {
 	isHasExpressionSpecification,
 } from '~/components/common/FilterInputField/expressions/lookup/HasInputField';
 import {
-	InInputField,
-	isInExpressionSpecification,
-} from '~/components/common/FilterInputField/expressions/lookup/InInputField';
-import {
 	IndexOfInputField,
 	isIndexOfExpressionSpecification,
 } from '~/components/common/FilterInputField/expressions/lookup/IndexOfInputField';
+import {
+	InInputField,
+	isInExpressionSpecification,
+} from '~/components/common/FilterInputField/expressions/lookup/InInputField';
 import {
 	LengthInputField,
 	isLengthExpressionSpecification,
@@ -438,11 +437,7 @@ export const ExpressionInputField: FC<ExpressionInputFieldProps> = ({
 	}
 	if (isGreaterThanOrEqualExpressionSpecification(value)) {
 		return (
-			<GreaterThanOrEqualInputField
-				value={value}
-				onChange={onChange}
-				{...props}
-			>
+			<GreaterThanOrEqualInputField value={value} onChange={onChange} {...props}>
 				{children}
 			</GreaterThanOrEqualInputField>
 		);

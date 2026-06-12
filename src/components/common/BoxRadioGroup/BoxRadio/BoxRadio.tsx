@@ -1,6 +1,5 @@
 import type { FC, ReactNode } from 'react';
 import { useRef } from 'react';
-
 import type { AriaRadioProps } from 'react-aria';
 import { useRadio } from 'react-aria';
 import type { RadioGroupState } from 'react-stately';
@@ -13,12 +12,7 @@ export type BoxRadioProps = {
 	state: RadioGroupState;
 } & AriaRadioProps;
 
-export const BoxRadio: FC<BoxRadioProps> = ({
-	className,
-	children,
-	state,
-	...props
-}) => {
+export const BoxRadio: FC<BoxRadioProps> = ({ className, children, state, ...props }) => {
 	const ref = useRef(null);
 	const { inputProps, isSelected } = useRadio(props, state, ref);
 

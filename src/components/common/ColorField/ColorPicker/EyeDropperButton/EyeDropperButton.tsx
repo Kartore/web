@@ -1,8 +1,7 @@
-import type { FC } from 'react';
-import { useEffect, useState } from 'react';
-
 import type { Color } from '@react-stately/color';
 import { parseColor } from '@react-stately/color';
+import type { FC } from 'react';
+import { useEffect, useState } from 'react';
 
 import type { ButtonProps } from '~/components/common/Button';
 import { Button } from '~/components/common/Button';
@@ -13,11 +12,7 @@ export type EyeDropperButtonProps = {
 	onChange?: (color: Color) => void;
 } & Omit<ButtonProps, 'onChange' | 'children'>;
 
-export const EyeDropperButton: FC<EyeDropperButtonProps> = ({
-	className,
-	onChange,
-	...props
-}) => {
+export const EyeDropperButton: FC<EyeDropperButtonProps> = ({ className, onChange, ...props }) => {
 	const [isEyeDropperSupported, setIsEyeDropperSupported] = useState(false);
 
 	const handleClick = () => {

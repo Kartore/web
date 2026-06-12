@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { useRef } from 'react';
-
 import type { AriaSwitchProps } from 'react-aria';
 import { VisuallyHidden, useSwitch } from 'react-aria';
 import { useToggleState } from 'react-stately';
@@ -17,15 +16,10 @@ export const Switch: FC<SwitchProps> = ({ className, label, ...props }) => {
 	const ref = useRef(null);
 	const { labelProps, inputProps } = useSwitch(props, state, ref);
 	return (
-		<div
-			className={cn('flex flex-row items-center justify-between', className)}
-		>
+		<div className={cn('flex flex-row items-center justify-between', className)}>
 			<label
 				{...labelProps}
-				className={cn(
-					'font-semibold text-gray-600 text-sm',
-					labelProps.className,
-				)}
+				className={cn('font-semibold text-gray-600 text-sm', labelProps.className)}
 			>
 				{label}
 			</label>
@@ -34,12 +28,7 @@ export const Switch: FC<SwitchProps> = ({ className, label, ...props }) => {
 				<VisuallyHidden>
 					<input {...inputProps} ref={ref} />
 				</VisuallyHidden>
-				<svg
-					width={40}
-					height={24}
-					aria-hidden="true"
-					style={{ marginRight: 4 }}
-				>
+				<svg width={40} height={24} aria-hidden="true" style={{ marginRight: 4 }}>
 					<rect
 						x={4}
 						y={4}

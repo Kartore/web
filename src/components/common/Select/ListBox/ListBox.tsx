@@ -1,6 +1,5 @@
 import type { FC, RefObject } from 'react';
 import { useRef } from 'react';
-
 import type { AriaListBoxOptions } from 'react-aria';
 import { useListBox } from 'react-aria';
 import type { ListState } from 'react-stately';

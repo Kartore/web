@@ -1,5 +1,4 @@
-import { expect } from '@storybook/test';
-import { describe } from 'vitest';
+import { describe, expect } from 'vitest';
 
 import {
 	BackgroundLayerSample,

@@ -1,9 +1,8 @@
-import type { ComponentProps, FC } from 'react';
-
 import type {
 	BackgroundLayerSpecification,
 	LayerSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
 
 import { FilterInputField } from '~/components/common/FilterInputField';
 import { MonacoEditor } from '~/components/common/MonacoEditor';
@@ -26,7 +25,7 @@ export const FilterProperties: FC<FilterPropertiesProps> = ({
 }) => {
 	return (
 		<div {...props} className={cn('flex flex-col gap-2 px-4', className)}>
-			<h3 className={'font-montserrat font-semibold text-sm'}>Filter</h3>
+			<h3 className={'font-montserrat text-sm font-semibold'}>Filter</h3>
 			{isExpressionFilter(layer.filter) ? (
 				<FilterInputField
 					value={layer.filter}
@@ -37,11 +36,7 @@ export const FilterProperties: FC<FilterPropertiesProps> = ({
 					<details>
 						<MonacoEditor
 							className={cn('min-h-16', className)}
-							value={JSON.stringify(
-								{ filter: layer.filter ? layer.filter : [] },
-								undefined,
-								2,
-							)}
+							value={JSON.stringify({ filter: layer.filter ? layer.filter : [] }, undefined, 2)}
 							onChange={(value) => {
 								if (onChange && value) {
 									const filterValue = JSON.parse(value).filter;
@@ -63,9 +58,7 @@ export const FilterProperties: FC<FilterPropertiesProps> = ({
 											schema: {
 												type: 'object',
 												properties: {
-													filter: getStyleJSONSchemaDefinition(
-														'FilterSpecification',
-													),
+													filter: getStyleJSONSchemaDefinition('FilterSpecification'),
 												},
 											},
 										},

@@ -19,12 +19,8 @@ export const NumberArrayField: FC<NumberArrayFieldProps> = ({
 	onChange,
 }) => {
 	return (
-		<div
-			className={cn('flex flex-row items-center justify-between', className)}
-		>
-			<label className={cn('font-semibold text-gray-600 text-sm')}>
-				{label}
-			</label>
+		<div className={cn('flex flex-row items-center justify-between', className)}>
+			<label className={cn('font-semibold text-gray-600 text-sm')}>{label}</label>
 			<div className={'flex w-1/2 flex-row gap-1'}>
 				<NumberArrayInnerField
 					label={arrayLabels[0]}

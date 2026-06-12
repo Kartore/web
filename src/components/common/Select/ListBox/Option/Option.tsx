@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { useRef } from 'react';
-
 import { useOption } from 'react-aria';
 import type { ListState, Node } from 'react-stately';
 

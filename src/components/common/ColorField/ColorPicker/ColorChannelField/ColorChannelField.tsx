@@ -1,9 +1,8 @@
-import type { FC } from 'react';
-import { useRef } from 'react';
-
 import { useColorChannelField } from '@react-aria/color';
 import { useColorChannelFieldState } from '@react-stately/color';
 import type { ColorChannelFieldProps as AriaColorChannelFieldProps } from '@react-stately/color';
+import type { FC } from 'react';
+import { useRef } from 'react';
 import { useLocale } from 'react-aria';
 
 import { cn } from '~/utils/tailwindUtil';
@@ -12,11 +11,7 @@ export type ColorChannelFieldProps = {
 	className?: string;
 } & AriaColorChannelFieldProps;
 
-export const ColorChannelField: FC<ColorChannelFieldProps> = ({
-	className,
-	label,
-	...props
-}) => {
+export const ColorChannelField: FC<ColorChannelFieldProps> = ({ className, label, ...props }) => {
 	const { locale } = useLocale();
 	const ref = useRef(null);
 	const alphaState = useColorChannelFieldState({
@@ -24,20 +19,13 @@ export const ColorChannelField: FC<ColorChannelFieldProps> = ({
 		label,
 		locale,
 	});
-	const { inputProps, labelProps } = useColorChannelField(
-		{ ...props, label },
-		alphaState,
-		ref,
-	);
+	const { inputProps, labelProps } = useColorChannelField({ ...props, label }, alphaState, ref);
 
 	return (
 		<div className={cn('text-xs', className)}>
 			<label
 				{...labelProps}
-				className={cn(
-					'sr-only font-semibold text-gray-600',
-					labelProps.className,
-				)}
+				className={cn('sr-only font-semibold text-gray-600', labelProps.className)}
 			>
 				{label}
 			</label>

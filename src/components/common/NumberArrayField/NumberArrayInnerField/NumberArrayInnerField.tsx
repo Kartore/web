@@ -1,11 +1,6 @@
 import type { FC } from 'react';
 import { useRef } from 'react';
-
-import {
-	type AriaNumberFieldProps,
-	useLocale,
-	useNumberField,
-} from 'react-aria';
+import { type AriaNumberFieldProps, useLocale, useNumberField } from 'react-aria';
 import { useNumberFieldState } from 'react-stately';
 
 import { cn } from '~/utils/tailwindUtil';
@@ -22,11 +17,7 @@ export const NumberArrayInnerField: FC<NumberArrayInnerFieldProps> = ({
 	const { locale } = useLocale();
 	const state = useNumberFieldState({ ...props, label, locale });
 	const ref = useRef(null);
-	const { labelProps, inputProps, groupProps } = useNumberField(
-		{ ...props, label },
-		state,
-		ref,
-	);
+	const { labelProps, inputProps, groupProps } = useNumberField({ ...props, label }, state, ref);
 
 	return (
 		<div
@@ -37,10 +28,7 @@ export const NumberArrayInnerField: FC<NumberArrayInnerFieldProps> = ({
 		>
 			<label
 				{...labelProps}
-				className={cn(
-					'font-semibold text-gray-500 text-sm',
-					labelProps.className,
-				)}
+				className={cn('font-semibold text-gray-500 text-sm', labelProps.className)}
 			>
 				{label}
 			</label>

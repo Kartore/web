@@ -1,10 +1,9 @@
-import type { ComponentProps, FC } from 'react';
-import { Fragment } from 'react';
-
 import type {
 	ExpressionInputType,
 	ExpressionSpecification,
 } from '@maplibre/maplibre-gl-style-spec';
+import type { ComponentProps, FC } from 'react';
+import { Fragment } from 'react';
 
 import { ExpressionInputField } from '~/components/common/FilterInputField/expressions';
 import { ExpressionInputTypeInputField } from '~/components/common/FilterInputField/expressions/common/ExpressionInputTypeInputField';
@@ -34,32 +33,23 @@ export const CaseInputField: FC<CaseInputFieldProps> = ({
 		| ExpressionInputType
 		| ExpressionSpecification
 	)[];
-	const fallback = value.slice(-1)[0] as
-		| ExpressionInputType
-		| ExpressionSpecification;
+	const fallback = value.slice(-1)[0] as ExpressionInputType | ExpressionSpecification;
 	return (
 		<div
 			{...props}
-			className={cn(
-				'flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5',
-				className,
-			)}
+			className={cn('flex flex-row items-center gap-2 rounded bg-black/5 px-0.5 py-0.5', className)}
 		>
 			<div className={'flex flex-row px-0.5 py-0.5'}>CASE</div>
 			{expressions.map((expression, index) => {
 				const isCondition = index % 2 === 0;
 				return (
-					<Fragment
-						key={`case${isCondition ? 'condition' : 'value'}${index}${expression}`}
-					>
+					<Fragment key={`case${isCondition ? 'condition' : 'value'}${index}${expression}`}>
 						{isExpression(expression) ? (
 							<ExpressionInputField value={expression} onChange={onChange} />
 						) : (
 							<ExpressionInputTypeInputField value={expression} />
 						)}
-						{isCondition && (
-							<div className={'flex flex-row px-0.5 py-0.5'}>WHEN</div>
-						)}
+						{isCondition && <div className={'flex flex-row px-0.5 py-0.5'}>WHEN</div>}
 					</Fragment>
 				);
 			})}
