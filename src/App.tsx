@@ -12,23 +12,19 @@ import { PropertiesPanel } from '~/components/editor/PropertiesPanel/PropertiesP
 import { osmLibertyMigrated } from '~/samples/osm-liberty.ts';
 
 function App() {
-	const [mapStyle, setMapStyle] = useLocalStorage<StyleSpecification>(
-		'kartore:style',
-		osmLibertyMigrated,
-		{},
-	);
+	const [mapStyle, setMapStyle] = useLocalStorage('kartore:style', osmLibertyMigrated);
 
 	const [selectedLayerId, setSelectedLayerId] = useState<string>(mapStyle.layers[4].id);
 	const selectedLayer =
 		mapStyle.layers.find((layer) => layer.id === selectedLayerId) ?? mapStyle.layers[0];
 	const handleChangeLayerOrder = (layer: LayerSpecification[]) => {
-		setMapStyle((currentStyle) => {
+		setMapStyle((currentStyle: StyleSpecification) => {
 			return { ...currentStyle, layers: layer };
 		});
 	};
 
 	const handleChangeLayerData: onChangeType = (layer, group, key, value) => {
-		setMapStyle((currentStyle) => {
+		setMapStyle((currentStyle: StyleSpecification) => {
 			return replaceLayerData(currentStyle, layer, group, key, value);
 		});
 	};
