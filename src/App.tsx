@@ -1,7 +1,6 @@
 import type { LayerSpecification, StyleSpecification } from 'maplibre-gl';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MapProvider } from 'react-map-gl/maplibre';
-import { useLocalStorage } from 'usehooks-ts';
 
 import { ControlPanel } from '~/components/editor/ControlPanel';
 import { MapPanel } from '~/components/editor/MapPanel';
@@ -10,13 +9,24 @@ import type { onChangeType } from '~/components/editor/PropertiesPanel/LayerProp
 import { replaceLayerData } from '~/components/editor/PropertiesPanel/LayerPropertiesPanel/utils/LayerUtil/LayerUtil.ts';
 import { PropertiesPanel } from '~/components/editor/PropertiesPanel/PropertiesPanel.tsx';
 import { osmLibertyMigrated } from '~/samples/osm-liberty.ts';
+import { localStorageMapStyleStoreAdapter, useMapStyleStore } from '~/stores/mapStyle';
 
 function App() {
-	const [mapStyle, setMapStyle] = useLocalStorage('kartore:style', osmLibertyMigrated);
+	const { mapStyle, setMapStyle, isLoading } = useMapStyleStore({
+		adapter: localStorageMapStyleStoreAdapter,
+		initialStyle: osmLibertyMigrated,
+	});
 
-	const [selectedLayerId, setSelectedLayerId] = useState<string>(mapStyle.layers[4].id);
+	const [selectedLayerId, setSelectedLayerId] = useState<string>(osmLibertyMigrated.layers[4].id);
 	const selectedLayer =
 		mapStyle.layers.find((layer) => layer.id === selectedLayerId) ?? mapStyle.layers[0];
+
+	useEffect(() => {
+		if (!mapStyle.layers.some((layer) => layer.id === selectedLayerId)) {
+			setSelectedLayerId(mapStyle.layers[0].id);
+		}
+	}, [mapStyle.layers, selectedLayerId]);
+
 	const handleChangeLayerOrder = (layer: LayerSpecification[]) => {
 		setMapStyle((currentStyle: StyleSpecification) => {
 			return { ...currentStyle, layers: layer };
@@ -28,6 +38,14 @@ function App() {
 			return replaceLayerData(currentStyle, layer, group, key, value);
 		});
 	};
+
+	if (isLoading) {
+		return (
+			<div className={'flex min-h-screen items-center justify-center text-sm text-gray-600'}>
+				Loading map style...
+			</div>
+		);
+	}
 
 	return (
 		<MapProvider>

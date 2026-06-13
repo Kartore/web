@@ -39,8 +39,7 @@
 		"react-dom": "19.2.7",
 		"react-map-gl": "8.1.1",
 		"react-stately": "3.47.0",
-		"shiki": "4.2.0",
-		"usehooks-ts": "3.1.1"
+		"shiki": "4.2.0"
 	},
 	"devDependencies": {
 		"@tailwindcss/vite": "4.3.0",
