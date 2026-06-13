@@ -7,3 +7,4 @@ onlyBuiltDependencies:
   - msw
   - sharp
   - workerd
+enableGlobalVirtualStore: true
