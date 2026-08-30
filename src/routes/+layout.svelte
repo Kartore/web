@@ -2,9 +2,17 @@
 	import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
 	import { adapterProviders } from 'virtual:kartore-adapter';
 
+	import { setWorkerUrl } from 'maplibre-gl';
+	import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
+
 	import './layout.css';
 	import favicon from '#lib/assets/favicon.svg';
 	import AdapterProviders from '#lib/components/AdapterProviders.svelte';
+	import { browser } from '$app/env';
+
+	if (browser) {
+		setWorkerUrl(workerUrl);
+	}
 
 	let { children } = $props();
 
