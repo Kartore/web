@@ -433,6 +433,7 @@
 		getSpriteIcons: () => $state.snapshot(spriteIconsStore.icons),
 		replaceSpriteIcons: spriteIconsStore.replaceIcons,
 		getStoredFonts: fontsStore.getStoredFonts,
+		getFontMetadata: () => $state.snapshot(fontsStore.fonts),
 		replaceStoredFonts: fontsStore.replaceStoredFonts,
 		setPreview: (preview) => (previewState = preview),
 		getPreview: () => previewState,

@@ -2,7 +2,7 @@ import type { StyleSpecification } from 'maplibre-gl';
 import { describe, expect, it } from 'vitest';
 
 import type { StylePackAssets, StylePackFiles } from './stylePack.ts';
-import { createStylePack, readStylePack } from './stylePack.ts';
+import { createStyleAssetFiles, createStylePack, readStylePack } from './stylePack.ts';
 import { serializeStyleAuxiliary } from './styleSerialize.ts';
 import { BINDINGS_METADATA_KEY, VARIABLES_METADATA_KEY } from './styleVariables.ts';
 
@@ -92,6 +92,17 @@ describe('stylePack', () => {
 		expect(Object.keys(files).some((path) => path.endsWith('.png') || path.endsWith('.pbf'))).toBe(
 			false
 		);
+	});
+
+	it('can emit the portable asset subtree without style or manifest files', () => {
+		const files = createStyleAssetFiles(assets());
+
+		expect(Object.keys(files).sort()).toEqual([
+			'assets/fonts.json',
+			'assets/fonts/Inter Regular.otf',
+			'assets/sprites.json',
+			'assets/sprites/marker.svg'
+		]);
 	});
 
 	it('accepts a project without registered icons or fonts', () => {

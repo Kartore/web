@@ -185,6 +185,15 @@ export const createStylePack = (
 		files[packPath(STYLE_DIRECTORY, path)] = content;
 	}
 
+	Object.assign(files, createStyleAssetFiles(assets));
+
+	return files;
+};
+
+/** プロジェクト資産をリポジトリやアーカイブで共有できる決定的なファイルマップへ変換する。 */
+export const createStyleAssetFiles = (assets: StylePackAssets): StylePackFiles => {
+	const files: StylePackFiles = {};
+
 	const spriteFiles = new Set<string>();
 	const spriteIndex: SpriteIndex = { version: 1, icons: {} };
 	for (const name of Object.keys(assets.icons).sort(compareKeys)) {

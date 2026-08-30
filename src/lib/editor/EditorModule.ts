@@ -78,6 +78,8 @@ export type EditorApi = {
 	replaceSpriteIcons: (icons: SpriteIcons) => Promise<void>;
 	/** 登録済みローカルフォントを bytes 込みですべて返す */
 	getStoredFonts: () => Promise<Record<string, StoredFont>>;
+	/** フォント bytes を読まず、変更監視に使える現在のメタデータを返す */
+	getFontMetadata: () => Record<string, Omit<StoredFont, 'bytes'>>;
 	/** 登録済みローカルフォントをマージせず全置換する */
 	replaceStoredFonts: (fonts: Record<string, StoredFont>) => Promise<void>;
 	setPreview: (preview: EditorPreview | null) => void;
