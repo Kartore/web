@@ -11,7 +11,9 @@ import {
 import {
 	activateStyleVariableMode,
 	duplicateStyleVariableMode,
-	getStyleVariableModes
+	getStyleVariableModes,
+	renameStyleVariableMode,
+	VARIABLE_MODES_METADATA_KEY
 } from './variableModes.ts';
 
 const style = (): StyleSpecification => ({
@@ -51,5 +53,61 @@ describe('style variable naming and modes', () => {
 		expect(getStyleVariableModes(restoredDark).activeModeId).toBe('dark');
 		expect(getStyleVariables(light).find(({ id }) => id === 'brand')?.value).toBe('#ddeeff');
 		expect(getStyleVariables(restoredDark).find(({ id }) => id === 'brand')?.value).toBe('#112233');
+	});
+
+	it('gives every mode exactly one valid value for every current variable', () => {
+		const input = style();
+		input.metadata = {
+			...(input.metadata as Record<string, unknown>),
+			[VARIABLE_MODES_METADATA_KEY]: {
+				version: 1,
+				activeModeId: 'light',
+				modes: [
+					{
+						id: 'light',
+						name: 'ライト',
+						values: { brand: '#445566', removed: '#ffffff' }
+					},
+					{
+						id: 'dark',
+						name: 'ダーク',
+						values: { brand: '#000000', width: 'invalid' }
+					}
+				]
+			}
+		};
+
+		expect(getStyleVariableModes(input).modes).toEqual([
+			{
+				id: 'light',
+				name: 'ライト',
+				values: { brand: '#445566', width: 2 }
+			},
+			{
+				id: 'dark',
+				name: 'ダーク',
+				values: { brand: '#000000', width: 2 }
+			}
+		]);
+	});
+
+	it('renames a mode and its runtime id while keeping the active mode selected', () => {
+		const duplicated = duplicateStyleVariableMode(style(), 'ダーク', 'dark');
+		const dark = activateStyleVariableMode(duplicated.style, 'dark');
+		const renamed = renameStyleVariableMode(dark, 'dark', '夜', 'night');
+
+		expect(getStyleVariableModes(renamed)).toMatchObject({
+			activeModeId: 'night',
+			modes: [
+				{ id: 'light', name: 'ライト' },
+				{ id: 'night', name: '夜' }
+			]
+		});
+	});
+
+	it('does not allow duplicate mode ids when renaming', () => {
+		const duplicated = duplicateStyleVariableMode(style(), 'ダーク', 'dark');
+
+		expect(renameStyleVariableMode(duplicated.style, 'dark', '夜', 'light')).toBe(duplicated.style);
 	});
 });

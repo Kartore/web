@@ -29,6 +29,25 @@ const cloneValue = <Value extends StyleVariable['value']>(value: Value): Value =
 const currentValues = (style: StyleSpecification): Record<string, StyleVariable['value']> =>
 	Object.fromEntries(getStyleVariables(style).map(({ id, value }) => [id, cloneValue(value)]));
 
+const valueMatchesType = (variable: StyleVariable, value: unknown): boolean =>
+	(variable.type === 'color' && typeof value === 'string') ||
+	(variable.type === 'number' && typeof value === 'number') ||
+	(variable.type === 'interpolation' && Array.isArray(value));
+
+const completeModeValues = (
+	variables: StyleVariable[],
+	values: Record<string, unknown>
+): Record<string, StyleVariable['value']> =>
+	Object.fromEntries(
+		variables.map((variable) => {
+			const candidate = values[variable.id];
+			const value = valueMatchesType(variable, candidate)
+				? (candidate as StyleVariable['value'])
+				: variable.value;
+			return [variable.id, cloneValue(value)];
+		})
+	);
+
 const isMode = (value: unknown): value is StyleVariableMode =>
 	isRecord(value) &&
 	typeof value.id === 'string' &&
@@ -37,6 +56,7 @@ const isMode = (value: unknown): value is StyleVariableMode =>
 	isRecord(value.values);
 
 export const getStyleVariableModes = (style: StyleSpecification): StyleVariableModes => {
+	const variables = getStyleVariables(style);
 	const raw = isRecord(style.metadata) ? style.metadata[VARIABLE_MODES_METADATA_KEY] : undefined;
 	if (
 		isRecord(raw) &&
@@ -49,13 +69,13 @@ export const getStyleVariableModes = (style: StyleSpecification): StyleVariableM
 			activeModeId: raw.activeModeId,
 			modes: raw.modes.map((mode) => ({
 				...mode,
-				values: JSON.parse(JSON.stringify(mode.values)) as StyleVariableMode['values']
+				values: completeModeValues(variables, mode.values)
 			}))
 		};
 	}
 	return {
 		activeModeId: LIGHT_MODE_ID,
-		modes: [{ id: LIGHT_MODE_ID, name: 'ライト', values: currentValues(style) }]
+		modes: [{ id: LIGHT_MODE_ID, name: 'ライト', values: completeModeValues(variables, {}) }]
 	};
 };
 
@@ -83,13 +103,13 @@ const captureActiveValues = (
 
 export const duplicateStyleVariableMode = (
 	style: StyleSpecification,
-	name = 'ダーク',
-	id: string = crypto.randomUUID()
+	name: string,
+	id: string
 ): { style: StyleSpecification; mode: StyleVariableMode } => {
 	const captured = captureActiveValues(style, getStyleVariableModes(style));
 	const mode: StyleVariableMode = {
-		id,
-		name,
+		id: id.trim(),
+		name: name.trim(),
 		values: currentValues(style)
 	};
 	return {
@@ -98,10 +118,31 @@ export const duplicateStyleVariableMode = (
 	};
 };
 
-const valueMatchesType = (variable: StyleVariable, value: unknown): boolean =>
-	(variable.type === 'color' && typeof value === 'string') ||
-	(variable.type === 'number' && typeof value === 'number') ||
-	(variable.type === 'interpolation' && Array.isArray(value));
+export const renameStyleVariableMode = (
+	style: StyleSpecification,
+	modeId: string,
+	name: string,
+	id: string
+): StyleSpecification => {
+	const nextName = name.trim();
+	const nextId = id.trim();
+	const captured = captureActiveValues(style, getStyleVariableModes(style));
+	if (
+		!nextName ||
+		!nextId ||
+		!captured.modes.some((mode) => mode.id === modeId) ||
+		captured.modes.some((mode) => mode.id !== modeId && mode.id === nextId)
+	) {
+		return style;
+	}
+
+	return withModes(style, {
+		activeModeId: captured.activeModeId === modeId ? nextId : captured.activeModeId,
+		modes: captured.modes.map((mode) =>
+			mode.id === modeId ? { ...mode, id: nextId, name: nextName } : mode
+		)
+	});
+};
 
 export const activateStyleVariableMode = (
 	style: StyleSpecification,

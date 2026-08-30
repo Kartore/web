@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { LayerSpecification, StyleSpecification } from '@maplibre/maplibre-gl-style-spec';
-	import { ArrowRight, CaretDown, FunctionIcon, Plus, Trash } from 'phosphor-svelte';
+	import { ArrowRight, CaretDown, FunctionIcon, PencilSimple, Plus, Trash } from 'phosphor-svelte';
 	import { onDestroy, onMount, tick } from 'svelte';
 	import { SvelteMap, SvelteSet } from 'svelte/reactivity';
 	import type * as maplibregl from 'maplibre-gl';
@@ -38,7 +38,9 @@
 	import {
 		activateStyleVariableMode,
 		duplicateStyleVariableMode,
-		getStyleVariableModes
+		getStyleVariableModes,
+		renameStyleVariableMode,
+		type StyleVariableMode
 	} from '#lib/utils/variableModes.ts';
 	import { cn } from '#lib/utils/tailwindUtil.ts';
 
@@ -96,6 +98,10 @@
 	let colorVisionWarningId = $state<string>();
 	let pendingDeleteId = $state<string>();
 	let modesOpen = $state(false);
+	let modeFormOpen = $state(false);
+	let modeFormTargetId = $state<string>();
+	let modeFormName = $state('');
+	let modeFormId = $state('');
 	let selectedDetailElement = $state<HTMLElement>();
 	let literalGridWidth = $state(0);
 	let colorHighlightEnabled = $state(false);
@@ -163,6 +169,12 @@
 		hasSelectedColor && !colorHighlightEnabled ? [] : selectedLayerIds
 	);
 	const modes = $derived(getStyleVariableModes(mapStyle));
+	const modeIdConflict = $derived(
+		modes.modes.some(({ id }) => id === modeFormId.trim() && id !== modeFormTargetId)
+	);
+	const canSubmitMode = $derived(
+		Boolean(editable && modeFormName.trim() && modeFormId.trim() && !modeIdConflict)
+	);
 
 	const variableTreeRows = $derived.by((): VariableTreeRow[] => {
 		const roots: VariableGroupNode[] = [];
@@ -564,11 +576,44 @@
 		onApplyStyle(next);
 		select({ kind: 'variable', id: variable.id });
 	};
-	const addMode = () => {
+	const availableModeId = (base: string): string => {
+		const ids = new Set(modes.modes.map(({ id }) => id));
+		if (!ids.has(base)) return base;
+		let suffix = 2;
+		while (ids.has(`${base}-${suffix}`)) suffix += 1;
+		return `${base}-${suffix}`;
+	};
+	const openAddModeForm = () => {
 		if (!editable) return;
-		const name = modes.modes.length === 1 ? 'ダーク' : `モード ${modes.modes.length + 1}`;
-		const duplicated = duplicateStyleVariableMode(mapStyle, name);
-		onApplyStyle(activateStyleVariableMode(duplicated.style, duplicated.mode.id));
+		const number = modes.modes.length + 1;
+		modeFormTargetId = undefined;
+		modeFormName = modes.modes.length === 1 ? 'ダーク' : `モード ${number}`;
+		modeFormId = availableModeId(modes.modes.length === 1 ? 'dark' : `mode-${number}`);
+		modeFormOpen = true;
+		modesOpen = true;
+	};
+	const openEditModeForm = (mode: StyleVariableMode) => {
+		if (!editable) return;
+		modeFormTargetId = mode.id;
+		modeFormName = mode.name;
+		modeFormId = mode.id;
+		modeFormOpen = true;
+	};
+	const closeModeForm = () => {
+		modeFormOpen = false;
+		modeFormTargetId = undefined;
+	};
+	const submitMode = () => {
+		if (!canSubmitMode) return;
+		const name = modeFormName.trim();
+		const id = modeFormId.trim();
+		if (modeFormTargetId) {
+			onApplyStyle(renameStyleVariableMode(mapStyle, modeFormTargetId, name, id));
+		} else {
+			const duplicated = duplicateStyleVariableMode(mapStyle, name, id);
+			onApplyStyle(activateStyleVariableMode(duplicated.style, duplicated.mode.id));
+		}
+		closeModeForm();
 		modesOpen = false;
 	};
 
@@ -951,27 +996,83 @@
 	{#if modesOpen}
 		<div class="shrink-0 border-t border-hairline-soft bg-white p-1">
 			{#each modes.modes as mode (mode.id)}
-				<Button
-					class={cn(
-						'flex h-7 w-full items-center rounded-[6px] px-2 text-left text-[10px] text-ink-2 hover:bg-field',
-						mode.id === modes.activeModeId && 'bg-accent-soft text-ink-1'
-					)}
-					onclick={() => {
-						onApplyStyle(activateStyleVariableMode(mapStyle, mode.id));
-						modesOpen = false;
-					}}
-				>
-					{mode.name}
-				</Button>
+				<div class="flex min-w-0 items-center gap-0.5">
+					<Button
+						class={cn(
+							'flex h-8 min-w-0 flex-1 items-center gap-2 rounded-[6px] px-2 text-left text-[10px] text-ink-2 hover:bg-field',
+							mode.id === modes.activeModeId && 'bg-accent-soft text-ink-1'
+						)}
+						onclick={() => {
+							onApplyStyle(activateStyleVariableMode(mapStyle, mode.id));
+							closeModeForm();
+							modesOpen = false;
+						}}
+					>
+						<span class="min-w-0 flex-1 truncate">{mode.name}</span>
+						<code class="max-w-20 truncate font-mono text-[9px] text-ink-3" title={mode.id}>
+							{mode.id}
+						</code>
+					</Button>
+					<Button
+						class="flex size-7 shrink-0 items-center justify-center rounded-[5px] text-ink-3 hover:text-ink-1 disabled:text-ink-4"
+						aria-label={`${mode.name}を編集`}
+						title="表示名とMode IDを編集"
+						disabled={!editable}
+						onclick={() => openEditModeForm(mode)}
+					>
+						<PencilSimple size={12} weight="regular" aria-hidden="true" />
+					</Button>
+				</div>
 			{/each}
-			<Button
-				class="flex h-7 w-full items-center gap-1 rounded-[6px] px-2 text-left text-[10px] text-ink-2 hover:bg-field disabled:text-ink-4"
-				disabled={!editable}
-				onclick={addMode}
-			>
-				<Plus size={12} weight="regular" aria-hidden="true" />
-				{modes.modes.length === 1 ? 'ダークモードを追加…' : 'モードを複製…'}
-			</Button>
+			{#if modeFormOpen}
+				<div
+					class="mt-1 flex flex-col gap-1 border-t border-hairline-soft px-2 pt-2 pb-1"
+					style="--field-label-width: 52px; --field-column-gap: 6px"
+				>
+					<p class="mb-0.5 text-[10px] font-semibold text-ink-2">
+						{modeFormTargetId ? 'モードを編集' : 'モードを追加'}
+					</p>
+					<TextField
+						label="表示名"
+						value={modeFormName}
+						onValueChange={(value) => (modeFormName = value)}
+					/>
+					<TextField
+						label="Mode ID"
+						value={modeFormId}
+						onValueChange={(value) => (modeFormId = value)}
+					/>
+					<p class={cn('text-[9px] leading-3 text-ink-3', modeIdConflict && 'text-danger')}>
+						{modeIdConflict
+							? 'このMode IDは使用済みです。'
+							: 'global-stateの切り替え値として使用します。'}
+					</p>
+					<div class="mt-1 flex justify-end gap-1">
+						<Button
+							class="h-6 rounded-[5px] px-2 text-[10px] text-ink-3 hover:bg-field"
+							onclick={closeModeForm}
+						>
+							キャンセル
+						</Button>
+						<Button
+							class="h-6 rounded-[5px] bg-accent px-2 text-[10px] font-semibold text-white disabled:bg-ink-4"
+							disabled={!canSubmitMode}
+							onclick={submitMode}
+						>
+							{modeFormTargetId ? '保存' : '追加'}
+						</Button>
+					</div>
+				</div>
+			{:else}
+				<Button
+					class="flex h-7 w-full items-center gap-1 rounded-[6px] px-2 text-left text-[10px] text-ink-2 hover:bg-field disabled:text-ink-4"
+					disabled={!editable}
+					onclick={openAddModeForm}
+				>
+					<Plus size={12} weight="regular" aria-hidden="true" />
+					{modes.modes.length === 1 ? 'ダークモードを追加…' : 'モードを複製…'}
+				</Button>
+			{/if}
 		</div>
 	{/if}
 	<footer
@@ -980,7 +1081,10 @@
 		<button
 			type="button"
 			class="h-6 cursor-pointer text-ink-2 outline-none hover:text-ink-1 focus-visible:text-accent"
-			onclick={() => (modesOpen = !modesOpen)}
+			onclick={() => {
+				modesOpen = !modesOpen;
+				if (!modesOpen) closeModeForm();
+			}}
 		>
 			モード: {modes.modes.find(({ id }) => id === modes.activeModeId)?.name ?? 'ライト'}
 		</button>
@@ -988,7 +1092,7 @@
 			type="button"
 			class="h-6 cursor-pointer text-ink-3 outline-none hover:text-accent focus-visible:text-accent disabled:text-ink-4"
 			disabled={!editable}
-			onclick={addMode}
+			onclick={openAddModeForm}
 		>
 			{modes.modes.length === 1 ? 'ダークモードを追加…' : 'モードを複製…'}
 		</button>

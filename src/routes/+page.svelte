@@ -12,6 +12,7 @@
 		serializeFilter
 	} from '#lib/components/common/FilterQueryBuilder';
 	import { isExpression } from '#lib/components/common/FilterInputField/expressions/utils/isExpression.ts';
+	import ExportStyleDialog from '#lib/components/editor/ExportStyleDialog/ExportStyleDialog.svelte';
 	import { ImportStyleDialog } from '#lib/components/editor/ImportStyleDialog';
 	import {
 		collectInspectSourceLayers,
@@ -76,7 +77,7 @@
 	import { localStorageSpriteIconsStoreAdapter, SpriteIconsStore } from '#lib/stores/spriteIcons';
 	import { groupLayersByIdPrefix } from '#lib/utils/layerGroup.ts';
 	import { COLOR_VISION_MODE_LABELS, type ColorVisionMode } from '#lib/utils/colorVision.ts';
-	import { createStyleExport } from '#lib/utils/styleExport.ts';
+	import { createStyleExports, type StyleExportKind } from '#lib/utils/styleExport.ts';
 	import { createEmptyStyle } from '#lib/utils/styleCreate.ts';
 	import { getLayerRawPropertyValue, type RootPropertyKind } from '#lib/utils/layerSpec.ts';
 	import { getPropertyInitialValue, type PropertyCatalogItem } from '#lib/utils/propertyCatalog.ts';
@@ -137,6 +138,7 @@
 	let layerSearchInput = $state<HTMLInputElement | null>(null);
 	let layerDragActive = $state(false);
 	let importDialogOpen = $state(false);
+	let exportDialogOpen = $state(false);
 	let addLayerPopoverOpen = $state(false);
 	let styleJsonMode = $state(false);
 	let activeLayerTab = $state<LayerInspectorTab>('design');
@@ -547,20 +549,21 @@
 		store.setMapStyle(style);
 	};
 
-	const handleExport = () => {
+	const handleExport = (kind: StyleExportKind) => {
 		const style = $state.snapshot(store.mapStyle as object) as StyleSpecification;
-		const styleExport = createStyleExport(style);
-		const blob = new Blob([styleExport.contents], { type: 'application/json' });
-		const url = URL.createObjectURL(blob);
-		const anchor = document.createElement('a');
-		anchor.href = url;
-		anchor.download = styleExport.fileName;
-		anchor.click();
-		URL.revokeObjectURL(url);
+		for (const styleExport of createStyleExports(style, kind)) {
+			const blob = new Blob([styleExport.contents], { type: 'application/json' });
+			const url = URL.createObjectURL(blob);
+			const anchor = document.createElement('a');
+			anchor.href = url;
+			anchor.download = styleExport.fileName;
+			anchor.click();
+			URL.revokeObjectURL(url);
+		}
 	};
 
 	const handleSave = () => {
-		void dispatchSave(saveProviders, handleExport);
+		void dispatchSave(saveProviders, () => handleExport('current-mode'));
 	};
 
 	const handleRenameStyle = (name: string) => {
@@ -826,7 +829,7 @@
 		) {
 			return;
 		}
-		if (importDialogOpen || addLayerPopoverOpen || layerDragActive) {
+		if (importDialogOpen || exportDialogOpen || addLayerPopoverOpen || layerDragActive) {
 			return;
 		}
 		if (
@@ -958,7 +961,7 @@
 			onRedo={() => store.redo()}
 			onNewStyle={handleNewStyle}
 			onImport={() => (importDialogOpen = true)}
-			onExport={handleExport}
+			onExport={() => (exportDialogOpen = true)}
 			onRenameStyle={previewState ? undefined : handleRenameStyle}
 			onAddLayer={handleOpenAddLayer}
 			onGroupLayersByPrefix={previewState ? undefined : handleGroupLayersByPrefix}
@@ -1220,6 +1223,11 @@
 		/>
 
 		<ImportStyleDialog bind:open={importDialogOpen} onImport={handleImport} />
+		<ExportStyleDialog
+			bind:open={exportDialogOpen}
+			style={store.mapStyle}
+			onExport={handleExport}
+		/>
 		{#each adapterModules as module (module.id)}
 			{#each module.overlays ?? [] as Overlay, index (`${module.id}-${index}`)}
 				<Overlay />

@@ -297,9 +297,6 @@
 									</div>
 								{/if}
 							</div>
-							<p class="mt-1 text-[9.5px] leading-4 text-ink-4">
-								SVG ソースを保持 ・ 表示は WASM(spritore)で生成
-							</p>
 							<div class="flex justify-end">
 								{#if pendingDeleteId === selectedId}
 									<Button

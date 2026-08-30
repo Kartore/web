@@ -197,8 +197,5 @@
 				{/each}
 			{/if}
 		</div>
-		<div class="border-t border-hairline-soft px-3 py-[9px] text-[10px] text-ink-3">
-			↵ で既定値のまま挿入し、その行にフォーカス
-		</div>
 	{/snippet}
 </RowPopover>
