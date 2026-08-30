@@ -8,7 +8,7 @@ configDependencies:
   '@pnpm/pacquet': 0.11.12
 
 packageExtensions:
-  '@sveltejs/kit@3.0.0-next.23':
+  '@sveltejs/kit@3.0.0-next.25':
     dependencies:
       rolldown: ^1.1.2
 
