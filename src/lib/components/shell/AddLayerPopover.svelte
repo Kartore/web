@@ -74,13 +74,13 @@
 	);
 	const trimmedId = $derived(draftId.trim());
 	const idError = $derived.by(() => {
-		if (trimmedId === '') return 'ID を入力してください。';
-		if (existingIds.has(trimmedId)) return 'ID は重複できません。';
+		if (trimmedId === '') return 'Enter an ID.';
+		if (existingIds.has(trimmedId)) return 'IDs must be unique.';
 		return undefined;
 	});
 	const sourceError = $derived(
 		sourceRequired && compatibleSources.length === 0
-			? '互換ソースがありません。Sources で追加してください。'
+			? 'No compatible source. Add one in Sources.'
 			: undefined
 	);
 	const canAdd = $derived(!readOnly && idError === undefined && sourceError === undefined);
@@ -117,7 +117,7 @@
 <Popover
 	bind:open
 	onOpenChange={handleOpenChange}
-	aria-label="レイヤーを追加"
+	aria-label="Add layer"
 	triggerClass="flex size-6 items-center justify-center rounded-[6px] bg-accent text-white hover:bg-accent"
 	contentClass="w-[252px] overflow-hidden rounded-[10px] border border-hairline bg-white text-xs shadow-[0_8px_28px_rgba(0,0,0,0.2)]"
 >
@@ -128,10 +128,10 @@
 	<div
 		class="flex h-10 items-center gap-2 border-b border-hairline-soft px-3 text-[11.5px] font-semibold"
 	>
-		<span>新しいレイヤー</span>
+		<span>New layer</span>
 		<Button
 			class="ml-auto grid size-[26px] place-items-center rounded-[5px] text-ink-3 outline-none hover:bg-field hover:text-ink-1 focus-visible:shadow-[inset_0_0_0_1px_var(--color-accent)]"
-			aria-label="閉じる"
+			aria-label="Close"
 			onclick={() => (open = false)}
 		>
 			<X size={14} weight="regular" aria-hidden="true" />
@@ -188,10 +188,10 @@
 			onValueChange={(value) => (draftId = value)}
 		/>
 		<Select
-			label="挿入位置"
+			label="Insert position"
 			items={[
-				{ value: topInsertion, label: '最前面' },
-				...mapStyle.layers.map(({ id }) => ({ value: id, label: `${id} の上` }))
+				{ value: topInsertion, label: 'Top' },
+				...mapStyle.layers.map(({ id }) => ({ value: id, label: `Above ${id}` }))
 			]}
 			bind:value={insertion}
 		/>
@@ -206,13 +206,13 @@
 	<div
 		class="flex items-center justify-between gap-2 border-t border-hairline-soft px-3 py-2.5 text-[10px] text-ink-3"
 	>
-		<span>既定スタイルで追加</span>
+		<span>Add with default style</span>
 		<Button
 			class="h-6 rounded-[6px] bg-accent px-3 text-[11px] font-semibold text-white disabled:bg-ink-4"
 			disabled={!canAdd}
 			onclick={add}
 		>
-			追加
+			Add
 		</Button>
 	</div>
 </Popover>

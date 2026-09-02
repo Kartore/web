@@ -196,7 +196,7 @@
 			<textarea
 				id={`${id}-tiles`}
 				class="min-h-10 w-full resize-y rounded-[5px] border-0 bg-field px-2 py-1 font-mono text-[10px] leading-4 text-ink-1 outline-none focus:shadow-[inset_0_0_0_1px_var(--color-accent)] disabled:text-ink-4"
-				placeholder="1行に1つのタイル URL"
+				placeholder="One tile URL per line"
 				spellcheck="false"
 				disabled={readOnly}
 				value={source.tiles?.join('\n') ?? ''}
@@ -208,7 +208,7 @@
 			minLength={4}
 			maxLength={4}
 			disabled={readOnly}
-			aria-label="bounds（西, 南, 東, 北）"
+			aria-label="Bounds (west, south, east, north)"
 			onChange={commitBounds}
 		/>
 		<div class="flex gap-1">
@@ -312,7 +312,7 @@
 			<textarea
 				id={`${id}-data`}
 				class="min-h-16 w-full resize-y rounded-[5px] border-0 bg-field px-2 py-1 font-mono text-[10px] leading-4 text-ink-1 outline-none focus:shadow-[inset_0_0_0_1px_var(--color-accent)] disabled:text-ink-4"
-				placeholder="GeoJSON URL または GeoJSON オブジェクト"
+				placeholder="GeoJSON URL or GeoJSON object"
 				spellcheck="false"
 				disabled={readOnly}
 				value={sourceDataText}
@@ -395,7 +395,7 @@
 			<textarea
 				id={`${id}-urls`}
 				class="min-h-10 w-full resize-y rounded-[5px] border-0 bg-field px-2 py-1 font-mono text-[10px] leading-4 text-ink-1 outline-none focus:shadow-[inset_0_0_0_1px_var(--color-accent)] disabled:text-ink-4"
-				placeholder="1行に1つの動画 URL"
+				placeholder="One video URL per line"
 				spellcheck="false"
 				disabled={readOnly}
 				value={source.urls.join('\n')}

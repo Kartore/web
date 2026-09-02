@@ -40,14 +40,14 @@
 		{layer}
 		groups={['layout']}
 		prefix="visibility"
-		title="レイアウト"
+		title="Layout"
 		{onChange}
 	/>
 	<SpecPropertiesSection
 		{layer}
 		groups={['layout']}
 		prefix="symbol-"
-		title="シンボル"
+		title="Symbol"
 		{spriteIds}
 		{spriteImages}
 		{onChange}
@@ -56,7 +56,7 @@
 		{layer}
 		groups={['layout', 'paint']}
 		prefix="icon-"
-		title="アイコン"
+		title="Icon"
 		{spriteIds}
 		{spriteImages}
 		{onChange}
@@ -65,7 +65,7 @@
 		{layer}
 		groups={['layout', 'paint']}
 		prefix="text-"
-		title="テキスト"
+		title="Text"
 		{spriteIds}
 		{spriteImages}
 		{fontSuggestions}

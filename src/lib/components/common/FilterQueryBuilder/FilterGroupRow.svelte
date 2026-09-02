@@ -110,9 +110,7 @@
 		const op: FilterGroupNode['op'] = node.op === 'all' ? 'any' : 'all';
 		onChange({ ...node, op }, node.children.length > 0);
 	};
-	const operatorLabel = $derived(
-		node.op === 'all' ? 'かつ' : node.op === 'any' ? 'または' : 'いずれも除外'
-	);
+	const operatorLabel = $derived(node.op === 'all' ? 'All' : node.op === 'any' ? 'Any' : 'None');
 	onDestroy(stopPointerDrag);
 </script>
 
@@ -125,10 +123,10 @@
 >
 	{#if !root}
 		<div class="flex min-h-5 items-center px-0.5 pb-0.5 text-[9.5px] text-ink-3">
-			<span>グループ ・ {node.children.length} 条件</span>
+			<span>Group · {node.children.length} conditions</span>
 			{#if onRemove}
 				<Button
-					aria-label="フィルターグループを削除"
+					aria-label="Remove filter group"
 					class="ml-auto flex size-[18px] items-center justify-center text-ink-4 hover:text-ink-2"
 					onclick={() => onRemove(node.children.length > 0)}
 				>
@@ -144,8 +142,8 @@
 			aria-hidden="true"
 		></span>
 		<Button
-			aria-label={`条件の結合を${node.op === 'all' ? 'または' : 'かつ'}へ変更`}
-			title="クリックで「かつ / または」を切り替え"
+			aria-label={`Change condition group to ${node.op === 'all' ? 'any' : 'all'}`}
+			title="Click to toggle between all and any"
 			class="absolute top-1/2 left-1 z-10 h-[18px] -translate-x-1/2 -translate-y-1/2 rounded-[9px] border border-[#e3e3e3] bg-white px-[7px] text-[9px] font-normal whitespace-nowrap text-ink-2 hover:text-ink-1 focus-visible:outline-2 focus-visible:outline-accent"
 			onclick={toggleOperator}
 		>
@@ -164,7 +162,7 @@
 				>
 					<button
 						type="button"
-						aria-label={`フィルター条件 ${index + 1} を並べ替え`}
+						aria-label={`Reorder filter condition ${index + 1}`}
 						class={cn(
 							'mt-1 flex size-5 shrink-0 touch-none items-center justify-center rounded-[5px] text-ink-4 hover:bg-field hover:text-ink-2',
 							draggedIndex === index ? 'cursor-grabbing' : 'cursor-grab'
@@ -206,7 +204,7 @@
 			onclick={() => onChange({ ...node, children: [...node.children, defaultCondition()] })}
 		>
 			<Plus size={11} weight="regular" aria-hidden="true" />
-			条件
+			Condition
 		</Button>
 		{#if depth < 2}
 			<Button
@@ -221,7 +219,7 @@
 					)}
 			>
 				<Plus size={11} weight="regular" aria-hidden="true" />
-				グループ
+				Group
 			</Button>
 		{/if}
 	</div>

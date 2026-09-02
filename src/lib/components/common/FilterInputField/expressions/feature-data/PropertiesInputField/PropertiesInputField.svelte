@@ -27,6 +27,6 @@
 	class={cn('flex min-w-0 flex-row items-center gap-2 rounded bg-field px-2 py-2', className)}
 >
 	<ExpressionOperatorSelect value={expression} {onChange} />
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">フィーチャーから</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">From feature</div>
 	{@render children?.()}
 </div>

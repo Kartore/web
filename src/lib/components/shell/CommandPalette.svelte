@@ -10,7 +10,7 @@
 
 	type PaletteEntry = {
 		id: string;
-		group: 'レイヤー' | 'プロパティ' | 'アクション' | '移動';
+		group: 'Layers' | 'Properties' | 'Actions' | 'Navigate';
 		label: string;
 		detail?: string;
 		disabled?: boolean;
@@ -36,7 +36,7 @@
 	} = $props();
 
 	const commandRegistry = useEditorCommands();
-	const groupOrder: PaletteEntry['group'][] = ['レイヤー', 'プロパティ', 'アクション', '移動'];
+	const groupOrder: PaletteEntry['group'][] = ['Layers', 'Properties', 'Actions', 'Navigate'];
 	let query = $state('');
 	let activeIndex = $state(0);
 	const focusSearch: Attachment<HTMLInputElement> = (element) => {
@@ -62,7 +62,7 @@
 		return { longitude, latitude };
 	});
 	const zoomTarget = $derived.by(() => {
-		const match = /^(?:z|zoom|ズーム)\s*[:：]?\s*(-?(?:\d+(?:\.\d*)?|\.\d+))$/i.exec(query.trim());
+		const match = /^(?:z|zoom)\s*:?\s*(-?(?:\d+(?:\.\d*)?|\.\d+))$/i.exec(query.trim());
 		if (!match) return undefined;
 		const zoom = Number(match[1]);
 		return Number.isFinite(zoom) && zoom >= 0 && zoom <= 24 ? zoom : undefined;
@@ -70,17 +70,17 @@
 	const allEntries = $derived.by((): PaletteEntry[] => {
 		const layerEntries: PaletteEntry[] = layers.map((layer) => ({
 			id: `layer:${layer.id}`,
-			group: 'レイヤー',
+			group: 'Layers',
 			label: layer.id,
-			detail: layer.id === selectedLayer?.id ? `${layer.type} ・ 選択中` : layer.type,
+			detail: layer.id === selectedLayer?.id ? `${layer.type} · Selected` : layer.type,
 			run: () => onSelectLayer(layer.id)
 		}));
 		const propertyEntries: PaletteEntry[] = selectedLayer
 			? getLayerPropertyCatalog(selectedLayer.type).map((item) => ({
 					id: `property:${item.group}:${item.key}`,
-					group: 'プロパティ',
-					label: `${selectedLayer.id} の ${item.key} を編集`,
-					detail: item.spec.expression?.interpolated ? 'zoom 補間' : item.group,
+					group: 'Properties',
+					label: `Edit ${selectedLayer.id} ${item.key}`,
+					detail: item.spec.expression?.interpolated ? 'Zoom interpolation' : item.group,
 					run: () => onSelectProperty(item)
 				}))
 			: [];
@@ -88,7 +88,7 @@
 			.filter(({ label }) => label !== '')
 			.map((command) => ({
 				id: `action:${command.id}`,
-				group: 'アクション',
+				group: 'Actions',
 				label: command.label,
 				detail: command.shortcut
 					? `${command.groupLabel} · ${command.shortcut}`
@@ -98,26 +98,26 @@
 			}));
 		const movementEntries: PaletteEntry[] = [3, 8, 12, 16, 20].map((zoom) => ({
 			id: `move:zoom:${zoom}`,
-			group: '移動',
-			label: `ズーム ${zoom}`,
-			detail: `z${zoom} へ移動`,
+			group: 'Navigate',
+			label: `Zoom ${zoom}`,
+			detail: `Go to z${zoom}`,
 			run: () => onMoveZoom(zoom)
 		}));
 		if (zoomTarget !== undefined && ![3, 8, 12, 16, 20].includes(zoomTarget)) {
 			movementEntries.unshift({
 				id: `move:zoom:${zoomTarget}`,
-				group: '移動',
-				label: `ズーム ${zoomTarget}`,
-				detail: `z${zoomTarget} へ移動`,
+				group: 'Navigate',
+				label: `Zoom ${zoomTarget}`,
+				detail: `Go to z${zoomTarget}`,
 				run: () => onMoveZoom(zoomTarget)
 			});
 		}
 		if (coordinateTarget) {
 			movementEntries.unshift({
 				id: `move:coordinate:${coordinateTarget.longitude}:${coordinateTarget.latitude}`,
-				group: '移動',
-				label: `${coordinateTarget.longitude}, ${coordinateTarget.latitude} へ移動`,
-				detail: '経度, 緯度',
+				group: 'Navigate',
+				label: `Go to ${coordinateTarget.longitude}, ${coordinateTarget.latitude}`,
+				detail: 'Longitude, latitude',
 				run: () => onMoveCoordinate(coordinateTarget.longitude, coordinateTarget.latitude)
 			});
 		}
@@ -200,14 +200,14 @@
 			class="fixed top-[116px] left-1/2 z-50 flex max-h-[min(620px,calc(100vh-132px))] w-[min(520px,calc(100vw-32px))] -translate-x-1/2 flex-col overflow-hidden rounded-[10px] bg-white shadow-[0_16px_48px_rgba(0,0,0,0.3)] outline-none"
 			onkeydown={handleKeyDown}
 		>
-			<Dialog.Title class="sr-only">コマンドパレット</Dialog.Title>
+			<Dialog.Title class="sr-only">Command palette</Dialog.Title>
 			<div class="flex h-11 shrink-0 items-center gap-0.5 border-b border-hairline-soft px-4">
 				<input
 					{@attach focusSearch}
 					value={query}
 					type="search"
-					aria-label="コマンドを検索"
-					placeholder="レイヤー、プロパティ、アクション、座標を検索"
+					aria-label="Search commands"
+					placeholder="Search layers, properties, actions, or coordinates"
 					class="h-full min-w-0 flex-1 border-0 bg-transparent text-[13.5px] text-ink-1 outline-none placeholder:text-ink-3"
 					oninput={(event) => {
 						query = event.currentTarget.value;
@@ -218,7 +218,7 @@
 
 			<div class="min-h-0 flex-1 overflow-y-auto pb-2">
 				{#if entries.length === 0}
-					<p class="px-3 py-8 text-center text-[11px] text-ink-3">一致する項目がありません。</p>
+					<p class="px-3 py-8 text-center text-[11px] text-ink-3">No matching commands.</p>
 				{:else}
 					{#each groupOrder as group (group)}
 						{@const groupEntries = entries.filter((entry) => entry.group === group)}
@@ -242,11 +242,11 @@
 									onclick={() => runEntry(entry)}
 								>
 									<span class="grid w-[18px] shrink-0 place-items-center text-ink-3">
-										{#if entry.group === 'レイヤー'}
+										{#if entry.group === 'Layers'}
 											<StackSimple size={14} weight="regular" aria-hidden="true" />
-										{:else if entry.group === 'プロパティ'}
+										{:else if entry.group === 'Properties'}
 											<FunctionIcon size={14} weight="regular" aria-hidden="true" />
-										{:else if entry.group === 'アクション'}
+										{:else if entry.group === 'Actions'}
 											<Plus size={14} weight="regular" aria-hidden="true" />
 										{:else}
 											<Crosshair size={14} weight="regular" aria-hidden="true" />
@@ -271,10 +271,10 @@
 			<div
 				class="flex shrink-0 items-center gap-4 border-t border-hairline-soft px-4 pt-2 pb-[9px] font-mono text-[10px] text-ink-3"
 			>
-				<span>↑↓ 移動</span>
-				<span>↵ 実行</span>
-				<span>⇥ カテゴリ</span>
-				<span>esc 閉じる</span>
+				<span>↑↓ Navigate</span>
+				<span>↵ Run</span>
+				<span>⇥ Category</span>
+				<span>esc Close</span>
 			</div>
 		</Dialog.Content>
 	</Dialog.Portal>

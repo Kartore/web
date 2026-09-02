@@ -37,11 +37,11 @@
 >
 	<ExpressionOperatorSelect value={expression} {onChange} />
 	<ExpressionArgInputField parentValue={expression} index={1} {onChange} suggestion="propertyKey" />
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">対象</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">Target</div>
 	{#if items !== undefined}
 		<ExpressionArgInputField parentValue={expression} index={2} {onChange} />
 	{:else}
-		<div class="text-[10px] font-semibold tracking-wide text-ink-3">このフィーチャー</div>
+		<div class="text-[10px] font-semibold tracking-wide text-ink-3">This feature</div>
 	{/if}
 	{@render children?.()}
 </div>

@@ -30,7 +30,7 @@
 	let selectedRevisionId = $state<string>();
 	let error = $state<string>();
 
-	const firstLine = (message: string): string => message.split(/\r?\n/, 1)[0] || '(メッセージなし)';
+	const firstLine = (message: string): string => message.split(/\r?\n/, 1)[0] || '(No message)';
 	const filteredRevisions = $derived(
 		revisions.filter((revision) =>
 			`${firstLine(revision.message)} ${revision.authorName}`
@@ -44,8 +44,8 @@
 		const yesterday = new Date(today.getTime() - 24 * 60 * 60 * 1000);
 		const dayKey = (value: Date): string =>
 			`${value.getFullYear()}-${value.getMonth()}-${value.getDate()}`;
-		if (dayKey(date) === dayKey(today)) return '今日';
-		if (dayKey(date) === dayKey(yesterday)) return '昨日';
+		if (dayKey(date) === dayKey(today)) return 'Today';
+		if (dayKey(date) === dayKey(yesterday)) return 'Yesterday';
 		return new Intl.DateTimeFormat('ja-JP', {
 			year: 'numeric',
 			month: 'short',
@@ -120,9 +120,9 @@
 
 <aside class="flex w-60 shrink-0 flex-col border-r border-hairline bg-white">
 	<header class="flex h-10 shrink-0 items-center gap-1.5 px-3">
-		<h2 class="text-[12px] font-semibold text-ink-1">履歴</h2>
+		<h2 class="text-[12px] font-semibold text-ink-1">History</h2>
 		<p class="min-w-0 truncate font-mono text-[10.5px] text-ink-3">
-			{provider.label ?? '未接続'}
+			{provider.label ?? 'Not connected'}
 		</p>
 	</header>
 
@@ -130,15 +130,15 @@
 		<div class="relative">
 			<TextField
 				class="w-full [&>input]:h-[26px] [&>input]:w-full [&>input]:rounded-[6px] [&>input]:pr-7 [&>input]:text-[11px] [&>input]:font-normal"
-				aria-label="履歴を検索"
-				placeholder="検索"
+				aria-label="Search history"
+				placeholder="Search"
 				value={search}
 				onValueChange={(value) => (search = value)}
 			/>
 			{#if search}
 				<Button
 					class="absolute top-0 right-0 flex size-6 items-center justify-center text-ink-3 hover:text-ink-1"
-					aria-label="履歴検索をクリア"
+					aria-label="Clear history search"
 					onclick={() => (search = '')}
 				>
 					<X size={14} weight="regular" aria-hidden="true" />
@@ -149,9 +149,9 @@
 
 	<div class="min-h-0 flex-1 overflow-y-auto">
 		{#if loading && revisions.length === 0}
-			<p class="px-3 py-6 text-center text-[11px] text-ink-3">履歴を取得中…</p>
+			<p class="px-3 py-6 text-center text-[11px] text-ink-3">Loading history…</p>
 		{:else if groupedRevisions.length === 0}
-			<p class="px-3 py-6 text-center text-[11px] text-ink-3">履歴はありません。</p>
+			<p class="px-3 py-6 text-center text-[11px] text-ink-3">No history.</p>
 		{/if}
 		{#each groupedRevisions as group (group.date)}
 			<p class="px-3 pt-2 pb-0.5 text-[10px] font-normal text-ink-3">
@@ -184,14 +184,14 @@
 								disabled={actionRevisionId !== undefined}
 								onclick={() => showRevision(revision)}
 							>
-								この時点を表示
+								View at this point
 							</Button>
 							<Button
 								class="h-5 px-0 text-[10px] hover:bg-transparent disabled:text-ink-4"
 								disabled={actionRevisionId !== undefined}
 								onclick={() => revertRevision(revision)}
 							>
-								戻す
+								Revert
 							</Button>
 						</div>
 					</div>
@@ -205,7 +205,7 @@
 					disabled={loading}
 					onclick={() => loadPage(page + 1)}
 				>
-					{loading ? '取得中…' : 'さらに読み込む'}
+					{loading ? 'Loading…' : 'Load more'}
 				</Button>
 			</div>
 		{/if}
@@ -217,7 +217,7 @@
 	<footer
 		class="flex h-8 shrink-0 items-center justify-between border-t border-hairline-soft px-3 font-mono text-[10px] text-ink-3"
 	>
-		<span>{revisions.length} 件</span>
+		<span>{revisions.length} entries</span>
 		<span>⌘6</span>
 	</footer>
 </aside>

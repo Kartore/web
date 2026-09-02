@@ -249,7 +249,7 @@
 			inspectHiddenDataKeys
 		);
 		inspectLegend = generated.legend;
-		previewState = { label: 'データビュー', style: generated.style };
+		previewState = { label: 'Data view', style: generated.style };
 	};
 	const setInspectView = (view: InspectView) => {
 		if (!inspectActive || !inspectStylePreview || inspectView === view) return;
@@ -258,7 +258,7 @@
 		inspectPopup = null;
 		inspectPopoverHighlight = null;
 		if (view === 'data') refreshInspectDataView();
-		else previewState = { label: 'ポイント検査', style: inspectStylePreview };
+		else previewState = { label: 'Point inspection', style: inspectStylePreview };
 	};
 	const toggleInspectLegendEntry = (key: string) => {
 		const next = new SvelteSet(inspectHiddenDataKeys);
@@ -322,7 +322,7 @@
 		inspectStylePreview = structuredClone(
 			$state.snapshot(effectiveStyle as object) as StyleSpecification
 		);
-		previewState = { label: 'ポイント検査', style: inspectStylePreview };
+		previewState = { label: 'Point inspection', style: inspectStylePreview };
 		inspectActive = true;
 		inspectSession += 1;
 		inspectView = 'style';
@@ -639,7 +639,7 @@
 					: currentLayer
 			)
 		};
-		previewState = { label: 'ポイント検査', style: inspectStylePreview };
+		previewState = { label: 'Point inspection', style: inspectStylePreview };
 		inspectPopup = null;
 		inspectPopoverHighlight = null;
 	};
@@ -938,7 +938,7 @@
 
 {#if store.isLoading || spriteIconsStore.isLoading || fontsStore.isLoading || initialProjectLoading}
 	<div class="flex min-h-screen items-center justify-center text-[11px] text-ink-2">
-		地図スタイルを読み込み中…
+		Loading map style…
 	</div>
 {:else if initialProjectError}
 	<div
@@ -946,7 +946,7 @@
 		role="alert"
 	>
 		<div class="max-w-md">
-			<p class="text-sm font-semibold text-ink-1">初期プロジェクトを読み込めませんでした</p>
+			<p class="text-sm font-semibold text-ink-1">Could not load the initial project</p>
 			<p class="mt-2 text-[11px] text-ink-2">{initialProjectError.message}</p>
 		</div>
 	</div>
@@ -1023,7 +1023,7 @@
 					minWidth={MIN_SIDEBAR_WIDTH}
 					maxWidth={MAX_SIDEBAR_WIDTH}
 					defaultWidth={DEFAULT_SIDEBAR_WIDTH}
-					label="左サイドバーの幅を変更"
+					label="Resize left sidebar"
 					onResizeEnd={handleLeftSidebarResizeEnd}
 				>
 					<SecondColumn
@@ -1101,7 +1101,7 @@
 						class="absolute top-3 left-3 z-20 h-7 cursor-pointer rounded-[6px] bg-white px-2.5 text-[10.5px] font-semibold text-ink-2 shadow-[0_1px_4px_rgba(0,0,0,0.16)] hover:bg-field"
 						onclick={() => setLeftShellCollapsed(false)}
 					>
-						パネル <span class="font-mono text-ink-3">⌘.</span>
+						Panels <span class="font-mono text-ink-3">⌘.</span>
 					</button>
 				{/if}
 				{#if colorVisionMode !== 'none'}
@@ -1110,29 +1110,29 @@
 					>
 						<span>
 							{colorVisionMode === 'grayscale'
-								? 'グレースケールで表示中'
-								: `${COLOR_VISION_MODE_LABELS[colorVisionMode]}色覚で表示中`}
+								? 'Grayscale simulation active'
+								: `${COLOR_VISION_MODE_LABELS[colorVisionMode]} simulation active`}
 						</span>
-						<span class="text-[9.5px] text-ink-3">esc で解除</span>
+						<span class="text-[9.5px] text-ink-3">esc to exit</span>
 					</div>
 				{:else if previewState && !inspectActive}
 					<div
 						class="absolute top-3 left-1/2 z-20 flex h-7 -translate-x-1/2 items-center gap-3 rounded-[6px] border border-accent bg-accent-soft px-3 text-[11px] font-semibold text-accent"
 					>
-						<span>{previewState.label} をプレビュー中。編集は無効です。</span>
+						<span>Previewing {previewState.label}. Editing is disabled.</span>
 						<button
 							type="button"
 							class="h-5 cursor-pointer rounded-[5px] px-1.5 hover:bg-white"
 							onclick={() => (previewState = null)}
 						>
-							終了
+							Exit
 						</button>
 					</div>
 				{:else if paletteSelectionLabel}
 					<div
 						class="absolute top-3 left-1/2 z-20 flex h-7 -translate-x-1/2 items-center rounded-[6px] border border-accent bg-accent-soft px-3 text-[11px] font-semibold text-accent"
 					>
-						{paletteSelectionLabel} の使用箇所をハイライト中
+						Highlighting usages of {paletteSelectionLabel}
 					</div>
 				{/if}
 			</MapViewport>
@@ -1143,7 +1143,7 @@
 				maxWidth={MAX_PROPERTIES_PANEL_WIDTH}
 				defaultWidth={DEFAULT_PROPERTIES_PANEL_WIDTH}
 				resizeEdge="left"
-				label="プロパティパネルの幅を変更"
+				label="Resize properties panel"
 				onResizeEnd={handlePropertiesPanelResizeEnd}
 			>
 				<PropertiesDock>

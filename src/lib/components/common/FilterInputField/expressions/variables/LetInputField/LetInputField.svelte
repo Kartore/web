@@ -58,8 +58,8 @@
 		<ExpressionArgInputField parentValue={expression} index={nameIndex + 1} {onChange} />
 		{#if onChange}
 			<Button
-				aria-label="変数割り当てを削除"
-				title="変数割り当てを削除"
+				aria-label="Remove variable binding"
+				title="Remove variable binding"
 				class="rounded px-1 py-0.5 text-xs text-ink-3 transition-colors hover:text-ink-2"
 				onclick={() =>
 					onChange(removeArgsOrCollapse(expression, nameIndex, 2, expression[resultIndex]))}

@@ -34,14 +34,14 @@
 	});
 
 	const resolvedColorName = $derived(
-		colorName ?? (color.getChannelValue('alpha') === 0 ? '透明' : color.toString('hex'))
+		colorName ?? (color.getChannelValue('alpha') === 0 ? 'Transparent' : color.toString('hex'))
 	);
 </script>
 
 <div
 	{...props}
 	role="img"
-	aria-roledescription="カラースウォッチ"
+	aria-roledescription="Color swatch"
 	aria-label={[resolvedColorName, ariaLabel || ''].filter(Boolean).join(', ')}
 	aria-labelledby={ariaLabelledby ? `${resolvedId} ${ariaLabelledby}` : undefined}
 	id={resolvedId}

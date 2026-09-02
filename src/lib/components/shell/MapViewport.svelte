@@ -125,11 +125,11 @@
 
 	<div
 		class="absolute top-3 right-3 z-10 flex flex-col overflow-hidden rounded-[6px] bg-white shadow-[0_1px_4px_rgba(0,0,0,0.16)]"
-		aria-label="地図ナビゲーション"
+		aria-label="Map navigation"
 	>
 		<Button
 			class="flex size-7 items-center justify-center border-b border-hairline-soft text-ink-2 hover:bg-field disabled:text-ink-4"
-			aria-label="拡大"
+			aria-label="Zoom in"
 			disabled={isMaxZoom}
 			onclick={() => backgroundMap.map?.zoomIn()}
 		>
@@ -137,7 +137,7 @@
 		</Button>
 		<Button
 			class="flex size-7 items-center justify-center border-b border-hairline-soft text-ink-2 hover:bg-field disabled:text-ink-4"
-			aria-label="縮小"
+			aria-label="Zoom out"
 			disabled={isMinZoom}
 			onclick={() => backgroundMap.map?.zoomOut()}
 		>
@@ -145,7 +145,7 @@
 		</Button>
 		<Button
 			class="flex size-7 items-center justify-center border-b border-hairline-soft text-ink-2 hover:bg-field disabled:text-ink-4"
-			aria-label="北向きと傾きをリセット"
+			aria-label="Reset north and pitch"
 			disabled={isNorthUpFlat}
 			onclick={() => backgroundMap.map?.resetNorthPitch()}
 		>
@@ -158,9 +158,9 @@
 		</Button>
 		<Button
 			class="flex size-7 items-center justify-center text-ink-2 hover:bg-field aria-pressed:bg-accent aria-pressed:text-white"
-			aria-label={inspectActive ? 'ポイント検査を終了' : 'ポイント検査'}
+			aria-label={inspectActive ? 'Exit point inspection' : 'Inspect point'}
 			aria-pressed={inspectActive}
-			title="ポイント検査 (I)"
+			title="Inspect point (I)"
 			onclick={onToggleInspect}
 		>
 			<Crosshair size={16} weight="regular" aria-hidden="true" />

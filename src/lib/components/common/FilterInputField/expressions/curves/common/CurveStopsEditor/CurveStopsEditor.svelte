@@ -122,7 +122,7 @@
 			aria-expanded={detailsOpen}
 			onclick={() => (detailsOpen = !detailsOpen)}
 		>
-			詳細
+			Details
 		</Button>
 		<CurveStopsCanvas
 			value={expression}
@@ -191,7 +191,7 @@
 						onRemove={onChange
 							? () => removeStop(selectedStartIndex, selectedStopIndex ?? 0)
 							: undefined}
-						removeLabel="ストップを削除"
+						removeLabel="Remove stop"
 					/>
 				</div>
 			{/if}
@@ -200,20 +200,20 @@
 		<ExpressionAppendArgButton
 			value={expression}
 			{onChange}
-			label="ストップを追加"
-			ariaLabel="ストップを追加"
+			label="Add stop"
+			ariaLabel="Add stop"
 			class="mt-1 h-5 justify-start px-0 text-[10px] font-normal text-ink-3 hover:bg-transparent hover:text-accent"
 		/>
 
 		{#if detailsOpen}
 			<div class="mt-1.5 flex flex-col gap-1.5 border-l-2 border-hairline-soft pl-2">
 				<div class="flex h-6 min-w-0 items-center justify-between gap-2">
-					<span class="font-mono text-[10px] text-ink-2">式</span>
+					<span class="font-mono text-[10px] text-ink-2">Expression</span>
 					<ExpressionOperatorSelect value={expression} {onChange} />
 				</div>
 				{#if interpolation}
 					<div class="flex h-6 min-w-0 items-center justify-between gap-2">
-						<span class="font-mono text-[10px] text-ink-2">補間</span>
+						<span class="font-mono text-[10px] text-ink-2">Interpolation</span>
 						<InterpolationsInputField
 							value={interpolation}
 							onChange={onChange
@@ -223,7 +223,7 @@
 					</div>
 				{/if}
 				<div class="flex h-6 min-w-0 items-center justify-between gap-2">
-					<span class="font-mono text-[10px] text-ink-2">入力</span>
+					<span class="font-mono text-[10px] text-ink-2">Input</span>
 					<ExpressionArgInputField
 						class="min-w-0 flex-1 justify-end"
 						parentValue={expression}

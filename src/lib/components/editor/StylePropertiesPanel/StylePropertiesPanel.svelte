@@ -67,7 +67,7 @@
 	);
 	const terrainSourceItems = $derived.by(() => {
 		const items = [
-			{ value: '', label: 'なし' },
+			{ value: '', label: 'None' },
 			...rasterDemSourceIds.map((sourceId) => ({
 				value: sourceId,
 				label: sourceId
@@ -76,7 +76,7 @@
 		if (terrainSource && !rasterDemSourceIds.includes(terrainSource)) {
 			items.unshift({
 				value: terrainSource,
-				label: `${terrainSource} (見つかりません)`
+				label: `${terrainSource} (not found)`
 			});
 		}
 		return items;
@@ -120,7 +120,7 @@
 	{#if styleErrors.length > 0}
 		<div class="border-b border-hairline-soft px-3 py-2" role="alert">
 			<h3 class="text-[11px] font-semibold text-ink-1">
-				このスタイルに {styleErrors.length} 件のエラー
+				{styleErrors.length} errors in this style
 			</h3>
 			{#each styleErrors as error, index (error + index)}
 				<p class="mt-1 text-[10px] break-words text-ink-2">{error}</p>
@@ -129,24 +129,26 @@
 	{/if}
 
 	<div class="flex flex-col">
-		{#if matchesSearch('identity', 'name', 'sprite', 'glyphs', '名前', 'スプライト', 'フォント')}
+		{#if matchesSearch('identity', 'name', 'sprite', 'glyphs', 'font')}
 			<section class="border-b border-hairline-soft px-3 pt-0.5 pb-2">
 				<TextField
-					label="名前"
+					label="Name"
 					value={mapStyle.name ?? ''}
 					onCommit={(value) => commitStringSetting('name', value)}
 				/>
 			</section>
 		{/if}
 
-		{#if matchesSearch('default view', 'center', 'zoom', 'bearing', 'pitch', '既定ビュー', '現在のビュー')}
+		{#if matchesSearch('default view', 'center', 'zoom', 'bearing', 'pitch', 'current view')}
 			<section class="border-b border-hairline-soft px-3 pt-1.5 pb-2.5">
-				<h3 class="flex h-[22px] items-center text-[11px] font-semibold text-ink-1">既定ビュー</h3>
+				<h3 class="flex h-[22px] items-center text-[11px] font-semibold text-ink-1">
+					Default view
+				</h3>
 				<div class="flex min-h-[30px] items-center gap-2">
-					<span class="w-[52px] shrink-0 text-[10px] text-ink-2">中心</span>
+					<span class="w-[52px] shrink-0 text-[10px] text-ink-2">Center</span>
 					<NumberField
 						class="h-6 min-w-0 flex-1"
-						aria-label="中心経度"
+						aria-label="Center longitude"
 						value={mapStyle.center?.[0]}
 						minValue={-180}
 						maxValue={180}
@@ -154,7 +156,7 @@
 					/>
 					<NumberField
 						class="h-6 min-w-0 flex-1"
-						aria-label="中心緯度"
+						aria-label="Center latitude"
 						value={mapStyle.center?.[1]}
 						minValue={-90}
 						maxValue={90}
@@ -162,10 +164,10 @@
 					/>
 				</div>
 				<div class="flex min-h-[30px] items-center">
-					<span class="w-[84px] shrink-0 text-[10px] text-ink-2">ズーム</span>
+					<span class="w-[84px] shrink-0 text-[10px] text-ink-2">Zoom</span>
 					<NumberField
 						class="h-6 w-12"
-						aria-label="既定ズーム"
+						aria-label="Default zoom"
 						value={mapStyle.zoom}
 						minValue={0}
 						maxValue={24}
@@ -175,20 +177,18 @@
 				{#if onUseCurrentView}
 					<Button
 						class="mt-0.5 h-5 px-0 text-[10px] font-semibold text-accent hover:bg-transparent"
-						title="現在の地図位置を既定ビューに設定"
+						title="Set the current map position as the default view"
 						onclick={() => onUseCurrentView()}
 					>
-						現在のビューを既定にする
+						Use current view as default
 					</Button>
 				{/if}
 			</section>
 		{/if}
 
-		{#if matchesSearch('projection', 'type', '投影')}
+		{#if matchesSearch('projection', 'type')}
 			<section class="border-b border-hairline-soft px-3 pt-1.5 pb-2.5">
-				<h3 class="flex h-[22px] items-center text-[11px] font-semibold text-ink-1">
-					プロジェクション
-				</h3>
+				<h3 class="flex h-[22px] items-center text-[11px] font-semibold text-ink-1">Projection</h3>
 				{#if projectionIsSegmented}
 					<BoxRadioGroup
 						label="type"
@@ -208,11 +208,9 @@
 			</section>
 		{/if}
 
-		{#if matchesSearch('asset', 'glyphs', 'sprite', 'アセット', 'フォント', 'スプライト')}
+		{#if matchesSearch('asset', 'glyphs', 'sprite', 'font')}
 			<section class="border-b border-hairline-soft px-3 pt-1.5 pb-2.5">
-				<h3 class="flex h-[22px] items-center text-[11px] font-semibold text-ink-1">
-					アセット URL
-				</h3>
+				<h3 class="flex h-[22px] items-center text-[11px] font-semibold text-ink-1">Asset URLs</h3>
 				<TextField
 					label="glyphs"
 					placeholder={'https://.../{fontstack}/{range}.pbf'}
@@ -222,7 +220,7 @@
 				{#if managedSprite}
 					<div class="flex min-h-[30px] items-center">
 						<p class="w-[84px] shrink-0 font-mono text-[10px] text-ink-2">sprite</p>
-						<p class="text-[10px] text-ink-3">kartore が管理(ローカル生成)</p>
+						<p class="text-[10px] text-ink-3">Managed by Kartore (generated locally)</p>
 					</div>
 				{:else if spriteEditable}
 					<TextField
@@ -240,14 +238,14 @@
 			</section>
 		{/if}
 
-		{#if matchesSearch('light', 'anchor', 'position', 'color', 'intensity', 'ライト')}
+		{#if matchesSearch('light', 'anchor', 'position', 'color', 'intensity')}
 			<section class="border-b border-hairline-soft px-3 pt-1.5 pb-1">
 				<h3 class="flex h-[22px] items-center text-[11px] font-semibold text-ink-3">
-					ライト
+					Light
 					{#if mapStyle.light === undefined}
 						<Button
 							class="ml-auto grid size-6 place-items-center rounded-[5px] text-ink-2 hover:bg-field hover:text-ink-1"
-							aria-label="ライトを追加"
+							aria-label="Add light"
 							onclick={() => onSetRootObject?.('light', {})}
 						>
 							<Plus size={14} weight="regular" aria-hidden="true" />
@@ -266,14 +264,14 @@
 			</section>
 		{/if}
 
-		{#if matchesSearch('sky', '空')}
+		{#if matchesSearch('sky')}
 			<section class="border-b border-hairline-soft px-3 pt-1.5 pb-1">
 				<h3 class="flex h-[22px] items-center text-[11px] font-semibold text-ink-3">
-					スカイ
+					Sky
 					{#if mapStyle.sky === undefined}
 						<Button
 							class="ml-auto grid size-6 place-items-center rounded-[5px] text-ink-2 hover:bg-field hover:text-ink-1"
-							aria-label="スカイを追加"
+							aria-label="Add sky"
 							onclick={() => onSetRootObject?.('sky', {})}
 						>
 							<Plus size={14} weight="regular" aria-hidden="true" />
@@ -290,13 +288,13 @@
 					{/each}
 					{#if confirmingRemoveSky}
 						<div class="py-1">
-							<p class="mb-1 text-[10px] text-ink-2">スカイを削除しますか？</p>
+							<p class="mb-1 text-[10px] text-ink-2">Remove sky?</p>
 							<div class="flex justify-end gap-1">
 								<Button
 									class="h-6 rounded-[5px] px-2 text-[10px] text-ink-2 hover:bg-field"
 									onclick={() => (confirmingRemoveSky = false)}
 								>
-									キャンセル
+									Cancel
 								</Button>
 								<Button
 									class="h-6 rounded-[5px] bg-ink-1 px-2 text-[10px] font-semibold text-white"
@@ -305,7 +303,7 @@
 										onSetRootObject?.('sky', undefined);
 									}}
 								>
-									削除
+									Remove
 								</Button>
 							</div>
 						</div>
@@ -315,7 +313,7 @@
 								class="h-6 rounded-[5px] px-2 text-[10px] text-ink-2 hover:bg-field"
 								onclick={() => (confirmingRemoveSky = true)}
 							>
-								スカイを削除
+								Remove sky
 							</Button>
 						</div>
 					{/if}
@@ -323,14 +321,14 @@
 			</section>
 		{/if}
 
-		{#if matchesSearch('terrain', 'source', 'exaggeration', '地形')}
+		{#if matchesSearch('terrain', 'source', 'exaggeration')}
 			<section class="border-b border-hairline-soft px-3 pt-1.5 pb-1">
 				<h3 class="flex h-[22px] items-center text-[11px] font-semibold text-ink-3">
-					地形(terrain)
+					Terrain
 					{#if terrainObject === undefined && rasterDemSourceIds.length > 0}
 						<Button
 							class="ml-auto grid size-6 place-items-center rounded-[5px] text-ink-2 hover:bg-field hover:text-ink-1"
-							aria-label="地形を追加"
+							aria-label="Add terrain"
 							onclick={() => onSetRootObject?.('terrain', { source: rasterDemSourceIds[0] })}
 						>
 							<Plus size={14} weight="regular" aria-hidden="true" />
@@ -338,7 +336,7 @@
 					{/if}
 				</h3>
 				{#if rasterDemSourceIds.length === 0 && terrainObject === undefined}
-					<p class="pb-1 text-[10px] text-ink-3">raster-dem ソースが必要です。</p>
+					<p class="pb-1 text-[10px] text-ink-3">A raster-dem source is required.</p>
 				{:else}
 					<Select
 						label="source"
@@ -358,7 +356,7 @@
 				{/if}
 				{#if terrainObject !== undefined}
 					<NumberField
-						label="強調"
+						label="Exaggeration"
 						value={terrainExaggeration}
 						minValue={0}
 						description="×"
@@ -376,7 +374,7 @@
 					onclick={() => onOpenVariables()}
 				>
 					<Palette size={14} weight="regular" aria-hidden="true" />
-					パレットを開く
+					Open palette
 				</Button>
 			{/if}
 			<Button
@@ -384,7 +382,7 @@
 				onclick={() => onOpenStyleJson?.()}
 			>
 				<BracketsCurly size={14} weight="regular" aria-hidden="true" />
-				スタイル全体を JSON で表示
+				View full style JSON
 			</Button>
 		</section>
 	</div>

@@ -81,7 +81,7 @@
 		{toDisplayText(value)}
 	{:else if typeof value === 'boolean'}
 		<Button
-			aria-label="真偽値を切り替え"
+			aria-label="Toggle boolean"
 			class={cn(literalInputClassName, 'cursor-pointer')}
 			onclick={() => onChange?.(!value)}
 		>
@@ -89,7 +89,7 @@
 		</Button>
 	{:else if typeof value === 'number'}
 		<LiteralTextInput
-			aria-label="数値"
+			aria-label="Number"
 			value={String(value)}
 			parse={(text) => {
 				if (text.trim() === '') return undefined;
@@ -101,7 +101,7 @@
 		/>
 	{:else}
 		<LiteralTextInput
-			aria-label="テキスト"
+			aria-label="Text"
 			value={value as string}
 			parse={(text) => text}
 			onCommit={onChange}

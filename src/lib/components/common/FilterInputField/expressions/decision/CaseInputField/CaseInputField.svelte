@@ -59,7 +59,7 @@
 	style:--expression-control-background={surface.controlBackground}
 >
 	<div class="flex min-w-0 items-center gap-1">
-		<span class="text-[10px] font-semibold tracking-wide text-ink-3">演算子</span>
+		<span class="text-[10px] font-semibold tracking-wide text-ink-3">Operator</span>
 		<ExpressionOperatorSelect value={expression} {onChange} label="case" />
 	</div>
 
@@ -67,9 +67,9 @@
 		<div
 			class="grid grid-cols-[minmax(0,2fr)_16px_minmax(0,1fr)] gap-1 border-b border-hairline-soft px-0.5 pb-1 font-mono text-[10px] text-ink-3"
 		>
-			<span>条件</span>
+			<span>Condition</span>
 			<span aria-hidden="true"></span>
-			<span>出力</span>
+			<span>Output</span>
 		</div>
 
 		{#each Array.from({ length: pairCount }, (_, pair) => pair) as pair (pair)}
@@ -87,8 +87,8 @@
 						<span class="pt-1 text-center font-mono text-xs text-ink-4" aria-hidden="true">→</span>
 						{#if onChange}
 							<Button
-								aria-label="条件ケースを削除"
-								title="条件ケースを削除"
+								aria-label="Remove condition case"
+								title="Remove condition case"
 								class="ml-auto flex size-6 shrink-0 items-center justify-center rounded-[6px] text-ink-3 hover:bg-black/5 hover:text-ink-1"
 								onclick={() => removePair(conditionIndex)}
 							>
@@ -124,7 +124,7 @@
 						{propertySpec}
 						{onChange}
 						onRemove={onChange ? () => removePair(conditionIndex) : undefined}
-						removeLabel="条件ケースを削除"
+						removeLabel="Remove condition case"
 					/>
 				</div>
 			{/if}
@@ -133,7 +133,7 @@
 		{#if isCompoundOutput(value[fallbackIndex])}
 			<div class="flex min-w-0 flex-col rounded px-0.5 py-1 hover:bg-black/5">
 				<div class="flex min-w-0 items-start gap-1 pb-1">
-					<span class="pt-1 font-mono text-xs text-ink-3">フォールバック</span>
+					<span class="pt-1 font-mono text-xs text-ink-3">Fallback</span>
 					<span class="pt-1 text-center font-mono text-xs text-ink-4" aria-hidden="true">→</span>
 				</div>
 				<div class="ml-1 min-w-0 border-l-2 border-hairline-soft pl-2">
@@ -150,7 +150,7 @@
 			<div
 				class="grid min-w-0 grid-cols-[minmax(0,2fr)_16px_minmax(0,1fr)] items-start gap-1 rounded px-0.5 py-1 hover:bg-black/5"
 			>
-				<span class="pt-1 font-mono text-xs text-ink-3">フォールバック</span>
+				<span class="pt-1 font-mono text-xs text-ink-3">Fallback</span>
 				<span class="pt-1 text-center font-mono text-xs text-ink-4" aria-hidden="true">→</span>
 				<ExpressionArgInputField
 					class="min-w-0"
@@ -167,8 +167,8 @@
 		<ExpressionAppendArgButton
 			value={expression}
 			{onChange}
-			label="＋ ケースを追加"
-			ariaLabel="条件ケースを追加"
+			label="＋ Add case"
+			ariaLabel="Add condition case"
 			class="px-2 py-1 text-ink-3"
 		/>
 	</div>

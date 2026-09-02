@@ -75,7 +75,7 @@ export const getStyleVariableModes = (style: StyleSpecification): StyleVariableM
 	}
 	return {
 		activeModeId: LIGHT_MODE_ID,
-		modes: [{ id: LIGHT_MODE_ID, name: 'ライト', values: completeModeValues(variables, {}) }]
+		modes: [{ id: LIGHT_MODE_ID, name: 'Light', values: completeModeValues(variables, {}) }]
 	};
 };
 

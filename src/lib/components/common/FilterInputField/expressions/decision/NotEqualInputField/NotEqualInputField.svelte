@@ -41,9 +41,9 @@
 	<div
 		class="grid grid-cols-[minmax(0,1fr)_44px_minmax(0,1fr)] gap-1 px-0.5 font-mono text-[10px] text-ink-3"
 	>
-		<span class="min-w-0 truncate">対象</span>
-		<span class="min-w-0 truncate text-center" title="演算子">演算</span>
-		<span class="min-w-0 truncate">値</span>
+		<span class="min-w-0 truncate">Input</span>
+		<span class="min-w-0 truncate text-center" title="Operator">Operator</span>
+		<span class="min-w-0 truncate">Value</span>
 	</div>
 	<div
 		class="grid min-w-0 grid-cols-[minmax(0,1fr)_44px_minmax(0,1fr)] items-start gap-1 rounded px-0.5 py-1 hover:bg-white"
@@ -66,7 +66,7 @@
 	</div>
 	{#if collator}
 		<div class="flex min-w-0 items-start gap-2 border-t border-hairline-soft px-0.5 pt-1">
-			<span class="pt-1 text-[10px] font-semibold tracking-wide text-ink-3">照合順序</span>
+			<span class="pt-1 text-[10px] font-semibold tracking-wide text-ink-3">Collation</span>
 			<ExpressionArgInputField
 				class="min-w-0 flex-1"
 				parentValue={expression}

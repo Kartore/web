@@ -36,7 +36,7 @@
 	<SpecPropertiesSection
 		{layer}
 		groups={['paint']}
-		title="色"
+		title="Color"
 		include={[
 			'line-color',
 			'line-opacity',
@@ -52,8 +52,8 @@
 	<SpecPropertiesSection
 		{layer}
 		groups={['paint']}
-		title="幅"
-		meta="ズーム"
+		title="Width"
+		meta="Zoom"
 		include={[
 			'line-width',
 			'line-gap-width',
@@ -71,7 +71,7 @@
 	<SpecPropertiesSection
 		{layer}
 		groups={['layout']}
-		title="線端・結合"
+		title="Cap & join"
 		{spriteIds}
 		{spriteImages}
 		{onChange}
@@ -80,7 +80,7 @@
 	<SpecPropertiesSection
 		{layer}
 		groups={['paint']}
-		title="破線"
+		title="Dash"
 		include={['line-dasharray']}
 		{spriteIds}
 		{spriteImages}
@@ -89,7 +89,7 @@
 	<SpecPropertiesSection
 		{layer}
 		groups={['paint']}
-		title="オフセット・ブラー"
+		title="Offset & blur"
 		include={['line-offset', 'line-blur', 'line-translate', 'line-translate-anchor']}
 		{spriteIds}
 		{spriteImages}

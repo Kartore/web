@@ -9,7 +9,7 @@
 
 	let {
 		class: className,
-		label = '値',
+		label = 'Value',
 		compact = false,
 		value,
 		onChange
@@ -88,11 +88,11 @@
 			{/if}
 			{#if nextAnchor !== undefined}
 				<Button
-					aria-label={`${label}を追加`}
+					aria-label={`Add ${label}`}
 					class="h-6 min-w-24 flex-1 rounded-[5px] bg-field px-2 font-mono text-[11px] font-normal text-ink-1 hover:bg-field"
 					onclick={() => commit([...pairs, { anchor: nextAnchor, offset: [0, 0] }])}
 				>
-					＋ 追加
+					＋ Add
 				</Button>
 			{/if}
 		</div>
@@ -102,7 +102,7 @@
 			<Select
 				class="min-w-0 flex-1"
 				triggerClass="w-full"
-				aria-label={`${label}のアンカー ${index + 1}`}
+				aria-label={`${label} anchor ${index + 1}`}
 				items={anchors.map((anchor) => ({
 					value: anchor,
 					label: anchor,
@@ -124,7 +124,7 @@
 				/>
 			</div>
 			<Button
-				aria-label={`${label} ${index + 1} を削除`}
+				aria-label={`Remove ${label} ${index + 1}`}
 				class="rounded p-0.5 text-ink-3 hover:text-ink-2"
 				onclick={() => commit(pairs.filter((_, currentIndex) => currentIndex !== index))}
 			>

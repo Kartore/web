@@ -39,11 +39,11 @@
 </script>
 
 <div {...props} class={cn('border-b border-hairline-soft px-4 pt-1.5 pb-2.5', className)}>
-	<h3 class="flex h-7 items-center text-[11px] font-semibold text-ink-1">ズーム範囲</h3>
+	<h3 class="flex h-7 items-center text-[11px] font-semibold text-ink-1">Zoom range</h3>
 	<div class="flex h-[30px] items-center gap-2">
 		<NumberField
 			class="w-10 shrink-0 [&>div]:w-full"
-			aria-label="最小ズーム"
+			aria-label="Minimum zoom"
 			value={minzoom}
 			minValue={0}
 			maxValue={maxzoom}
@@ -56,7 +56,7 @@
 			minValue={0}
 			maxValue={24}
 			step={zoomSteps}
-			sliderThumbLabel={['最小ズーム', '最大ズーム']}
+			sliderThumbLabel={['Minimum zoom', 'Maximum zoom']}
 			onValueChange={([min, max]) => {
 				updateMinzoom(min);
 				updateMaxzoom(max);
@@ -64,7 +64,7 @@
 		/>
 		<NumberField
 			class="w-10 shrink-0 [&>div]:w-full"
-			aria-label="最大ズーム"
+			aria-label="Maximum zoom"
 			value={maxzoom}
 			minValue={minzoom}
 			maxValue={24}

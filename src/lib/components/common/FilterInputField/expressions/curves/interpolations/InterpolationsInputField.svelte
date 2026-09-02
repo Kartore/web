@@ -40,7 +40,7 @@
 
 {#snippet typeSelect()}
 	<Select
-		aria-label="補間方式"
+		aria-label="Interpolation method"
 		class="inline-flex max-w-full min-w-0 font-mono"
 		triggerClass="w-auto min-w-0 max-w-full font-mono font-normal text-ink-2"
 		items={interpolationTypes.map((type) => ({ value: type, label: type }))}

@@ -121,7 +121,7 @@
 			<Select
 				class="w-[104px]"
 				triggerClass="h-6 rounded-[5px] bg-field px-2 font-mono text-[10.5px]"
-				aria-label="式タイプ"
+				aria-label="Expression type"
 				items={expressionTypeItems}
 				value={expressionType}
 				onValueChange={resetExpressionType}
@@ -129,7 +129,7 @@
 		{/if}
 		<Button
 			class="ml-auto grid size-[26px] shrink-0 place-items-center rounded-[5px] text-ink-3 hover:bg-field hover:text-ink-1 focus-visible:outline-none"
-			aria-label="閉じる"
+			aria-label="Close"
 			onclick={() => onClose?.()}
 		>
 			<X size={14} weight="regular" aria-hidden="true" />
@@ -147,7 +147,7 @@
 			<div class="rounded-[6px] bg-field p-2">
 				<div class="flex items-start gap-1.5 text-ink-2">
 					<WarningCircle size={14} weight="regular" class="mt-0.5 shrink-0" aria-hidden="true" />
-					<p>この filter はルールビルダーで安全に表現できないため、読み取り専用です。</p>
+					<p>This filter cannot be safely represented by the rule builder and is read-only.</p>
 				</div>
 				<pre class="mt-2 overflow-auto font-mono text-[10px] leading-4 text-ink-2">{JSON.stringify(
 						value,
@@ -170,7 +170,7 @@
 			<div class="rounded-[6px] bg-field p-2">
 				<div class="flex items-start gap-1.5 text-ink-2">
 					<WarningCircle size={14} weight="regular" class="mt-0.5 shrink-0" aria-hidden="true" />
-					<p>この式はビルダーで安全に表現できないため、読み取り専用です。</p>
+					<p>This expression cannot be safely represented by the builder and is read-only.</p>
 				</div>
 				<pre class="mt-2 overflow-auto font-mono text-[10px] leading-4 text-ink-2">{JSON.stringify(
 						expression,
@@ -183,9 +183,9 @@
 	<div
 		class="flex shrink-0 items-center justify-between gap-2 border-t border-hairline-soft px-3 py-[9px] text-[10px] text-ink-3"
 	>
-		<span>ビルダー外の式は読み取り専用</span>
+		<span>Expressions outside the builder are read-only</span>
 		<Button class="font-semibold text-accent hover:underline" onclick={() => onRequestJson?.()}>
-			JSON で編集
+			Edit as JSON
 		</Button>
 	</div>
 </div>

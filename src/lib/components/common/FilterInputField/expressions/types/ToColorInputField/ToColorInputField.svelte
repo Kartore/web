@@ -37,7 +37,7 @@
 		className
 	)}
 >
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">型変換</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">Type conversion</div>
 	<ExpressionOperatorSelect value={expression} {onChange} />
 	{#each Array.from({ length: argCount }, (_, i) => i + 1) as index (index)}
 		<ExpressionArgInputField
@@ -49,7 +49,7 @@
 				: undefined}
 		/>
 		{#if index < value.length - 1}
-			<div class="text-[10px] font-semibold tracking-wide text-ink-3">または</div>
+			<div class="text-[10px] font-semibold tracking-wide text-ink-3">Or</div>
 		{/if}
 	{/each}
 	<ExpressionAppendArgButton value={expression} {onChange} />

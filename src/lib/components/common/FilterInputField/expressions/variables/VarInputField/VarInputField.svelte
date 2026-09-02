@@ -40,6 +40,6 @@
 		value={value[1]}
 		onChange={onChange ? (v) => onChange(replaceArgAt(expression, 1, v)) : undefined}
 	/>
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">変数から</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">From variable</div>
 	{@render children?.()}
 </div>

@@ -81,7 +81,7 @@
 			(module) => !resolveEditorMenuSection(module, 'file') && module.headerAction
 		)
 	);
-	const styleName = $derived(mapStyle.name ?? '名称未設定');
+	const styleName = $derived(mapStyle.name ?? 'Untitled style');
 	const filename = $derived(styleName.replace(/\.kartore$/i, ''));
 	const colorVisionModes: ColorVisionMode[] = [
 		'none',
@@ -145,7 +145,7 @@
 			<TextField
 				bind:ref={renameInput}
 				class="w-40 min-w-0 [&>input]:h-6 [&>input]:w-full [&>input]:rounded-[5px] [&>input]:px-2 [&>input]:font-mono [&>input]:text-[11px] [&>input]:font-normal [&>input]:text-ink-1 focus-within:[&>input]:shadow-[inset_0_0_0_1px_var(--color-accent)]"
-				aria-label="スタイル名"
+				aria-label="Style name"
 				value={renameValue}
 				onValueChange={(value) => (renameValue = value)}
 				onCommit={commitStyleName}
@@ -154,7 +154,7 @@
 		{:else}
 			<Button
 				class="min-w-0 justify-start rounded-[5px] px-0 py-1 text-left text-[12.5px] font-semibold text-ink-1 hover:bg-field focus-visible:outline-2 focus-visible:outline-accent"
-				aria-label={`スタイル名「${styleName}」を変更`}
+				aria-label={`Edit style name "${styleName}"`}
 				title={`${filename}`}
 				disabled={!onRenameStyle}
 				onclick={startRenamingStyle}
@@ -169,11 +169,11 @@
 				saveState === 'error' ? 'bg-danger' : saveState === 'saved' ? 'bg-ok' : 'bg-ink-3'
 			}`}
 			aria-label={saveState === 'error'
-				? '保存に失敗'
+				? 'Save failed'
 				: saveState === 'saved'
-					? '保存済み'
-					: '保存中'}
-			title={saveState === 'error' ? '保存に失敗' : saveState === 'saved' ? '保存済み' : '保存中…'}
+					? 'Saved'
+					: 'Saving'}
+			title={saveState === 'error' ? 'Save failed' : saveState === 'saved' ? 'Saved' : 'Saving…'}
 		></span>
 	</div>
 
@@ -186,14 +186,14 @@
 		{/each}
 	</div>
 
-	<nav class="flex min-w-0 items-center gap-0.5" aria-label="エディター">
+	<nav class="flex min-w-0 items-center gap-0.5" aria-label="Editor">
 		<MenuRoot>
-			<MenuTrigger value="file" label="ファイル">
+			<MenuTrigger value="file" label="File">
 				<MenuItem disabled={!onNewStyle} shortcut="⌘N" onSelect={() => onNewStyle?.()}>
-					新規スタイル
+					New style
 				</MenuItem>
-				<MenuItem onSelect={() => onImport?.()}>スタイルを読み込む…</MenuItem>
-				<MenuItem onSelect={() => onExport?.()}>スタイルを書き出す…</MenuItem>
+				<MenuItem onSelect={() => onImport?.()}>Import style…</MenuItem>
+				<MenuItem onSelect={() => onExport?.()}>Export style…</MenuItem>
 				{@render renderAdapterMenuSections('file')}
 				{#if hasHeaderActionFallbacks}
 					<MenuSeparator />
@@ -205,30 +205,30 @@
 					{/each}
 				{/if}
 			</MenuTrigger>
-			<MenuTrigger value="edit" label="編集">
-				<MenuItem disabled={!canUndo} shortcut="⌘Z" onSelect={() => onUndo?.()}>元に戻す</MenuItem>
-				<MenuItem disabled={!canRedo} shortcut="⇧⌘Z" onSelect={() => onRedo?.()}>やり直す</MenuItem>
+			<MenuTrigger value="edit" label="Edit">
+				<MenuItem disabled={!canUndo} shortcut="⌘Z" onSelect={() => onUndo?.()}>Undo</MenuItem>
+				<MenuItem disabled={!canRedo} shortcut="⇧⌘Z" onSelect={() => onRedo?.()}>Redo</MenuItem>
 				<MenuSeparator />
-				<MenuItem onSelect={() => onAddLayer?.()}>レイヤーを追加…</MenuItem>
+				<MenuItem onSelect={() => onAddLayer?.()}>Add layer…</MenuItem>
 				<MenuItem disabled={onGroupLayersByPrefix === undefined} onSelect={groupLayersByPrefix}>
-					ID 接頭辞でグループ化
+					Group by ID prefix
 				</MenuItem>
 				{@render renderAdapterMenuSections('edit')}
 			</MenuTrigger>
-			<MenuTrigger value="view" label="表示">
+			<MenuTrigger value="view" label="View">
 				<MenuItem shortcut="⌘." onSelect={() => onTogglePanels?.()}>
-					{leftShellCollapsed ? 'パネルを表示' : 'パネルを格納'}
+					{leftShellCollapsed ? 'Show panels' : 'Hide panels'}
 				</MenuItem>
 				<MenuSeparator />
-				<MenuItem onSelect={() => onOpenStyleSettings?.()}>スタイル設定</MenuItem>
+				<MenuItem onSelect={() => onOpenStyleSettings?.()}>Style settings</MenuItem>
 				{@render renderAdapterMenuSections('view')}
 				<MenuSeparator />
-				<MenuItem onSelect={() => onOpenVariables?.()}>パレット</MenuItem>
-				<MenuItem onSelect={() => onOpenSources?.()}>ソース</MenuItem>
-				<MenuItem onSelect={() => onOpenSprites?.()}>スプライト</MenuItem>
-				<MenuItem onSelect={() => onOpenFonts?.()}>フォント</MenuItem>
+				<MenuItem onSelect={() => onOpenVariables?.()}>Palette</MenuItem>
+				<MenuItem onSelect={() => onOpenSources?.()}>Sources</MenuItem>
+				<MenuItem onSelect={() => onOpenSprites?.()}>Sprites</MenuItem>
+				<MenuItem onSelect={() => onOpenFonts?.()}>Fonts</MenuItem>
 				<MenuSeparator />
-				<MenuSub label="色覚シミュレーション">
+				<MenuSub label="Color vision simulation">
 					{#each colorVisionModes as mode (mode)}
 						<MenuCheckboxItem
 							checked={colorVisionMode === mode}
@@ -245,12 +245,12 @@
 	<div class="ml-auto flex shrink-0 items-center gap-1">
 		<Button
 			class="flex h-7 items-center gap-1.5 rounded-[6px] bg-field px-2.5 text-[11px] text-ink-2 hover:bg-field focus-visible:shadow-[inset_0_0_0_1px_var(--color-accent)] focus-visible:outline-none"
-			aria-label="コマンドパレットを開く"
-			title="検索 (⌘K または /)"
+			aria-label="Open command palette"
+			title="Search (⌘K or /)"
 			onclick={() => onSearch?.()}
 		>
 			<MagnifyingGlass size={14} weight="regular" aria-hidden="true" />
-			<span>検索</span>
+			<span>Search</span>
 			<span class="font-mono text-[10px] font-normal text-ink-3">⌘K</span>
 		</Button>
 		<Button
@@ -259,17 +259,17 @@
 					? 'border-accent bg-accent-soft text-accent hover:bg-accent-soft'
 					: 'border-hairline text-ink-2 hover:bg-field'
 			}`}
-			aria-label="スタイル全体を JSON で表示"
+			aria-label="View full style JSON"
 			aria-pressed={styleJsonMode}
-			title="スタイル全体を JSON で表示"
+			title="View full style JSON"
 			onclick={() => onToggleStyleJson?.()}
 		>
 			JSON
 		</Button>
 		<Button
 			class="flex size-7 items-center justify-center rounded-[6px] text-ink-2 hover:bg-field disabled:text-ink-4"
-			aria-label="元に戻す"
-			title="元に戻す (⌘Z)"
+			aria-label="Undo"
+			title="Undo (⌘Z)"
 			disabled={!canUndo}
 			onclick={() => onUndo?.()}
 		>
@@ -277,8 +277,8 @@
 		</Button>
 		<Button
 			class="flex size-7 items-center justify-center rounded-[6px] text-ink-2 hover:bg-field disabled:text-ink-4"
-			aria-label="やり直す"
-			title="やり直す (⇧⌘Z)"
+			aria-label="Redo"
+			title="Redo (⇧⌘Z)"
 			disabled={!canRedo}
 			onclick={() => onRedo?.()}
 		>
@@ -290,13 +290,13 @@
 			disabled={!onPreview}
 			onclick={() => onPreview?.()}
 		>
-			プレビュー
+			Preview
 		</Button>
 		<Button
 			class="h-7 rounded-[6px] bg-accent px-3 text-[11.5px] font-semibold text-white hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent"
 			onclick={() => onExport?.()}
 		>
-			エクスポート
+			Export
 		</Button>
 	</div>
 </header>

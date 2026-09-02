@@ -21,7 +21,7 @@
 <div class="flex h-6 min-w-0 flex-1 items-center justify-end gap-1">
 	<div
 		class="flex h-6 min-w-0 items-center gap-1.5 rounded-[12px] bg-field pr-2.5 pl-1.5 font-mono text-[11px] text-ink-1"
-		title={`スタイル変数「${variable.name}」を参照`}
+		title={`References style variable "${variable.name}"`}
 	>
 		{#if variable.type === 'color'}
 			<ColorSwatch
@@ -35,8 +35,8 @@
 		{#if stale}
 			<span
 				class="size-1.5 shrink-0 rounded-full bg-danger"
-				title="プロパティ値が変数と一致していません"
-				aria-label="変数参照が同期していません"
+				title="Property value does not match the variable"
+				aria-label="Variable reference is out of sync"
 			></span>
 		{/if}
 	</div>
@@ -45,13 +45,13 @@
 			class="h-6 shrink-0 rounded-[5px] px-1.5 text-[10px] font-semibold text-ink-2 hover:bg-field"
 			onclick={onReapply}
 		>
-			再適用
+			Reapply
 		</Button>
 	{/if}
 	<Button
 		class="flex size-6 shrink-0 items-center justify-center rounded-[5px] text-ink-3 hover:bg-field hover:text-ink-1"
-		aria-label={`スタイル変数 ${variable.name} の参照を解除`}
-		title="変数の参照を解除"
+		aria-label={`Detach style variable ${variable.name}`}
+		title="Detach variable reference"
 		onclick={onDetach}
 	>
 		<LinkBreak size={12} weight="regular" aria-hidden="true" />

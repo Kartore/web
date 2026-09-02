@@ -38,10 +38,10 @@
 >
 	<ExpressionArgInputField parentValue={expression} index={1} {onChange} />
 	<ExpressionOperatorSelect value={expression} {onChange} />
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">開始位置</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">Start position</div>
 	<ExpressionArgInputField parentValue={expression} index={2} {onChange} />
 	{#if to !== undefined}
-		<div class="text-[10px] font-semibold tracking-wide text-ink-3">終了位置</div>
+		<div class="text-[10px] font-semibold tracking-wide text-ink-3">End position</div>
 		<ExpressionArgInputField parentValue={expression} index={3} {onChange} />
 	{/if}
 	{@render children?.()}

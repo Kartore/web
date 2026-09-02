@@ -30,7 +30,7 @@
 	class={cn('flex min-w-0 flex-row items-center gap-2 rounded bg-field px-2 py-2', className)}
 >
 	<ExpressionOperatorSelect value={expression} {onChange} />
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">オプション</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">Options</div>
 	<div class="text-[10px] font-semibold tracking-wide text-ink-3">
 		{JSON.stringify(value[1])}
 	</div>

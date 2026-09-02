@@ -382,7 +382,7 @@
 		].join(', ')}, ${v.getColorName()}`;
 	};
 
-	const inputAriaLabel = $derived(ariaLabel ? `${ariaLabel}, カラーピッカー` : 'カラーピッカー');
+	const inputAriaLabel = $derived(ariaLabel ? `${ariaLabel}, color picker` : 'Color picker');
 
 	const visuallyHiddenStyle =
 		'border: 0; clip: rect(0 0 0 0); clip-path: inset(50%); height: 100%; width: 100%; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; opacity: 0.0001; pointer-events: none;';
@@ -391,7 +391,7 @@
 <div
 	{@attach setContainerEl}
 	role="group"
-	aria-label={ariaLabel ? `${ariaLabel}, カラーピッカー` : undefined}
+	aria-label={ariaLabel ? `${ariaLabel}, color picker` : undefined}
 	class={cn('aspect-square w-full', className)}
 	style={`position: relative; touch-action: none; forced-color-adjust: none; ${colorAreaStyle}`}
 	onpointerdown={onPointerDown}
@@ -413,7 +413,7 @@
 			value={xValue}
 			disabled={isDisabled}
 			aria-label={inputAriaLabel}
-			aria-roledescription="2 次元スライダー"
+			aria-roledescription="2D slider"
 			aria-valuetext={getAriaValueTextForChannel(channels.xChannel)}
 			aria-orientation="horizontal"
 			aria-hidden={!focusedInput || focusedInput === 'x' ? undefined : 'true'}
@@ -436,7 +436,7 @@
 			value={yValue}
 			disabled={isDisabled}
 			aria-label={inputAriaLabel}
-			aria-roledescription="2 次元スライダー"
+			aria-roledescription="2D slider"
 			aria-valuetext={getAriaValueTextForChannel(channels.yChannel)}
 			aria-orientation="vertical"
 			aria-hidden={focusedInput === 'y' ? undefined : 'true'}

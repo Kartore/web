@@ -34,6 +34,6 @@
 	)}
 >
 	<ExpressionOperatorSelect value={expression} {onChange} />
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">現在のズームレベル</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">Current zoom level</div>
 	{@render children?.()}
 </div>

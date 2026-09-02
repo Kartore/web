@@ -25,7 +25,7 @@
 		<div class="min-w-0">
 			<p class="text-[10px] leading-4 break-words text-ink-2">{error.message}</p>
 			<p class="text-[10px] leading-4 text-ink-3">
-				値を修正するか、行の − で未設定に戻してください。
+				Fix the value or use − on the row to reset it to unset.
 			</p>
 		</div>
 	</div>

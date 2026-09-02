@@ -53,20 +53,20 @@
 
 <aside
 	class="flex w-11 shrink-0 flex-col items-center gap-0.5 border-r border-hairline bg-white py-2"
-	aria-label="編集モード"
+	aria-label="Edit mode"
 >
 	<Button
 		class={buttonClass(activeMode === 'layers')}
-		aria-label="レイヤー"
-		title="レイヤー (⌘1)"
+		aria-label="Layers"
+		title="Layers (⌘1)"
 		onclick={() => onLayers?.()}
 	>
 		<StackSimple size={18} weight="regular" aria-hidden="true" />
 	</Button>
 	<Button
 		class={buttonClass(activeMode === 'palette', !onPalette)}
-		aria-label="パレット"
-		title="パレット (⌘2)"
+		aria-label="Palette"
+		title="Palette (⌘2)"
 		disabled={!onPalette}
 		onclick={() => onPalette?.()}
 	>
@@ -74,24 +74,24 @@
 	</Button>
 	<Button
 		class={buttonClass(activeMode === 'sources')}
-		aria-label="ソース"
-		title="ソース (⌘3)"
+		aria-label="Sources"
+		title="Sources (⌘3)"
 		onclick={() => onSources?.()}
 	>
 		<Database size={18} weight="regular" aria-hidden="true" />
 	</Button>
 	<Button
 		class={buttonClass(activeMode === 'sprites')}
-		aria-label="スプライト"
-		title="スプライト (⌘4)"
+		aria-label="Sprites"
+		title="Sprites (⌘4)"
 		onclick={() => onSprites?.()}
 	>
 		<Shapes size={18} weight="regular" aria-hidden="true" />
 	</Button>
 	<Button
 		class={buttonClass(activeMode === 'fonts')}
-		aria-label="フォント"
-		title="フォント (⌘5)"
+		aria-label="Fonts"
+		title="Fonts (⌘5)"
 		onclick={() => onFonts?.()}
 	>
 		<TextAa size={18} weight="regular" aria-hidden="true" />
@@ -99,8 +99,8 @@
 	{#if historyAvailable}
 		<Button
 			class={buttonClass(activeMode === 'history', !onHistory)}
-			aria-label="履歴"
-			title="履歴 (⌘6)"
+			aria-label="History"
+			title="History (⌘6)"
 			disabled={!onHistory}
 			onclick={() => onHistory?.()}
 		>
@@ -132,8 +132,8 @@
 		{/each}
 		<Button
 			class={buttonClass(activeMode === 'settings')}
-			aria-label="スタイル設定"
-			title="スタイル設定"
+			aria-label="Style settings"
+			title="Style settings"
 			onclick={() => onSettings?.()}
 		>
 			<GearSix size={18} weight="regular" aria-hidden="true" />

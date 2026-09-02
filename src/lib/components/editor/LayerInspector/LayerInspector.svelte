@@ -70,9 +70,9 @@
 	} = $props();
 
 	const tabs: { value: LayerInspectorTab; label: string }[] = [
-		{ value: 'design', label: 'デザイン' },
-		{ value: 'data', label: 'データ' },
-		{ value: 'filter', label: 'フィルター' },
+		{ value: 'design', label: 'Design' },
+		{ value: 'data', label: 'Data' },
+		{ value: 'filter', label: 'Filter' },
 		{ value: 'json', label: 'JSON' }
 	];
 	const addPropertyFilter = (key: string, value: string | number | boolean) => {
@@ -122,19 +122,19 @@
 				{layerSourceSummary}
 			</p>
 			{#if layerGroup}
-				<p class="truncate text-[10px] leading-[14px] text-ink-3">グループ ・ {layerGroup}</p>
+				<p class="truncate text-[10px] leading-[14px] text-ink-3">Group · {layerGroup}</p>
 			{/if}
 		</div>
 		<div class="flex shrink-0 items-center gap-0.5">
 			<Button
 				class="flex size-6 items-center justify-center rounded-[5px] text-ink-3 hover:bg-field hover:text-ink-1"
-				aria-label="レイヤー履歴"
-				title="レイヤー履歴"
+				aria-label="Layer history"
+				title="Layer history"
 			>
 				<ClockCounterClockwise size={16} weight="regular" aria-hidden="true" />
 			</Button>
 			<RowPopover
-				aria-label="レイヤー操作"
+				aria-label="Layer actions"
 				triggerClass="flex size-6 items-center justify-center rounded-[5px] text-ink-3 hover:bg-field hover:text-ink-1"
 				contentClass="w-44 p-1.5"
 			>
@@ -150,7 +150,7 @@
 						}}
 					>
 						<Copy size={15} weight="regular" aria-hidden="true" />
-						レイヤーを複製
+						Duplicate layer
 					</Button>
 					<Button
 						class="flex h-7 w-full items-center gap-2 rounded-[6px] px-2 text-left text-[11px] text-ink-2 hover:bg-field hover:text-ink-1 disabled:text-ink-4"
@@ -161,7 +161,7 @@
 						}}
 					>
 						<Trash size={15} weight="regular" aria-hidden="true" />
-						レイヤーを削除
+						Delete layer
 					</Button>
 				{/snippet}
 			</RowPopover>
@@ -171,7 +171,7 @@
 	<div
 		class="flex shrink-0 gap-[14px] border-b border-hairline px-4"
 		role="tablist"
-		aria-label="レイヤー編集"
+		aria-label="Edit layer"
 	>
 		{#each tabs as tab (tab.value)}
 			<button
@@ -207,7 +207,7 @@
 		{:else if activeTab === 'data'}
 			{#if isBackgroundLayer(layer)}
 				<p class="px-3 py-8 text-center text-[10px] text-ink-3">
-					背景レイヤーにはデータソースがありません。
+					Background layers do not have a data source.
 				</p>
 			{:else}
 				<LayerDataPanel {layer} {sources} {onApplyLayer} onFilterProperty={addPropertyFilter} />
@@ -215,7 +215,7 @@
 		{:else if activeTab === 'filter'}
 			{#if isBackgroundLayer(layer)}
 				<p class="px-3 py-8 text-center text-[10px] text-ink-3">
-					背景レイヤーには filter がありません。
+					Background layers do not have a filter.
 				</p>
 			{:else}
 				{#key layer.id}

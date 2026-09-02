@@ -195,7 +195,7 @@
 						</Combobox.Item>
 					{:else}
 						<div class="px-2 py-1 text-[10px] text-ink-3">
-							{allowsCustomValue ? '一致するスプライトはありません' : '結果はありません'}
+							{allowsCustomValue ? 'No matching sprites' : 'No results'}
 						</div>
 					{/each}
 				</Combobox.Viewport>

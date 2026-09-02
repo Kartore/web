@@ -36,7 +36,7 @@
 
 	const history = useStyleHistory();
 	const provider = $derived(history?.provider ?? null);
-	const providerLabel = $derived(provider?.label ?? '接続中のスタイル');
+	const providerLabel = $derived(provider?.label ?? 'Connected style');
 
 	let open = $state(false);
 	let loading = $state(false);
@@ -52,21 +52,21 @@
 
 	const isDefined = <T,>(value: T | undefined): value is T => value !== undefined;
 	const errorMessage = (value: unknown): string =>
-		value instanceof Error ? value.message : value ? String(value) : '履歴を読み込めませんでした。';
+		value instanceof Error ? value.message : value ? String(value) : 'Could not load history.';
 	const valuesEqual = (left: unknown, right: unknown): boolean =>
 		JSON.stringify(left) === JSON.stringify(right);
 	const formatValue = (value: unknown): string => {
-		if (value === undefined) return '(未設定)';
+		if (value === undefined) return '(Unset)';
 		const serialized = JSON.stringify(value);
 		return serialized === undefined ? String(value) : serialized;
 	};
 	const colorValue = (value: unknown): string | undefined =>
 		typeof value === 'string' && tryParseColor(value) ? value : undefined;
-	const firstLine = (message: string): string => message.split(/\r?\n/, 1)[0] || '(メッセージなし)';
+	const firstLine = (message: string): string => message.split(/\r?\n/, 1)[0] || '(No message)';
 	const formatDate = (authoredAt: string): string => {
 		const date = new Date(authoredAt);
-		if (Number.isNaN(date.getTime())) return '日時不明';
-		const parts = new Intl.DateTimeFormat('ja-JP', {
+		if (Number.isNaN(date.getTime())) return 'Unknown date';
+		const parts = new Intl.DateTimeFormat('en-US', {
 			year: 'numeric',
 			month: '2-digit',
 			day: '2-digit',
@@ -92,13 +92,13 @@
 	const displayEntries = $derived(
 		loading && revisionValues.length === 0 ? pageValues.map(provisionalEntry) : entries
 	);
-	const unsetLabel = $derived(group === 'filter' ? 'フィルターなし' : '既定値');
+	const unsetLabel = $derived(group === 'filter' ? 'No filter' : 'Default');
 	const unsetDescription = $derived(
 		group === 'filter'
-			? 'フィルターを適用せず、すべてのフィーチャーを表示します。'
-			: 'プロパティは未設定で、スタイルの既定値が適用されます。'
+			? 'No filter is applied, so all features are shown.'
+			: 'The property is unset, so the style default is applied.'
 	);
-	const unsetActionLabel = $derived(group === 'filter' ? 'フィルターを解除' : '既定値を使用');
+	const unsetActionLabel = $derived(group === 'filter' ? 'Clear filter' : 'Use default');
 
 	const loadRevisionValues = async (
 		revisions: StyleHistoryRevision[],
@@ -195,8 +195,8 @@
 
 <Popover.Root bind:open onOpenChange={handleOpenChange}>
 	<Popover.Trigger
-		aria-label={`${label} の履歴を表示`}
-		title={`${label} の履歴を表示`}
+		aria-label={`Show history for ${label}`}
+		title={`Show history for ${label}`}
 		class="flex shrink-0 items-center justify-center rounded px-1.5 py-0.5 font-mono text-xs text-ink-3 transition-colors hover:bg-field hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent data-[state=open]:bg-accent-soft data-[state=open]:text-accent"
 	>
 		<ClockCounterClockwiseIcon size={13} weight="regular" aria-hidden="true" />
@@ -212,7 +212,7 @@
 			<header class="border-b border-hairline-soft bg-field px-4 py-3">
 				<div class="flex items-start justify-between gap-3">
 					<div class="min-w-0">
-						<h2 class="truncate text-[11.5px] font-semibold text-ink-1">{label} の履歴</h2>
+						<h2 class="truncate text-[11.5px] font-semibold text-ink-1">{label} history</h2>
 						<p class="mt-0.5 truncate font-mono text-[11px] text-ink-3" title={providerLabel}>
 							{providerLabel}
 						</p>
@@ -222,7 +222,7 @@
 							class="shrink-0 rounded-full bg-accent-soft px-2 py-1 text-[10px] font-semibold text-accent"
 							aria-live="polite"
 						>
-							{#if totalCount > 0}{loadedCount}/{totalCount}{:else}読込中…{/if}
+							{#if totalCount > 0}{loadedCount}/{totalCount}{:else}Loading…{/if}
 						</span>
 					{/if}
 				</div>
@@ -248,9 +248,9 @@
 								></span>
 
 								{#if entry.kind === 'layer-missing'}
-									<p class="text-xs font-semibold text-ink-3">このレイヤーが作成される前です</p>
+									<p class="text-xs font-semibold text-ink-3">Before this layer was created</p>
 								{:else if entry.kind === 'error'}
-									<p class="text-xs font-semibold text-ink-2">このリビジョンを読めませんでした</p>
+									<p class="text-xs font-semibold text-ink-2">Could not read this revision</p>
 									<p class="mt-1 text-xs text-ink-2">{entry.error}</p>
 								{:else}
 									<div class="flex min-w-0 items-center gap-2">
@@ -261,14 +261,14 @@
 													>
 													<span
 														class="shrink-0 rounded border border-hairline-soft bg-field px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-ink-3"
-														>未設定</span
+														>Unset</span
 													>
 												</div>
 												{#if group !== 'filter' && defaultValue !== undefined}
 													<div
 														class="mt-1 flex min-w-0 items-center gap-1.5 text-[10px] text-ink-3"
 													>
-														<span class="shrink-0">実効値</span>
+														<span class="shrink-0">Effective value</span>
 														<span aria-hidden="true">·</span>
 														{#if colorValue(defaultValue) !== undefined}
 															<span
@@ -306,21 +306,21 @@
 										{#if valuesEqual(entry.value, currentValue)}
 											<span
 												class="shrink-0 rounded-full bg-field px-2 py-1 text-[10px] font-semibold text-ink-3"
-												>現在</span
+												>Current</span
 											>
 										{:else}
 											<Button
-												aria-label={`${entry.revision.id.slice(0, 7)} から ${entry.value === undefined ? unsetActionLabel : `${label}を復元`}`}
+												aria-label={`${entry.value === undefined ? unsetActionLabel : `Restore ${label}`} from ${entry.revision.id.slice(0, 7)}`}
 												class="shrink-0 rounded border border-accent bg-accent-soft px-2 py-1 text-[10px] font-semibold text-accent hover:bg-accent-soft"
 												onclick={() => onRestore(entry.value)}
 											>
-												{entry.value === undefined ? unsetActionLabel : '復元'}
+												{entry.value === undefined ? unsetActionLabel : 'Restore'}
 											</Button>
 										{/if}
 									</div>
 									{#if entry.kind === 'oldest-loaded' && hasNext}
 										<p class="mt-1 text-[10px] font-medium text-ink-3">
-											現在読み込んでいる中で最も古い値
+											Oldest value currently loaded
 										</p>
 									{/if}
 								{/if}
@@ -350,7 +350,7 @@
 											href={entry.revision.htmlUrl}
 											target="_blank"
 											rel="noreferrer"
-											aria-label={`リビジョン ${entry.revision.id.slice(0, 7)} を開く`}
+											aria-label={`Open revision ${entry.revision.id.slice(0, 7)}`}
 											>{entry.revision.id.slice(0, 7)}</a
 										>
 									{:else}
@@ -362,10 +362,8 @@
 					</ol>
 				{:else if !loading && !error}
 					<div class="px-5 py-8 text-center">
-						<p class="text-[11px] font-semibold text-ink-2">プロパティ履歴はありません</p>
-						<p class="mt-1 text-xs text-ink-3">
-							このスタイルファイルのコミットは見つかりませんでした。
-						</p>
+						<p class="text-[11px] font-semibold text-ink-2">No property history</p>
+						<p class="mt-1 text-xs text-ink-3">No commits were found for this style file.</p>
 					</div>
 				{:else if loading}
 					<div class="space-y-3 px-4 py-5" aria-hidden="true">
@@ -389,7 +387,7 @@
 										revisionValues.length === 0
 									)}
 							>
-								再試行
+								Retry
 							</Button>
 						</div>
 					{:else if hasNext}
@@ -398,7 +396,7 @@
 							disabled={loading}
 							onclick={() => void loadPage(nextPage, false)}
 						>
-							{loading ? `読込中 ${loadedCount}/${totalCount}…` : 'さらに読み込む'}
+							{loading ? `Loading ${loadedCount}/${totalCount}…` : 'Load more'}
 						</Button>
 					{/if}
 				</footer>

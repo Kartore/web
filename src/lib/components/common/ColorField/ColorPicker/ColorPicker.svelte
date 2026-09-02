@@ -52,7 +52,7 @@
 
 <div class={cn('h-4 w-4', className)}>
 	<RowPopover
-		aria-label={ariaLabel ?? 'カラー'}
+		aria-label={ariaLabel ?? 'Color'}
 		triggerClass="h-full w-full overflow-hidden rounded-[4px] border border-black/5 hover:shadow-[inset_0_0_0_1px_var(--color-accent)] focus-visible:outline-2 focus-visible:outline-accent"
 		contentClass="shadow-[0_8px_28px_rgba(0,0,0,0.2)]"
 		onOpenChange={(open) => {
@@ -65,13 +65,13 @@
 
 		{#snippet children({ close })}
 			<div class="flex h-10 items-center gap-2 border-b border-hairline-soft pr-1.5 pl-3">
-				<span class="text-[11.5px] font-semibold text-ink-1">カラー</span>
-				{#if ariaLabel && ariaLabel !== 'カラー'}
+				<span class="text-[11.5px] font-semibold text-ink-1">Color</span>
+				{#if ariaLabel && ariaLabel !== 'Color'}
 					<span class="truncate font-mono text-[11px] text-ink-2">{ariaLabel}</span>
 				{/if}
 				<Button
 					class="ml-auto flex size-[26px] shrink-0 items-center justify-center rounded-[5px] text-ink-3 hover:bg-field hover:text-ink-1 focus-visible:outline-none"
-					aria-label="カラーピッカーを閉じる"
+					aria-label="Close color picker"
 					onclick={close}
 				>
 					<X size={14} weight="regular" aria-hidden="true" />
@@ -84,24 +84,24 @@
 					value={value?.toFormat('hsb')}
 					xChannel="saturation"
 					yChannel="brightness"
-					aria-label="カラー"
+					aria-label="Color"
 					onChange={handleChange}
 				/>
 				<div class="mt-2.5 mb-2.5 flex items-center gap-2.5">
 					<EyeDropperButton
 						class="flex size-7 shrink-0 items-center justify-center rounded-[6px] bg-field p-1.5 text-ink-2 hover:text-ink-1"
-						aria-label="スポイト"
+						aria-label="Eyedropper"
 						onChange={handleChange}
 					/>
 					<div class="flex min-w-0 flex-1 flex-col gap-2">
 						<ColorChannelSlider
-							label="色相"
+							label="Hue"
 							channel="hue"
 							value={value?.toFormat('hsl')}
 							onChange={handleChange}
 						/>
 						<ColorChannelSlider
-							label="不透明度"
+							label="Opacity"
 							channel="alpha"
 							value={value?.toFormat('rgba')}
 							onChange={handleChange}
@@ -114,7 +114,7 @@
 					</span>
 					<input
 						class="min-w-0 flex-1 rounded-[5px] border-0 bg-field px-2 outline-none focus-visible:shadow-[inset_0_0_0_1px_var(--color-accent)]"
-						aria-label="16進数カラー値"
+						aria-label="Hex color value"
 						value={hexValue}
 						onblur={(event) => commitHex(event.currentTarget)}
 						onkeydown={(event) => {
@@ -123,7 +123,7 @@
 					/>
 					<ColorChannelField
 						class="w-[52px] shrink-0 overflow-hidden rounded-[5px] [&>input]:h-6 [&>input]:font-mono [&>input]:font-normal"
-						label="不透明度"
+						label="Opacity"
 						channel="alpha"
 						value={value?.toFormat('rgb')}
 						onChange={handleChange}
@@ -133,13 +133,13 @@
 
 			{#if colorVariables.length > 0 || onPromoteColor}
 				<div class="border-t border-hairline-soft px-3 pt-2.5 pb-3">
-					<p class="mb-1.5 text-[10px] text-ink-3">変数</p>
+					<p class="mb-1.5 text-[10px] text-ink-3">Variables</p>
 					{#if variables && variables.variables.some((variable) => variable.type === 'color')}
 						<input
 							type="search"
 							class="mb-1.5 h-[26px] w-full rounded-[6px] border-0 bg-field px-2 text-[11px] text-ink-1 outline-none placeholder:text-ink-3"
-							aria-label="カラー変数を検索"
-							placeholder="検索"
+							aria-label="Search color variables"
+							placeholder="Search"
 							bind:value={variableSearch}
 						/>
 					{/if}
@@ -172,7 +172,7 @@
 								close();
 							}}
 						>
-							＋ この色を変数に昇格
+							＋ Promote this color to a variable
 						</Button>
 					{/if}
 				</div>

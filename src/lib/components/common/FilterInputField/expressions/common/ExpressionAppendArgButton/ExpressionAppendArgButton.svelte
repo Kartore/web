@@ -22,8 +22,8 @@
 		value,
 		onChange,
 		class: className,
-		label = '引数を追加',
-		ariaLabel = '引数を追加'
+		label = 'Add argument',
+		ariaLabel = 'Add argument'
 	}: ExpressionAppendArgButtonProps = $props();
 
 	const variadic = $derived(getExpressionOperatorMeta(value[0])?.variadic);

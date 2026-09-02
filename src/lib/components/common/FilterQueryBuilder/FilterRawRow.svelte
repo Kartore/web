@@ -29,11 +29,11 @@
 		try {
 			expression = JSON.parse(value);
 		} catch (caught) {
-			error = `JSON が不正です: ${caught instanceof Error ? caught.message : String(caught)}`;
+			error = `Invalid JSON: ${caught instanceof Error ? caught.message : String(caught)}`;
 			return;
 		}
 		if (!Array.isArray(expression)) {
-			error = '式は JSON 配列で指定してください。';
+			error = 'The expression must be a JSON array.';
 			return;
 		}
 
@@ -51,11 +51,11 @@
 <div class="flex flex-col gap-0.5">
 	<div class="grid grid-cols-[minmax(0,1fr)_68px_minmax(0,1fr)_20px] items-start gap-1">
 		<div class="pt-1">
-			<span class="rounded bg-field px-1.5 py-0.5 font-mono text-xs text-ink-2">式</span>
+			<span class="rounded bg-field px-1.5 py-0.5 font-mono text-xs text-ink-2">Expression</span>
 		</div>
 		<div class="col-span-2 min-w-0">
 			<TextField
-				aria-label="フィルター式"
+				aria-label="Filter expression"
 				class="min-w-0 font-mono [&>input]:w-full [&>input]:font-normal"
 				value={draft}
 				onValueChange={(value) => {
@@ -66,7 +66,7 @@
 			/>
 		</div>
 		<Button
-			aria-label="フィルター式を削除"
+			aria-label="Remove filter expression"
 			class="mt-0.5 flex size-5 items-center justify-center rounded-[5px] text-ink-3 hover:bg-field hover:text-ink-1"
 			onclick={onRemove}
 		>

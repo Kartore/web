@@ -75,7 +75,7 @@ const splitCurrent = (
 	});
 
 const valueLabel = (value: unknown): string => {
-	if (value === undefined) return '未設定';
+	if (value === undefined) return 'Unset';
 	if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
 		return String(value);
 	}
@@ -85,8 +85,8 @@ const valueLabel = (value: unknown): string => {
 
 const summarizeLayerDiff = (layerId: string, diffs: StyleLayerDiff[]): string => {
 	const relevant = diffs.filter((entry) => entry.layerId === layerId);
-	if (relevant.some(({ kind }) => kind === 'added')) return 'レイヤーを追加';
-	if (relevant.some(({ kind }) => kind === 'removed')) return 'レイヤーを削除';
+	if (relevant.some(({ kind }) => kind === 'added')) return 'Add layer';
+	if (relevant.some(({ kind }) => kind === 'removed')) return 'Remove layer';
 	const modified = relevant.find(({ kind }) => kind === 'modified');
 	if (modified) {
 		const labels = modified.propertyChanges.slice(0, 2).map((change) => {
@@ -94,10 +94,10 @@ const summarizeLayerDiff = (layerId: string, diffs: StyleLayerDiff[]): string =>
 			return `${path}: ${valueLabel(change.before)} → ${valueLabel(change.after)}`;
 		});
 		const remaining = modified.propertyChanges.length - labels.length;
-		return `${labels.join('、')}${remaining > 0 ? `、ほか${remaining}件` : ''}`;
+		return `${labels.join(', ')}${remaining > 0 ? `, ${remaining} more` : ''}`;
 	}
-	if (relevant.some(({ kind }) => kind === 'reordered')) return 'レイヤー順序を変更';
-	return 'レイヤーを更新';
+	if (relevant.some(({ kind }) => kind === 'reordered')) return 'Reorder layer';
+	return 'Update layer';
 };
 
 const changedRootKeys = (
@@ -121,11 +121,11 @@ const rootSummary = (
 ): string => {
 	if (diff.variables.length === 1) {
 		const [variable] = diff.variables;
-		return `${variable.name} を ${variable.affectedLayerCount} レイヤーで更新`;
+		return `Update ${variable.name} across ${variable.affectedLayerCount} layers`;
 	}
-	if (diff.variables.length > 1) return `変数を ${diff.variables.length} 件更新`;
+	if (diff.variables.length > 1) return `Update ${diff.variables.length} variables`;
 	const keys = changedRootKeys(beforeStyle, currentStyle);
-	return keys.length > 0 ? `${keys.slice(0, 3).join('・')} を更新` : 'スタイル設定を更新';
+	return keys.length > 0 ? `Update ${keys.slice(0, 3).join(', ')}` : 'Update style settings';
 };
 
 const sourceSummary = (
@@ -137,7 +137,7 @@ const sourceSummary = (
 	const changed = [...new Set([...Object.keys(before), ...Object.keys(current)])].filter(
 		(key) => JSON.stringify(before[key]) !== JSON.stringify(current[key])
 	);
-	return changed.length === 1 ? `${changed[0]} ソースを更新` : `ソースを ${changed.length} 件更新`;
+	return changed.length === 1 ? `Update ${changed[0]} source` : `Update ${changed.length} sources`;
 };
 
 const manifestSummary = (diff: StyleDiffResult): string => {
@@ -145,11 +145,11 @@ const manifestSummary = (diff: StyleDiffResult): string => {
 	const removed = diff.layers.filter(({ kind }) => kind === 'removed').length;
 	const reordered = diff.layers.filter(({ kind }) => kind === 'reordered').length;
 	const parts = [
-		added > 0 ? `${added} 追加` : '',
-		removed > 0 ? `${removed} 削除` : '',
-		reordered > 0 ? '順序変更' : ''
+		added > 0 ? `${added} added` : '',
+		removed > 0 ? `${removed} removed` : '',
+		reordered > 0 ? 'reordered' : ''
 	].filter(Boolean);
-	return parts.length > 0 ? `レイヤー構成: ${parts.join('・')}` : 'レイヤー構成を更新';
+	return parts.length > 0 ? `Layer structure: ${parts.join(', ')}` : 'Update layer structure';
 };
 
 const pathToLayerId = (layerFiles: Readonly<LayerFileMap>): Map<string, string> =>
@@ -184,7 +184,7 @@ const createSplitFiles = (
 		} else if (layerId) {
 			summary = summarizeLayerDiff(layerId, diff.layers);
 		} else {
-			summary = 'ファイルを更新';
+			summary = 'Update file';
 		}
 		files.push({
 			path,
@@ -202,7 +202,7 @@ const createSplitFiles = (
 			path,
 			layerId,
 			status: 'removed',
-			summary: layerId ? summarizeLayerDiff(layerId, diff.layers) : 'ファイルを削除'
+			summary: layerId ? summarizeLayerDiff(layerId, diff.layers) : 'Delete file'
 		});
 	}
 	return files;

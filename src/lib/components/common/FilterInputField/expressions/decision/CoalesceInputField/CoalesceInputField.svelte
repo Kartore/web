@@ -32,12 +32,12 @@
 <div {...props} class={cn('flex min-w-0 flex-col gap-2 rounded bg-field px-2 py-2', className)}>
 	<div class="flex min-w-0 items-center gap-2">
 		<div class="flex min-w-0 items-center gap-1">
-			<span class="text-[10px] font-semibold tracking-wide text-ink-3">演算子</span>
+			<span class="text-[10px] font-semibold tracking-wide text-ink-3">Operator</span>
 			<ExpressionOperatorSelect value={expression} {onChange} />
 		</div>
 		<span class="font-mono text-xs text-ink-3">
 			{argCount}
-			値
+			Value
 		</span>
 	</div>
 
@@ -47,7 +47,7 @@
 				class="grid min-w-0 grid-cols-[44px_minmax(0,1fr)] items-start gap-1 rounded px-0.5 py-1 hover:bg-white"
 			>
 				<span class="pt-1 font-mono text-xs text-ink-3">
-					{index === 1 ? '最初' : 'それ以外'}
+					{index === 1 ? 'First' : 'Otherwise'}
 				</span>
 				<ExpressionArgInputField
 					class="min-w-0 justify-between [&>:first-child]:min-w-0 [&>:first-child]:flex-1"
@@ -57,7 +57,7 @@
 					onRemove={onChange
 						? () => onChange(removeArgsOrCollapse(expression, index, 1, expression[index]))
 						: undefined}
-					removeLabel="フォールバック値を削除"
+					removeLabel="Remove fallback value"
 				/>
 			</div>
 		{/each}
@@ -67,8 +67,8 @@
 		<ExpressionAppendArgButton
 			value={expression}
 			{onChange}
-			label="＋ フォールバックを追加"
-			ariaLabel="フォールバック値を追加"
+			label="＋ Add fallback"
+			ariaLabel="Add fallback value"
 			class="px-2 py-1 text-ink-3"
 		/>
 	</div>

@@ -79,7 +79,7 @@
 	const unresolved = (fontstack: string): boolean => !(fontstack in fonts) && !mapStyle.glyphs;
 	const fallbackLabel = (fontstack: string): string | undefined => {
 		if (fontstack in fonts) return undefined;
-		return mapStyle.glyphs ? 'glyphs URL から取得' : 'sans-serif へフォールバック';
+		return mapStyle.glyphs ? 'Fetched from glyphs URL' : 'Fallback to sans-serif';
 	};
 	const formatBytes = (bytes: number | undefined): string => {
 		if (bytes === undefined) return '—';
@@ -165,12 +165,12 @@
 				nextSizes[name] = font.bytes.byteLength;
 			}
 		} catch (error) {
-			operationError = `フォント容量を取得できません: ${errorMessage(error)}`;
+			operationError = `Could not get font size: ${errorMessage(error)}`;
 		}
 		for (const fontstack of fontNames) {
 			try {
 				const font = await getLoadedFont(fontstack);
-				if (!font) throw new Error('保存フォントを読み込めません。');
+				if (!font) throw new Error('Could not load the saved font.');
 				nextInfos[fontstack] = font.info;
 			} catch (error) {
 				nextErrors[fontstack] = errorMessage(error);
@@ -202,7 +202,7 @@
 				await tick();
 				void ensurePreviewFont(info.fontstackName);
 			} catch (error) {
-				operationError = `${file.name} を追加できません: ${errorMessage(error)}`;
+				operationError = `Could not add ${file.name}: ${errorMessage(error)}`;
 			}
 		}
 		isUploading = false;
@@ -225,7 +225,7 @@
 			fontSizes = nextSizes;
 			validationErrors = nextErrors;
 		} catch (error) {
-			operationError = `“${fontstack}” を削除できません: ${errorMessage(error)}`;
+			operationError = `Could not delete “${fontstack}”: ${errorMessage(error)}`;
 		} finally {
 			deletingFontstack = undefined;
 		}
@@ -248,7 +248,7 @@
 		await tick();
 		try {
 			const font = await getLoadedFont(fontstack);
-			if (!font) throw new Error('保存フォントを読み込めません。');
+			if (!font) throw new Error('Could not load the saved font.');
 			const { generateRange } = await loadGlyphore();
 			const archive = await buildGlyphArchive({
 				fontstack,
@@ -258,7 +258,7 @@
 			});
 			downloadBlob(archive, `${fontstack}-glyphs.zip`);
 		} catch (error) {
-			operationError = `glyphs を生成できません: ${errorMessage(error)}`;
+			operationError = `Could not generate glyphs: ${errorMessage(error)}`;
 		} finally {
 			downloadingFontstack = undefined;
 			downloadProgress = undefined;
@@ -278,15 +278,15 @@
 
 <aside class="flex w-60 shrink-0 flex-col border-r border-hairline bg-white">
 	<header class="flex h-10 shrink-0 items-center gap-1.5 px-3">
-		<h2 class="text-[12px] font-semibold text-ink-1">フォント</h2>
+		<h2 class="text-[12px] font-semibold text-ink-1">Fonts</h2>
 		<p class="text-[10.5px] text-ink-3">{fontstacks.length}</p>
 		<label
 			class={cn(
 				'ml-auto flex size-6 items-center justify-center rounded-[5px] text-ink-2 hover:bg-field hover:text-ink-1',
 				readOnly || isBusy ? 'cursor-default text-ink-4' : 'cursor-pointer'
 			)}
-			aria-label="フォントを追加"
-			title="TTF または OTF を追加"
+			aria-label="Add font"
+			title="Add TTF or OTF"
 		>
 			<Plus size={16} weight="regular" aria-hidden="true" />
 			<input
@@ -304,15 +304,15 @@
 		<div class="relative">
 			<TextField
 				class="w-full [&>input]:h-[26px] [&>input]:w-full [&>input]:rounded-[6px] [&>input]:pr-7 [&>input]:text-[11px] [&>input]:font-normal"
-				aria-label="フォントを検索"
-				placeholder="検索"
+				aria-label="Search fonts"
+				placeholder="Search"
 				value={search}
 				onValueChange={(value) => (search = value)}
 			/>
 			{#if search}
 				<Button
 					class="absolute top-0 right-0 flex size-6 items-center justify-center text-ink-3 hover:text-ink-1"
-					aria-label="フォント検索をクリア"
+					aria-label="Clear font search"
 					onclick={() => (search = '')}
 				>
 					<X size={14} weight="regular" aria-hidden="true" />
@@ -323,7 +323,7 @@
 
 	<div class="min-h-0 flex-1 overflow-y-auto">
 		{#if fontstacks.length === 0}
-			<p class="px-3 py-6 text-center text-[11px] text-ink-3">フォント参照はありません。</p>
+			<p class="px-3 py-6 text-center text-[11px] text-ink-3">No font references.</p>
 		{/if}
 		{#each fontstacks as fontstack (fontstack)}
 			{@const selected = selectedFontstack === fontstack}
@@ -341,13 +341,13 @@
 						{#if unresolved(fontstack)}
 							<span
 								class="size-1.5 shrink-0 rounded-full bg-danger"
-								aria-label="未解決フォント"
-								title="未解決フォント"
+								aria-label="Unresolved font"
+								title="Unresolved font"
 							></span>
 						{/if}
 					</span>
 					<span class="mt-0.5 block truncate text-[9.5px] text-ink-3">
-						{fontstack in fonts ? 'ローカル' : `見つかりません ・ ${fallbackLabel(fontstack)}`}
+						{fontstack in fonts ? 'Local' : `Not found · ${fallbackLabel(fontstack)}`}
 					</span>
 				</span>
 			</button>
@@ -361,13 +361,13 @@
 						style:font-stretch={selectedPreviewDescriptors.stretch}
 						style:font-synthesis="none"
 					>
-						Basis 地図 Aa 123
+						Basis map Aa 123
 					</p>
 					{#if selectedMeta}
 						<div class="flex min-h-[30px] items-center">
-							<span class="w-[84px] shrink-0 text-ink-2">グリフ</span>
+							<span class="w-[84px] shrink-0 text-ink-2">Glyphs</span>
 							<span class="font-mono text-ink-1">
-								{selectedInfo?.glyphCount.toLocaleString() ?? (isValidating ? '取得中…' : '—')} ・
+								{selectedInfo?.glyphCount.toLocaleString() ?? (isValidating ? 'Loading…' : '—')} ·
 								{formatBytes(fontSizes[fontstack])}
 							</span>
 						</div>
@@ -380,9 +380,9 @@
 						<p class="text-ink-2" role="alert">{validationErrors[fontstack]}</p>
 					{/if}
 					<div class="flex min-h-[30px] items-start">
-						<p class="w-[84px] shrink-0 pt-2 text-ink-2">使用</p>
+						<p class="w-[84px] shrink-0 pt-2 text-ink-2">Usage</p>
 						{#if selectedUsages.length === 0}
-							<p class="pt-2 text-ink-3">使用レイヤーなし</p>
+							<p class="pt-2 text-ink-3">No layers use this font.</p>
 						{:else}
 							<div class="min-w-0 flex-1">
 								{#each selectedUsages as layerId (layerId)}
@@ -408,7 +408,7 @@
 						<div class="flex items-center justify-between gap-2">
 							<Button
 								class="flex size-6 items-center justify-center text-ink-2 hover:bg-field disabled:text-ink-4"
-								aria-label={`${fontstack} を削除`}
+								aria-label={`Delete ${fontstack}`}
 								disabled={readOnly || isBusy}
 								onclick={() => removeFont(fontstack)}
 							>
@@ -420,7 +420,7 @@
 								onclick={() => downloadGlyphs(fontstack)}
 							>
 								<ArrowDown size={12} weight="regular" aria-hidden="true" />
-								{downloadingFontstack === fontstack ? '生成中…' : 'glyphs'}
+								{downloadingFontstack === fontstack ? 'Generating…' : 'glyphs'}
 							</Button>
 						</div>
 					{/if}
@@ -435,7 +435,7 @@
 	<footer
 		class="flex h-8 shrink-0 items-center justify-between border-t border-hairline-soft px-3 font-mono text-[10px] text-ink-3"
 	>
-		<span>{Object.keys(fonts).length} ローカル</span>
+		<span>{Object.keys(fonts).length} local</span>
 		<span>⌘5</span>
 	</footer>
 </aside>

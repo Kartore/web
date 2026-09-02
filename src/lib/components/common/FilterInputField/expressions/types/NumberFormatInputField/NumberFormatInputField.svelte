@@ -39,7 +39,7 @@
 	<ExpressionOperatorSelect value={expression} {onChange} />
 	<ExpressionArgInputField parentValue={expression} index={1} {onChange} />
 	<div class="text-[10px] font-semibold tracking-wide text-ink-3">
-		オプション: {JSON.stringify(value[2])}
+		Options: {JSON.stringify(value[2])}
 	</div>
 	{@render children?.()}
 </div>

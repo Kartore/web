@@ -218,7 +218,7 @@
 
 <aside class="flex w-60 shrink-0 flex-col border-r border-hairline bg-white">
 	<div class="flex h-10 shrink-0 items-center gap-1.5 px-3">
-		<h2 class="text-[12px] font-semibold text-ink-1">レイヤー</h2>
+		<h2 class="text-[12px] font-semibold text-ink-1">Layers</h2>
 		<span class="font-mono text-[10.5px] text-ink-3">{mapStyle.layers.length}</span>
 		<div class="ml-auto">
 			<AddLayerPopover bind:open={addLayerOpen} {mapStyle} {readOnly} onAdd={onAddLayer} />
@@ -230,8 +230,8 @@
 			<TextField
 				bind:ref={layerSearchInput}
 				class="w-full [&>input]:h-[26px] [&>input]:w-full [&>input]:rounded-[6px] [&>input]:px-2 [&>input]:pr-7 [&>input]:text-[11px] [&>input]:font-normal focus-within:[&>input]:shadow-[inset_0_0_0_1px_var(--color-accent)]"
-				aria-label="レイヤーを検索"
-				placeholder="検索"
+				aria-label="Search layers"
+				placeholder="Search"
 				value={layerSearch}
 				onValueChange={(value) => (layerSearch = value)}
 				onCancel={() => {
@@ -247,8 +247,8 @@
 			{:else}
 				<Button
 					class="absolute top-px right-px flex size-6 items-center justify-center rounded-[5px] text-ink-3 hover:bg-white hover:text-ink-2"
-					aria-label="検索をクリア"
-					title="検索をクリア"
+					aria-label="Clear search"
+					title="Clear search"
 					onclick={() => (layerSearch = '')}
 				>
 					<X size={14} weight="regular" aria-hidden="true" />
@@ -260,11 +260,11 @@
 	<div class="min-h-0 flex-1 overflow-auto px-1" {@attach setListElement}>
 		{#if isSearching && matchingLayerCount === 0}
 			<p class="px-2 py-6 text-center text-[11px] text-ink-3">
-				“{normalizedLayerSearch}” に一致するレイヤーはありません。
+				No layers match “{normalizedLayerSearch}”.
 			</p>
 		{:else if mapStyle.layers.length === 0}
 			<p class="px-2 py-6 text-center text-[11px] text-ink-3">
-				レイヤーがありません。上の＋から追加できます。
+				No layers. Add one with the ＋ above.
 			</p>
 		{:else}
 			{#each visibleRows as row, rowIndex (row.kind === 'group' ? `group-${row.name}-${row.startIndex}` : (mapStyle.layers[row.layerIndex]?.id ?? row.layerIndex))}
@@ -292,7 +292,7 @@
 								class="size-1.5 shrink-0 rounded-full bg-danger"
 								title={groupErrors.join('\n')}
 								role="img"
-								aria-label={`${row.name} に ${groupErrors.length} 件のエラー`}
+								aria-label={`${row.name}: ${groupErrors.length} errors`}
 							></span>
 						{/if}
 					</button>
@@ -324,15 +324,15 @@
 									class="size-1.5 shrink-0 rounded-full bg-danger"
 									title={layerErrorsForRow.join('\n')}
 									role="img"
-									aria-label={`${layer.id} に ${layerErrorsForRow.length} 件のエラー`}
+									aria-label={`${layer.id}: ${layerErrorsForRow.length} errors`}
 								></span>
 							{/if}
 						</button>
 						{#if selected}
 							<Button
 								class="mr-0.5 flex size-6 shrink-0 items-center justify-center rounded-[5px] text-ink-2 outline-none hover:bg-white focus-visible:shadow-[inset_0_0_0_1px_var(--color-accent)]"
-								aria-label={isLayerVisible(layer) ? `${layer.id} を非表示` : `${layer.id} を表示`}
-								title={isLayerVisible(layer) ? 'レイヤーを非表示' : 'レイヤーを表示'}
+								aria-label={isLayerVisible(layer) ? `Hide ${layer.id}` : `Show ${layer.id}`}
+								title={isLayerVisible(layer) ? 'Hide layer' : 'Show layer'}
 								onpointerdown={(event) => event.stopPropagation()}
 								onclick={(event) => {
 									event.stopPropagation();
@@ -355,7 +355,7 @@
 	<footer
 		class="flex h-8 shrink-0 items-center justify-between border-t border-hairline-soft px-3 font-mono text-[10px] text-ink-3"
 	>
-		<span>{sourceCount} ソース ・ {errorCount} エラー</span>
+		<span>{sourceCount} sources · {errorCount} errors</span>
 		<span>⌘.</span>
 	</footer>
 </aside>

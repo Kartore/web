@@ -58,7 +58,7 @@
 	</div>
 {:else}
 	<Select
-		aria-label="式の演算子"
+		aria-label="Expression operator"
 		class={cn('inline-flex max-w-full min-w-0 font-mono', className)}
 		triggerClass={cn(
 			'w-auto min-w-0 max-w-full font-mono font-normal text-ink-2',

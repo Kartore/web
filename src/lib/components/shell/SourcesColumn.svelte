@@ -77,8 +77,8 @@
 	);
 	const trimmedAddSourceId = $derived(addSourceId.trim());
 	const addSourceError = $derived.by(() => {
-		if (trimmedAddSourceId === '') return 'ID を入力してください。';
-		if (trimmedAddSourceId in mapStyle.sources) return '同じ ID のソースがあります。';
+		if (trimmedAddSourceId === '') return 'Enter an ID.';
+		if (trimmedAddSourceId in mapStyle.sources) return 'A source with this ID already exists.';
 		return undefined;
 	});
 
@@ -92,7 +92,7 @@
 		for (const layer of mapStyle.layers) {
 			if (!('source' in layer) || layer.source !== sourceId) continue;
 			const sourceLayer = 'source-layer' in layer ? layer['source-layer'] : undefined;
-			const key = typeof sourceLayer === 'string' ? sourceLayer : '(指定なし)';
+			const key = typeof sourceLayer === 'string' ? sourceLayer : '(None)';
 			const item = counts.find(({ id }) => id === key);
 			if (item) item.count += 1;
 			else counts.push({ id: key, count: 1 });
@@ -138,7 +138,7 @@
 		try {
 			parsed = JSON.parse(editValue);
 		} catch (error) {
-			editError = `JSON が不正です: ${error instanceof Error ? error.message : String(error)}`;
+			editError = `Invalid JSON: ${error instanceof Error ? error.message : String(error)}`;
 			return;
 		}
 		if (
@@ -148,7 +148,7 @@
 			typeof parsed.type !== 'string' ||
 			!editableSourceTypes.includes(parsed.type as EditableSourceType)
 		) {
-			editError = '有効な type を持つソース JSON が必要です。';
+			editError = 'Source JSON with a valid type is required.';
 			return;
 		}
 		applySource(parsed as SourceSpecification);
@@ -176,12 +176,12 @@
 
 <aside class="flex w-60 shrink-0 flex-col border-r border-hairline bg-white">
 	<header class="flex h-10 shrink-0 items-center gap-1.5 px-3">
-		<h2 class="text-[12px] font-semibold text-ink-1">ソース</h2>
+		<h2 class="text-[12px] font-semibold text-ink-1">Sources</h2>
 		<p class="text-[10.5px] text-ink-3">{Object.keys(mapStyle.sources).length}</p>
 		<Button
 			class="ml-auto flex size-6 items-center justify-center rounded-[5px] text-ink-2 hover:bg-field hover:text-ink-1 disabled:text-ink-4"
-			aria-label="ソースを追加"
-			title="ソースを追加"
+			aria-label="Add source"
+			title="Add source"
 			disabled={readOnly}
 			onclick={() => (adding = !adding)}
 		>
@@ -193,15 +193,15 @@
 		<div class="relative">
 			<TextField
 				class="w-full [&>input]:h-[26px] [&>input]:w-full [&>input]:rounded-[6px] [&>input]:pr-7 [&>input]:text-[11px] [&>input]:font-normal"
-				aria-label="ソースを検索"
-				placeholder="検索"
+				aria-label="Search sources"
+				placeholder="Search"
 				value={search}
 				onValueChange={(value) => (search = value)}
 			/>
 			{#if search}
 				<Button
 					class="absolute top-0 right-0 flex size-6 items-center justify-center text-ink-3 hover:text-ink-1"
-					aria-label="ソース検索をクリア"
+					aria-label="Clear source search"
 					onclick={() => (search = '')}
 				>
 					<X size={14} weight="regular" aria-hidden="true" />
@@ -215,14 +215,14 @@
 			<div class="flex flex-col gap-2 border-b border-hairline-soft px-3 py-2">
 				<TextField
 					class="[&>input]:w-full"
-					aria-label="新しいソース ID"
+					aria-label="New source ID"
 					placeholder="source-id"
 					value={addSourceId}
 					onValueChange={(value) => (addSourceId = value)}
 				/>
 				<Select
 					class="[&>button]:w-full"
-					aria-label="新しいソースの種類"
+					aria-label="New source type"
 					items={addableSourceTypes.map((type) => ({ value: type, label: type }))}
 					value={addSourceType}
 					onValueChange={(value) => (addSourceType = value as AddableSourceType)}
@@ -235,13 +235,13 @@
 					disabled={addSourceError !== undefined}
 					onclick={addSource}
 				>
-					追加
+					Add
 				</Button>
 			</div>
 		{/if}
 
 		{#if sourceEntries.length === 0}
-			<p class="px-3 py-6 text-center text-[11px] text-ink-3">一致するソースはありません。</p>
+			<p class="px-3 py-6 text-center text-[11px] text-ink-3">No matching sources.</p>
 		{/if}
 		{#each sourceEntries as [sourceId, source] (sourceId)}
 			{@const usedBy = usedLayerIds(sourceId)}
@@ -259,7 +259,7 @@
 					<span class="mt-0.5 block truncate text-[9.5px] text-ink-3">
 						{source.type} ・ z{'minzoom' in source ? (source.minzoom ?? 0) : 0}–{'maxzoom' in source
 							? (source.maxzoom ?? 24)
-							: 24} ・ {usedBy.length === 0 ? '未使用' : `${usedBy.length} レイヤー`}
+							: 24} · {usedBy.length === 0 ? 'Not used' : `${usedBy.length} layers`}
 					</span>
 				</span>
 			</button>
@@ -271,9 +271,9 @@
 						<p class="mt-1 text-[10px] text-ink-3">{warning}</p>
 					{/each}
 					<div>
-						<p class="mt-1.5 mb-0.5 text-[10px] text-ink-3">使用中の source-layer</p>
+						<p class="mt-1.5 mb-0.5 text-[10px] text-ink-3">Source-layers in use</p>
 						{#if usedSourceLayers(sourceId).length === 0}
-							<p class="text-ink-3">使用レイヤーなし</p>
+							<p class="text-ink-3">No layers use this source.</p>
 						{:else}
 							{#each usedSourceLayers(sourceId) as item (item.id)}
 								<p class="flex h-[22px] items-center justify-between gap-2 font-mono text-ink-2">
@@ -289,14 +289,14 @@
 							{#if sourceLayersState.error}
 								<p class="text-ink-2" role="alert">{sourceLayersState.error.message}</p>
 							{:else if sourceLayersState.isLoading}
-								<p class="text-ink-3">取得中…</p>
+								<p class="text-ink-3">Loading…</p>
 							{/if}
 							<Button
 								class="mt-2 h-5 px-0 text-[10px] font-semibold text-accent hover:bg-transparent"
 								disabled={sourceLayersState.isLoading}
 								onclick={() => sourceLayersState.refetch()}
 							>
-								TileJSON を再取得
+								Refetch TileJSON
 							</Button>
 						</div>
 					{/if}
@@ -306,15 +306,15 @@
 							class="h-5 px-0 text-[10px] font-semibold text-accent hover:bg-transparent"
 							onclick={() => (editingSource = !editingSource)}
 						>
-							{editingSource ? '詳細 JSON を閉じる' : '詳細 JSON を編集'}
+							{editingSource ? 'Close detailed JSON' : 'Edit detailed JSON'}
 						</Button>
 						<Button
 							class="h-5 px-0 text-[10px] text-ink-3 hover:bg-transparent hover:text-ink-1 disabled:text-ink-4"
 							disabled={readOnly || usedBy.length > 0}
-							title={usedBy.length > 0 ? '使用中のソースは削除できません' : 'ソースを削除'}
+							title={usedBy.length > 0 ? 'Sources in use cannot be deleted' : 'Delete source'}
 							onclick={() => deleteSource(sourceId)}
 						>
-							削除
+							Delete
 						</Button>
 					</div>
 
@@ -322,7 +322,7 @@
 						<div class="mt-1.5">
 							<textarea
 								class="h-28 w-full resize-y rounded-[5px] border-0 bg-field p-2 font-mono text-[10px] leading-4 text-ink-1 outline-none focus:shadow-[inset_0_0_0_1px_var(--color-accent)]"
-								aria-label={`${sourceId} のソース JSON`}
+								aria-label={`${sourceId} source JSON`}
 								spellcheck="false"
 								bind:value={editValue}></textarea>
 							{#if editError}
@@ -336,7 +336,7 @@
 								disabled={readOnly}
 								onclick={applySourceJSONEdit}
 							>
-								適用
+								Apply
 							</Button>
 						</div>
 					{/if}
@@ -348,7 +348,7 @@
 	<footer
 		class="flex h-8 shrink-0 items-center justify-between border-t border-hairline-soft px-3 font-mono text-[10px] text-ink-3"
 	>
-		<span>{Object.keys(mapStyle.sources).length} ソース</span>
+		<span>{Object.keys(mapStyle.sources).length} sources</span>
 		<span>⌘3</span>
 	</footer>
 </aside>

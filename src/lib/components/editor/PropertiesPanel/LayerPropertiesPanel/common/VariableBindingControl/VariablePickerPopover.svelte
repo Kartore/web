@@ -32,15 +32,17 @@
 	};
 
 	const formatValue = (value: unknown): string => {
-		if (value === undefined) return '(未設定)';
+		if (value === undefined) return '(Unset)';
 		const serialized = JSON.stringify(value);
 		return serialized === undefined ? String(value) : serialized;
 	};
-	const typeLabel = $derived(type === 'color' ? 'カラー' : type === 'number' ? '数値' : '補間');
+	const typeLabel = $derived(
+		type === 'color' ? 'Color' : type === 'number' ? 'Number' : 'Interpolation'
+	);
 </script>
 
 <RowPopover
-	aria-label={`${typeLabel}のスタイル変数を参照`}
+	aria-label={`Reference ${typeLabel.toLowerCase()} style variable`}
 	triggerClass="flex size-6 items-center justify-center rounded-[6px] text-ink-3 hover:bg-field hover:text-accent focus-visible:outline-2 focus-visible:outline-accent aria-expanded:bg-accent-soft aria-expanded:text-accent"
 >
 	{#snippet trigger()}
@@ -49,14 +51,14 @@
 
 	{#snippet children({ close })}
 		<div class="border-b border-hairline-soft px-3 py-2">
-			<p class="text-[11px] font-semibold text-ink-1">スタイル変数</p>
+			<p class="text-[11px] font-semibold text-ink-1">Style variables</p>
 			<p class="mt-0.5 text-[10px] text-ink-3">{typeLabel}</p>
 		</div>
 
 		<div class="max-h-56 overflow-y-auto p-1">
 			{#if matchingVariables.length === 0}
 				<p class="px-2 py-4 text-center text-[11px] text-ink-3">
-					{typeLabel}変数はありません。
+					No {typeLabel.toLowerCase()} variables.
 				</p>
 			{:else}
 				{#each matchingVariables as variable (variable.id)}
@@ -101,7 +103,7 @@
 					}}
 				>
 					<Plus size={14} weight="regular" class="shrink-0" aria-hidden="true" />
-					<span class="min-w-0 flex-1 truncate">現在の値から作成</span>
+					<span class="min-w-0 flex-1 truncate">Create from current value</span>
 					<span
 						class="max-w-20 truncate font-mono text-[9px] text-ink-3"
 						title={formatValue(currentValue)}

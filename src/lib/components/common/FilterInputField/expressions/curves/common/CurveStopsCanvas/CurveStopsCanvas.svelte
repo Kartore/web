@@ -246,7 +246,7 @@
 				<div
 					role="slider"
 					tabindex="0"
-					aria-label={`ストップ ${handle.stopIndex + 1} の入力値`}
+					aria-label={`Stop ${handle.stopIndex + 1} input value`}
 					aria-orientation="horizontal"
 					aria-valuemin={handle.bounds?.min ?? result.domain[0]}
 					aria-valuemax={handle.bounds?.max ?? result.domain[1]}
@@ -268,8 +268,8 @@
 					style:left={`${handle.xPercent}%`}
 					style:top={`${handle.yPercent}%`}
 					title={handle.pointerDraggable
-						? 'ドラッグしてストップを編集'
-						: 'ストップ行または矢印キーで入力値を編集'}
+						? 'Drag to edit the stop'
+						: 'Edit the input value from the stop row or with the arrow keys'}
 					onfocus={() => onSelectStop?.(handle.stopIndex)}
 					onkeydown={(event) => adjustWithKeyboard(event, handle)}
 					onpointerdown={(event) => startDrag(event, handle)}

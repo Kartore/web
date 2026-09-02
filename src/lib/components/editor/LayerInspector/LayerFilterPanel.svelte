@@ -132,7 +132,7 @@
 			class="my-1 mb-2.5 flex min-h-7 items-center gap-2 rounded-[6px] border border-hairline-soft px-[9px] py-[3px] text-[10.5px] text-ink-2"
 		>
 			<LockSimple size={14} weight="regular" class="shrink-0 text-ink-3" aria-hidden="true" />
-			<span>source-layer は</span>
+			<span>source-layer:</span>
 			<span class="truncate font-mono text-ink-1">
 				{'source-layer' in layer ? (layer['source-layer'] ?? '—') : '—'}
 			</span>
@@ -146,7 +146,7 @@
 			{:else}
 				<div class="flex flex-col gap-2 rounded-[6px] bg-field p-2">
 					<p class="text-[10px] leading-4 text-ink-2">
-						この filter はルールビルダーで安全に表現できないため、読み取り専用です。
+						This filter cannot be safely represented by the rule builder and is read-only.
 					</p>
 					<pre
 						class="max-h-52 overflow-auto font-mono text-[10px] leading-4 break-all whitespace-pre-wrap text-ink-1">{JSON.stringify(
@@ -159,12 +159,12 @@
 							class="flex h-6 items-center gap-1 rounded-[6px] px-2 text-[10px] font-semibold text-ink-2 hover:bg-white"
 							onclick={(event) =>
 								expressionFlyout?.open(
-									{ group: 'filter', key: 'filter', label: 'フィルター' },
+									{ group: 'filter', key: 'filter', label: 'Filter' },
 									event.currentTarget
 								)}
 						>
 							<FunctionIcon size={13} weight="regular" aria-hidden="true" />
-							式として編集
+							Edit as expression
 						</Button>
 						<Button
 							class="h-6 rounded-[6px] px-2 text-[10px] font-semibold text-ink-2 hover:bg-white"
@@ -178,7 +178,7 @@
 		</div>
 		<div class="mt-1.5 flex h-[30px] items-center gap-1.5 border-t border-hairline-soft">
 			<p class="font-mono text-[10px] text-ink-2">
-				<span class="font-mono font-normal text-ink-1">{matchedCount}</span> / {totalCount} がマッチ
+				<span class="font-mono font-normal text-ink-1">{matchedCount}</span> / {totalCount} matched
 			</p>
 			<button
 				type="button"
@@ -186,7 +186,7 @@
 				aria-pressed={highlight}
 				onclick={toggleHighlight}
 			>
-				{highlight ? 'ハイライトを解除' : '地図でハイライト'}
+				{highlight ? 'Clear highlight' : 'Highlight on map'}
 			</button>
 		</div>
 	</div>

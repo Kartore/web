@@ -57,17 +57,17 @@
 				parsed = JSON.parse(next) as unknown;
 			} catch (caught) {
 				const error = caught instanceof Error ? caught.message : String(caught);
-				validation = { draft: next, error: `JSON が不正です: ${error}`, diagnostics: [] };
+				validation = { draft: next, error: `Invalid JSON: ${error}`, diagnostics: [] };
 				return;
 			}
 			if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
-				const error = 'レイヤー JSON はオブジェクトで指定してください。';
+				const error = 'Layer JSON must be an object.';
 				validation = { draft: next, error, diagnostics: [diagnostic(error)] };
 				return;
 			}
 			const record = parsed as Record<string, unknown>;
 			if (typeof record.id !== 'string' || record.id.trim() === '') {
-				const error = '空でないレイヤー ID が必要です。';
+				const error = 'A non-empty layer ID is required.';
 				validation = { draft: next, error, diagnostics: [diagnostic(error)] };
 				return;
 			}
@@ -75,7 +75,7 @@
 				record.id !== layer.id &&
 				mapStyle.layers.some((candidate) => candidate.id === record.id)
 			) {
-				const error = `レイヤー ID「${record.id}」は既に使われています。`;
+				const error = `Layer ID "${record.id}" is already in use.`;
 				validation = { draft: next, error, diagnostics: [diagnostic(error)] };
 				return;
 			}
@@ -131,12 +131,12 @@
 		class="flex min-h-8 shrink-0 items-center gap-2 border-t border-hairline-soft px-3 font-mono text-[10px] text-ink-3"
 	>
 		<span class="min-w-0 flex-1 truncate">
-			layers/{sanitizeLayerBasename(layer.id)}.json ・ 保存時に整形
+			layers/{sanitizeLayerBasename(layer.id)}.json · formatted on save
 		</span>
 		{#if readOnly}
-			<span class="shrink-0">読み取り専用</span>
+			<span class="shrink-0">Read-only</span>
 		{:else if isDirty && validation?.draft !== draft}
-			<span class="shrink-0">検証中</span>
+			<span class="shrink-0">Validating</span>
 		{:else if validation?.draft === draft && validation.error}
 			<span class="size-1.5 shrink-0 rounded-full bg-danger" title={validation.error}></span>
 		{/if}
@@ -144,7 +144,7 @@
 			class="h-6 shrink-0 px-1 text-[10px] font-semibold text-accent hover:bg-field"
 			onclick={copyDraft}
 		>
-			{copied ? 'コピー済み' : 'コピー'}
+			{copied ? 'Copied' : 'Copy'}
 		</Button>
 	</div>
 </div>

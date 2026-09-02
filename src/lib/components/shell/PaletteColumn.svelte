@@ -587,7 +587,7 @@
 		if (!editable) return;
 		const number = modes.modes.length + 1;
 		modeFormTargetId = undefined;
-		modeFormName = modes.modes.length === 1 ? 'ダーク' : `モード ${number}`;
+		modeFormName = modes.modes.length === 1 ? 'Dark' : `Mode ${number}`;
 		modeFormId = availableModeId(modes.modes.length === 1 ? 'dark' : `mode-${number}`);
 		modeFormOpen = true;
 		modesOpen = true;
@@ -629,11 +629,11 @@
 
 <aside class="relative flex w-60 shrink-0 flex-col border-r border-hairline bg-white">
 	<header class="flex h-10 shrink-0 items-center gap-1.5 px-3">
-		<h2 class="text-[12px] font-semibold text-ink-1">パレット</h2>
+		<h2 class="text-[12px] font-semibold text-ink-1">Palette</h2>
 		<p class="text-[10.5px] text-ink-3">{variables.length}</p>
 		<Button
 			class="ml-auto flex size-6 items-center justify-center rounded-[5px] text-ink-2 hover:bg-field hover:text-ink-1 disabled:text-ink-4"
-			aria-label="変数を追加"
+			aria-label="Add variable"
 			disabled={!editable}
 			onclick={() => (adding = !adding)}
 		>
@@ -644,8 +644,8 @@
 	<div class="shrink-0 px-2 pb-1.5">
 		<TextField
 			class="w-full [&>input]:h-[26px] [&>input]:w-full [&>input]:rounded-[6px] [&>input]:text-[11px] [&>input]:font-normal"
-			aria-label="パレットを検索"
-			placeholder="検索"
+			aria-label="Search palette"
+			placeholder="Search"
 			value={search}
 			onValueChange={(value) => (search = value)}
 		/>
@@ -656,18 +656,18 @@
 			<div class="flex flex-col gap-1.5 border-b border-hairline-soft px-3 py-2">
 				<TextField
 					class="[&>input]:w-full"
-					aria-label="変数名"
+					aria-label="Variable name"
 					placeholder="road/primary"
 					value={addName}
 					onValueChange={(value) => (addName = value)}
 				/>
 				<Select
 					class="[&>button]:w-full"
-					aria-label="変数の種類"
+					aria-label="Variable type"
 					items={[
-						{ value: 'color', label: 'カラー' },
-						{ value: 'number', label: '数値' },
-						{ value: 'interpolation', label: '補間' }
+						{ value: 'color', label: 'Color' },
+						{ value: 'number', label: 'Number' },
+						{ value: 'interpolation', label: 'Interpolation' }
 					]}
 					value={addType}
 					onValueChange={(value) => {
@@ -680,18 +680,18 @@
 					disabled={!addName.trim()}
 					onclick={createVariable}
 				>
-					追加
+					Add
 				</Button>
 			</div>
 		{/if}
 
 		<section class="px-2">
 			<div class="flex h-[26px] items-center gap-1.5 px-2 text-[11px] text-ink-3">
-				<h3>変数</h3>
+				<h3>Variables</h3>
 				<span class="text-[10px] text-ink-4">{variables.length}</span>
 			</div>
 			{#if variableTreeRows.length === 0}
-				<p class="px-3 py-4 text-center text-[10px] text-ink-3">変数はありません。</p>
+				<p class="px-3 py-4 text-center text-[10px] text-ink-3">No variables.</p>
 			{/if}
 			{#each variableTreeRows as row (row.kind === 'group' ? `group:${row.node.path}` : row.variable.id)}
 				{#if row.kind === 'group'}
@@ -742,7 +742,7 @@
 						>
 							<TextField
 								class="mb-2 [&>input]:w-full"
-								label="名前"
+								label="Name"
 								value={row.variable.name}
 								disabled={!editable}
 								onCommit={(name) => renameVariable(row.variable, name)}
@@ -754,7 +754,7 @@
 									onclick={() =>
 										renameVariable(row.variable, suggestModernVariableName(row.variable.name))}
 								>
-									{suggestModernVariableName(row.variable.name)} にリネーム
+									Rename to {suggestModernVariableName(row.variable.name)}
 								</Button>
 							{/if}
 							{#if row.variable.type === 'color'}
@@ -769,12 +769,12 @@
 										aria-pressed={colorHighlightEnabled}
 										onclick={toggleColorHighlight}
 									>
-										{colorHighlightEnabled ? 'ハイライトを解除' : '使用箇所をハイライト'}
+										{colorHighlightEnabled ? 'Clear highlight' : 'Highlight usages'}
 									</Button>
 								{/if}
 							{:else if row.variable.type === 'number'}
 								<NumberField
-									label="値"
+									label="Value"
 									value={row.variable.value}
 									disabled={!editable}
 									onValueChange={(value) => context?.updateValue(row.variable.id, value)}
@@ -787,9 +787,9 @@
 								/>
 							{/if}
 							<div>
-								<p class="mt-1.5 mb-0.5 text-[9.5px] text-ink-3">使用箇所</p>
+								<p class="mt-1.5 mb-0.5 text-[9.5px] text-ink-3">Usages</p>
 								{#if variableUsages.length === 0}
-									<p class="text-[10px] text-ink-3">使用なし</p>
+									<p class="text-[10px] text-ink-3">Not used</p>
 								{:else}
 									{#each variableUsages as usage (`${usage.layerId}:${usage.group}:${usage.propertyKey}`)}
 										<button
@@ -817,7 +817,7 @@
 									onclick={() => removeVariable(row.variable)}
 								>
 									<Trash size={12} weight="regular" aria-hidden="true" />
-									{pendingDeleteId === row.variable.id ? '使用箇所を外して削除' : '削除'}
+									{pendingDeleteId === row.variable.id ? 'Remove usages and delete' : 'Delete'}
 								</Button>
 							</div>
 						</div>
@@ -828,7 +828,7 @@
 
 		<section class="px-2">
 			<div class="flex h-[26px] items-center gap-1.5 px-2 text-[11px] text-ink-3">
-				<h3>リテラル</h3>
+				<h3>Literals</h3>
 				<span class="text-[10px] text-ink-4">{visibleLiterals.length}</span>
 			</div>
 			<div
@@ -846,8 +846,8 @@
 								'relative size-5 rounded-[4px] border border-black/5 outline-none focus-visible:outline-1 focus-visible:outline-offset-1 focus-visible:outline-accent',
 								selected && 'outline-1 outline-offset-1 outline-accent'
 							)}
-							aria-label={`${literal.canonicalColor}、使用 ${literal.usages.length} 箇所`}
-							title={`${literal.canonicalColor} · ${literal.usages.length} 箇所`}
+							aria-label={`${literal.canonicalColor}, ${literal.usages.length} usages`}
+							title={`${literal.canonicalColor} · ${literal.usages.length} usages`}
 							onclick={() =>
 								select(
 									selected ? undefined : { kind: 'literal', canonicalColor: literal.canonicalColor }
@@ -857,7 +857,7 @@
 							{#if literal.expressionUsages.length > 0}
 								<span
 									class="absolute right-0 bottom-0 flex size-3 items-center justify-center rounded-tl-[5px] bg-white text-ink-2"
-									title="式内にも存在"
+									title="Also used in expressions"
 								>
 									<FunctionIcon size={9} weight="regular" aria-hidden="true" />
 								</span>
@@ -887,7 +887,7 @@
 									disabled={!editable}
 									onclick={() => promoteLiteral(selectedLiteral)}
 								>
-									変数に昇格 ({selectedLiteral.directUsages.length} 箇所)
+									Promote to variable ({selectedLiteral.directUsages.length} usages)
 								</Button>
 							{/if}
 							{#if selectedLiteral.usages.length > 0}
@@ -896,16 +896,17 @@
 									aria-pressed={colorHighlightEnabled}
 									onclick={toggleColorHighlight}
 								>
-									{colorHighlightEnabled ? 'ハイライトを解除' : '使用箇所をハイライト'}
+									{colorHighlightEnabled ? 'Clear highlight' : 'Highlight usages'}
 								</Button>
 							{/if}
 							{#if selectedLiteral.expressionUsages.length > 0}
 								<p class="text-[10px] text-ink-3">
-									式内 {selectedLiteral.expressionUsages.length} 箇所は初期版では編集対象外です。
+									{selectedLiteral.expressionUsages.length} expression usages are not editable in this
+									initial version.
 								</p>
 							{/if}
 							<div>
-								<p class="mb-1 text-[10px] font-semibold text-ink-2">使用箇所</p>
+								<p class="mb-1 text-[10px] font-semibold text-ink-2">Usages</p>
 								{#each selectedLiteral.usages as usage (`${usage.layerId}:${usage.group}:${usage.propertyKey}:${usage.inExpression}`)}
 									<button
 										type="button"
@@ -915,7 +916,7 @@
 										<span class="min-w-0 flex-1 truncate">
 											{usage.layerId} · {usage.propertyKey}
 										</span>
-										{#if usage.inExpression}<span class="shrink-0 text-ink-3">式内</span>{/if}
+										{#if usage.inExpression}<span class="shrink-0 text-ink-3">Expression</span>{/if}
 									</button>
 								{/each}
 							</div>
@@ -927,11 +928,11 @@
 
 		<section class="px-2">
 			<div class="flex h-[26px] items-center gap-1.5 px-2 text-[11px] text-ink-3">
-				<h3>色覚チェック</h3>
+				<h3>Color vision check</h3>
 				<span class="text-[10px] text-ink-4">{colorVisionWarnings.length}</span>
 			</div>
 			{#if colorVisionWarnings.length === 0}
-				<p class="px-3 py-3 text-[10px] text-ink-3">識別性が失われる色ペアはありません。</p>
+				<p class="px-3 py-3 text-[10px] text-ink-3">No color pairs lose distinguishability.</p>
 			{:else}
 				<div class="px-1 pb-2">
 					{#each colorVisionWarnings as warning (warning.id)}
@@ -972,7 +973,7 @@
 
 		{#if selection && mergeSuggestions.length > 0}
 			<section class="mx-4 mt-2.5 rounded-[6px] border border-hairline px-2.5 py-2">
-				<p class="mb-1 text-[10px] text-ink-3">近似色を統合</p>
+				<p class="mb-1 text-[10px] text-ink-3">Merge similar colors</p>
 				{#each mergeSuggestions as suggestion (`${suggestion.variable.id}:${suggestion.literal.canonicalColor}`)}
 					<Button
 						class="flex min-h-7 w-full items-center gap-2 rounded-[5px] px-1 text-left text-[10px] text-ink-2 hover:bg-field disabled:text-ink-4"
@@ -986,7 +987,7 @@
 						<span class="min-w-0 flex-1 truncate font-mono">
 							{suggestion.literal.canonicalColor} → {suggestion.variable.name}
 						</span>
-						<span class="shrink-0">{suggestion.literal.directUsages.length} 箇所</span>
+						<span class="shrink-0">{suggestion.literal.directUsages.length} usages</span>
 					</Button>
 				{/each}
 			</section>
@@ -1015,8 +1016,8 @@
 					</Button>
 					<Button
 						class="flex size-7 shrink-0 items-center justify-center rounded-[5px] text-ink-3 hover:text-ink-1 disabled:text-ink-4"
-						aria-label={`${mode.name}を編集`}
-						title="表示名とMode IDを編集"
+						aria-label={`Edit ${mode.name}`}
+						title="Edit display name and mode ID"
 						disabled={!editable}
 						onclick={() => openEditModeForm(mode)}
 					>
@@ -1030,10 +1031,10 @@
 					style="--field-label-width: 52px; --field-column-gap: 6px"
 				>
 					<p class="mb-0.5 text-[10px] font-semibold text-ink-2">
-						{modeFormTargetId ? 'モードを編集' : 'モードを追加'}
+						{modeFormTargetId ? 'Edit mode' : 'Add mode'}
 					</p>
 					<TextField
-						label="表示名"
+						label="Display name"
 						value={modeFormName}
 						onValueChange={(value) => (modeFormName = value)}
 					/>
@@ -1044,22 +1045,22 @@
 					/>
 					<p class={cn('text-[9px] leading-3 text-ink-3', modeIdConflict && 'text-danger')}>
 						{modeIdConflict
-							? 'このMode IDは使用済みです。'
-							: 'global-stateの切り替え値として使用します。'}
+							? 'This Mode ID is already in use.'
+							: 'Used as the switch value for global-state.'}
 					</p>
 					<div class="mt-1 flex justify-end gap-1">
 						<Button
 							class="h-6 rounded-[5px] px-2 text-[10px] text-ink-3 hover:bg-field"
 							onclick={closeModeForm}
 						>
-							キャンセル
+							Cancel
 						</Button>
 						<Button
 							class="h-6 rounded-[5px] bg-accent px-2 text-[10px] font-semibold text-white disabled:bg-ink-4"
 							disabled={!canSubmitMode}
 							onclick={submitMode}
 						>
-							{modeFormTargetId ? '保存' : '追加'}
+							{modeFormTargetId ? 'Save' : 'Add'}
 						</Button>
 					</div>
 				</div>
@@ -1070,7 +1071,7 @@
 					onclick={openAddModeForm}
 				>
 					<Plus size={12} weight="regular" aria-hidden="true" />
-					{modes.modes.length === 1 ? 'ダークモードを追加…' : 'モードを複製…'}
+					{modes.modes.length === 1 ? 'Add dark mode…' : 'Duplicate mode…'}
 				</Button>
 			{/if}
 		</div>
@@ -1086,7 +1087,7 @@
 				if (!modesOpen) closeModeForm();
 			}}
 		>
-			モード: {modes.modes.find(({ id }) => id === modes.activeModeId)?.name ?? 'ライト'}
+			Mode: {modes.modes.find(({ id }) => id === modes.activeModeId)?.name ?? 'Light'}
 		</button>
 		<button
 			type="button"
@@ -1094,7 +1095,7 @@
 			disabled={!editable}
 			onclick={openAddModeForm}
 		>
-			{modes.modes.length === 1 ? 'ダークモードを追加…' : 'モードを複製…'}
+			{modes.modes.length === 1 ? 'Add dark mode…' : 'Duplicate mode…'}
 		</button>
 	</footer>
 </aside>

@@ -36,7 +36,7 @@
 	<SpecPropertiesSection
 		{layer}
 		groups={['layout']}
-		title="レイアウト"
+		title="Layout"
 		{spriteIds}
 		{spriteImages}
 		{onChange}
@@ -44,7 +44,7 @@
 	<SpecPropertiesSection
 		{layer}
 		groups={['paint']}
-		title="ペイント"
+		title="Paint"
 		{spriteIds}
 		{spriteImages}
 		{onChange}

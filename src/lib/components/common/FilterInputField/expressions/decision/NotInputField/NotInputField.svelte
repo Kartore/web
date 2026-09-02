@@ -25,7 +25,7 @@
 
 <div {...props} class={cn('flex min-w-0 flex-col gap-2 rounded bg-field px-2 py-2', className)}>
 	<div class="flex min-w-0 items-center gap-1">
-		<span class="text-[10px] font-semibold tracking-wide text-ink-3">論理条件</span>
+		<span class="text-[10px] font-semibold tracking-wide text-ink-3">Logical conditions</span>
 		<ExpressionOperatorSelect value={expression} {onChange} />
 	</div>
 	<div class="min-w-0 border-l border-hairline-soft pl-2">

@@ -39,7 +39,7 @@
 		<ColorSwatch class="h-6 min-w-0 flex-1 rounded-[5px] border border-black/5" color={value} />
 		<input
 			class="h-6 w-[70px] rounded-[5px] border-0 bg-field px-2 font-mono text-[11px] font-normal text-ink-1 outline-none focus-visible:shadow-[inset_0_0_0_1px_var(--color-accent)]"
-			aria-label="16進数カラー値"
+			aria-label="Hex color value"
 			bind:value={hexDraft}
 			onblur={commitHex}
 			onkeydown={(event) => {
@@ -50,7 +50,7 @@
 		/>
 		<EyeDropperButton
 			class="flex size-6 shrink-0 items-center justify-center rounded-[5px] bg-field text-ink-2 hover:text-ink-1"
-			aria-label="スポイト"
+			aria-label="Eyedropper"
 			onChange={commit}
 		/>
 	</div>

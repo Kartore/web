@@ -99,7 +99,7 @@
 
 <div class="flex h-full min-h-0 flex-col overflow-y-auto bg-white">
 	<section class="shrink-0 border-b border-hairline-soft px-4 pt-1.5 pb-2.5">
-		<h3 class="flex h-7 items-center text-[11px] font-semibold text-ink-1">ソース</h3>
+		<h3 class="flex h-7 items-center text-[11px] font-semibold text-ink-1">Source</h3>
 		<Select
 			label="source"
 			items={compatibleSources.map(([id]) => ({ value: id, label: id }))}
@@ -119,20 +119,20 @@
 		{/if}
 		<p class="mt-1.5 font-mono text-[10px] leading-[1.6] text-ink-3">
 			<span class="font-mono text-[11px] font-normal text-ink-2">{sourceData?.type ?? '—'}</span>
-			・ z{minzoom}–{maxzoom} ・ 超過分はオーバーズーム<br />
+			· z{minzoom}–{maxzoom} · higher zooms use overzoom<br />
 			<span class="break-all">{sourceUrl}</span>
 		</p>
 	</section>
 
 	<section class="shrink-0 border-b border-hairline-soft px-4 pt-1.5 pb-2.5">
-		<h3 class="flex h-7 items-center text-[11px] font-semibold text-ink-1">ジオメトリ</h3>
+		<h3 class="flex h-7 items-center text-[11px] font-semibold text-ink-1">Geometry</h3>
 		<dl>
 			<div class="flex h-[30px] items-center">
-				<dt class="w-[84px] shrink-0 font-mono text-[10px] text-ink-2">タイプ</dt>
+				<dt class="w-[84px] shrink-0 font-mono text-[10px] text-ink-2">Type</dt>
 				<dd class="ml-auto font-mono text-[11px] text-ink-1">{geometryType}</dd>
 			</div>
 			<div class="flex h-[30px] items-center">
-				<dt class="w-[84px] shrink-0 font-mono text-[10px] text-ink-2">ビューポート内</dt>
+				<dt class="w-[84px] shrink-0 font-mono text-[10px] text-ink-2">In viewport</dt>
 				<dd class="ml-auto font-mono text-[11px] text-ink-1">
 					{viewportFeatures.length.toLocaleString()}
 				</dd>
@@ -142,14 +142,14 @@
 
 	<section class="min-h-0 px-4 pt-1.5 pb-2.5">
 		<h3 class="flex h-7 items-center gap-1.5 text-[11px] font-semibold text-ink-1">
-			属性
+			Attributes
 			<span class="font-mono text-[9px] font-semibold tracking-[0.04em] text-ink-3">
 				{'source-layer' in layer ? (layer['source-layer'] ?? '') : ''}
 			</span>
 		</h3>
 		{#if properties.length === 0}
 			<p class="py-5 text-center text-[10px] text-ink-3">
-				表示中のタイルから属性を取得できませんでした。
+				Could not get attributes from the visible tiles.
 			</p>
 		{:else}
 			{#each properties as property (property.name)}
@@ -170,11 +170,11 @@
 						class="shrink-0 text-[9.5px] font-semibold text-accent opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
 						onclick={() => onFilterProperty(property.name, values[0] ?? '')}
 					>
-						絞り込む
+						Filter
 					</button>
 				</div>
 			{/each}
 		{/if}
-		<p class="mt-1.5 text-[9.5px] text-ink-4">TileJSON + ビューポート内フィーチャーから取得</p>
+		<p class="mt-1.5 text-[9.5px] text-ink-4">From TileJSON + features in the viewport</p>
 	</section>
 </div>

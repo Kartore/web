@@ -102,7 +102,7 @@
 			{groups}
 			{prefix}
 			exclude={[...sectionExclude, ...entries.map((entry) => entry.key)]}
-			label={`${title} プロパティを追加`}
+			label={`Add ${title} property`}
 			onSelect={addProperty}
 		/>
 	</div>

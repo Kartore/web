@@ -113,14 +113,16 @@
 	<div class="shrink-0 border-b border-hairline-soft px-4 py-3">
 		<div class="flex items-center justify-between gap-3">
 			<div class="min-w-0">
-				<h2 class="text-[11.5px] font-semibold text-ink-1">スタイル JSON</h2>
-				<p class="truncate text-[10px] text-ink-3">有効な編集は地図へ自動反映されます。</p>
+				<h2 class="text-[11.5px] font-semibold text-ink-1">Style JSON</h2>
+				<p class="truncate text-[10px] text-ink-3">
+					Valid edits are applied to the map automatically.
+				</p>
 			</div>
 			{#if isDirty}
 				<span
 					class="shrink-0 rounded-full border border-hairline bg-field px-2 py-0.5 text-[11px] font-semibold text-ink-2"
 				>
-					未適用の変更
+					Unapplied changes
 				</span>
 			{/if}
 		</div>
@@ -145,17 +147,17 @@
 		<div class="flex min-h-8 flex-wrap items-start gap-x-3 gap-y-2">
 			<div class="min-w-0 flex-1 basis-64" aria-live="polite">
 				{#if readOnly}
-					<p class="text-xs text-accent">プレビュー中は JSON を編集できません。</p>
+					<p class="text-xs text-accent">JSON cannot be edited while previewing.</p>
 				{:else if isDirty && validated === null}
-					<p class="text-xs text-ink-3">スタイルを検証中…</p>
+					<p class="text-xs text-ink-3">Validating style…</p>
 				{:else if isDirty && validated?.ok === false}
 					<p class="text-xs break-words text-ink-2" role="alert">{validated.error}</p>
 				{:else if validated?.ok === true && validated.warnings.length > 0}
 					<p class="text-xs font-semibold text-ink-2">
-						{validated.warnings.length} 件の警告とともに適用しました。
+						Applied with {validated.warnings.length} warnings.
 					</p>
 				{:else}
-					<p class="text-xs text-ink-2">有効な変更は自動的に適用されます。</p>
+					<p class="text-xs text-ink-2">Valid changes are applied automatically.</p>
 				{/if}
 
 				{#if validated?.ok === true && validated.warnings.length > 0}
@@ -165,7 +167,7 @@
 						{/each}
 						{#if validated.warnings.length > 10}
 							<p class="text-xs font-semibold text-ink-2">
-								ほか {validated.warnings.length - 10} 件
+								and {validated.warnings.length - 10} more
 							</p>
 						{/if}
 					</div>
@@ -178,7 +180,7 @@
 					disabled={readOnly || !isDirty}
 					onclick={revert}
 				>
-					元に戻す
+					Undo
 				</Button>
 			</div>
 		</div>

@@ -31,22 +31,24 @@ describe('compact nested expression layout', () => {
 			expect(nestedNode).not.toContain('style=');
 		}
 		expect(body).toContain('text-ellipsis');
-		expect(body).toMatch(/class="[^"]*shrink-0[^"]*whitespace-nowrap[^"]*"[^>]*>入力/);
+		expect(body).toMatch(/class="[^"]*shrink-0[^"]*whitespace-nowrap[^"]*"[^>]*>Input/);
 		expect(body.match(/h-6 shrink-0/g)).toHaveLength(3);
 		expect(
-			body.match(/<button(?=[^>]*aria-label="式の演算子")(?=[^>]*class="[^"]*px-1[^"]*")[^>]*>/g)
+			body.match(
+				/<button(?=[^>]*aria-label="Expression operator")(?=[^>]*class="[^"]*px-1[^"]*")[^>]*>/g
+			)
 		).toHaveLength(3);
 		expect(body.match(/grid-cols-\[minmax\(0,0\.8fr\)_16px_minmax\(0,1\.2fr\)\]/g)).toHaveLength(3);
 		expect(body.match(/flex-nowrap gap-x-1/g)).toHaveLength(3);
-		expect(body).not.toContain('aria-label="式に変換"');
-		expect(body).not.toContain('現在のフィーチャー');
+		expect(body).not.toContain('aria-label="Convert to expression"');
+		expect(body).not.toContain('Current feature');
 	});
 
 	it('keeps the full metadata when get is the root expression', () => {
 		const body = renderExpression(['get', 'name']);
 
-		expect(body).toContain('現在のフィーチャー');
+		expect(body).toContain('Current feature');
 		expect(body).toContain('flex-wrap');
-		expect(body).toContain('aria-label="式に変換"');
+		expect(body).toContain('aria-label="Convert to expression"');
 	});
 });

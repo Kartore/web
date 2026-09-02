@@ -19,7 +19,7 @@
 		prefix,
 		exclude = [],
 		configuredOnly = false,
-		label = 'プロパティを追加',
+		label = 'Add property',
 		triggerText,
 		triggerClass,
 		onSelect
@@ -63,12 +63,12 @@
 	);
 
 	const groupLabels: Record<LayerPropertyGroup, string> = {
-		layout: 'レイアウト',
-		paint: 'ペイント'
+		layout: 'Layout',
+		paint: 'Paint'
 	};
 	const formatValue = (value: unknown): string => {
-		if (value === undefined) return '既定 なし';
-		if (typeof value === 'string') return value === '' ? '既定 空' : value;
+		if (value === undefined) return 'Default: none';
+		if (typeof value === 'string') return value === '' ? 'Default: empty' : value;
 		const serialized = JSON.stringify(value);
 		return serialized === undefined ? String(value) : serialized;
 	};
@@ -102,11 +102,11 @@
 
 	{#snippet children({ close })}
 		<div class="flex h-10 items-center gap-2 border-b border-hairline-soft pr-1.5 pl-3">
-			<p class="font-semibold text-ink-1">プロパティを追加</p>
+			<p class="font-semibold text-ink-1">Add property</p>
 			<p class="font-mono text-[11px] text-ink-3">{layer.type}</p>
 			<Button
 				class="ml-auto grid size-[26px] place-items-center rounded-[5px] text-ink-3 hover:bg-field hover:text-ink-1 focus-visible:outline-none"
-				aria-label="閉じる"
+				aria-label="Close"
 				onclick={close}
 			>
 				<X size={14} weight="regular" aria-hidden="true" />
@@ -117,8 +117,8 @@
 				<MagnifyingGlass size={11} weight="regular" class="shrink-0" aria-hidden="true" />
 				<input
 					type="search"
-					aria-label="プロパティを検索"
-					placeholder="検索…"
+					aria-label="Search properties"
+					placeholder="Search…"
 					bind:value={search}
 					class="h-full min-w-0 flex-1 border-0 bg-transparent text-[11px] font-normal text-ink-1 outline-none placeholder:text-ink-3"
 					oninput={() => {
@@ -144,7 +144,7 @@
 		</div>
 		<div class="max-h-80 overflow-y-auto px-2 pb-2">
 			{#if filteredCatalog.length === 0}
-				<p class="px-2 py-6 text-center text-ink-3">一致するプロパティはありません。</p>
+				<p class="px-2 py-6 text-center text-ink-3">No matching properties.</p>
 			{:else}
 				{#each groups as group (group)}
 					{@const items = filteredCatalog.filter((item) => item.group === group)}

@@ -39,25 +39,25 @@
 		>
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-1">
-					<Dialog.Title class="text-base font-semibold text-ink-1">スタイルを書き出す</Dialog.Title>
+					<Dialog.Title class="text-base font-semibold text-ink-1">Export style</Dialog.Title>
 					<Dialog.Description class="text-xs leading-5 text-ink-3">
-						Variable Mode の出力方法を選択してください。
+						Choose how to export Variable Modes.
 					</Dialog.Description>
 				</div>
 
 				<RadioGroup.Root
 					bind:value={kind}
 					orientation="vertical"
-					aria-label="出力方法"
+					aria-label="Export method"
 					class="flex flex-col gap-2"
 				>
 					<RadioGroup.Item
 						value="current-mode"
 						class="flex cursor-pointer flex-col gap-1 rounded-md border border-hairline px-3 py-2.5 text-left outline-none hover:bg-field focus-visible:outline-2 focus-visible:outline-accent data-[state=checked]:border-accent data-[state=checked]:bg-accent-soft"
 					>
-						<span class="text-xs font-semibold text-ink-1">現在のモード</span>
+						<span class="text-xs font-semibold text-ink-1">Current mode</span>
 						<span class="text-[11px] leading-4 text-ink-3">
-							{activeMode?.name ?? 'ライト'}の値を使った JSON を1ファイル出力します。
+							Exports one JSON file using the values from {activeMode?.name ?? 'Light'}.
 						</span>
 					</RadioGroup.Item>
 
@@ -66,9 +66,9 @@
 						disabled={!hasMultipleModes}
 						class="flex cursor-pointer flex-col gap-1 rounded-md border border-hairline px-3 py-2.5 text-left outline-none hover:bg-field focus-visible:outline-2 focus-visible:outline-accent data-disabled:cursor-default data-disabled:opacity-45 data-[state=checked]:border-accent data-[state=checked]:bg-accent-soft"
 					>
-						<span class="text-xs font-semibold text-ink-1">モードごとの JSON</span>
+						<span class="text-xs font-semibold text-ink-1">JSON per mode</span>
 						<span class="text-[11px] leading-4 text-ink-3">
-							各モードの値を適用した JSON を {variableModes.modes.length} ファイル出力します。
+							Exports {variableModes.modes.length} JSON files with each mode's values applied.
 						</span>
 					</RadioGroup.Item>
 
@@ -77,10 +77,10 @@
 						disabled={!hasMultipleModes}
 						class="flex cursor-pointer flex-col gap-1 rounded-md border border-hairline px-3 py-2.5 text-left outline-none hover:bg-field focus-visible:outline-2 focus-visible:outline-accent data-disabled:cursor-default data-disabled:opacity-45 data-[state=checked]:border-accent data-[state=checked]:bg-accent-soft"
 					>
-						<span class="text-xs font-semibold text-ink-1">ランタイム切り替え</span>
+						<span class="text-xs font-semibold text-ink-1">Runtime switching</span>
 						<span class="text-[11px] leading-4 text-ink-3">
-							global-state の <code class="font-mono">{VARIABLE_MODE_GLOBAL_STATE_KEY}</code>
-							でモードを切り替える JSON を1ファイル出力します。
+							<code class="font-mono">{VARIABLE_MODE_GLOBAL_STATE_KEY}</code>
+							to switch modes at runtime.
 						</span>
 					</RadioGroup.Item>
 				</RadioGroup.Root>
@@ -109,14 +109,14 @@
 					<Dialog.Close
 						class="h-8 cursor-pointer rounded-md px-3 text-xs font-semibold text-ink-3 hover:bg-field focus-visible:outline-2 focus-visible:outline-accent"
 					>
-						キャンセル
+						Cancel
 					</Dialog.Close>
 					<Button
 						class="h-8 rounded-md bg-ink-1 px-3 text-xs font-semibold text-white hover:bg-ink-2 disabled:cursor-default disabled:bg-ink-4"
 						disabled={!selectedKindAvailable}
 						onclick={exportStyle}
 					>
-						書き出す
+						Export
 					</Button>
 				</div>
 			</div>

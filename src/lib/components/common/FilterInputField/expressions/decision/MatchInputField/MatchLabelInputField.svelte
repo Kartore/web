@@ -52,8 +52,8 @@
 				/>
 				{#if onChange && label.length > 1}
 					<Button
-						aria-label="ラベルを削除"
-						title="ラベルを削除"
+						aria-label="Remove label"
+						title="Remove label"
 						class="rounded px-1 py-0.5 text-xs text-ink-3 transition-colors hover:text-ink-2"
 						onclick={() => replaceLabelArray(label.filter((_, i) => i !== elementIndex))}
 					>
@@ -64,12 +64,12 @@
 		{/each}
 		{#if onChange}
 			<Button
-				aria-label="ラベルを追加"
-				title="ラベルを追加"
+				aria-label="Add label"
+				title="Add label"
 				class="rounded px-1.5 py-0.5 text-xs font-semibold text-ink-3 hover:text-ink-2"
 				onclick={() => replaceLabelArray([...label, ''])}
 			>
-				＋ 値
+				＋ Value
 			</Button>
 		{/if}
 	</div>

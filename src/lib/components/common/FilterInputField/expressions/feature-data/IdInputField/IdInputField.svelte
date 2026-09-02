@@ -34,6 +34,6 @@
 	)}
 >
 	<ExpressionOperatorSelect value={expression} {onChange} />
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">フィーチャーから</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">From feature</div>
 	{@render children?.()}
 </div>

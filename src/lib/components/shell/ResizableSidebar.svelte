@@ -11,7 +11,7 @@
 		maxWidth = MAX_SIDEBAR_WIDTH,
 		defaultWidth = DEFAULT_SIDEBAR_WIDTH,
 		resizeEdge = 'right',
-		label = 'サイドバーの幅を変更',
+		label = 'Resize sidebar',
 		onResizeEnd,
 		children
 	}: {
@@ -102,7 +102,7 @@
 		onlostpointercapture={finishResize}
 		onkeydown={handleKeyDown}
 		ondblclick={resetToDefaultWidth}
-		title={`${label}・ダブルクリックで既定幅`}
+		title={`${label} · double-click for default width`}
 	>
 		<span
 			class={cn(

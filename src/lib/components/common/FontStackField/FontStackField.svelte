@@ -189,7 +189,7 @@
 							</div>
 						</Combobox.Item>
 					{:else}
-						<div class="px-2 py-1 text-[10px] text-ink-3">候補はありません</div>
+						<div class="px-2 py-1 text-[10px] text-ink-3">No suggestions</div>
 					{/each}
 				</Combobox.Viewport>
 			</Combobox.Content>

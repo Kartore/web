@@ -54,7 +54,7 @@
 			marker.outOfDomain && 'opacity-30'
 		)}
 		style:left={`${marker.percent}%`}
-		title={`現在のズーム ${formatNumber(marker.zoom)}`}
+		title={`Current zoom ${formatNumber(marker.zoom)}`}
 	></div>
 {/snippet}
 
@@ -66,7 +66,7 @@
 		)}
 		style:left={`${marker.percent}%`}
 		style:top
-		title={`現在のズーム ${formatNumber(marker.zoom)}`}
+		title={`Current zoom ${formatNumber(marker.zoom)}`}
 	></div>
 {/snippet}
 

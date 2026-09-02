@@ -46,11 +46,11 @@
 	const sourceLabel = $derived.by(() => {
 		switch (propertySuggestion?.origin) {
 			case 'both':
-				return 'TileJSON + 読込済みタイル';
+				return 'TileJSON + loaded tiles';
 			case 'tilejson':
 				return 'TileJSON';
 			case 'features':
-				return '読込済みタイル';
+				return 'Loaded tiles';
 			default:
 				return undefined;
 		}
@@ -90,11 +90,11 @@
 			suggestion="propertyKey"
 		/>
 		{#if !nested || items !== undefined}
-			<div class="text-[10px] font-semibold tracking-wide text-ink-3">取得元</div>
+			<div class="text-[10px] font-semibold tracking-wide text-ink-3">Source</div>
 			{#if items !== undefined}
 				<ExpressionArgInputField parentValue={expression} index={2} {onChange} />
 			{:else}
-				<div class="text-[10px] font-semibold tracking-wide text-ink-3">現在のフィーチャー</div>
+				<div class="text-[10px] font-semibold tracking-wide text-ink-3">Current feature</div>
 			{/if}
 		{/if}
 	</div>
@@ -113,7 +113,7 @@
 				</span>
 			{/if}
 			{#if sampledValues.length > 0}
-				<span class="ml-1 text-[10px] text-ink-3">サンプル</span>
+				<span class="ml-1 text-[10px] text-ink-3">Sample</span>
 				{#each sampledValues as sample (`${typeof sample}:${String(sample)}`)}
 					<code
 						class="max-w-24 truncate rounded bg-[var(--expression-control-background,#fff)] px-1 py-0.5 text-[10px] text-ink-2"
@@ -124,7 +124,7 @@
 		</div>
 	{:else if !nested && !propertyKey && suggestions && suggestions.propertyKeys.length > 0}
 		<div class="border-t border-hairline-soft pt-1.5 text-[10px] text-ink-3">
-			ソースフィールド {suggestions.propertyKeys.length} 件を利用できます
+			{suggestions.propertyKeys.length} source fields available
 		</div>
 	{/if}
 	{@render children?.()}

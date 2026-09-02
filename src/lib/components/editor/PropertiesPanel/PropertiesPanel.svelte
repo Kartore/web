@@ -80,7 +80,7 @@
 		<div class="mx-3 mb-2 flex flex-col gap-1 rounded-[6px] bg-field px-3 py-2" role="alert">
 			<h3 class="flex items-center gap-1.5 text-[11px] font-semibold text-ink-1">
 				<span class="size-1.5 shrink-0 rounded-full bg-danger"></span>
-				{errors.length} 件の検証エラー
+				{errors.length} validation errors
 			</h3>
 			{#each errors as error (error.path + error.message)}
 				<div class="border-t border-hairline-soft pt-1 first:border-0 first:pt-0">
@@ -91,7 +91,7 @@
 						{error.message}
 					</p>
 					<p class="mt-0.5 text-[10px] text-ink-3">
-						値を有効な範囲へ修正するか、行の − で未設定に戻してください。
+						Fix the values to a valid range or use − on a row to reset them to unset.
 					</p>
 				</div>
 			{/each}
@@ -112,8 +112,8 @@
 		<PropertyCatalogPopover
 			{layer}
 			exclude={configuredPropertyKeys}
-			label="すべてのプロパティ"
-			triggerText={`すべてのプロパティ(未設定 ${unsetPropertyCount})…`}
+			label="All properties"
+			triggerText={`All properties (unset ${unsetPropertyCount})…`}
 			triggerClass="h-6 justify-start px-0 text-[10.5px] font-normal hover:bg-transparent hover:text-accent"
 			onSelect={addProperty}
 		/>

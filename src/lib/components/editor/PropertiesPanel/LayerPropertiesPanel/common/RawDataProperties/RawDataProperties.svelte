@@ -23,7 +23,7 @@
 
 <div {...props} class={cn('flex flex-col px-3', className)}>
 	<div class="flex h-7 items-center border-b border-hairline-soft">
-		<h3 class="text-[11px] font-semibold text-ink-1">生データ編集(詳細)</h3>
+		<h3 class="text-[11px] font-semibold text-ink-1">Raw data editing (advanced)</h3>
 	</div>
 
 	<CodeEditor

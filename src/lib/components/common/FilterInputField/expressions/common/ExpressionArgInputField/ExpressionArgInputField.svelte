@@ -59,7 +59,7 @@
 		index,
 		onChange,
 		onRemove,
-		removeLabel = '引数を削除',
+		removeLabel = 'Remove argument',
 		disableConvert,
 		suggestion,
 		literalType,
@@ -120,7 +120,7 @@
 			class="min-w-0 flex-1"
 			compact
 			context="expression"
-			label="値"
+			label="Value"
 			spec={propertySpec}
 			value={editableLiteral.value}
 			onChange={handleChildChange ? handleSpecLiteralChange : undefined}
@@ -144,8 +144,8 @@
 	{/if}
 	{#if handleChildChange && !disableConvert && !editAsExpression && !isExpression(arg)}
 		<Button
-			aria-label="式に変換"
-			title="式に変換"
+			aria-label="Convert to expression"
+			title="Convert to expression"
 			class="flex size-6 shrink-0 items-center justify-center rounded-[6px] text-ink-3 opacity-0 transition-opacity group-hover/arg:opacity-100 hover:bg-black/5 hover:text-ink-1 focus-visible:opacity-100"
 			onclick={specLiteralFieldKind !== undefined
 				? editSpecLiteralAsExpression
@@ -155,8 +155,8 @@
 		</Button>
 	{:else if handleChildChange && !disableConvert && specLiteralFieldKind !== undefined && !editAsExpression}
 		<Button
-			aria-label="式として編集"
-			title="式として編集"
+			aria-label="Edit as expression"
+			title="Edit as expression"
 			class="flex size-6 shrink-0 items-center justify-center rounded-[6px] text-ink-3 opacity-0 transition-opacity group-hover/arg:opacity-100 hover:bg-black/5 hover:text-ink-1 focus-visible:opacity-100"
 			onclick={editSpecLiteralAsExpression}
 		>

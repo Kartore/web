@@ -99,7 +99,7 @@ describe('style variable naming and modes', () => {
 		expect(getStyleVariableModes(renamed)).toMatchObject({
 			activeModeId: 'night',
 			modes: [
-				{ id: 'light', name: 'ライト' },
+				{ id: 'light', name: 'Light' },
 				{ id: 'night', name: '夜' }
 			]
 		});

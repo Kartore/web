@@ -29,12 +29,12 @@
 <div {...props} class={cn('flex min-w-0 flex-col gap-2 rounded bg-field px-2 py-2', className)}>
 	<div class="flex min-w-0 items-center gap-2">
 		<div class="flex min-w-0 items-center gap-1">
-			<span class="text-[10px] font-semibold tracking-wide text-ink-3">論理条件</span>
+			<span class="text-[10px] font-semibold tracking-wide text-ink-3">Logical conditions</span>
 			<ExpressionOperatorSelect value={expression} {onChange} />
 		</div>
 		<span class="font-mono text-xs text-ink-3">
 			{argCount}
-			条件
+			Condition
 		</span>
 	</div>
 
@@ -46,7 +46,7 @@
 				{index}
 				{onChange}
 				onRemove={onChange ? () => onChange(removeArgsAt(expression, index, 1)) : undefined}
-				removeLabel="条件を削除"
+				removeLabel="Remove condition"
 			/>
 		{/each}
 	</div>
@@ -55,8 +55,8 @@
 		<ExpressionAppendArgButton
 			value={expression}
 			{onChange}
-			label="＋ 条件を追加"
-			ariaLabel="論理条件を追加"
+			label="＋ Add condition"
+			ariaLabel="Add logical condition"
 			class="px-2 py-1 text-ink-3"
 		/>
 	</div>

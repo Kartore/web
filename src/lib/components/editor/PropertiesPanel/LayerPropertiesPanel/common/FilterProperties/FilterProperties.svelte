@@ -38,7 +38,7 @@
 	const canShowHistory = $derived(history !== undefined && history.provider !== null);
 	const isFlyoutOpen = $derived(flyout?.isOpen('filter', 'filter') ?? false);
 	const openFlyout = (anchorElement: HTMLElement) =>
-		flyout?.open({ group: 'filter', key: 'filter', label: 'フィルター' }, anchorElement);
+		flyout?.open({ group: 'filter', key: 'filter', label: 'Filter' }, anchorElement);
 	const toggleFlyout = (anchorElement: HTMLElement) => {
 		if (isFlyoutOpen) flyout?.close();
 		else openFlyout(anchorElement);
@@ -60,21 +60,21 @@
 
 <div {...props} class={cn('flex flex-col px-3', className)}>
 	<div class="flex h-7 flex-row items-center justify-between border-b border-hairline-soft">
-		<h3 class="text-[11px] font-semibold text-ink-1">フィルター</h3>
+		<h3 class="text-[11px] font-semibold text-ink-1">Filter</h3>
 		<div class="flex flex-row items-center gap-1">
 			{#if canShowHistory}
 				<PropertyHistoryPopover
 					layerId={layer.id}
 					group="filter"
 					key="filter"
-					label="フィルター"
+					label="Filter"
 					currentValue={layer.filter}
 					onRestore={restoreFilter}
 				/>
 			{/if}
 			{#if layer.filter === undefined}
 				<Button
-					aria-label="フィルターを追加"
+					aria-label="Add filter"
 					class="flex h-6 items-center gap-1 rounded-[6px] px-1.5 text-[11px] font-semibold text-ink-3 hover:bg-field hover:text-ink-1"
 					onclick={(event) => {
 						onChange?.(layer, undefined, 'filter', defaultFilter);
@@ -82,13 +82,13 @@
 					}}
 				>
 					<Plus size={14} weight="regular" aria-hidden="true" />
-					追加
+					Add
 				</Button>
 			{:else}
 				{#if flyout !== undefined}
 					<Button
 						bind:ref={() => null, handleEditButtonRef}
-						aria-label="フィルター式を編集"
+						aria-label="Edit filter expression"
 						aria-pressed={isFlyoutOpen}
 						class={cn(
 							'flex h-6 min-w-0 flex-row items-center gap-1.5 rounded-[6px] border px-2 text-[11px] transition-colors',
@@ -103,8 +103,8 @@
 					</Button>
 				{/if}
 				<Button
-					aria-label="フィルターを削除"
-					title="フィルターを削除"
+					aria-label="Remove filter"
+					title="Remove filter"
 					class="flex size-6 shrink-0 items-center justify-center rounded-[6px] text-ink-3 hover:bg-field hover:text-ink-1"
 					onclick={() => {
 						if (isFlyoutOpen) flyout?.close();

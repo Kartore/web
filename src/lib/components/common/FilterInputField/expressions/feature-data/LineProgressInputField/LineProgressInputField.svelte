@@ -34,6 +34,6 @@
 	)}
 >
 	<ExpressionOperatorSelect value={expression} {onChange} />
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">line-gradient から</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">From line-gradient</div>
 	{@render children?.()}
 </div>

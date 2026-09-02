@@ -23,9 +23,9 @@
 <div
 	class="pointer-events-auto absolute top-3 right-12 z-20 flex rounded-[6px] bg-white p-0.5 shadow-[0_1px_4px_rgba(0,0,0,0.16)]"
 	role="group"
-	aria-label="検査表示"
+	aria-label="Inspection display"
 >
-	{#each [{ value: 'style' as const, label: 'スタイル' }, { value: 'data' as const, label: 'データ' }] as item (item.value)}
+	{#each [{ value: 'style' as const, label: 'Style' }, { value: 'data' as const, label: 'Data' }] as item (item.value)}
 		<button
 			type="button"
 			class={cn(
@@ -42,7 +42,7 @@
 
 {#if view === 'data'}
 	<aside
-		aria-label="データビュー凡例"
+		aria-label="Data view legend"
 		class="pointer-events-auto absolute top-12 left-3 z-20 flex max-h-[calc(100%-96px)] w-[208px] flex-col overflow-hidden rounded-[6px] bg-white shadow-[0_1px_4px_rgba(0,0,0,0.16)]"
 	>
 		<header class="flex h-8 shrink-0 items-center border-b border-hairline-soft px-2.5">
@@ -51,7 +51,7 @@
 		</header>
 		<div class="min-h-0 flex-1 overflow-y-auto p-1">
 			{#if legend.length === 0}
-				<p class="px-2 py-3 text-[10px] text-ink-3">検査できる vector data はありません。</p>
+				<p class="px-2 py-3 text-[10px] text-ink-3">No vector data to inspect.</p>
 			{:else}
 				{#each legend as entry (entry.key)}
 					<button

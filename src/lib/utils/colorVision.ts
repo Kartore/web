@@ -25,11 +25,11 @@ export const COLOR_VISION_ORIGINAL_DELTA_E = 6;
 export const COLOR_VISION_SIMULATED_DELTA_E = 2.5;
 
 export const COLOR_VISION_MODE_LABELS: Record<ColorVisionMode, string> = {
-	none: 'なし',
-	protanopia: '1型',
-	deuteranopia: '2型',
-	tritanopia: '3型',
-	grayscale: 'グレースケール'
+	none: 'None',
+	protanopia: 'Protanopia',
+	deuteranopia: 'Deuteranopia',
+	tritanopia: 'Tritanopia',
+	grayscale: 'Grayscale'
 };
 
 const CHECK_MODES: ColorVisionCheckMode[] = ['protanopia', 'deuteranopia', 'tritanopia'];

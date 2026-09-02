@@ -195,7 +195,7 @@
 	>
 		<ColorPicker
 			value={colorValue ?? undefined}
-			aria-label={label ?? 'カラー'}
+			aria-label={label ?? 'Color'}
 			onChange={(color) => onChange?.(color)}
 			{onPickVariable}
 			{onPromoteColor}
@@ -206,7 +206,7 @@
 			autocomplete="off"
 			autocorrect="off"
 			spellcheck="false"
-			aria-label={label ? undefined : 'カラー'}
+			aria-label={label ? undefined : 'Color'}
 			value={inputValue}
 			oninput={(e) => {
 				const v = e.currentTarget.value;
@@ -242,7 +242,7 @@
 			autocomplete="off"
 			autocorrect="off"
 			spellcheck="false"
-			aria-label="不透明度"
+			aria-label="Opacity"
 			bind:value={alphaInputValue}
 			onblur={commitAlpha}
 			onkeydown={(event) => {

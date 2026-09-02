@@ -231,8 +231,8 @@
 		<div class="flex size-6 shrink-0 items-center justify-center">
 			<Popover.Root bind:open={actionsOpen}>
 				<Popover.Trigger
-					aria-label={`${label} の操作`}
-					title={`${label} の操作`}
+					aria-label={`Actions for ${label}`}
+					title={`Actions for ${label}`}
 					class="flex size-6 items-center justify-center rounded-[5px] text-ink-3 opacity-0 transition-opacity group-hover/property-field:opacity-100 hover:bg-field hover:text-ink-1 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-accent data-[state=open]:bg-field data-[state=open]:text-ink-1 data-[state=open]:opacity-100"
 				>
 					<DotsThree size={15} weight="bold" aria-hidden="true" />
@@ -251,7 +251,7 @@
 						<div class="flex flex-col p-1">
 							{#if canShowHistory && layerId !== undefined && propertyKey !== undefined}
 								<div class="flex h-7 items-center rounded-[6px] px-2 hover:bg-field">
-									<span class="min-w-0 flex-1 truncate">履歴</span>
+									<span class="min-w-0 flex-1 truncate">History</span>
 									<PropertyHistoryPopover
 										{layerId}
 										group={propertyGroup}
@@ -266,7 +266,7 @@
 							{#if !isExpression(value) && literalBinding === undefined}
 								{#if canBindLiteral && bindableType !== undefined}
 									<div class="flex h-7 items-center rounded-[6px] px-2 hover:bg-field">
-										<span class="min-w-0 flex-1 truncate">スタイル変数</span>
+										<span class="min-w-0 flex-1 truncate">Style variable</span>
 										<VariablePickerPopover
 											type={bindableType}
 											currentValue={literalVariableSeed}
@@ -287,7 +287,7 @@
 										}}
 									>
 										<ChartLine size={14} weight="regular" class="shrink-0" aria-hidden="true" />
-										<span class="min-w-0 flex-1 truncate">ズーム補間</span>
+										<span class="min-w-0 flex-1 truncate">Zoom interpolation</span>
 									</Button>
 								{/if}
 								{#if showExpressionButton}
@@ -300,7 +300,7 @@
 										}}
 									>
 										<FunctionIcon size={14} weight="regular" class="shrink-0" aria-hidden="true" />
-										<span class="min-w-0 flex-1 truncate">式で編集</span>
+										<span class="min-w-0 flex-1 truncate">Edit as expression</span>
 									</Button>
 								{/if}
 							{/if}
@@ -313,7 +313,7 @@
 									}}
 								>
 									<Minus size={14} weight="regular" class="shrink-0" aria-hidden="true" />
-									<span class="min-w-0 flex-1 truncate">未設定に戻す</span>
+									<span class="min-w-0 flex-1 truncate">Reset to unset</span>
 								</Button>
 							{/if}
 						</div>
@@ -336,7 +336,7 @@
 			{#if canUseFlyout}
 				<Button
 					bind:ref={() => null, handleExpressionButtonRef}
-					aria-label={`${label} の式を編集`}
+					aria-label={`Edit ${label} expression`}
 					aria-pressed={isFlyoutOpen}
 					class="flex h-6 min-w-24 flex-1 items-center gap-1.5 rounded-[5px] bg-field px-2 text-[10.5px] text-ink-1 hover:bg-field focus-visible:shadow-[inset_0_0_0_1px_var(--color-accent)] focus-visible:outline-none"
 					onclick={(event) => toggleFlyout(event.currentTarget)}
@@ -378,7 +378,9 @@
 		{#if isInterpolateRoot && variables !== undefined && layerId !== undefined && interpolationTarget !== undefined && Array.isArray(value)}
 			{#if interpolationBinding !== undefined}
 				<div class="mt-1 flex h-6 items-center justify-between gap-2">
-					<span class="shrink-0 font-mono text-[10px] font-normal text-ink-3">補間変数</span>
+					<span class="shrink-0 font-mono text-[10px] font-normal text-ink-3"
+						>Interpolation variable</span
+					>
 					<div class="flex min-w-0 justify-end">
 						<VariableChip
 							variable={interpolationBinding.variable}

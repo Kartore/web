@@ -56,7 +56,7 @@
 	{#each values as arg, index (index)}
 		{#if isStyleOptionsObject(arg)}
 			<div class="text-[10px] font-semibold tracking-wide text-ink-3">
-				書式オプション: {JSON.stringify(arg)}
+				Format options: {JSON.stringify(arg)}
 			</div>
 		{:else}
 			<ExpressionArgInputField
@@ -74,7 +74,7 @@
 								)
 							)
 					: undefined}
-				removeLabel="書式セクションを削除"
+				removeLabel="Remove format section"
 			/>
 		{/if}
 	{/each}

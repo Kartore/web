@@ -111,10 +111,10 @@
 		{ value: '<=', label: '<=' },
 		{ value: '>', label: '>' },
 		{ value: '>=', label: '>=' },
-		{ value: 'exists', label: '存在する' },
-		{ value: 'not-exists', label: '存在しない' },
-		{ value: 'in', label: 'いずれか' },
-		{ value: 'not-in', label: 'いずれでもない' }
+		{ value: 'exists', label: 'Exists' },
+		{ value: 'not-exists', label: 'Does not exist' },
+		{ value: 'in', label: 'Any of' },
+		{ value: 'not-in', label: 'None of' }
 	];
 
 	const valueSuggestions = $derived<(string | number | boolean)[]>(
@@ -209,7 +209,7 @@
 
 <div class="grid grid-cols-[minmax(52px,1fr)_64px_minmax(52px,1fr)_18px] items-start gap-1">
 	<ComboBox
-		aria-label="フィルターの対象"
+		aria-label="Filter target"
 		class="min-w-0 font-mono"
 		triggerClass="w-full min-w-0 font-mono font-normal"
 		items={subjectItems}
@@ -221,7 +221,7 @@
 		onValueChange={(value) => commitSubject(parseSubjectValue(value))}
 	/>
 	<Select
-		aria-label="フィルターの演算子"
+		aria-label="Filter operator"
 		class="min-w-0 font-mono"
 		triggerClass="w-full min-w-0 font-mono font-normal"
 		items={operatorItems}
@@ -230,7 +230,7 @@
 	/>
 	{#if node.kind === 'comparison'}
 		<SuggestionTextInput
-			aria-label="フィルターの値"
+			aria-label="Filter value"
 			class="min-w-0 font-mono"
 			inputClass="w-full rounded-[5px] bg-field px-2 font-mono text-[11px] font-normal text-ink-1 hover:shadow-[inset_0_0_0_1px_var(--color-accent)] focus-visible:shadow-[inset_0_0_0_1px_var(--color-accent)]"
 			value={comparisonDraft}
@@ -251,7 +251,7 @@
 				>
 					<span class="truncate">{value}</span>
 					<Button
-						aria-label={`${value} を削除`}
+						aria-label={`Remove ${value}`}
 						class="ml-0.5 flex size-4 items-center justify-center rounded-[5px] text-ink-3 hover:bg-field hover:text-ink-1"
 						onclick={() => {
 							if (node.kind !== 'membership') return;
@@ -266,7 +266,7 @@
 				</span>
 			{/each}
 			<SuggestionTextInput
-				aria-label="フィルター値を追加"
+				aria-label="Add filter value"
 				class="min-w-16 flex-1 font-mono"
 				inputClass="w-full bg-transparent px-1 font-mono text-[11px] font-normal text-ink-1"
 				value={membershipDraft}
@@ -279,7 +279,7 @@
 		<div class="px-2 py-1 text-center text-[11px] text-ink-3">—</div>
 	{/if}
 	<Button
-		aria-label="フィルター条件を削除"
+		aria-label="Remove filter condition"
 		class="mt-0.5 flex size-5 items-center justify-center rounded-[5px] text-ink-3 hover:bg-field hover:text-ink-1"
 		onclick={onRemove}
 	>

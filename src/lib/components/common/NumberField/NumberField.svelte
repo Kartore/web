@@ -170,8 +170,8 @@
 			type="button"
 			class="min-w-0 shrink-0 cursor-ew-resize truncate rounded-[5px] text-left font-mono text-[10px] font-normal text-ink-2 focus-visible:outline-2 focus-visible:outline-accent disabled:cursor-default disabled:text-ink-4"
 			style="width: var(--field-label-width, 84px)"
-			aria-label={`${label} を調整`}
-			title={`${label} — 左右にドラッグして調整。Shift で大きく変更`}
+			aria-label={`Adjust ${label}`}
+			title={`${label} — Drag left or right to adjust. Hold Shift for larger changes`}
 			{disabled}
 			onpointerdown={beginScrub}
 			onkeydown={(event) => {
@@ -226,14 +226,14 @@
 		{#if showButton}
 			<Button
 				class="flex size-6 items-center justify-center text-ink-2 hover:bg-white"
-				aria-label="減らす"
+				aria-label="Decrease"
 				onclick={() => stepBy(-1)}
 			>
 				<Minus size={14} weight="regular" aria-hidden="true" />
 			</Button>
 			<Button
 				class="flex size-6 items-center justify-center text-ink-2 hover:bg-white"
-				aria-label="増やす"
+				aria-label="Increase"
 				onclick={() => stepBy(1)}
 			>
 				<Plus size={14} weight="regular" aria-hidden="true" />

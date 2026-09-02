@@ -112,15 +112,15 @@
 		>
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-1">
-					<Dialog.Title class=" text-base font-semibold">スタイルを読み込む</Dialog.Title>
-					<p class="text-xs text-ink-3">現在のスタイルは置き換えられます。</p>
+					<Dialog.Title class=" text-base font-semibold">Import style</Dialog.Title>
+					<p class="text-xs text-ink-3">The current style will be replaced.</p>
 				</div>
 
 				<div class="flex flex-col gap-2">
 					<div class="flex items-center gap-2">
 						<TextField
 							class="flex-1 [&>input]:w-full"
-							aria-label="スタイル URL"
+							aria-label="Style URL"
 							placeholder="https://example.com/style.json"
 							bind:value={url}
 						/>
@@ -129,7 +129,7 @@
 							disabled={isFetching}
 							onclick={fetchStyle}
 						>
-							取得
+							Fetch
 						</Button>
 					</div>
 
@@ -147,7 +147,7 @@
 							for={fileInputId}
 							class="inline-block cursor-pointer rounded px-2 py-1 text-xs font-semibold text-ink-2 transition-colors hover:bg-field active:bg-ink-4"
 						>
-							JSON ファイルを選択
+							Choose JSON file
 						</label>
 					</div>
 				</div>
@@ -157,36 +157,35 @@
 				{:else if result?.ok === true}
 					<div class="flex flex-col gap-2">
 						<div class="rounded border border-hairline-soft bg-field px-3 py-2 text-xs text-ink-2">
-							<p class="font-semibold">{result.style.name ?? '名称未設定のスタイル'}</p>
+							<p class="font-semibold">{result.style.name ?? 'Untitled style'}</p>
 							<p>
-								{result.style.layers.length} レイヤー /
-								{Object.keys(result.style.sources).length} ソース
+								{result.style.layers.length} layers /
+								{Object.keys(result.style.sources).length} sources
 							</p>
 						</div>
 						{#if prefixGrouping !== null && prefixGrouping.groupCount > 0}
 							<div class="flex flex-col gap-0.5">
 								<Switch
-									label="ID 接頭辞でレイヤーをグループ化"
+									label="Group layers by ID prefix"
 									checked={groupByPrefix}
 									onCheckedChange={(checked) => (groupByPrefix = checked)}
 								/>
 								<p class="text-xs text-ink-3">
-									road_* / tunnel_* のように隣接するレイヤーから
-									{prefixGrouping.groupCount} グループを作成します。
+									Creates {prefixGrouping.groupCount} groups from adjacent layers such as road_* / tunnel_*.
 								</p>
 							</div>
 						{/if}
 						{#if result.warnings.length > 0}
 							<div class="flex flex-col gap-1 rounded border border-hairline bg-field px-3 py-2">
 								<p class="text-xs font-semibold text-ink-2">
-									検証エラーが {result.warnings.length} 件見つかりました
+									Found {result.warnings.length} validation warnings
 								</p>
 								{#each result.warnings.slice(0, 10) as warning, index (warning + index)}
 									<p class="text-xs break-words text-ink-2">{warning}</p>
 								{/each}
 								{#if result.warnings.length > 10}
 									<p class="text-xs text-ink-2">
-										ほか {result.warnings.length - 10} 件
+										and {result.warnings.length - 10} more
 									</p>
 								{/if}
 							</div>
@@ -196,14 +195,14 @@
 
 				<div class="flex justify-end gap-2">
 					<Button class="rounded px-2 py-1 text-xs font-semibold text-ink-3" onclick={cancel}>
-						キャンセル
+						Cancel
 					</Button>
 					<Button
 						class="rounded bg-ink-1 px-2 py-1 text-xs font-semibold text-white hover:bg-ink-2 disabled:cursor-default disabled:bg-ink-4"
 						disabled={result?.ok !== true}
 						onclick={importStyle}
 					>
-						読み込む
+						Import
 					</Button>
 				</div>
 			</div>

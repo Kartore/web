@@ -47,7 +47,7 @@
 
 {#if hasSuggestions && suggestions}
 	<SuggestionTextInput
-		aria-label={ariaLabel ?? 'リテラル値'}
+		aria-label={ariaLabel ?? 'Literal value'}
 		value={draft}
 		{suggestions}
 		autoWidth
@@ -57,7 +57,7 @@
 	/>
 {:else}
 	<input
-		aria-label={ariaLabel ?? 'リテラル値'}
+		aria-label={ariaLabel ?? 'Literal value'}
 		class={literalInputClassName}
 		style:width={`${Math.max(draft.length, 1) + 2}ch`}
 		value={draft}

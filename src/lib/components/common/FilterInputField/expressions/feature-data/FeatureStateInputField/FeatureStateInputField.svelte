@@ -28,7 +28,7 @@
 	class={cn('flex min-w-0 flex-row items-center gap-2 rounded bg-field px-2 py-2', className)}
 >
 	<ExpressionArgInputField parentValue={expression} index={1} {onChange} />
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">取得元</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">Source</div>
 	<ExpressionOperatorSelect value={expression} {onChange} />
 	{@render children?.()}
 </div>

@@ -46,7 +46,7 @@
 		<div class="min-w-0 flex-1 basis-48">
 			{#if validation.ok}
 				<p class="text-xs text-ink-2">
-					{isDirty ? '有効な式です。適用できます。' : '式は有効です。'}
+					{isDirty ? 'Expression is valid and ready to apply.' : 'Expression is valid.'}
 				</p>
 			{:else}
 				<p class="text-xs break-words text-ink-2" role="alert">{validation.error}</p>
@@ -58,15 +58,15 @@
 				disabled={!isDirty}
 				onclick={revert}
 			>
-				元に戻す
+				Undo
 			</Button>
 			<Button
 				class="h-7 rounded bg-ink-2 px-2.5 text-xs font-semibold text-white hover:bg-ink-2 disabled:cursor-default disabled:bg-field disabled:text-ink-3"
 				disabled={!isDirty || !validation.ok}
-				title="JSON を適用 (⌘/Ctrl+Enter)"
+				title="Apply JSON (⌘/Ctrl+Enter)"
 				onclick={apply}
 			>
-				JSON を適用
+				Apply JSON
 			</Button>
 		</div>
 	</div>

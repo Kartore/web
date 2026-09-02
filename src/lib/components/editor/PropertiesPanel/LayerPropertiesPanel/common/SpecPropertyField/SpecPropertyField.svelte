@@ -188,7 +188,7 @@
 					title={label}>{label}</span
 				>
 				<Button
-					aria-label={`${label} の式を追加`}
+					aria-label={`Add expression for ${label}`}
 					class="flex h-6 min-w-24 flex-1 items-center justify-center gap-1 rounded-[6px] bg-field px-2 text-[10px] font-semibold text-ink-2 hover:shadow-[inset_0_0_0_1px_var(--color-accent)]"
 					onclick={(event) => {
 						expressionChange(spec.default);
@@ -196,7 +196,7 @@
 					}}
 				>
 					<Plus size={14} weight="regular" aria-hidden="true" />
-					追加
+					Add
 				</Button>
 			</div>
 		{:else if specLiteralFieldKind !== undefined}
@@ -290,12 +290,12 @@
 				aria-expanded={showTransition}
 				onclick={() => (showTransition = !showTransition)}
 			>
-				トランジション…
+				Transition…
 			</Button>
 			{#if showTransition}
 				<div class="flex flex-col gap-1 border-l-2 border-hairline-soft pl-3">
 					<NumberField
-						label="継続時間"
+						label="Duration"
 						value={transitionValue(rawTransitionValue).duration}
 						minValue={0}
 						description="ms"
@@ -304,7 +304,7 @@
 						}}
 					/>
 					<NumberField
-						label="遅延"
+						label="Delay"
 						value={transitionValue(rawTransitionValue).delay}
 						minValue={0}
 						description="ms"

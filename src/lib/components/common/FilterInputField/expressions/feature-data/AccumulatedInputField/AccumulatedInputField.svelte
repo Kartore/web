@@ -34,6 +34,6 @@
 	)}
 >
 	<ExpressionOperatorSelect value={expression} {onChange} />
-	<div class="text-[10px] font-semibold tracking-wide text-ink-3">フィーチャークラスターから</div>
+	<div class="text-[10px] font-semibold tracking-wide text-ink-3">From feature cluster</div>
 	{@render children?.()}
 </div>

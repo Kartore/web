@@ -109,7 +109,7 @@
 		const nextIcons = { ...icons };
 		for (const file of files) {
 			const id = spriteIdFromFileName(file.name);
-			if (occupiedIds.has(id) && !window.confirm(`“${id}” は既にあります。上書きしますか？`)) {
+			if (occupiedIds.has(id) && !window.confirm(`“${id}” already exists. Overwrite it?`)) {
 				continue;
 			}
 			try {
@@ -119,7 +119,7 @@
 				occupiedIds.add(id);
 				selectedId = id;
 			} catch (error) {
-				uploadError = `${file.name} を読み込めません: ${errorMessage(error)}`;
+				uploadError = `Could not load ${file.name}: ${errorMessage(error)}`;
 			}
 		}
 		await validateIcons(Object.entries(nextIcons));
@@ -191,15 +191,15 @@
 
 <aside class="flex w-60 shrink-0 flex-col border-r border-hairline bg-white">
 	<header class="flex h-10 shrink-0 items-center gap-1.5 px-3">
-		<h2 class="text-[12px] font-semibold text-ink-1">スプライト</h2>
+		<h2 class="text-[12px] font-semibold text-ink-1">Sprites</h2>
 		<p class="text-[10.5px] text-ink-3">{allIconEntries.length}</p>
 		<label
 			class={cn(
 				'ml-auto flex size-6 items-center justify-center rounded-[5px] text-ink-2 hover:bg-field hover:text-ink-1',
 				readOnly ? 'cursor-default text-ink-4' : 'cursor-pointer'
 			)}
-			aria-label="SVG スプライトを追加"
-			title="SVG スプライトを追加"
+			aria-label="Add SVG sprite"
+			title="Add SVG sprite"
 		>
 			<Plus size={16} weight="regular" aria-hidden="true" />
 			<input
@@ -217,15 +217,15 @@
 		<div class="relative">
 			<TextField
 				class="w-full [&>input]:h-[26px] [&>input]:w-full [&>input]:rounded-[6px] [&>input]:pr-7 [&>input]:text-[11px] [&>input]:font-normal"
-				aria-label="スプライトを検索"
-				placeholder="検索"
+				aria-label="Search sprites"
+				placeholder="Search"
 				value={search}
 				onValueChange={(value) => (search = value)}
 			/>
 			{#if search}
 				<Button
 					class="absolute top-0 right-0 flex size-6 items-center justify-center text-ink-3 hover:text-ink-1"
-					aria-label="スプライト検索をクリア"
+					aria-label="Clear sprite search"
 					onclick={() => (search = '')}
 				>
 					<X size={14} weight="regular" aria-hidden="true" />
@@ -238,14 +238,12 @@
 		<div
 			class="grid min-h-16 grid-cols-5 gap-1.5 px-3 pt-1 pb-2"
 			role="region"
-			aria-label="スプライト一覧"
+			aria-label="Sprite list"
 			ondragover={(event) => event.preventDefault()}
 			ondrop={handleDrop}
 		>
 			{#if iconRows.length === 0}
-				<p class="col-span-5 self-center text-center text-[10px] text-ink-3">
-					スプライトはありません。
-				</p>
+				<p class="col-span-5 self-center text-center text-[10px] text-ink-3">No sprites.</p>
 			{:else}
 				{#each iconRows as row (row[0][0])}
 					{#each row as [id, svg] (id)}
@@ -255,7 +253,7 @@
 								'flex aspect-square items-center justify-center rounded-[6px] border border-hairline-soft p-1 text-ink-2 outline-none hover:bg-field focus-visible:border-accent',
 								selectedId === id && 'border-accent outline-1 outline-accent'
 							)}
-							aria-label={`${id} を選択`}
+							aria-label={`Select ${id}`}
 							title={id}
 							onclick={() => selectIcon(id)}
 						>
@@ -269,7 +267,7 @@
 							class="col-span-5 flex flex-col gap-1 border-t border-hairline-soft px-3 pt-1 pb-2.5 text-[10px]"
 						>
 							<TextField
-								label="名前"
+								label="Name"
 								value={selectedId}
 								disabled={readOnly}
 								onCommit={renameIcon}
@@ -277,12 +275,12 @@
 							{#if validationErrors[selectedId]}
 								<p class="text-ink-2" role="alert">{validationErrors[selectedId]}</p>
 							{:else if isValidating}
-								<p class="text-ink-3">検証中…</p>
+								<p class="text-ink-3">Validating…</p>
 							{/if}
 							<div class="flex min-h-[30px] items-start">
-								<p class="w-[84px] shrink-0 pt-2 text-[10px] text-ink-2">使用</p>
+								<p class="w-[84px] shrink-0 pt-2 text-[10px] text-ink-2">Usage</p>
 								{#if selectedUsages.length === 0}
-									<p class="pt-2 text-ink-3">使用レイヤーなし</p>
+									<p class="pt-2 text-ink-3">No layers use this sprite.</p>
 								{:else}
 									<div class="min-w-0 flex-1">
 										{#each selectedUsages as layerId (layerId)}
@@ -303,13 +301,13 @@
 										class="h-6 px-2 text-[10px] text-ink-3 hover:bg-field"
 										onclick={() => (pendingDeleteId = undefined)}
 									>
-										キャンセル
+										Cancel
 									</Button>
 									<Button
 										class="h-6 bg-ink-1 px-2 text-[10px] font-semibold text-white"
 										onclick={() => confirmDelete(selectedId)}
 									>
-										削除
+										Delete
 									</Button>
 								{:else}
 									<Button
@@ -318,7 +316,7 @@
 										onclick={() => (pendingDeleteId = selectedId)}
 									>
 										<Trash size={12} weight="regular" aria-hidden="true" />
-										削除
+										Delete
 									</Button>
 								{/if}
 							</div>
@@ -344,7 +342,7 @@
 			onclick={downloadSprite}
 		>
 			<ArrowDown size={12} weight="regular" aria-hidden="true" />
-			{isDownloading ? '生成中…' : 'sprite を保存'}
+			{isDownloading ? 'Generating…' : 'Save sprite'}
 		</Button>
 		<span>⌘4</span>
 	</footer>

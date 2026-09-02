@@ -33,22 +33,22 @@
 
 <aside class="flex w-60 shrink-0 flex-col border-r border-hairline bg-white">
 	<header class="flex h-10 shrink-0 items-center gap-2 px-3">
-		<h2 class="text-[12px] font-semibold text-ink-1">スタイル設定</h2>
+		<h2 class="text-[12px] font-semibold text-ink-1">Style settings</h2>
 	</header>
 
 	<div class="shrink-0 px-3 pb-1.5">
 		<div class="relative">
 			<TextField
 				class="w-full [&>input]:h-[26px] [&>input]:w-full [&>input]:rounded-[6px] [&>input]:pr-7 [&>input]:text-[11px] [&>input]:font-normal"
-				aria-label="スタイル設定を検索"
-				placeholder="検索"
+				aria-label="Search style settings"
+				placeholder="Search"
 				value={search}
 				onValueChange={(value) => (search = value)}
 			/>
 			{#if search}
 				<Button
 					class="absolute top-0 right-0 flex size-6 items-center justify-center text-ink-3 hover:text-ink-1"
-					aria-label="設定検索をクリア"
+					aria-label="Clear settings search"
 					onclick={() => (search = '')}
 				>
 					<X size={14} weight="regular" aria-hidden="true" />
@@ -74,7 +74,7 @@
 	<footer
 		class="flex h-8 shrink-0 items-center justify-between border-t border-hairline-soft px-3 font-mono text-[10px] text-ink-3"
 	>
-		<span>{mapStyle.name ?? '名称未設定'}</span>
-		<span>設定</span>
+		<span>{mapStyle.name ?? 'Untitled style'}</span>
+		<span>Settings</span>
 	</footer>
 </aside>
