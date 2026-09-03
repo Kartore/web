@@ -14,6 +14,8 @@ export type BuildGlyphArchiveOptions = {
 	yieldToMain?: () => Promise<void>;
 };
 
+export type GlyphFiles = Record<string, Uint8Array>;
+
 export const glyphRangeFileName = (start: number): string => `${start}-${start + 255}.pbf`;
 
 export const yieldToAnimationFrame = (): Promise<void> =>
@@ -27,14 +29,14 @@ const zipAsync = (files: AsyncZippable): Promise<Uint8Array> =>
 		});
 	});
 
-export const buildGlyphArchive = async ({
+export const buildGlyphFiles = async ({
 	fontstack,
 	ranges,
 	generateRange,
 	onProgress,
 	yieldToMain = yieldToAnimationFrame
-}: BuildGlyphArchiveOptions): Promise<Uint8Array> => {
-	const files: AsyncZippable = {};
+}: BuildGlyphArchiveOptions): Promise<GlyphFiles> => {
+	const files: GlyphFiles = {};
 	for (let index = 0; index < ranges.length; index += 1) {
 		const start = ranges[index];
 		files[`${fontstack}/${glyphRangeFileName(start)}`] = generateRange(start);
@@ -44,5 +46,8 @@ export const buildGlyphArchive = async ({
 	}
 
 	onProgress?.({ phase: 'zipping', completed: ranges.length, total: ranges.length });
-	return zipAsync(files);
+	return files;
 };
+
+export const buildGlyphArchive = async (options: BuildGlyphArchiveOptions): Promise<Uint8Array> =>
+	zipAsync(await buildGlyphFiles(options));

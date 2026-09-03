@@ -16,6 +16,11 @@ export type StyleExport = {
 
 export type StyleExportKind = 'current-mode' | 'mode-files' | 'runtime';
 
+export type StyleExportAssetUrls = {
+	sprite?: string;
+	glyphs?: string;
+};
+
 export const VARIABLE_MODE_GLOBAL_STATE_KEY = 'mode';
 
 type LayerPropertyGroup = Record<string, unknown>;
@@ -55,8 +60,29 @@ const safeFilePart = (value: string, fallback: string): string =>
 const styleFileBase = (style: StyleSpecification): string =>
 	safeFilePart(style.name ?? 'style', 'style');
 
-const serializeExport = (style: StyleSpecification, fileName: string): StyleExport => ({
-	contents: serializeStyle(pruneDefaultValues(stripEditorMetadata(style))),
+const withAssetUrls = (
+	style: StyleSpecification,
+	assetUrls: StyleExportAssetUrls | undefined
+): StyleSpecification => {
+	if (!assetUrls || (assetUrls.sprite === undefined && assetUrls.glyphs === undefined)) {
+		return style;
+	}
+
+	return {
+		...style,
+		...(assetUrls.sprite === undefined ? {} : { sprite: assetUrls.sprite }),
+		...(assetUrls.glyphs === undefined ? {} : { glyphs: assetUrls.glyphs })
+	};
+};
+
+const serializeExport = (
+	style: StyleSpecification,
+	fileName: string,
+	assetUrls?: StyleExportAssetUrls
+): StyleExport => ({
+	contents: serializeStyle(
+		pruneDefaultValues(stripEditorMetadata(withAssetUrls(style, assetUrls)))
+	),
 	fileName
 });
 
@@ -253,12 +279,19 @@ export const createStyleExport = (style: StyleSpecification): StyleExport =>
 
 export const createStyleExports = (
 	style: StyleSpecification,
-	kind: StyleExportKind
+	kind: StyleExportKind,
+	assetUrls?: StyleExportAssetUrls
 ): StyleExport[] => {
-	if (kind === 'current-mode') return [createStyleExport(style)];
+	if (kind === 'current-mode') {
+		return [serializeExport(style, `${styleFileBase(style)}.json`, assetUrls)];
+	}
 	if (kind === 'runtime') {
 		return [
-			serializeExport(createRuntimeVariableModeStyle(style), `${styleFileBase(style)}-runtime.json`)
+			serializeExport(
+				createRuntimeVariableModeStyle(style),
+				`${styleFileBase(style)}-runtime.json`,
+				assetUrls
+			)
 		];
 	}
 
@@ -268,6 +301,11 @@ export const createStyleExports = (
 		const occurrence = (usedFileParts.get(part) ?? 0) + 1;
 		usedFileParts.set(part, occurrence);
 		const suffix = occurrence === 1 ? part : `${part}-${occurrence}`;
-		return serializeExport(modeStyle, `${styleFileBase(style)}-${suffix}.json`);
+		return serializeExport(modeStyle, `${styleFileBase(style)}-${suffix}.json`, assetUrls);
 	});
 };
+
+export const styleExportArchiveFileName = (
+	style: StyleSpecification,
+	kind: StyleExportKind
+): string => `${styleFileBase(style)}${kind === 'runtime' ? '-runtime' : ''}.zip`;

@@ -9,25 +9,52 @@
 	let {
 		open = $bindable(false),
 		style,
+		spriteCount = 0,
+		fontCount = 0,
 		onExport
 	}: {
 		open?: boolean;
 		style: StyleSpecification;
-		onExport: (kind: StyleExportKind) => void;
+		spriteCount?: number;
+		fontCount?: number;
+		onExport: (kind: StyleExportKind, includeAssets: boolean) => void | Promise<void>;
 	} = $props();
 
 	let kind = $state<StyleExportKind>('current-mode');
+	let includeAssets = $state(false);
+	let isExporting = $state(false);
+	let exportError = $state<string | null>(null);
 	const variableModes = $derived(getStyleVariableModes(style));
 	const activeMode = $derived(
 		variableModes.modes.find(({ id }) => id === variableModes.activeModeId)
 	);
 	const hasMultipleModes = $derived(variableModes.modes.length > 1);
 	const selectedKindAvailable = $derived(kind === 'current-mode' || hasMultipleModes);
+	const hasLocalAssets = $derived(spriteCount > 0 || fontCount > 0);
+	const assetSummary = $derived(
+		[
+			spriteCount > 0 ? `${spriteCount} sprite${spriteCount === 1 ? '' : 's'}` : '',
+			fontCount > 0 ? `${fontCount} font${fontCount === 1 ? '' : 's'} for glyphs` : ''
+		]
+			.filter(Boolean)
+			.join(' · ')
+	);
 
-	const exportStyle = () => {
-		if (!selectedKindAvailable) return;
-		onExport(kind);
-		open = false;
+	const errorMessage = (error: unknown): string =>
+		error instanceof Error ? error.message : String(error);
+
+	const exportStyle = async () => {
+		if (!selectedKindAvailable || isExporting) return;
+		isExporting = true;
+		exportError = null;
+		try {
+			await onExport(kind, includeAssets);
+			open = false;
+		} catch (error) {
+			exportError = errorMessage(error);
+		} finally {
+			isExporting = false;
+		}
 	};
 </script>
 
@@ -41,7 +68,7 @@
 				<div class="flex flex-col gap-1">
 					<Dialog.Title class="text-base font-semibold text-ink-1">Export style</Dialog.Title>
 					<Dialog.Description class="text-xs leading-5 text-ink-3">
-						Choose how to export Variable Modes.
+						Choose the style output and whether to include local assets.
 					</Dialog.Description>
 				</div>
 
@@ -105,18 +132,56 @@
 					</div>
 				{/if}
 
+				<div class="flex flex-col gap-2 border-t border-hairline-soft pt-3">
+					<div class="flex flex-col gap-0.5">
+						<h3 class="text-xs font-semibold text-ink-1">Local assets</h3>
+						<p class="text-[11px] leading-4 text-ink-3">
+							Bundle generated sprite sheets and glyph PBFs in one ZIP.
+						</p>
+					</div>
+					<label
+						class="flex cursor-pointer items-start gap-2 rounded-md border border-hairline px-3 py-2.5 outline-none hover:bg-field has-[:checked]:border-accent has-[:checked]:bg-accent-soft has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-accent"
+					>
+						<input
+							type="checkbox"
+							bind:checked={includeAssets}
+							class="mt-0.5 size-3.5 accent-accent"
+						/>
+						<span class="flex min-w-0 flex-col gap-0.5">
+							<span class="text-xs font-semibold text-ink-1">Include sprite and glyph assets</span>
+							<span class="text-[11px] leading-4 text-ink-3">
+								{#if hasLocalAssets}
+									{assetSummary} will be generated alongside the JSON.
+								{:else}
+									No local sprites or fonts are registered; the ZIP will contain JSON only.
+								{/if}
+							</span>
+						</span>
+					</label>
+				</div>
+
+				{#if exportError}
+					<p
+						class="rounded-md border border-danger/30 bg-danger/5 px-3 py-2 text-[11px] leading-4 text-danger"
+						role="alert"
+					>
+						Could not export: {exportError}
+					</p>
+				{/if}
+
 				<div class="flex justify-end gap-2">
 					<Dialog.Close
-						class="h-8 cursor-pointer rounded-md px-3 text-xs font-semibold text-ink-3 hover:bg-field focus-visible:outline-2 focus-visible:outline-accent"
+						disabled={isExporting}
+						class="h-8 cursor-pointer rounded-md px-3 text-xs font-semibold text-ink-3 hover:bg-field focus-visible:outline-2 focus-visible:outline-accent disabled:cursor-default disabled:text-ink-4"
 					>
 						Cancel
 					</Dialog.Close>
 					<Button
 						class="h-8 rounded-md bg-ink-1 px-3 text-xs font-semibold text-white hover:bg-ink-2 disabled:cursor-default disabled:bg-ink-4"
-						disabled={!selectedKindAvailable}
+						disabled={!selectedKindAvailable || isExporting}
 						onclick={exportStyle}
 					>
-						Export
+						{isExporting ? 'Generating…' : includeAssets ? 'Export ZIP' : 'Export'}
 					</Button>
 				</div>
 			</div>

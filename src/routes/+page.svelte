@@ -77,7 +77,12 @@
 	import { localStorageSpriteIconsStoreAdapter, SpriteIconsStore } from '#lib/stores/spriteIcons';
 	import { groupLayersByIdPrefix } from '#lib/utils/layerGroup.ts';
 	import { COLOR_VISION_MODE_LABELS, type ColorVisionMode } from '#lib/utils/colorVision.ts';
-	import { createStyleExports, type StyleExportKind } from '#lib/utils/styleExport.ts';
+	import {
+		createStyleExports,
+		styleExportArchiveFileName,
+		type StyleExportKind
+	} from '#lib/utils/styleExport.ts';
+	import { createStyleExportArchive } from '#lib/utils/styleExportArchive.ts';
 	import { createEmptyStyle } from '#lib/utils/styleCreate.ts';
 	import { getLayerRawPropertyValue, type RootPropertyKind } from '#lib/utils/layerSpec.ts';
 	import { getPropertyInitialValue, type PropertyCatalogItem } from '#lib/utils/propertyCatalog.ts';
@@ -550,16 +555,30 @@
 		store.setMapStyle(style);
 	};
 
-	const handleExport = (kind: StyleExportKind) => {
+	const downloadBlob = (contents: string | Uint8Array, type: string, fileName: string) => {
+		const blob = new Blob([contents as BlobPart], { type });
+		const url = URL.createObjectURL(blob);
+		const anchor = document.createElement('a');
+		anchor.href = url;
+		anchor.download = fileName;
+		anchor.click();
+		URL.revokeObjectURL(url);
+	};
+
+	const handleExport = async (kind: StyleExportKind, includeAssets = false): Promise<void> => {
 		const style = $state.snapshot(store.mapStyle as object) as StyleSpecification;
+		if (includeAssets) {
+			const archive = await createStyleExportArchive(style, kind, {
+				icons: $state.snapshot(spriteIconsStore.icons),
+				fontstacks: Object.keys(fontsStore.fonts),
+				getLoadedFont: fontsStore.getLoadedFont
+			});
+			downloadBlob(archive, 'application/zip', styleExportArchiveFileName(style, kind));
+			return;
+		}
+
 		for (const styleExport of createStyleExports(style, kind)) {
-			const blob = new Blob([styleExport.contents], { type: 'application/json' });
-			const url = URL.createObjectURL(blob);
-			const anchor = document.createElement('a');
-			anchor.href = url;
-			anchor.download = styleExport.fileName;
-			anchor.click();
-			URL.revokeObjectURL(url);
+			downloadBlob(styleExport.contents, 'application/json', styleExport.fileName);
 		}
 	};
 
@@ -1227,6 +1246,8 @@
 		<ExportStyleDialog
 			bind:open={exportDialogOpen}
 			style={store.mapStyle}
+			spriteCount={Object.keys(spriteIconsStore.icons).length}
+			fontCount={Object.keys(fontsStore.fonts).length}
 			onExport={handleExport}
 		/>
 		{#each adapterModules as module (module.id)}
